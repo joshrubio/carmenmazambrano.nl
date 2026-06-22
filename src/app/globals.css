@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF7F0;
+  --foreground: #1A1A1A;
+  --accent: #8B1A1A;
+  --muted: #555555;
+  --border: #cccccc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-source-sans), Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Newspaper drop-cap for first article paragraph */
+.article-body > p:first-child::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  font-weight: 900;
+  color: var(--accent);
+  margin-right: 0.1em;
+  margin-top: 0.05em;
+}
+
+/* Column layout utilities */
+.newspaper-columns-2 {
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid var(--border);
+}
+
+.newspaper-columns-3 {
+  column-count: 3;
+  column-gap: 2rem;
+  column-rule: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .newspaper-columns-2,
+  .newspaper-columns-3 {
+    column-count: 1;
+  }
+}
