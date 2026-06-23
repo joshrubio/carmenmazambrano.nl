@@ -18,7 +18,8 @@ export async function proxy(req: NextRequest) {
 
   if (
     pathname === "/admin/login" ||
-    pathname.startsWith("/api/admin/login")
+    pathname.startsWith("/api/admin/login") ||
+    pathname.startsWith("/api/admin/session")
   ) {
     return NextResponse.next();
   }

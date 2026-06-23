@@ -9,7 +9,7 @@ export function AdminButton() {
   const [authenticated, setAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
-    fetch("/api/admin/session")
+    fetch("/api/admin/session", { cache: "no-store" })
       .then((r) => r.json())
       .then((d) => setAuthenticated(d.authenticated === true))
       .catch(() => setAuthenticated(false));
@@ -36,7 +36,7 @@ export function AdminButton() {
           onClick={handleLogout}
           className="label bg-ink text-inverse px-3 py-0.5 leading-none hover:opacity-80 transition-opacity"
         >
-          Salir
+          Logout
         </button>
       </div>
     );
