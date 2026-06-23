@@ -2,6 +2,67 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "freehaut-kilas-sentimentos-emocoes-rotterdam-2026",
+    title: "Rotterdam opent 'Gevoelens en Emoties' van Freehaut Kilas",
+    subtitle: "Acrylwerken vol kleur, textuur en menselijke verbinding — Galerie Planchard, 6 juni 2026",
+    category: "Cultuur",
+    date: "2026-06-06",
+    author: "Carmen Zambrano",
+    excerpt:
+      "De Rotterdamse kunstscene verwelkomt 'Gevoelens en Emoties', een tentoonstelling van de Portugees-Rotterdamse autodidact Freehaut Kilas — expressieve portretten, gelaagde texturen en een intense kleurenpalet dat uitnodigt tot reflectie.",
+    coverImage: "/images/freehaut-kilas-rotterdam-2026.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/freehaut-kilas-rotterdam-2026.png",
+        alt: "Freehaut Kilas — tentoonstelling Gevoelens en Emoties, Galerie Planchard Rotterdam",
+        caption: "Opening van 'Gevoelens en Emoties' door Freehaut Kilas in Galerie Planchard, Rotterdam, 6 juni 2026.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, 6 juni 2026 — De kunstscene van Rotterdam opent vandaag haar deuren voor een levendige en diep menselijke tentoonstelling: 'Gevoelens en Emoties', een collectie acrylwerken van de Portugese autodidactische kunstenaar Freehaut Kilas, die al jaren in Rotterdam woont en werkt. De tentoonstelling vindt plaats in Galerie Planchard, een culturele ruimte die zich heeft bewezen als podium voor eigenzinnige en veelzijdige kunst.",
+      },
+      {
+        type: "paragraph",
+        text: "De werken die in deze tentoonstelling te zien zijn, zijn het resultaat van twee jaar intensief creatief werk. In die periode ontwikkelde Kilas een persoonlijk visueel vocabulaire dat draait om identiteit, veerkracht en menselijke verbinding. Zijn schilderijen spreken een directe, emotionele taal — ze vragen niet om intellectuele analyse, maar om gevoelsmatige aanwezigheid.",
+      },
+      {
+        type: "subheading",
+        text: "Een expressieve beeldtaal",
+      },
+      {
+        type: "paragraph",
+        text: "De werken, allemaal op formaat 50 x 40 cm, tonen expressieve portretten met gelaagde, getextureerde oppervlakken en een intensieve kleurenpalet gedomineerd door rode, groene en gele tinten. Die kleuren zijn geen willekeurige keuze: ze vertegenwoordigen energie, hoop en beweging — de emotionele staat die Kilas in elk werk wil overbrengen.",
+      },
+      {
+        type: "pullquote",
+        text: "Elk werk is een brug tussen gevoelens, identiteit en hoop — een uitnodiging om nieuwe manieren van voelen te ontdekken door middel van kunst.",
+      },
+      {
+        type: "paragraph",
+        text: "'Gevoelens en Emoties' is een artistieke reis geïnspireerd op persoonlijke ervaringen, culturele herinneringen en reflecties over de menselijke conditie. Als autodidact heeft Kilas zijn stijl ontwikkeld buiten de academische kaders, wat zijn werk een ongepolijste authenticiteit geeft die moeilijk te imiteren is. Elke laag verf vertelt iets — over herkomst, over verlies, over de kracht die schuilt in kwetsbaarheid.",
+      },
+      {
+        type: "paragraph",
+        text: "De opening van vandaag brengt kunstliefhebbers, verzamelaars, culturele managers en leden van de multiculturele gemeenschap van Rotterdam samen. Dat is geen toeval: Rotterdam, met haar rijke diversiteit en lange traditie van kunstinnovatie, vormt de ideale context voor werk dat grenzen — geografisch, cultureel en emotioneel — overstijgt. De stad groeit gestaag uit tot een Europees referentiepunt voor hedendaagse en diverse beeldende kunst.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Tentoonstelling", value: "Gevoelens en Emoties" },
+          { label: "Kunstenaar", value: "Freehaut Kilas" },
+          { label: "Techniek", value: "Acryl op doek, 50 × 40 cm" },
+          { label: "Opening", value: "6 juni 2026" },
+          { label: "Locatie", value: "Galerie Planchard, Rotterdam" },
+          { label: "Website", value: "artindexrotterdam.nl", href: "https://www.artindexrotterdam.nl" },
+          { label: "Contact", value: "killasarte@gmail.com", href: "mailto:killasarte@gmail.com" },
+          { label: "LinkedIn", value: "Lees de originele post", href: "https://www.linkedin.com/posts/carmen-zambrano_rotterdam-celebra-hoy-la-apertura-de-la-exposici%C3%B3n-activity-7469278078666641408-Ohyl?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "rotterdam-blaak-station-hart-van-de-stad",
     title: "Rotterdam Blaak: het hart van stedelijk vervoer én architectuur",
     subtitle: "Van vervoersknooppunt tot toeristische poort — de plek waar Rotterdam samenkomt",
