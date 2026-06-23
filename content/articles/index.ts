@@ -2,6 +2,59 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "rotterdam-zuid-community-ontmoetingspunt-2026",
+    title: "Rotterdam Zuid wordt een gemeenschappelijk ontmoetingspunt",
+    subtitle: "Gratis juridisch advies, ondernemers en immigranten samen op de Feijenoordmarkt",
+    category: "Rotterdam",
+    date: "2026-05-21",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Elke week komen mensen van over de hele wereld samen op de Feijenoordmarkt in Rotterdam Zuid — voor gratis juridisch advies, onderlinge steun en een gevoel van gemeenschap dat het hele stadsdeel verbindt.",
+    coverImage: "/images/rotterdam-zuid-community-2026.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/rotterdam-zuid-community-2026.png",
+        alt: "Rotterdam Zuid — gemeenschapsontmoeting Feijenoordmarkt",
+        caption: "De Feijenoordmarkt in Rotterdam Zuid als wekelijkse ontmoetingsplek voor mensen van over de hele wereld.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, 21 mei 2026 — Woensdagmiddag, in het hart van Rotterdam Zuid, vond opnieuw een van die bijeenkomsten plaats die de kracht van gemeenschap zichtbaar maken. Van 16:30 tot 19:30 uur transformeerde de Feijenoordmarkt in een bruisende ontmoetingsplek waar mensen van over de hele wereld samenkwamen — een menselijk weefsel van solidariteit dat ver voorbij de grenzen van het stadsdeel reikt.",
+      },
+      {
+        type: "paragraph",
+        text: "Het initiatief biedt meer dan een plek om samen te komen. Gratis juridisch advies staat centraal: ondernemers en immigranten kunnen terecht met vragen over hun rechten, vergunningen, inschrijving en andere juridische kwesties die het dagelijks leven in Nederland met zich meebrengt. Die laagdrempelige toegang tot informatie maakt een wezenlijk verschil voor mensen die het systeem nog aan het ontdekken zijn.",
+      },
+      {
+        type: "pullquote",
+        text: "Rotterdam bevestigt zijn inzet voor inclusie en samenwerking — niet als leuze, maar als dagelijkse praktijk in de straten van Zuid.",
+      },
+      {
+        type: "paragraph",
+        text: "De bijeenkomst beperkt zich niet tot Rotterdam Zuid. Het netwerk strekt zich uit over verschillende wijken van de stad en brengt ouderen, immigranten en studenten samen van alle continenten: Europeanen, Afrikanen, Aziaten en Latijns-Amerikanen vinden elkaar in een omgeving van wederzijds begrip en solidariteit.",
+      },
+      {
+        type: "paragraph",
+        text: "Dit soort initiatieven illustreert hoe diversiteit in Rotterdam niet alleen wordt getolereerd, maar actief wordt omarmd en omgezet in gemeenschapskracht. De uitwisseling van ervaringen, kennis en culturen die hier wekelijks plaatsvindt, versterkt het sociale weefsel van de stad op een manier die geen enkele institutionele maatregel alleen kan bereiken.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam Zuid, een stadsdeel dat al decennia lang een spiegel is van de diversiteit van de stad, herbevestigt met dit soort ontmoetingen zijn rol als ruimte voor inclusie, dialoog en collectieve groei. De Feijenoordmarkt is daarmee meer dan een markt — het is een symbool van wat Rotterdam als gemeenschap kan zijn.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Locatie", value: "Feijenoordmarkt, Rotterdam Zuid" },
+          { label: "Dag & tijd", value: "Woensdag, 16:30 – 19:30" },
+          { label: "Aanbod", value: "Gratis juridisch advies, gemeenschapsontmoeting" },
+          { label: "LinkedIn", value: "Lees de originele post", href: "https://www.linkedin.com/posts/carmen-zambrano_intercambiocultural-sinergia-espaciosdecreacion-activity-7463503051782406144-2QtJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "moederdag-viering-rotterdam-2026",
     title: "Moederdag bracht vrouwen samen in een bewogen middag in Rotterdam",
     subtitle: "Warmte, vriendschap en gemeenschap — een viering die meer was dan een dag",
