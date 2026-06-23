@@ -13,7 +13,7 @@ async function generateToken(secret: string): Promise<string> {
   return btoa(String.fromCharCode(...new Uint8Array(signature)));
 }
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (

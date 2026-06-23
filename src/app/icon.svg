@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" fill="#8B1A1A"/>
+  <rect x="3.5" y="3.5" width="57" height="57" fill="none" stroke="#FAF7F0" stroke-width="1.2" opacity="0.35"/>
+  <text
+    x="32"
+    y="44"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="27"
+    font-weight="700"
+    fill="#FAF7F0"
+    text-anchor="middle"
+    letter-spacing="3"
+  >CM</text>
+</svg>
