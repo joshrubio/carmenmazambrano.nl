@@ -2,6 +2,62 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "de-nachtbus-die-nooit-slaapt",
+    title: "De nachtbus die nooit slaapt: uw veilige terugkeer in Rotterdam",
+    subtitle: "De RET-nachtbus verbindt Rotterdam met de regio — ook als de stad slaapt",
+    category: "Rotterdam",
+    date: "2025-06-23",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Wanneer de stad haar lichten uitdoet, rijdt de RET-nachtbus gewoon door. Deze dienst verbindt Rotterdam met de omliggende wijken en gemeenten en is een trouwe metgezel geworden voor wie werkt, uitgaat of gewoon laat thuiskomt.",
+    coverImage: "/images/nachtbus-rotterdam.png",
+    content: [
+      {
+        type: "image",
+        src: "/images/nachtbus-rotterdam.png",
+        alt: "RET nachtbus Rotterdam",
+        caption: "De RET-nachtbus — een trouwe metgezel voor wie laat thuiskomt.",
+      },
+      {
+        type: "paragraph",
+        text: "Wanneer de stad haar lichten uitdoet, rijdt de RET-nachtbus gewoon door. Deze dienst, die Rotterdam verbindt met de omliggende wijken en gemeenten, is een trouwe metgezel geworden voor wie werkt, uitgaat of gewoon laat thuiskomt.",
+      },
+      {
+        type: "paragraph",
+        text: "De Nachtbus rijdt tussen middernacht en 6:00 uur 's ochtends en verbindt Rotterdam Centraal Station met verschillende strategische punten in de metropoolregio. De routes zijn ontworpen om de belangrijkste stedelijke en residentiële centra te bedienen, zodat niemand aan het einde van de dag zonder vervoer zit.",
+      },
+      {
+        type: "pullquote",
+        text: "Zodat niemand aan het einde van de dag zonder vervoer zit.",
+      },
+      {
+        type: "paragraph",
+        text: "Tot de drukste haltes behoren Schiedam Centrum, ideaal voor wie in deze naburige stad woont of ervan geniet; Vlaardingen Oost en Maassluis Centrum, waar de dienst een directe verbinding biedt voor wie in de buurt van de haven woont of 's ochtends vroeg werkt.",
+      },
+      {
+        type: "paragraph",
+        text: "In het zuiden rijdt de nachtbus naar Hoogvliet en Spijkenisse, twee woonwijken die druk bezocht worden door nachtwerkers en jongeren die vanuit het centrum terugkeren. In het oosten zorgen routes naar Capelle aan den IJssel, Nesselande en Ridderkerk voor een vlotte terugreis naar familie en woonwijken, terwijl de lijn naar Hoek van Holland zelfs aansluit op de kust voor wie aan zee woont of werkt.",
+      },
+      {
+        type: "paragraph",
+        text: "De nachtbus is niet alleen een voordelig alternatief, maar biedt ook veiligheid en comfort, met goed verlichte haltes en getrainde chauffeurs voor een vlotte reis. De dienstregeling is afgestemd op de sluitingstijden van de grote uitgaansgelegenheden, waardoor u gemakkelijk kunt terugkeren zonder taxi's of lange wandelingen.",
+      },
+      {
+        type: "paragraph",
+        text: "De dienstregeling rijdt van vrijdag tot en met zaterdag en van zaterdag tot en met zondag, en is afgestemd op het nachtleven van de stad. Zo kunnen zowel inwoners als bezoekers volop genieten van Rotterdam, wetende dat er altijd een bus klaarstaat om hen naar huis te brengen.",
+      },
+      {
+        type: "subheading",
+        text: "Meer informatie",
+      },
+      {
+        type: "paragraph",
+        text: "Routes, tarieven en dienstregelingen vindt u op ret.nl/nachtbus",
+      },
+    ],
+    featured: false,
+  },
+  {
     slug: "periodismo-cultural-rotterdam",
     title: "El periodismo cultural como puente entre comunidades",
     subtitle: "Cómo la narrativa editorial transforma el tejido social de las ciudades",
@@ -47,12 +103,6 @@ export const articles: Article[] = [
       {
         type: "paragraph",
         text: "Durante mis años en periodismo gubernamental, observé una constante: las instituciones que apostaban por la transparencia activa —no la reactiva— construían una relación de confianza que sobrevivía incluso a las crisis.",
-      },
-      {
-        type: "image",
-        src: "/images/placeholder-comunicacion.jpg",
-        alt: "Sala de prensa gubernamental",
-        caption: "Las salas de prensa modernas integran canales digitales y tradicionales.",
       },
       {
         type: "paragraph",
