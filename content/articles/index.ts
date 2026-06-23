@@ -2,6 +2,79 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "rotterdam-blaak-station-hart-van-de-stad",
+    title: "Rotterdam Blaak: het hart van stedelijk vervoer én architectuur",
+    subtitle: "Van vervoersknooppunt tot toeristische poort — de plek waar Rotterdam samenkomt",
+    category: "Rotterdam",
+    date: "2026-06-01",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Station Rotterdam Blaak is meer dan een vervoersknooppunt — het is de architectonische en stedelijke schakel die trein, metro, tram en bus verbindt met de Markthal, de Kubuswoningen en de Centrale Bibliotheek.",
+    coverImage: "/images/rotterdam-blaak-station.jpg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/rotterdam-blaak-station.jpg",
+        alt: "Rotterdam Blaak — station en vervoersknooppunt",
+        caption: "Station Rotterdam Blaak, gelegen in het hart van de architectonische driehoek van de stad.",
+      },
+      {
+        type: "paragraph",
+        text: "Station Rotterdam Blaak is een van de meest vitale vervoersknooppunten van de stad. Hier komen trein, metro, tram en bus samen in één compacte infrastructuur — een dagelijks kruispunt voor tienduizenden forensen, studenten, toeristen en bewoners. Maar Blaak is meer dan een functioneel knooppunt. Het is een plek die architectuur, stedelijk leven en toerisme op een unieke manier met elkaar verweeft.",
+      },
+      {
+        type: "subheading",
+        text: "Een architectonisch landmark",
+      },
+      {
+        type: "paragraph",
+        text: "Het metrostation Rotterdam Blaak, ontworpen door architect Harry Reijnders en geopend in 1987, valt op door zijn futuristische uitstraling. De ronde glazen overkapping van het ondergrondse gedeelte — in de volksmond bekend als 'de vliegende schotel' — is een opvallend element in het stedelijk landschap en weerspiegelt de bredere architectonische ambitie die Rotterdam na de Tweede Wereldoorlog heeft omarmd: niet herbouwen wat verloren ging, maar iets nieuws en gedurfds neerzetten.",
+      },
+      {
+        type: "paragraph",
+        text: "Die ambitie is zichtbaar in de gehele omgeving van Blaak. Op loopafstand van het station staan drie van de meest iconische gebouwen van Rotterdam: de Markthal, de Kubuswoningen en de Centrale Bibliotheek. Samen vormen ze een architectonisch drieluik dat nergens anders ter wereld te vinden is.",
+      },
+      {
+        type: "subheading",
+        text: "Poort naar het beste van Rotterdam",
+      },
+      {
+        type: "paragraph",
+        text: "De Markthal (2014), ontworpen door MVRDV, is een overdekte markt en woongebouw ineen — een hoefijzervormige constructie met een enorm kleurrijk plafondfresco van 11.000 vierkante meter. De Kubuswoningen (Piet Blom, 1984) zijn 's werelds meest gefotografeerde woningen: op hun punt geplaatste kubusvormige huizen die een bos symboliseren boven een verhoogde straat. De Centrale Bibliotheek, geopend in 1983, was bij haar opening de grootste openbare bibliotheek van Nederland en is nog altijd een bruisend cultureel centrum.",
+      },
+      {
+        type: "pullquote",
+        text: "Bij Blaak loopt Rotterdam op zijn meest expressief: architectuur, mobiliteit en gemeenschap raken elkaar in één stadsdeel.",
+      },
+      {
+        type: "subheading",
+        text: "Verbinding en bereikbaarheid",
+      },
+      {
+        type: "paragraph",
+        text: "Praktisch gezien is Blaak een van de best bereikbare plekken van Rotterdam. De NS-treinen verbinden het station rechtstreeks met steden als Den Haag, Utrecht, Dordrecht en Breda. De RET-metro brengt reizigers in minuten naar Rotterdam Centraal, Capelle aan den IJssel of Spijkenisse. Tramlijnen en busverbindingen maken de rest van de stad toegankelijk zonder overstap.",
+      },
+      {
+        type: "paragraph",
+        text: "Voor toeristen is Blaak het perfecte startpunt: binnen een straal van 200 meter zijn de Markthal, de Kubuswoningen, de Openluchtmarkt (dinsdag en zaterdag), de Oude Haven en de Erasmusbrug bereikbaar te voet. Geen andere plek in Rotterdam concentreert zoveel bezienswaardigheden op zo'n klein oppervlak.",
+      },
+      {
+        type: "paragraph",
+        text: "In een stad die zichzelf voortdurend heruitvindt, is Blaak een constante: het kloppende hart van een Rotterdam dat nooit stilstaat.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Locatie", value: "Blaak, Rotterdam Centrum" },
+          { label: "Vervoer", value: "Trein (NS), Metro (RET), Tram, Bus" },
+          { label: "Metro geopend", value: "1987 — ontwerp Harry Reijnders" },
+          { label: "Op loopafstand", value: "Markthal · Kubuswoningen · Centrale Bibliotheek · Oude Haven" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "gohar-shachbazov-tentoonstelling-rotterdam-2026",
     title: "De mensheid als spiegel: tentoonstelling Gohar Shachbazov sluit af in Rotterdam",
     subtitle: "Een maand van kunst, emotie en reflectie over de menselijke conditie",
