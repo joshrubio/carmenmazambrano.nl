@@ -51,6 +51,16 @@ export const articles: Article[] = [
         type: "paragraph",
         text: "De viering werd afgesloten met groepsfoto's, muziek en een sfeer van dankbaarheid en vreugde die alle aanwezigen bijblijft als een herinnering aan een onvergetelijke Moederdagmiddag in Rotterdam.",
       },
+      {
+        type: "infobox",
+        items: [
+          {
+            label: "LinkedIn",
+            value: "Lees de originele post",
+            href: "https://www.linkedin.com/posts/carmen-zambrano_celebraci%C3%B3n-del-d%C3%ADa-de-la-madre-reuni%C3%B3-a-activity-7462205532813160448--qzU?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY",
+          },
+        ],
+      },
     ],
   },
   {
