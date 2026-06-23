@@ -2,6 +2,58 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "moederdag-viering-rotterdam-2026",
+    title: "Moederdag bracht vrouwen samen in een bewogen middag in Rotterdam",
+    subtitle: "Warmte, vriendschap en gemeenschap — een viering die meer was dan een dag",
+    category: "Rotterdam",
+    date: "2026-05-10",
+    author: "Carmen Zambrano",
+    excerpt:
+      "In het kader van Moederdag kwamen vrouwen uit verschillende nationaliteiten samen in Rotterdam voor een middag vol warmte, muziek en verbinding — een viering van moederschap en gemeenschap.",
+    coverImage: "/images/moederdag-rotterdam-2026.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/moederdag-rotterdam-2026.png",
+        alt: "Moederdag viering Rotterdam — vrouwen bijeen in warmte en gemeenschap",
+        caption: "Een groep vrouwen vierde Moederdag samen in Rotterdam met muziek, gesprekken en gemeenschap.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, Nederland — In het kader van Moederdag kwamen vrouwen uit verschillende hoeken van de wereld samen in Rotterdam voor een bijzondere middag vol vreugde, vriendschap en verbinding. De bijeenkomst was een viering van het moederschap in de breedste zin van het woord: een moment om stil te staan bij de kracht, het doorzettingsvermogen en de liefde die moeders elke dag uitdragen.",
+      },
+      {
+        type: "paragraph",
+        text: "De middag werd gekenmerkt door een warme en vertrouwde sfeer, waarbij de aanwezigen konden genieten van gesprekken, muziek en momenten van verbinding tussen moeders en vriendinnen van uiteenlopende nationaliteiten die Rotterdam als hun thuis hebben gekozen. De taalverschillen leken te verdwijnen naarmate de middag vorderde — humor, herkenning en gedeelde ervaringen verbonden de vrouwen moeiteloos.",
+      },
+      {
+        type: "pullquote",
+        text: "Dit soort bijeenkomsten helpt ons menselijke banden te smeden die verder gaan dan afkomst of taal — ze geven ons een thuis ver van huis.",
+      },
+      {
+        type: "paragraph",
+        text: "Een van de meest ontroerende momenten van de dag was de verrassingviering van de verjaardag van een van de aanwezige moeders. Alle deelnemers zongen haar een vrolijk verjaardagslied toe, begeleid door applaus, brede glimlachen en hartelijke omhelzingen. Het was een spontaan moment dat de diepe verbondenheid tussen de aanwezigen perfect illustreerde.",
+      },
+      {
+        type: "paragraph",
+        text: "De activiteit benadrukte hoe belangrijk het is om gemeenschapsbanden te versterken onder immigrantenvrouwen en families die in Rotterdam een nieuw thuis hebben gevonden. Door ruimte te bieden voor samenzijn, wederzijdse steun en het vieren van familietradities, vervullen dit soort initiatieven een onmisbare sociale rol in een diverse stad als Rotterdam.",
+      },
+      {
+        type: "paragraph",
+        text: "Tijdens de middag deelden de deelnemers levenservaringen, anekdotes over het moederschap en reflecties over de waarde van de vrouw in het gezin en de samenleving. De bijeenkomst bood ook de gelegenheid om te benadrukken hoe belangrijk het is om culturele wortels en een gevoel van gemeenschap levend te houden in het buitenland — iets wat voor velen van hen dagelijks een bewuste keuze is.",
+      },
+      {
+        type: "paragraph",
+        text: "De deelnemers waren het erover eens dat dit soort activiteiten bijdraagt aan het opbouwen van hechte menselijke banden en emotioneel welzijn brengt aan wie ver van het thuisland leeft. Moederschap kent geen grenzen, en de vreugde ervan delen met anderen maakt het alleen maar groter.",
+      },
+      {
+        type: "paragraph",
+        text: "De viering werd afgesloten met groepsfoto's, muziek en een sfeer van dankbaarheid en vreugde die alle aanwezigen bijblijft als een herinnering aan een onvergetelijke Moederdagmiddag in Rotterdam.",
+      },
+    ],
+  },
+  {
     slug: "dokkum-koningsdag-2026",
     title: "Dokkum vierde Koningsdag 2026 met traditie en nationale eenheid",
     subtitle: "De Friese stad als middelpunt van de verjaardag van koning Willem-Alexander",
