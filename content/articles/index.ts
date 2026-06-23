@@ -2,6 +2,64 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "gohar-shachbazov-tentoonstelling-rotterdam-2026",
+    title: "De mensheid als spiegel: tentoonstelling Gohar Shachbazov sluit af in Rotterdam",
+    subtitle: "Een maand van kunst, emotie en reflectie over de menselijke conditie",
+    category: "Cultuur",
+    date: "2026-05-30",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Na meer dan een maand sluit de tentoonstelling van Gohar Shachbazov in Rotterdam. Expressieve gezichten, gefragmenteerde lichamen en een boodschap van hoop — een artistieke reis die bezoekers uitnodigde om verder te kijken dan de oppervlakte.",
+    coverImage: "/images/gohar-shachbazov-rotterdam.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/gohar-shachbazov-rotterdam.png",
+        alt: "Gohar Shachbazov — tentoonstelling Rotterdam 2026",
+        caption: "Werk van Gohar Shachbazov, te zien in Rotterdam van 26 april tot 30 mei 2026.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, 30 mei — Na meer dan een maand van ontmoetingen tussen kunst, emotie en reflectie sluit de tentoonstelling van kunstenaar Gohar Shachbazov, die op 26 april in Rotterdam opende, vandaag haar deuren. Dit artistieke project nodigde bezoekers uit om verder te kijken dan de oppervlakte en de complexiteit van de menselijke conditie te doorgronden.",
+      },
+      {
+        type: "paragraph",
+        text: "Door middel van expressieve gezichten, gefragmenteerde lichamen en composities vol symboliek onderzoekt Shachbazov de kwetsbaarheden, beperkingen en angsten die deel uitmaken van de menselijke ervaring — maar ook het vermogen tot transformatie, veerkracht en wederopbouw. Zijn werk stelt geen makkelijke vragen. Het vraagt de bezoeker om even stil te staan, om te kijken zonder haast, om iets van zichzelf te herkennen in de blikken op het doek.",
+      },
+      {
+        type: "pullquote",
+        text: "Elk gezicht, elk gefragmenteerd lichaam, elke afgebeelde blik is een uitnodiging om te ontdekken wat er in ons schuilt, vaak verborgen.",
+      },
+      {
+        type: "paragraph",
+        text: "Shachbazov, geboren in Azerbeidzjan en werkzaam in Europa, brengt in zijn werk een universele taal die grenzen overstijgt. De figuren in zijn schilderijen zijn herkenbaar en tegelijkertijd raadselachtig — ze weerspiegelen niet één persoon, maar de mensheid in haar geheel. Die gelaagdheid maakte de tentoonstelling tot meer dan een visuele ervaring: het was een introspectieve reis.",
+      },
+      {
+        type: "paragraph",
+        text: "Sinds de opening op 26 april trok de tentoonstelling bezoekers die geïnteresseerd waren in de dialoog tussen hedendaagse kunst en menselijke emoties. De centrale boodschap draait om hoop: de mogelijkheid om onszelf als mens te herkennen, zelfs in complexe tijden, om onze wonden te begrijpen en betekenis te vinden door verbinding met anderen.",
+      },
+      {
+        type: "paragraph",
+        text: "In zijn slotwoord bedankte Shachbazov degenen die hem op deze artistieke reis in Rotterdam hadden vergezeld. Hij gaf het publiek een reflectie mee: dat de mensheid, met al haar tegenstrijdigheden, een onuitputtelijke bron van kracht, empathie en hoop blijft. Het is een boodschap die, in tijden van polarisatie en onzekerheid, bijzonder relevant klinkt.",
+      },
+      {
+        type: "paragraph",
+        text: "Met deze afsluiting bevestigt het werk van de kunstenaar de rol van kunst als ruimte voor ontmoeting, bevraging en collectieve wederopbouw. De tentoonstelling laat de deur open voor nieuwe gesprekken over identiteit, kwetsbaarheid en hoop — gesprekken die Rotterdam, als diverse en cultureel rijke stad, van harte verwelkomt.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Kunstenaar", value: "Gohar Shachbazov" },
+          { label: "Periode", value: "26 april – 30 mei 2026" },
+          { label: "Stad", value: "Rotterdam" },
+          { label: "Contact", value: "goharshachbazov@gmail.com", href: "mailto:goharshachbazov@gmail.com" },
+          { label: "Persbericht", value: "Carmen Zambrano" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "erasmusbrug-rotterdam-icoon-stad",
     title: "De Erasmusbrug: architectonisch icoon en ziel van Rotterdam",
     subtitle: "Van omstreden ontwerp tot onmiskenbaar symbool — de brug die een stad transformeerde",
