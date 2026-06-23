@@ -2,6 +2,102 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "het-hart-van-rotterdam-openluchtmarkt",
+    title: "Het hart van Rotterdam: openluchtmarkt",
+    subtitle: "De Binnenrotte/Blaak — meer dan 400 kramen, elke dinsdag en zaterdag",
+    category: "Rotterdam",
+    date: "2025-10-16",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Elke dinsdag en zaterdag bruist de Binnenrotte/Blaak van leven: verse producten, mode, streetfood en het multiculturele karakter dat Rotterdam zo uniek maakt.",
+    coverImage: "/images/markt-rotterdam-cover.jpeg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/markt-rotterdam-cover.jpeg",
+        alt: "Openluchtmarkt Binnenrotte/Blaak Rotterdam",
+        caption: "De openluchtmarkt op de Binnenrotte/Blaak, pal voor de Bibliotheek en de Markthal.",
+      },
+      {
+        type: "paragraph",
+        text: "Elke dinsdag en zaterdag, van de eerste zonnestralen tot laat in de avond, bruist het stadscentrum van een van de meest gekoesterde tradities: de openluchtmarkt op de Binnenrotte/Blaak, pal voor de Bibliotheek en de iconische Markthal. Deze stadsmarkt, met meer dan 250 tot 400 kramen afhankelijk van de gelegenheid, is een must-see geworden voor locals, toeristen en gezinnen op zoek naar winkelen, smaken en ontmoetingen.",
+      },
+      {
+        type: "subheading",
+        text: "Een wandeling die alles heeft: van lade tot bord",
+      },
+      {
+        type: "paragraph",
+        text: "Van ondergoed, sokken en sjaals tot telefoonhoesjes, screenprotectors, portemonnees, sieraden en huishoudelijke artikelen; van verse bloemen, groenten en fruit tot visspecialiteiten en streetfood om ter plekke van te genieten — de markt biedt het allemaal.",
+      },
+      {
+        type: "paragraph",
+        text: "Bezoekers kunnen slenteren door de rekken vol stoffen en kant, stoppen bij kiosken met technische accessoires, snuffelen tussen handgemaakte handtassen, prijzen vergelijken bij juweliers en zich al snel laten verleiden door een kraampje verse kibbeling of friet met typisch Hollandse worst.",
+      },
+      {
+        type: "paragraph",
+        text: "Het is niet ongebruikelijk om hele gezinnen urenlang langs de kraampjes te zien snuffelen, te kletsen met verkopers, bijzondere objecten te ontdekken, lokale gerechten te proeven en te kletsen met buren en vrienden. Door deze gezelligheid wordt de markt een essentieel onderdeel van de stedelijke structuur, een gemeenschapservaring.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/markt-rotterdam-1.jpeg", alt: "Openluchtmarkt Rotterdam — kraampjes" },
+          { src: "/images/markt-rotterdam-2.jpeg", alt: "Openluchtmarkt Rotterdam — sfeer" },
+          { src: "/images/markt-rotterdam-3.jpeg", alt: "Openluchtmarkt Rotterdam — producten" },
+          { src: "/images/markt-rotterdam-4.jpeg", alt: "Openluchtmarkt Rotterdam — bezoekers" },
+        ],
+        caption: "Sfeerbeelden van de wekelijkse markt op de Binnenrotte/Blaak.",
+      },
+      {
+        type: "subheading",
+        text: "Openingstijden en praktische informatie",
+      },
+      {
+        type: "paragraph",
+        text: "De markt vindt plaats op dinsdag en zaterdag in de Binnenrotte/Blaak, van ongeveer 8.00 tot 17.30 uur. De kraampjes buiten, vlak voor de bibliotheek en de Markthal, vormen een aanvulling op de dagelijkse activiteiten binnen in de Markthal, waar zich permanente eetkraampjes en winkels bevinden.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Locatie", value: "Binnenrotte/Blaak, Rotterdam" },
+          { label: "Dagen", value: "Dinsdag & zaterdag" },
+          { label: "Tijden", value: "08:00 – 17:30" },
+          { label: "Kramen", value: "250 – 400 (afhankelijk van de dag)" },
+          { label: "OV", value: "Station Blaak (metro/trein)" },
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Het terrein is bereikbaar met het openbaar vervoer, met station Blaak vlakbij, en er is parkeergelegenheid in de buurt. Op marktdagen kan het echter handiger en sneller zijn om met het openbaar vervoer te komen.",
+      },
+      {
+        type: "subheading",
+        text: "Een gemeentelijk icoon",
+      },
+      {
+        type: "paragraph",
+        text: "De Binnenrotte/Blaakmarkt wordt beheerd volgens het marktbeleid van de gemeente, met kraamvoorschriften, gemeentelijke vergunningen en institutionele coördinatie met straatverkopers. Veel kramen worden gerund door individuele verkopers — lokaal of uit verschillende landen — die diverse goederen aanbieden, wat de markt het multiculturele en levendige karakter geeft waar zoveel bezoekers van genieten.",
+      },
+      {
+        type: "subheading",
+        text: "Tips voor bezoekers",
+      },
+      {
+        type: "paragraph",
+        text: "Begin vroeg: door 's ochtends te komen kunt u optimaal genieten van de verse producten en de drukte vermijden. Neem contant geld en herbruikbare tassen mee; veel kraampjes zijn klein en accepteren geen grote elektronische betalingen.",
+      },
+      {
+        type: "paragraph",
+        text: "Plan een smaakpauze: verfris uzelf met een stroopwafel, probeer een lokale snack of deel een snelle maaltijd ter plaatse. Combineer daarna met een bezoek aan de Markthal voor gastronomische producten, food shops en proeverijen.",
+      },
+      {
+        type: "pullquote",
+        text: "Deze markt is niet zomaar een commerciële ruimte: het is een stedelijke ontmoetingsplek, een etalage van culturen en producten, een plek waar het dagelijks leven en feesten samenkomen.",
+      },
+    ],
+  },
+  {
     slug: "rotterdam-stimuleert-digitale-inclusie",
     title: "Rotterdam stimuleert digitale inclusie",
     subtitle: "Gratis computercursussen én refurbished laptop voor Rotterdammers",
