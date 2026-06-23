@@ -24,7 +24,7 @@ export default function AboutPage() {
         {/* ── Sidebar (sticky) ── */}
         <aside className="md:col-span-4">
           <div className="sticky top-8">
-            <div className="relative w-full aspect-[3/4] overflow-hidden mb-4">
+            <div className="relative w-full aspect-[3/4] max-h-80 md:max-h-none overflow-hidden mb-4">
               <PhotoSlot src={about.photo} alt={about.name} grayscale={false} />
             </div>
 

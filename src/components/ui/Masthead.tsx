@@ -7,14 +7,14 @@ export function Masthead() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Top bar — UI font */}
         <div className="flex justify-between items-center border-b border-rule pb-2 mb-3">
-          <span className="label text-muted font-normal normal-case tracking-wide">
+          <span className="label text-muted font-normal normal-case tracking-wide hidden sm:inline">
             Rotterdam, Netherlands
           </span>
-          <nav className="flex items-center gap-6 label text-muted">
+          <nav className="flex items-center gap-3 sm:gap-6 label text-muted w-full sm:w-auto justify-between sm:justify-end">
             <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <Link href="/about" className="hover:text-accent transition-colors">About</Link>
             <Link href="/articles" className="hover:text-accent transition-colors">Articles</Link>
-            <a href="mailto:carmenmazambrano@gmail.com" className="hover:text-accent transition-colors">Contact</a>
+            <a href="mailto:carmenmazambrano@gmail.com" className="hover:text-accent transition-colors hidden sm:inline">Contact</a>
             <AdminButton />
           </nav>
         </div>
@@ -22,7 +22,7 @@ export function Masthead() {
         {/* Nameplate — display font */}
         <div className="text-center py-2">
           <Link href="/" className="no-underline">
-            <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight text-ink leading-none">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-ink leading-none">
               Carmen Zambrano
             </h1>
             <p className="font-display text-sm tracking-[0.3em] uppercase text-muted font-normal italic mt-1">

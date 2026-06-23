@@ -37,7 +37,7 @@ export function Hero() {
 
         {/* Photo column */}
         <div className="md:col-span-4 md:border-r md:border-rule">
-          <div className="relative w-full aspect-[3/4] bg-surface overflow-hidden">
+          <div className="relative w-full aspect-[3/4] max-h-80 md:max-h-none bg-surface overflow-hidden">
             <PhotoSlot src={about.photo} alt="Carmen Zambrano" grayscale={false} />
             <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
           </div>
@@ -88,12 +88,12 @@ export function Hero() {
           </div>
 
           {/* Footer strip: location · phone · social · CTA */}
-          <div className="flex items-center gap-4 border-t border-rule pt-4 flex-wrap mt-auto">
+          <div className="flex items-start sm:items-center gap-x-4 gap-y-3 border-t border-rule pt-4 flex-wrap mt-auto">
             <div>
               <p className="label text-accent">Based in</p>
               <p className="font-body text-sm text-ink mt-0.5">{about.location}</p>
             </div>
-            <div className="w-px h-8 bg-rule shrink-0" />
+            <div className="hidden sm:block w-px h-8 bg-rule shrink-0" />
             <div>
               <p className="label text-accent">Contact</p>
               <a
@@ -103,17 +103,17 @@ export function Hero() {
                 {about.phone}
               </a>
             </div>
-            <div className="w-px h-8 bg-rule shrink-0" />
+            <div className="hidden sm:block w-px h-8 bg-rule shrink-0" />
             <div>
               <p className="label text-accent">Email</p>
               <a
                 href={`mailto:${about.email}`}
-                className="font-body text-sm text-ink hover:text-accent transition-colors block mt-0.5"
+                className="font-body text-sm text-ink hover:text-accent transition-colors block mt-0.5 break-all"
               >
                 {about.email}
               </a>
             </div>
-            <div className="w-px h-8 bg-rule shrink-0" />
+            <div className="hidden sm:block w-px h-8 bg-rule shrink-0" />
 
             {/* Social buttons */}
             <div className="flex items-center gap-2">
@@ -134,7 +134,7 @@ export function Hero() {
 
             <Link
               href="/about"
-              className="ml-auto label text-ink font-normal normal-case tracking-wide border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors whitespace-nowrap"
+              className="w-full sm:w-auto sm:ml-auto label text-ink font-normal normal-case tracking-wide border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors whitespace-nowrap text-center"
             >
               Full Profile →
             </Link>

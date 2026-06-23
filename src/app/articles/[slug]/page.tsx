@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: Props) {
         <ThickRule />
       </div>
 
-      <h1 className="font-display text-5xl md:text-6xl font-black leading-[1.05] text-ink">
+      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] text-ink">
         {article.title}
       </h1>
 

@@ -92,7 +92,7 @@ export function GalleryLightbox({ images, caption }: Props) {
           {/* Close */}
           <button
             onClick={close}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors text-3xl leading-none"
+            className="absolute top-3 right-3 text-white/70 hover:text-white transition-colors text-3xl leading-none p-2"
             aria-label="Close"
           >
             ×
@@ -103,14 +103,14 @@ export function GalleryLightbox({ images, caption }: Props) {
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); prev(); }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-4xl leading-none px-2"
+                className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-5xl leading-none px-4 py-6"
                 aria-label="Previous"
               >
                 ‹
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); next(); }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-4xl leading-none px-2"
+                className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-5xl leading-none px-4 py-6"
                 aria-label="Next"
               >
                 ›
