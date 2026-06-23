@@ -15,6 +15,7 @@ export const about = {
     "Radio & Television",
     "Cultural Projects",
     "Team Leadership",
+    "University Teaching",
   ],
   photo: "/images/carmen-zambrano.webp",
   social: {
