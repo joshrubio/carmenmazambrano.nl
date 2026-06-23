@@ -152,5 +152,14 @@ export const about = {
       description:
         "Led daily press coverage of energy-efficiency programmes (bulb replacement, appliance exchange, rational energy use). Founded the Citizens' Service Department for the Eastern Venezuela region. Worked across Press & PR, Social Development, and Customer Service divisions.",
     },
+    {
+      title: "Independent Journalist",
+      org: "Freelance",
+      location: "Rotterdam, Netherlands",
+      from: "2023",
+      to: "Present",
+      description:
+        "Press notes and cultural coverage for the Latino and broader Rotterdam community. Topics span arts, social inclusion, urban events, and multicultural life in the Netherlands. Published across digital platforms and social media, with an emphasis on amplifying community voices and documenting the Dutch-Venezuelan experience.",
+    },
   ],
 } as const;
