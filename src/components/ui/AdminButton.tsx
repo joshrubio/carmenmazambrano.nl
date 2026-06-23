@@ -28,13 +28,13 @@ export function AdminButton() {
       <div className="flex items-center gap-3">
         <Link
           href="/admin/new"
-          className="label bg-accent text-inverse px-3 py-0.5 leading-none hover:opacity-90 transition-opacity"
+          className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
         >
           Redactar
         </Link>
         <button
           onClick={handleLogout}
-          className="label bg-ink text-inverse px-3 py-0.5 leading-none hover:opacity-80 transition-opacity"
+          className="label bg-ink text-inverse px-3 py-1 leading-none hover:opacity-80 transition-opacity"
         >
           Logout
         </button>
@@ -45,7 +45,7 @@ export function AdminButton() {
   return (
     <Link
       href="/admin/login"
-      className="label bg-accent text-inverse px-3 py-0.5 leading-none hover:opacity-90 transition-opacity"
+      className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
     >
       Login
     </Link>
