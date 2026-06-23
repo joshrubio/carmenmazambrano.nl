@@ -52,6 +52,16 @@ export const articles: Article[] = [
         ],
         caption: "Works from the exhibition by Ruth Álvarez, International Women's Day 2026.",
       },
+      {
+        type: "infobox",
+        items: [
+          {
+            label: "LinkedIn",
+            value: "Read the original press release",
+            href: "https://www.linkedin.com/posts/carmen-zambrano_press-release-ruth-%C3%A1lvarez-a-poetic-look-activity-7453880851265777665--o03?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY",
+          },
+        ],
+      },
     ],
   },
   {
