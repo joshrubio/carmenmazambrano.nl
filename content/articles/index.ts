@@ -10,12 +10,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Een bezoek aan Museum Fenix in Rotterdam laat zien hoe immigranten door de decennia heen de stad hebben gevormd — door foto's, persoonlijke objecten en verhalen die indruk maken en lang bijblijven.",
-    coverImage: "/images/museum-fenix-rotterdam.png",
+    coverImage: "/images/museum-fenix-rotterdam.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/museum-fenix-rotterdam.png",
+        src: "/images/museum-fenix-rotterdam.webp",
         alt: "Museum Fenix Rotterdam — tentoonstelling immigranten",
         caption: "Museum Fenix in Rotterdam, gewijd aan de verhalen van migratie en menselijke beweging.",
       },
@@ -68,12 +68,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "De Rotterdamse kunstscene verwelkomt 'Gevoelens en Emoties', een tentoonstelling van de Portugees-Rotterdamse autodidact Freehaut Kilas — expressieve portretten, gelaagde texturen en een intense kleurenpalet dat uitnodigt tot reflectie.",
-    coverImage: "/images/freehaut-kilas-rotterdam-2026.png",
+    coverImage: "/images/freehaut-kilas-rotterdam-2026.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/freehaut-kilas-rotterdam-2026.png",
+        src: "/images/freehaut-kilas-rotterdam-2026.webp",
         alt: "Freehaut Kilas — tentoonstelling Gevoelens en Emoties, Galerie Planchard Rotterdam",
         caption: "Opening van 'Gevoelens en Emoties' door Freehaut Kilas in Galerie Planchard, Rotterdam, 6 juni 2026.",
       },
@@ -129,12 +129,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Station Rotterdam Blaak is meer dan een vervoersknooppunt — het is de architectonische en stedelijke schakel die trein, metro, tram en bus verbindt met de Markthal, de Kubuswoningen en de Centrale Bibliotheek.",
-    coverImage: "/images/rotterdam-blaak-station.jpg",
+    coverImage: "/images/rotterdam-blaak-station.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/rotterdam-blaak-station.jpg",
+        src: "/images/rotterdam-blaak-station.webp",
         alt: "Rotterdam Blaak — station en vervoersknooppunt",
         caption: "Station Rotterdam Blaak, gelegen in het hart van de architectonische driehoek van de stad.",
       },
@@ -202,12 +202,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Na meer dan een maand sluit de tentoonstelling van Gohar Shachbazov in Rotterdam. Expressieve gezichten, gefragmenteerde lichamen en een boodschap van hoop — een artistieke reis die bezoekers uitnodigde om verder te kijken dan de oppervlakte.",
-    coverImage: "/images/gohar-shachbazov-rotterdam.png",
+    coverImage: "/images/gohar-shachbazov-rotterdam.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/gohar-shachbazov-rotterdam.png",
+        src: "/images/gohar-shachbazov-rotterdam.webp",
         alt: "Gohar Shachbazov — tentoonstelling Rotterdam 2026",
         caption: "Werk van Gohar Shachbazov, te zien in Rotterdam van 26 april tot 30 mei 2026.",
       },
@@ -335,12 +335,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Elke week komen mensen van over de hele wereld samen op de Feijenoordmarkt in Rotterdam Zuid — voor gratis juridisch advies, onderlinge steun en een gevoel van gemeenschap dat het hele stadsdeel verbindt.",
-    coverImage: "/images/rotterdam-zuid-community-2026.png",
+    coverImage: "/images/rotterdam-zuid-community-2026.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/rotterdam-zuid-community-2026.png",
+        src: "/images/rotterdam-zuid-community-2026.webp",
         alt: "Rotterdam Zuid — gemeenschapsontmoeting Feijenoordmarkt",
         caption: "De Feijenoordmarkt in Rotterdam Zuid als wekelijkse ontmoetingsplek voor mensen van over de hele wereld.",
       },
@@ -388,12 +388,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "In het kader van Moederdag kwamen vrouwen uit verschillende nationaliteiten samen in Rotterdam voor een middag vol warmte, muziek en verbinding — een viering van moederschap en gemeenschap.",
-    coverImage: "/images/moederdag-rotterdam-2026.png",
+    coverImage: "/images/moederdag-rotterdam-2026.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/moederdag-rotterdam-2026.png",
+        src: "/images/moederdag-rotterdam-2026.webp",
         alt: "Moederdag viering Rotterdam — vrouwen bijeen in warmte en gemeenschap",
         caption: "Een groep vrouwen vierde Moederdag samen in Rotterdam met muziek, gesprekken en gemeenschap.",
       },
@@ -450,12 +450,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Op maandag 27 april 2026 werd de Friese stad Dokkum het epicentrum van de nationale viering van de verjaardag van koning Willem-Alexander — een dag van traditie, oranje straatkleur en collectieve verbinding.",
-    coverImage: "/images/koningsdag-dokkum-2026.png",
+    coverImage: "/images/koningsdag-dokkum-2026.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/koningsdag-dokkum-2026.png",
+        src: "/images/koningsdag-dokkum-2026.webp",
         alt: "Koningsdag 2026 in Dokkum — verjaardag koning Willem-Alexander",
         caption: "Dokkum in oranje: de Friese stad als gastheer van Koningsdag 2026.",
       },
@@ -503,12 +503,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Galerie Planck sloot de Rotterdam Art Week 2026 af met een bijzondere laatste expositiedag — een ontmoeting van kunst, gastronomie en gemeenschap rond het fotografisch werk van Ruth Álvarez.",
-    coverImage: "/images/planck-galerie-cover.jpg",
+    coverImage: "/images/planck-galerie-cover.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/planck-galerie-cover.jpg",
+        src: "/images/planck-galerie-cover.webp",
         alt: "Afsluiting Rotterdam Art Week 2026 — Galerie Planck",
         caption: "Galerie Planck tijdens de slotdag van de Rotterdam Art Week 2026, zondag 29 maart.",
       },
@@ -535,18 +535,18 @@ export const articles: Article[] = [
       {
         type: "gallery",
         images: [
-          { src: "/images/planck-galerie-1.jpg", alt: "Galerie Planck — slotdag 1" },
-          { src: "/images/planck-galerie-2.jpg", alt: "Galerie Planck — slotdag 2" },
-          { src: "/images/planck-galerie-3.jpg", alt: "Galerie Planck — slotdag 3" },
-          { src: "/images/planck-galerie-4.jpg", alt: "Galerie Planck — slotdag 4" },
-          { src: "/images/planck-galerie-5.jpg", alt: "Galerie Planck — slotdag 5" },
-          { src: "/images/planck-galerie-6.jpg", alt: "Galerie Planck — slotdag 6" },
-          { src: "/images/planck-galerie-7.jpg", alt: "Galerie Planck — slotdag 7" },
-          { src: "/images/planck-galerie-8.jpg", alt: "Galerie Planck — slotdag 8" },
-          { src: "/images/planck-galerie-9.jpg", alt: "Galerie Planck — slotdag 9" },
-          { src: "/images/planck-galerie-10.jpg", alt: "Galerie Planck — slotdag 10" },
-          { src: "/images/planck-galerie-11.jpg", alt: "Galerie Planck — slotdag 11" },
-          { src: "/images/planck-galerie-12.jpg", alt: "Galerie Planck — slotdag 12" },
+          { src: "/images/planck-galerie-1.webp", alt: "Galerie Planck — slotdag 1" },
+          { src: "/images/planck-galerie-2.webp", alt: "Galerie Planck — slotdag 2" },
+          { src: "/images/planck-galerie-3.webp", alt: "Galerie Planck — slotdag 3" },
+          { src: "/images/planck-galerie-4.webp", alt: "Galerie Planck — slotdag 4" },
+          { src: "/images/planck-galerie-5.webp", alt: "Galerie Planck — slotdag 5" },
+          { src: "/images/planck-galerie-6.webp", alt: "Galerie Planck — slotdag 6" },
+          { src: "/images/planck-galerie-7.webp", alt: "Galerie Planck — slotdag 7" },
+          { src: "/images/planck-galerie-8.webp", alt: "Galerie Planck — slotdag 8" },
+          { src: "/images/planck-galerie-9.webp", alt: "Galerie Planck — slotdag 9" },
+          { src: "/images/planck-galerie-10.webp", alt: "Galerie Planck — slotdag 10" },
+          { src: "/images/planck-galerie-11.webp", alt: "Galerie Planck — slotdag 11" },
+          { src: "/images/planck-galerie-12.webp", alt: "Galerie Planck — slotdag 12" },
         ],
         caption: "Sfeerbeelden van de slotdag van de Rotterdam Art Week 2026 in Galerie Planck.",
       },
@@ -580,12 +580,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "On the occasion of March 8, photographer Ruth Álvarez presents an exhibition that invites reflection on time, memory, and the essence of the everyday — a tribute to the enduring power of memory and the beauty of fleeting moments.",
-    coverImage: "/images/ruth-alvarez-cover.png",
+    coverImage: "/images/ruth-alvarez-cover.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/ruth-alvarez-cover.png",
+        src: "/images/ruth-alvarez-cover.webp",
         alt: "Ruth Álvarez — fotografie tentoonstelling Internationale Vrouwendag",
         caption: "Ruth Álvarez presents her work on the occasion of International Women's Day, March 8.",
       },
@@ -608,17 +608,17 @@ export const articles: Article[] = [
       {
         type: "gallery",
         images: [
-          { src: "/images/ruth-alvarez-1.jpg", alt: "Ruth Álvarez — werk 1" },
-          { src: "/images/ruth-alvarez-2.jpg", alt: "Ruth Álvarez — werk 2" },
-          { src: "/images/ruth-alvarez-3.jpg", alt: "Ruth Álvarez — werk 3" },
-          { src: "/images/ruth-alvarez-4.jpg", alt: "Ruth Álvarez — werk 4" },
-          { src: "/images/ruth-alvarez-5.jpg", alt: "Ruth Álvarez — werk 5" },
-          { src: "/images/ruth-alvarez-6.jpg", alt: "Ruth Álvarez — werk 6" },
-          { src: "/images/ruth-alvarez-7.jpg", alt: "Ruth Álvarez — werk 7" },
-          { src: "/images/ruth-alvarez-8.jpg", alt: "Ruth Álvarez — werk 8" },
-          { src: "/images/ruth-alvarez-9.jpg", alt: "Ruth Álvarez — werk 9" },
-          { src: "/images/ruth-alvarez-10.jpg", alt: "Ruth Álvarez — werk 10" },
-          { src: "/images/ruth-alvarez-11.jpg", alt: "Ruth Álvarez — werk 11" },
+          { src: "/images/ruth-alvarez-1.webp", alt: "Ruth Álvarez — werk 1" },
+          { src: "/images/ruth-alvarez-2.webp", alt: "Ruth Álvarez — werk 2" },
+          { src: "/images/ruth-alvarez-3.webp", alt: "Ruth Álvarez — werk 3" },
+          { src: "/images/ruth-alvarez-4.webp", alt: "Ruth Álvarez — werk 4" },
+          { src: "/images/ruth-alvarez-5.webp", alt: "Ruth Álvarez — werk 5" },
+          { src: "/images/ruth-alvarez-6.webp", alt: "Ruth Álvarez — werk 6" },
+          { src: "/images/ruth-alvarez-7.webp", alt: "Ruth Álvarez — werk 7" },
+          { src: "/images/ruth-alvarez-8.webp", alt: "Ruth Álvarez — werk 8" },
+          { src: "/images/ruth-alvarez-9.webp", alt: "Ruth Álvarez — werk 9" },
+          { src: "/images/ruth-alvarez-10.webp", alt: "Ruth Álvarez — werk 10" },
+          { src: "/images/ruth-alvarez-11.webp", alt: "Ruth Álvarez — werk 11" },
         ],
         caption: "Works from the exhibition by Ruth Álvarez, International Women's Day 2026.",
       },
@@ -643,12 +643,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Women Connected nodigt vrouwen van alle leeftijden en culturen uit om samen \"The Nest\" te bouwen — een collectief kunstwerk in de lobby van de Centrale Bibliotheek Rotterdam.",
-    coverImage: "/images/the-nest-rotterdam.jpeg",
+    coverImage: "/images/the-nest-rotterdam.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/the-nest-rotterdam.jpeg",
+        src: "/images/the-nest-rotterdam.webp",
         alt: "The Nest — collectief kunstwerk Women Connected, Centrale Bibliotheek Rotterdam",
         caption: "\"The Nest\", een collectief kunstwerk gepromoot door Women Connected in de Centrale Bibliotheek Rotterdam.",
       },
@@ -733,12 +733,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Rotterdam beleefde een unieke artistieke ervaring met een fototentoonstelling die vrouwen in alle levensfasen eerde — onderdeel van de 6e editie van het Rotterdam Grand Studio Weekend (GRAW 25).",
-    coverImage: "/images/graw25-cover.jpeg",
+    coverImage: "/images/graw25-cover.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/graw25-cover.jpeg",
+        src: "/images/graw25-cover.webp",
         alt: "GRAW 25 — fototentoonstelling eerbetoon aan vrouwen Rotterdam",
         caption: "Opening van de fototentoonstelling in het kader van GRAW 25, Rotterdam.",
       },
@@ -765,10 +765,10 @@ export const articles: Article[] = [
       {
         type: "gallery",
         images: [
-          { src: "/images/graw25-1.jpeg", alt: "GRAW 25 — tentoonstelling detail 1" },
-          { src: "/images/graw25-2.jpeg", alt: "GRAW 25 — tentoonstelling detail 2" },
-          { src: "/images/graw25-3.jpeg", alt: "GRAW 25 — tentoonstelling detail 3" },
-          { src: "/images/graw25-4.jpeg", alt: "GRAW 25 — tentoonstelling detail 4" },
+          { src: "/images/graw25-1.webp", alt: "GRAW 25 — tentoonstelling detail 1" },
+          { src: "/images/graw25-2.webp", alt: "GRAW 25 — tentoonstelling detail 2" },
+          { src: "/images/graw25-3.webp", alt: "GRAW 25 — tentoonstelling detail 3" },
+          { src: "/images/graw25-4.webp", alt: "GRAW 25 — tentoonstelling detail 4" },
         ],
         caption: "Sfeerbeelden van de opening van de fototentoonstelling tijdens GRAW 25.",
       },
@@ -805,12 +805,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Elke dinsdag en zaterdag bruist de Binnenrotte/Blaak van leven: verse producten, mode, streetfood en het multiculturele karakter dat Rotterdam zo uniek maakt.",
-    coverImage: "/images/markt-rotterdam-cover.jpeg",
+    coverImage: "/images/markt-rotterdam-cover.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/markt-rotterdam-cover.jpeg",
+        src: "/images/markt-rotterdam-cover.webp",
         alt: "Openluchtmarkt Binnenrotte/Blaak Rotterdam",
         caption: "De openluchtmarkt op de Binnenrotte/Blaak, pal voor de Bibliotheek en de Markthal.",
       },
@@ -837,10 +837,10 @@ export const articles: Article[] = [
       {
         type: "gallery",
         images: [
-          { src: "/images/markt-rotterdam-1.jpeg", alt: "Openluchtmarkt Rotterdam — kraampjes" },
-          { src: "/images/markt-rotterdam-2.jpeg", alt: "Openluchtmarkt Rotterdam — sfeer" },
-          { src: "/images/markt-rotterdam-3.jpeg", alt: "Openluchtmarkt Rotterdam — producten" },
-          { src: "/images/markt-rotterdam-4.jpeg", alt: "Openluchtmarkt Rotterdam — bezoekers" },
+          { src: "/images/markt-rotterdam-1.webp", alt: "Openluchtmarkt Rotterdam — kraampjes" },
+          { src: "/images/markt-rotterdam-2.webp", alt: "Openluchtmarkt Rotterdam — sfeer" },
+          { src: "/images/markt-rotterdam-3.webp", alt: "Openluchtmarkt Rotterdam — producten" },
+          { src: "/images/markt-rotterdam-4.webp", alt: "Openluchtmarkt Rotterdam — bezoekers" },
         ],
         caption: "Sfeerbeelden van de wekelijkse markt op de Binnenrotte/Blaak.",
       },
@@ -901,12 +901,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Het Rotterdam Digital Inclusion Program lanceert samen met Digi Surfer een nieuwe ronde gratis cursussen digitale vaardigheden — inclusief een refurbished laptop voor elke deelnemer.",
-    coverImage: "/images/digi-surfer-rotterdam.jpg",
+    coverImage: "/images/digi-surfer-rotterdam.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/digi-surfer-rotterdam.jpg",
+        src: "/images/digi-surfer-rotterdam.webp",
         alt: "Rotterdam Digital Inclusion Program — Digi Surfer computercursussen",
         caption: "Digi Surfer biedt gratis digitale cursussen en refurbished laptops aan Rotterdammers.",
       },
@@ -1002,12 +1002,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Rotterdam viert het Jaar van de Vrouw met een maand vol activiteiten gewijd aan creativiteit, verbinding en vrouwelijke kracht — in de Centrale Bibliotheek Rotterdam.",
-    coverImage: "/images/openlab-cover.jpeg",
+    coverImage: "/images/openlab-cover.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/openlab-cover.jpeg",
+        src: "/images/openlab-cover.webp",
         alt: "Open Lab: Women Connected — Centrale Bibliotheek Rotterdam",
         caption: "Open Lab: Women Connected, Centrale Bibliotheek Rotterdam, oktober–november 2025.",
       },
@@ -1074,9 +1074,9 @@ export const articles: Article[] = [
       {
         type: "gallery",
         images: [
-          { src: "/images/openlab-gallery-1.jpeg", alt: "Open Lab Women Connected — activiteit 1" },
-          { src: "/images/openlab-gallery-2.jpeg", alt: "Open Lab Women Connected — activiteit 2" },
-          { src: "/images/openlab-gallery-3.jpeg", alt: "Open Lab Women Connected — activiteit 3" },
+          { src: "/images/openlab-gallery-1.webp", alt: "Open Lab Women Connected — activiteit 1" },
+          { src: "/images/openlab-gallery-2.webp", alt: "Open Lab Women Connected — activiteit 2" },
+          { src: "/images/openlab-gallery-3.webp", alt: "Open Lab Women Connected — activiteit 3" },
         ],
         caption: "Impressies van de activiteiten tijdens Open Lab: Women Connected.",
       },
@@ -1108,12 +1108,12 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Inwoners van Rotterdam kunnen bij twee servicepunten in het westen en zuiden terecht voor persoonlijke begeleiding op het gebied van huisvesting, werk, mantelzorg, onderwijs, taalcursussen en meer.",
-    coverImage: "/images/europese-migranten.png",
+    coverImage: "/images/europese-migranten.webp",
     featured: false,
     content: [
       {
         type: "image",
-        src: "/images/europese-migranten.png",
+        src: "/images/europese-migranten.webp",
         alt: "Rotterdam informatiepunten voor Europese arbeidsmigranten",
         caption: "De gemeente Rotterdam biedt gratis begeleiding aan Europese arbeidsmigranten.",
       },
@@ -1191,11 +1191,11 @@ export const articles: Article[] = [
     author: "Carmen Zambrano",
     excerpt:
       "Wanneer de stad haar lichten uitdoet, rijdt de RET-nachtbus gewoon door. Deze dienst verbindt Rotterdam met de omliggende wijken en gemeenten en is een trouwe metgezel geworden voor wie werkt, uitgaat of gewoon laat thuiskomt.",
-    coverImage: "/images/nachtbus-rotterdam.png",
+    coverImage: "/images/nachtbus-rotterdam.webp",
     content: [
       {
         type: "image",
-        src: "/images/nachtbus-rotterdam.png",
+        src: "/images/nachtbus-rotterdam.webp",
         alt: "RET nachtbus Rotterdam",
         caption: "De RET-nachtbus — een trouwe metgezel voor wie laat thuiskomt.",
       },

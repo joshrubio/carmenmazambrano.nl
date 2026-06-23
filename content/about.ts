@@ -16,7 +16,7 @@ export const about = {
     "Cultural Projects",
     "Team Leadership",
   ],
-  photo: "/images/carmen-zambrano.png",
+  photo: "/images/carmen-zambrano.webp",
   social: {
     linkedin: "https://www.linkedin.com/in/carmen-zambrano/",
     tiktok: "https://www.tiktok.com/@carmenmazambrano",
