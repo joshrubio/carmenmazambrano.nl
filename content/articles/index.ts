@@ -2,6 +2,78 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "graw-25-eerbetoon-aan-vrouwen-rotterdam",
+    title: "GRAW 25: eerbetoon aan vrouwen in Rotterdam",
+    subtitle: "Artistieke opening in het kader van het Rotterdam Grand Studio Weekend",
+    category: "Cultuur",
+    date: "2025-10-15",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Rotterdam beleefde een unieke artistieke ervaring met een fototentoonstelling die vrouwen in alle levensfasen eerde — onderdeel van de 6e editie van het Rotterdam Grand Studio Weekend (GRAW 25).",
+    coverImage: "/images/graw25-cover.jpeg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/graw25-cover.jpeg",
+        alt: "GRAW 25 — fototentoonstelling eerbetoon aan vrouwen Rotterdam",
+        caption: "Opening van de fototentoonstelling in het kader van GRAW 25, Rotterdam.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam beleefde dit weekend een unieke artistieke ervaring met de opening van een fototentoonstelling die een eerbetoon bracht aan vrouwen in alle levensfasen. Het evenement maakte deel uit van de 6e editie van het Rotterdam Grand Studio Weekend (GRAW 25), een evenement dat de artistieke en culturele gemeenschap van de stad samenbracht.",
+      },
+      {
+        type: "paragraph",
+        text: "De tentoonstelling, begeleid door een groep vrouwen met een passie voor kunst, benadrukte het belang van feminisme en de transcendentie van het vrouw-zijn. Elk werk nodigde uit tot reflectie op vrouwelijkheid als een creatieve, spirituele en transcendentale kracht: van het begin van de menstruatiecyclus tot volwassenheid, moederschap en vervulling. Vrouwen werden onthuld als wezens die liefde geven en ontvangen, opvoeden, verzorgen en transformeren met hun essentie.",
+      },
+      {
+        type: "paragraph",
+        text: "Een van de aanwezige symbolen was de stoel, een metafoor voor het verstrijken van de tijd en de ervaringen die het leven van een vrouw kenmerken. Andere elementen, zoals haar, benadrukten natuurlijke schoonheid en het vermogen om haar levensdoel over te brengen en te delen.",
+      },
+      {
+        type: "pullquote",
+        text: "Vrouwelijkheid als een creatieve, spirituele en transcendentale kracht — van het begin tot de vervulling.",
+      },
+      {
+        type: "paragraph",
+        text: "De bijeenkomst omvatte ook een speciaal moment rond een kampvuur, ter ere van de eenheid en kracht van de deugdzame vrouwen van Rotterdam, en ter ere van de mannelijke artistieke gevoeligheid die de aanzet gaf.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/graw25-1.jpeg", alt: "GRAW 25 — tentoonstelling detail 1" },
+          { src: "/images/graw25-2.jpeg", alt: "GRAW 25 — tentoonstelling detail 2" },
+          { src: "/images/graw25-3.jpeg", alt: "GRAW 25 — tentoonstelling detail 3" },
+          { src: "/images/graw25-4.jpeg", alt: "GRAW 25 — tentoonstelling detail 4" },
+        ],
+        caption: "Sfeerbeelden van de opening van de fototentoonstelling tijdens GRAW 25.",
+      },
+      {
+        type: "subheading",
+        text: "Rotterdam Grand Studio Weekend 2025",
+      },
+      {
+        type: "paragraph",
+        text: "Als onderdeel van GRAW 25 opende de stad de deuren naar meer dan 90 studiocomplexen en 657 kunstenaars verspreid over tientallen buurten, die bezoekers tussen 11:00 en 17:00 uur de kans boden om te ontdekken, te leren en zich te laten verbazen.",
+      },
+      {
+        type: "paragraph",
+        text: "Afgelopen zaterdag en zondag consolideerde Rotterdam zich als epicentrum van kunst, cultuur en maatschappelijke reflectie en bevestigde daarmee haar rol als stad die openstaat voor creativiteit en transformatief denken.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Evenement", value: "GRAW 25 — 6e Rotterdam Grand Studio Weekend" },
+          { label: "Code", value: "1141467 – HUMA" },
+          { label: "Studios", value: "90+ complexen, 657 kunstenaars" },
+          { label: "Openingstijden", value: "11:00 – 17:00" },
+          { label: "Website", value: "humaplace.nl", href: "https://www.humaplace.nl" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "het-hart-van-rotterdam-openluchtmarkt",
     title: "Het hart van Rotterdam: openluchtmarkt",
     subtitle: "De Binnenrotte/Blaak — meer dan 400 kramen, elke dinsdag en zaterdag",
