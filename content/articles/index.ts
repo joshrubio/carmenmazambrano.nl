@@ -2,6 +2,59 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "ruth-alvarez-poetic-look-human-sensitivity",
+    title: "Ruth Álvarez: A Poetic Look at Human Sensitivity",
+    subtitle: "An exhibition on time, memory and the everyday — International Women's Day",
+    category: "Cultuur",
+    date: "2026-03-08",
+    author: "Carmen Zambrano",
+    excerpt:
+      "On the occasion of March 8, photographer Ruth Álvarez presents an exhibition that invites reflection on time, memory, and the essence of the everyday — a tribute to the enduring power of memory and the beauty of fleeting moments.",
+    coverImage: "/images/ruth-alvarez-cover.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/ruth-alvarez-cover.png",
+        alt: "Ruth Álvarez — fotografie tentoonstelling Internationale Vrouwendag",
+        caption: "Ruth Álvarez presents her work on the occasion of International Women's Day, March 8.",
+      },
+      {
+        type: "paragraph",
+        text: "On the occasion of March 8, International Women's Day, photographer Ruth Álvarez presents an exhibition that invites reflection on time, memory, and the essence of the everyday.",
+      },
+      {
+        type: "paragraph",
+        text: "Originally from the city of Tucupita, in the Delta Amacuro state of Venezuela, her childhood was marked by a natural environment that left an indelible imprint on her visual sensibility. This connection with nature and her childhood memories form the basis of her work, in which she poetically explores the relationship between past and present.",
+      },
+      {
+        type: "pullquote",
+        text: "Her work is a tribute to the enduring power of memory and the beauty of fleeting moments.",
+      },
+      {
+        type: "paragraph",
+        text: "As an immigrant who has lived in the Netherlands for twenty years, Ruth Álvarez conveys a message of empowerment and dignity, and underscores the importance of women in contemporary society.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/ruth-alvarez-1.jpg", alt: "Ruth Álvarez — werk 1" },
+          { src: "/images/ruth-alvarez-2.jpg", alt: "Ruth Álvarez — werk 2" },
+          { src: "/images/ruth-alvarez-3.jpg", alt: "Ruth Álvarez — werk 3" },
+          { src: "/images/ruth-alvarez-4.jpg", alt: "Ruth Álvarez — werk 4" },
+          { src: "/images/ruth-alvarez-5.jpg", alt: "Ruth Álvarez — werk 5" },
+          { src: "/images/ruth-alvarez-6.jpg", alt: "Ruth Álvarez — werk 6" },
+          { src: "/images/ruth-alvarez-7.jpg", alt: "Ruth Álvarez — werk 7" },
+          { src: "/images/ruth-alvarez-8.jpg", alt: "Ruth Álvarez — werk 8" },
+          { src: "/images/ruth-alvarez-9.jpg", alt: "Ruth Álvarez — werk 9" },
+          { src: "/images/ruth-alvarez-10.jpg", alt: "Ruth Álvarez — werk 10" },
+          { src: "/images/ruth-alvarez-11.jpg", alt: "Ruth Álvarez — werk 11" },
+        ],
+        caption: "Works from the exhibition by Ruth Álvarez, International Women's Day 2026.",
+      },
+    ],
+  },
+  {
     slug: "the-nest-collectief-kunstwerk-vrouwen-rotterdam",
     title: '"The Nest": collectieve kunst van vrouwen in Rotterdam',
     subtitle: "Van 15 oktober tot 10 november in de Centrale Bibliotheek Rotterdam",
