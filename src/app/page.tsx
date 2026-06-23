@@ -7,34 +7,52 @@ import { Hero } from "@/components/ui/Hero";
 export const revalidate = false;
 
 export default function HomePage() {
-  const latest = getAllArticles().slice(0, 3);
-  const [main, ...secondary] = latest;
+  const articles = getAllArticles();
+  const [main, second, ...rest] = articles;
 
   return (
     <div>
       <Hero />
 
+      {/* Latest — 2 articles */}
       <div className="flex items-center gap-3 mb-4">
         <span className="label text-accent">Latest</span>
         <ThickRule />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-10">
         {main && (
-          <div className="md:col-span-8 md:border-r md:border-rule md:pr-6">
+          <div className="md:col-span-7 md:border-r md:border-rule md:pr-6">
             <ArticleCard article={main} variant="featured" />
           </div>
         )}
-        <aside className="md:col-span-4 flex flex-col gap-6">
-          {secondary.map((article) => (
-            <ArticleCard key={article.slug} article={article} variant="secondary" />
-          ))}
-        </aside>
+        {second && (
+          <div className="md:col-span-5">
+            <ArticleCard article={second} variant="secondary" />
+          </div>
+        )}
       </div>
 
       <HorizontalRule />
 
-      <div className="text-center mt-4">
+      {/* Scroll strip — all remaining articles */}
+      {rest.length > 0 && (
+        <div className="mt-6 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="label text-accent">More</span>
+            <ThickRule />
+          </div>
+          <div className="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+            {rest.map((article) => (
+              <div key={article.slug} className="shrink-0 w-56">
+                <ArticleCard article={article} variant="compact" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="text-center mt-2 mb-4">
         <Link
           href="/articles"
           className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
