@@ -1,8 +1,12 @@
+export type GalleryImage = { src: string; alt: string; caption?: string };
+
 export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "pullquote"; text: string }
   | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "gallery"; images: GalleryImage[]; caption?: string }
   | { type: "video"; url: string; caption?: string }
+  | { type: "infobox"; items: { label: string; value: string; href?: string }[] }
   | { type: "subheading"; text: string };
 
 export interface Article {
