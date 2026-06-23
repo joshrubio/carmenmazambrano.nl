@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { about } from "../../../content/about";
-import { ThickRule } from "@/components/ui/ColumnDivider";
+import { ThickRule, HorizontalRule } from "@/components/ui/ColumnDivider";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { SkillBars } from "@/components/ui/SkillBars";
+import { Timeline } from "@/components/ui/Timeline";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,16 +13,18 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto">
+      {/* ── Header ── */}
       <div className="flex items-center gap-3 mb-8">
         <span className="label text-accent">Profile</span>
         <ThickRule />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        {/* Sidebar — sticky meta */}
+      {/* ── Bio section ── */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        {/* Sidebar — sticky */}
         <div className="md:col-span-4">
           <div className="sticky top-8">
-            {/* Photo — color */}
+            {/* Photo */}
             <div className="relative w-full aspect-[3/4] overflow-hidden mb-4">
               <PhotoSlot src={about.photo} alt={about.name} grayscale={false} />
             </div>
@@ -39,13 +43,19 @@ export default function AboutPage() {
               </div>
               <div className="flex gap-3">
                 <span className="label text-accent w-20 shrink-0 pt-0.5">Phone</span>
-                <a href={`tel:${about.phone}`} className="font-body text-sm text-ink hover:text-accent transition-colors">
+                <a
+                  href={`tel:${about.phone}`}
+                  className="font-body text-sm text-ink hover:text-accent transition-colors"
+                >
                   {about.phone}
                 </a>
               </div>
               <div className="flex gap-3">
                 <span className="label text-accent w-20 shrink-0 pt-0.5">Email</span>
-                <a href={`mailto:${about.email}`} className="font-body text-sm text-ink hover:text-accent transition-colors break-all">
+                <a
+                  href={`mailto:${about.email}`}
+                  className="font-body text-sm text-ink hover:text-accent transition-colors break-all"
+                >
                   {about.email}
                 </a>
               </div>
@@ -55,14 +65,17 @@ export default function AboutPage() {
               <p className="label text-accent mb-3">Specialties</p>
               <ul className="space-y-1.5">
                 {about.specialties.map((s) => (
-                  <li key={s} className="label text-muted font-normal normal-case tracking-wide flex items-center gap-2 before:content-['—'] before:text-accent">
+                  <li
+                    key={s}
+                    className="label text-muted font-normal normal-case tracking-wide flex items-center gap-2 before:content-['—'] before:text-accent"
+                  >
                     {s}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Social links */}
+            {/* Social */}
             {Object.keys(about.social).length > 0 && (
               <div className="mt-6 flex gap-3 border-t border-rule pt-4">
                 {Object.entries(about.social).map(([key, url]) => (
@@ -96,6 +109,31 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
+      </div>
+
+      <HorizontalRule />
+
+      {/* ── Skills section ── */}
+      <div className="mt-10 mb-12">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="label text-accent">Skills</span>
+          <ThickRule />
+        </div>
+        <SkillBars
+          languages={about.skills.languages}
+          tools={about.skills.tools}
+        />
+      </div>
+
+      <HorizontalRule />
+
+      {/* ── Experience section ── */}
+      <div className="mt-10">
+        <div className="flex items-center gap-3 mb-10">
+          <span className="label text-accent">Experience</span>
+          <ThickRule />
+        </div>
+        <Timeline items={about.experience} />
       </div>
     </div>
   );
