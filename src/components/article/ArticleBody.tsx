@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ContentBlock } from "@/lib/articles";
 import { MediaEmbed } from "./MediaEmbed";
+import { GalleryLightbox } from "./GalleryLightbox";
 
 interface Props {
   blocks: ContentBlock[];
@@ -60,31 +61,7 @@ export function ArticleBody({ blocks, dropCap = true }: Props) {
 
           case "gallery":
             return (
-              <figure key={i} className="my-8">
-                <div className={`grid gap-2 ${
-                  block.images.length === 2
-                    ? "grid-cols-2"
-                    : block.images.length >= 3
-                    ? "grid-cols-2 md:grid-cols-3"
-                    : "grid-cols-1"
-                }`}>
-                  {block.images.map((img, j) => (
-                    <div key={j} className="relative aspect-[4/3] overflow-hidden">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ))}
-                </div>
-                {block.caption && (
-                  <figcaption className="label text-dim font-normal normal-case tracking-wide mt-2 italic text-center">
-                    {block.caption}
-                  </figcaption>
-                )}
-              </figure>
+              <GalleryLightbox key={i} images={block.images} caption={block.caption} />
             );
 
           case "infobox":
