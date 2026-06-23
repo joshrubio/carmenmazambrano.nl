@@ -2,7 +2,65 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
-    slug: "freehaut-kilas-sentimentos-emocoes-rotterdam-2026",
+    slug: "museum-fenix-rotterdam-immigranten-tentoonstelling",
+    title: "Museum Fenix: een ontroerende blik op de immigrantengeschiedenis van Rotterdam",
+    subtitle: "Foto's, objecten en verhalen van wie Rotterdam tot een rijkere stad maakten",
+    category: "Cultuur",
+    date: "2026-06-07",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Een bezoek aan Museum Fenix in Rotterdam laat zien hoe immigranten door de decennia heen de stad hebben gevormd — door foto's, persoonlijke objecten en verhalen die indruk maken en lang bijblijven.",
+    coverImage: "/images/museum-fenix-rotterdam.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/museum-fenix-rotterdam.png",
+        alt: "Museum Fenix Rotterdam — tentoonstelling immigranten",
+        caption: "Museum Fenix in Rotterdam, gewijd aan de verhalen van migratie en menselijke beweging.",
+      },
+      {
+        type: "paragraph",
+        text: "Vandaag bezocht ik Museum Fenix in Rotterdam — en het was een ervaring die me niet loslaat. De tentoonstelling over immigranten die er momenteel te zien is, raakt aan iets fundamenteels: de vraag wie we zijn, waar we vandaan komen en wat we meenemen als we een nieuw leven beginnen in een vreemde stad.",
+      },
+      {
+        type: "paragraph",
+        text: "Museum Fenix, gevestigd in een voormalig pakhuis op de Katendrechtse Hoofd in Rotterdam Zuid, opende in 2024 en heeft zich snel gevestigd als een van de meest relevante museale stemmen over migratie in Europa. Het museum vertelt geen abstracte geschiedenis — het vertelt mensenlevens. Door middel van foto's, persoonlijke objecten en gesproken en geschreven getuigenissen brengt het de verhalen en dromen tot leven van wie naar Rotterdam kwamen en de stad rijker en diverser maakten.",
+      },
+      {
+        type: "pullquote",
+        text: "Elk object in de tentoonstelling draagt een naam, een reis, een droom. Het zijn geen artefacten — het zijn herinneringen van mensen die hier een thuis bouwden.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam heeft een bijzondere relatie met migratie. Als havenstad was de stad altijd een doorgang en een bestemming: voor Europeanen die naar Amerika vertrokken in de negentiende en vroege twintigste eeuw, voor gastarbeiders uit Marokko, Turkije en Suriname die in de jaren zestig en zeventig kwamen, en voor de nieuwere golven van migranten en vluchtelingen die vandaag de dag de stad kleuren. Museum Fenix maakt die gelaagde geschiedenis zichtbaar en tastbaar.",
+      },
+      {
+        type: "paragraph",
+        text: "De tentoonstelling is zorgvuldig samengesteld: een reiskoffer, een foto van een gezin op de kade, een brief in een vreemde taal, een traditioneel kledingstuk — elk voorwerp vertelt een verhaal van moed, verlies, hoop en aanpassing. Het zijn universele verhalen, ook al zijn de details uniek voor elke persoon die ze meebracht.",
+      },
+      {
+        type: "paragraph",
+        text: "Als journalist en immigrant in Rotterdam raakten deze verhalen mij persoonlijk. Ik herkende iets van mijn eigen reis in die van anderen — de spanning tussen wortels en nieuwe grond, tussen het verleden dat je niet vergeet en de toekomst die je bouwt. Museum Fenix biedt een ruimte om die herkenning te voelen, te delen en te eren.",
+      },
+      {
+        type: "paragraph",
+        text: "Een bezoek aan Museum Fenix is een must voor iedereen die Rotterdam wil begrijpen — niet alleen als stad van architectuur en haven, maar als stad van mensen, beweging en verhalen die de moeite waard zijn om te vertellen en te bewaren.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Museum", value: "Museum Fenix" },
+          { label: "Adres", value: "Fenixloods, Katendrechtse Hoofd, Rotterdam Zuid" },
+          { label: "Geopend", value: "2024" },
+          { label: "Thema", value: "Migratie, identiteit en menselijke beweging" },
+          { label: "LinkedIn", value: "Lees de originele post", href: "https://www.linkedin.com/posts/carmen-zambrano_museofenix-rotterdam-inmigrantes-activity-7469510701401866240-y-0H?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "freehaut-kilas-sentamentos-emocoes-rotterdam-2026",
     title: "Rotterdam opent 'Gevoelens en Emoties' van Freehaut Kilas",
     subtitle: "Acrylwerken vol kleur, textuur en menselijke verbinding — Galerie Planchard, 6 juni 2026",
     category: "Cultuur",
