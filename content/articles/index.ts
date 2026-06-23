@@ -2,6 +2,96 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "the-nest-collectief-kunstwerk-vrouwen-rotterdam",
+    title: '"The Nest": collectieve kunst van vrouwen in Rotterdam',
+    subtitle: "Van 15 oktober tot 10 november in de Centrale Bibliotheek Rotterdam",
+    category: "Cultuur",
+    date: "2025-10-14",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Women Connected nodigt vrouwen van alle leeftijden en culturen uit om samen \"The Nest\" te bouwen — een collectief kunstwerk in de lobby van de Centrale Bibliotheek Rotterdam.",
+    coverImage: "/images/the-nest-rotterdam.jpeg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/the-nest-rotterdam.jpeg",
+        alt: "The Nest — collectief kunstwerk Women Connected, Centrale Bibliotheek Rotterdam",
+        caption: "\"The Nest\", een collectief kunstwerk gepromoot door Women Connected in de Centrale Bibliotheek Rotterdam.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, 14 oktober 2025 — Van 15 oktober tot en met 10 november 2025 presenteert de Centrale Bibliotheek Rotterdam \"The Nest\", een groots collectief kunstwerk, gemaakt door en voor vrouwen. Dit project, gepromoot door Women Connected, nodigt vrouwen uit om samen een symbolische ruimte te creëren voor ontmoeting, creativiteit en groei.",
+      },
+      {
+        type: "paragraph",
+        text: "Vier weken lang komen vrouwen van verschillende leeftijden, culturen en ervaringen samen om te bouwen, te zingen, te dansen en verhalen te delen. De lobby van de bibliotheek wordt zo omgetoverd tot een leefruimte vol expressie en samenwerking. Elke deelnemer kan zijn eigen hoekje bijdragen, een \"symbolisch ei\" achterlaten of een zaadje planten, zodat nieuwe ideeën in de gemeenschap kunnen opbloeien.",
+      },
+      {
+        type: "pullquote",
+        text: "Het Nest is een ruimte waar vrouwen elkaar kunnen ontmoeten en samen kunnen creëren, ongeacht taal- of cultuurverschillen.",
+      },
+      {
+        type: "subheading",
+        text: "Gratis en open activiteiten",
+      },
+      {
+        type: "paragraph",
+        text: "Deelname aan alle activiteiten is gratis en er is geen eerdere ervaring vereist. Er worden elke week verschillende workshops georganiseerd:",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Bouw mee", value: "Di 21 & 28 okt, 4 nov — 13:00–15:00" },
+          { label: "Zing mee", value: "Wo 15, 22 & 29 okt, 5 nov — 10:30–11:30" },
+          { label: "Knip mee", value: "Wo 15, 22 & 29 okt, 5 nov — 13:00–15:00" },
+          { label: "Dans mee", value: "Do 16, 23 & 30 okt, 6 nov — 18:00–19:45 (16–40 jaar)" },
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Bouw mee: leer eenvoudige technieken en laat je creativiteit de vrije loop bij de gezamenlijke bouw van Het Nest. Zing mee: zangworkshop met liederen uit verschillende culturen, geïnspireerd door de natuur. Knip mee: neem een stuk hout mee met een bijzonder verhaal en draag bij aan de constructie. Dans mee: moderne danslessen met Young Connected voor vrouwen van 16 tot 40 jaar — Engels gesproken, geen ervaring vereist.",
+      },
+      {
+        type: "subheading",
+        text: "Eindfeest",
+      },
+      {
+        type: "paragraph",
+        text: "Het proces wordt afgesloten op zaterdag 8 november om 14:30 uur met een feestelijke presentatie in de Centrale Bibliotheek, waar het voltooide werk wordt tentoongesteld en de creatieve energie die gedurende de weken van samenwerking is gedeeld, wordt gevierd.",
+      },
+      {
+        type: "subheading",
+        text: "Open repetities Women Connected",
+      },
+      {
+        type: "paragraph",
+        text: "Women Connected nodigt ook uit om deel te nemen aan de gratis, multiculturele repetities die maandelijks plaatsvinden in Theater Zuidplein (Gooilandsingel 95, Rotterdam). Tijdens deze repetities komen vrouwen van over de hele wereld samen om te spelen, zingen, dansen en verhalen te delen in een inclusieve omgeving. De voertaal is Nederlands, maar er is altijd iemand beschikbaar om te vertalen.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Data 2025", value: "7 oktober · 9 december" },
+          { label: "Data 2026", value: "6 jan · 3 feb · 7 apr · 12 mei · 2 jun" },
+          { label: "Tijd", value: "13:00 – 15:00" },
+          { label: "Locatie", value: "Theater Zuidplein, Gooilandsingel 95, Rotterdam" },
+          { label: "Bibliotheek", value: "Hoogstraat 110, Rotterdam" },
+          { label: "Website", value: "womenconnected.nl", href: "https://www.womenconnected.nl" },
+          { label: "Telefoon", value: "06 519 345 50", href: "tel:0651934550" },
+          { label: "Instagram", value: "@womenconnected", href: "https://www.instagram.com/womenconnected" },
+        ],
+      },
+      {
+        type: "subheading",
+        text: "Over Women Connected",
+      },
+      {
+        type: "paragraph",
+        text: "Women Connected, opgericht door Kaat Zoontjens en Wing Tang, is een artistiek en sociaal platform dat vrouwen van diverse culturen en generaties met elkaar verbindt door middel van kunst, muziek en beweging. Vanuit Rotterdam promoten ze projecten die eenheid, expressie en gelijkheid bevorderen en ruimtes creëren waar vrouwen samen kunnen groeien en bloeien.",
+      },
+    ],
+  },
+  {
     slug: "graw-25-eerbetoon-aan-vrouwen-rotterdam",
     title: "GRAW 25: eerbetoon aan vrouwen in Rotterdam",
     subtitle: "Artistieke opening in het kader van het Rotterdam Grand Studio Weekend",
