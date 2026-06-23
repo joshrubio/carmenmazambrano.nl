@@ -108,6 +108,89 @@ export const articles: Article[] = [
     ],
   },
   {
+    slug: "rotterdam-versterkt-steun-europese-migranten",
+    title: "Rotterdam versterkt steun aan Europese migranten",
+    subtitle: "Twee informatiepunten bieden gratis begeleiding over huisvesting, werk, zorg en meer",
+    category: "Rotterdam",
+    date: "2025-11-01",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Inwoners van Rotterdam kunnen bij twee servicepunten in het westen en zuiden terecht voor persoonlijke begeleiding op het gebied van huisvesting, werk, mantelzorg, onderwijs, taalcursussen en meer.",
+    coverImage: "/images/europese-migranten.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/europese-migranten.png",
+        alt: "Rotterdam informatiepunten voor Europese arbeidsmigranten",
+        caption: "De gemeente Rotterdam biedt gratis begeleiding aan Europese arbeidsmigranten.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam blijft zich inzetten voor de integratie, het welzijn en de begeleiding van Europese arbeidsmigranten die in de stad wonen en werken. Via de informatiepunten biedt de gemeente gratis en vertrouwelijk advies over belangrijke dagelijkse zaken: huisvesting, werk, mantelzorg, school, taalcursussen, financiële zaken en inschrijving in de Basisregistratie Personen (BRP).",
+      },
+      {
+        type: "paragraph",
+        text: "Deze punten dienen als ondersteunings- en mentorcentra, speciaal ontworpen voor mensen die onlangs in Rotterdam zijn aangekomen of begeleiding nodig hebben over de diensten en rechten die in Nederland beschikbaar zijn.",
+      },
+      {
+        type: "pullquote",
+        text: "Het informatiepunt helpt mij met mijn vragen over werk, huisvesting of mantelzorg.",
+      },
+      {
+        type: "subheading",
+        text: "Twee locaties voor de buurt",
+      },
+      {
+        type: "paragraph",
+        text: "De informatiepunten zijn strategisch gelegen om de bereikbaarheid voor zowel inwoners van Rotterdam West als Zuid te vergemakkelijken. Tijdens de openingstijden kunnen burgers zonder afspraak langskomen voor praktisch advies afgestemd op hun persoonlijke situatie.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Rotterdam-West", value: "Bulgaarsestraat 4 — woensdag 17:00–19:00" },
+          { label: "Rotterdam-Zuid", value: "Pleinweg 196A — maandag 13:00–19:00 · vrijdag 10:00–14:00" },
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "De adviseurs van de informatiepunten kunnen helpen bij het invullen van formulieren, het uitleggen van gemeentelijke procedures en doorverwijzen naar andere gespecialiseerde gemeentelijke diensten.",
+      },
+      {
+        type: "subheading",
+        text: "Uitgebreid en gericht advies",
+      },
+      {
+        type: "paragraph",
+        text: "Huisvesting: begeleiding bij huren, huurdersrechten en het vinden van woonruimte. Werk: informatie over contracten, arbeidsvoorwaarden en werkgelegenheid. Zorg: ondersteuning met betrekking tot sociale voorzieningen, medische zorg en gezinsondersteuning.",
+      },
+      {
+        type: "paragraph",
+        text: "School: informatie over de inschrijving van kinderen en jongeren in het onderwijs. Taalcursussen: begeleiding bij Nederlandse lessen en inburgeringsprogramma's. Financiële zorgen: advies over budgetten, schulden of uitkeringen. Centrale Registratie (BRP): hulp bij een correcte inschrijving bij de gemeente.",
+      },
+      {
+        type: "subheading",
+        text: "Rotterdam: een open en zorgzame stad",
+      },
+      {
+        type: "paragraph",
+        text: "Met dit initiatief versterkt de gemeente Rotterdam haar visie op een inclusieve, gastvrije en diverse stad, waar iedereen, ongeacht zijn of haar achtergrond, toegang heeft tot kansen en institutionele ondersteuning.",
+      },
+      {
+        type: "paragraph",
+        text: "De informatiepunten vormen een toegankelijke en humane toegangspoort tot gemeentelijke diensten en helpen elke inwoner begeleiding, vertrouwen en ondersteuning te vinden op weg naar een stabiel en bevredigend leven in Rotterdam.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Website", value: "rotterdam.nl/eu-arbeidsmigranten", href: "https://www.rotterdam.nl/eu-arbeidsmigranten" },
+          { label: "West", value: "Bulgaarsestraat 4 — wo 17:00–19:00" },
+          { label: "Zuid", value: "Pleinweg 196A — ma 13:00–19:00 · vr 10:00–14:00" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "de-nachtbus-die-nooit-slaapt",
     title: "De nachtbus die nooit slaapt: uw veilige terugkeer in Rotterdam",
     subtitle: "De RET-nachtbus verbindt Rotterdam met de regio — ook als de stad slaapt",
