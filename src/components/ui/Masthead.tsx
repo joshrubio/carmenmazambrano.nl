@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AdminButton } from "./AdminButton";
 
 export function Masthead() {
   return (
@@ -14,6 +15,7 @@ export function Masthead() {
             <Link href="/about" className="hover:text-accent transition-colors">About</Link>
             <Link href="/articles" className="hover:text-accent transition-colors">Articles</Link>
             <a href="mailto:carmenmazambrano@gmail.com" className="hover:text-accent transition-colors">Contact</a>
+            <AdminButton />
           </nav>
         </div>
 
