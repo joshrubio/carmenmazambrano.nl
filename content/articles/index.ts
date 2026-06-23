@@ -69,6 +69,11 @@ export const articles: Article[] = [
           { label: "Datum", value: "Zondag 29 maart 2026" },
           { label: "Tijd", value: "15:00 – 17:30" },
           { label: "Tentoonstelling", value: "Ruth Álvarez — fotografie" },
+          {
+            label: "LinkedIn",
+            value: "Lees de originele post",
+            href: "https://www.linkedin.com/posts/carmen-zambrano_domingo-29-de-marzo-de-2026-clausura-de-activity-7454454326820864001-lXU1?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY",
+          },
         ],
       },
     ],
