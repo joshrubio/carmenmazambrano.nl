@@ -29,7 +29,7 @@ export function AdminButton() {
   return (
     <Link
       href="/admin/login"
-      className="label bg-accent text-inverse px-3 py-1 hover:opacity-90 transition-opacity"
+      className="label bg-accent text-inverse px-3 py-0.5 leading-none hover:opacity-90 transition-opacity"
     >
       Login
     </Link>

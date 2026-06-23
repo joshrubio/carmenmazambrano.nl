@@ -10,7 +10,7 @@ export function Masthead() {
           <span className="label text-muted font-normal normal-case tracking-wide">
             Rotterdam, Netherlands
           </span>
-          <nav className="flex gap-6 label text-muted">
+          <nav className="flex items-center gap-6 label text-muted">
             <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <Link href="/about" className="hover:text-accent transition-colors">About</Link>
             <Link href="/articles" className="hover:text-accent transition-colors">Articles</Link>
