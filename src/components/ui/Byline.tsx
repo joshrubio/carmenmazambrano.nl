@@ -8,16 +8,18 @@ interface Props {
 
 export function Byline({ author, date, category }: Props) {
   return (
-    <div className="flex items-center gap-3 text-xs font-sans text-[#555] border-t border-b border-[#ccc] py-2 my-3">
-      <span className="font-semibold uppercase tracking-wide">{author}</span>
-      <span className="text-[#ccc]">|</span>
+    <div className="flex items-center gap-3 border-t border-b border-rule py-2 my-3">
+      <span className="label text-ink">By {author}</span>
+      <span className="text-rule select-none">|</span>
       {category && (
         <>
-          <span className="uppercase tracking-wide text-[#8B1A1A]">{category}</span>
-          <span className="text-[#ccc]">|</span>
+          <span className="label text-accent">{category}</span>
+          <span className="text-rule select-none">|</span>
         </>
       )}
-      <time dateTime={date}>{formatDate(date)}</time>
+      <time dateTime={date} className="label text-dim font-normal normal-case tracking-wide">
+        {formatDate(date)}
+      </time>
     </div>
   );
 }

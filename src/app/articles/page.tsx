@@ -14,9 +14,7 @@ export default function ArticlesPage() {
   return (
     <div>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-[#8B1A1A]">
-          Articles
-        </span>
+        <span className="label text-accent">Articles</span>
         <ThickRule />
       </div>
 

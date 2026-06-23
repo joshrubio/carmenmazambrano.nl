@@ -4,18 +4,21 @@ import { MediaEmbed } from "./MediaEmbed";
 
 interface Props {
   blocks: ContentBlock[];
+  dropCap?: boolean;
 }
 
-export function ArticleBody({ blocks }: Props) {
+export function ArticleBody({ blocks, dropCap = true }: Props) {
   return (
-    <div className="article-body space-y-4">
+    <div className="space-y-4">
       {blocks.map((block, i) => {
         switch (block.type) {
           case "paragraph":
             return (
               <p
                 key={i}
-                className="font-serif text-[1.05rem] leading-[1.75] text-[#1A1A1A] text-justify hyphens-auto"
+                className={`font-body text-base leading-[1.85] text-ink text-justify hyphens-auto ${
+                  i === 0 && dropCap ? "drop-cap" : ""
+                }`}
               >
                 {block.text}
               </p>
@@ -25,7 +28,7 @@ export function ArticleBody({ blocks }: Props) {
             return (
               <h3
                 key={i}
-                className="font-serif text-xl font-bold text-[#1A1A1A] mt-6 mb-1 border-b border-[#ccc] pb-1"
+                className="font-display text-2xl font-bold text-ink mt-8 mb-2 border-b border-rule pb-1"
               >
                 {block.text}
               </h3>
@@ -35,7 +38,7 @@ export function ArticleBody({ blocks }: Props) {
             return (
               <blockquote
                 key={i}
-                className="border-l-4 border-[#8B1A1A] pl-4 my-6 font-serif text-xl italic text-[#333] leading-snug"
+                className="border-l-4 border-accent pl-5 my-8 font-display text-2xl italic text-muted leading-snug"
               >
                 &ldquo;{block.text}&rdquo;
               </blockquote>
@@ -53,7 +56,7 @@ export function ArticleBody({ blocks }: Props) {
                   />
                 </div>
                 {block.caption && (
-                  <figcaption className="text-xs font-sans text-[#666] mt-1 italic text-center">
+                  <figcaption className="label text-dim font-normal normal-case tracking-wide mt-2 italic text-center">
                     {block.caption}
                   </figcaption>
                 )}
@@ -65,7 +68,7 @@ export function ArticleBody({ blocks }: Props) {
               <figure key={i} className="my-6">
                 <MediaEmbed url={block.url} />
                 {block.caption && (
-                  <figcaption className="text-xs font-sans text-[#666] mt-1 italic text-center">
+                  <figcaption className="label text-dim font-normal normal-case tracking-wide mt-2 italic text-center">
                     {block.caption}
                   </figcaption>
                 )}

@@ -19,10 +19,10 @@ export interface Article {
 }
 
 export function getAllArticles(): Article[] {
-  const { articles } = require("../../content/articles/index");
-  return articles.sort(
-    (a: Article, b: Article) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { articles } = require("../../content/articles/index") as { articles: Article[] };
+  return [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
 

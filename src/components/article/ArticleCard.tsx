@@ -10,6 +10,12 @@ interface Props {
 }
 
 export function ArticleCard({ article, variant = "secondary" }: Props) {
+  const date = (
+    <p className="label text-dim font-normal normal-case tracking-wide mt-2">
+      {formatDate(article.date)}
+    </p>
+  );
+
   if (variant === "featured") {
     return (
       <article className="group">
@@ -25,55 +31,55 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
         )}
         <CategoryBadge category={article.category} />
         <Link href={`/articles/${article.slug}`}>
-          <h2 className="font-serif text-4xl font-black leading-tight text-[#1A1A1A] mt-2 group-hover:text-[#8B1A1A] transition-colors">
+          <h2 className="font-display text-4xl font-black leading-[1.1] text-ink mt-2 group-hover:text-accent transition-colors">
             {article.title}
           </h2>
         </Link>
         {article.subtitle && (
-          <p className="font-serif text-lg text-[#333] italic mt-1">{article.subtitle}</p>
+          <p className="font-display text-xl text-muted italic font-normal mt-1">
+            {article.subtitle}
+          </p>
         )}
-        <p className="font-sans text-sm text-[#555] mt-2 leading-relaxed">{article.excerpt}</p>
-        <div className="text-xs font-sans text-[#888] mt-2 uppercase tracking-wide">
-          {formatDate(article.date)}
-        </div>
+        <p className="font-body text-sm text-muted mt-2 leading-relaxed">
+          {article.excerpt}
+        </p>
+        {date}
       </article>
     );
   }
 
   if (variant === "compact") {
     return (
-      <article className="group border-t border-[#ccc] pt-3">
+      <article className="group border-t border-rule pt-3">
         <CategoryBadge category={article.category} />
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="font-serif text-base font-bold leading-snug text-[#1A1A1A] mt-1 group-hover:text-[#8B1A1A] transition-colors">
+          <h3 className="font-display text-base font-bold leading-snug text-ink mt-1 group-hover:text-accent transition-colors">
             {article.title}
           </h3>
         </Link>
-        <div className="text-xs font-sans text-[#888] mt-1 uppercase tracking-wide">
-          {formatDate(article.date)}
-        </div>
+        {date}
       </article>
     );
   }
 
   // secondary
   return (
-    <article className="group border-t border-[#ccc] pt-4">
+    <article className="group border-t border-rule pt-4">
       <CategoryBadge category={article.category} />
       <Link href={`/articles/${article.slug}`}>
-        <h3 className="font-serif text-2xl font-bold leading-tight text-[#1A1A1A] mt-1 group-hover:text-[#8B1A1A] transition-colors">
+        <h3 className="font-display text-2xl font-bold leading-snug text-ink mt-1 group-hover:text-accent transition-colors">
           {article.title}
         </h3>
       </Link>
       {article.subtitle && (
-        <p className="font-serif text-sm text-[#444] italic mt-0.5">{article.subtitle}</p>
+        <p className="font-display text-sm text-muted italic font-normal mt-0.5">
+          {article.subtitle}
+        </p>
       )}
-      <p className="font-sans text-sm text-[#555] mt-2 leading-relaxed line-clamp-3">
+      <p className="font-body text-sm text-muted mt-2 leading-relaxed line-clamp-3">
         {article.excerpt}
       </p>
-      <div className="text-xs font-sans text-[#888] mt-2 uppercase tracking-wide">
-        {formatDate(article.date)}
-      </div>
+      {date}
     </article>
   );
 }
