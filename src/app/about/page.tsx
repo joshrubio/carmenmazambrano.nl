@@ -65,8 +65,17 @@ export default function AboutPage() {
               </ul>
             </div>
 
+            <div className="mt-6 border-t border-rule pt-4">
+              <a
+                href={`mailto:${about.email}`}
+                className="block w-full text-center label bg-accent text-inverse py-2.5 hover:opacity-90 transition-opacity"
+              >
+                Contact via Email
+              </a>
+            </div>
+
             {Object.keys(about.social).length > 0 && (
-              <div className="mt-6 flex gap-3 border-t border-rule pt-4">
+              <div className="mt-3 flex gap-3">
                 {Object.entries(about.social).map(([key, url]) => (
                   <a key={key} href={url} target="_blank" rel="noopener noreferrer"
                     className="label text-ink font-normal border border-ink px-3 py-2 hover:bg-ink hover:text-inverse transition-colors capitalize"
