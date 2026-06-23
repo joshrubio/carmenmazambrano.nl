@@ -19,7 +19,7 @@ export function AdminButton() {
     return (
       <Link
         href="/admin/new"
-        className="label text-accent font-normal hover:text-ink transition-colors"
+        className="label bg-accent text-inverse px-3 py-0.5 leading-none hover:opacity-90 transition-opacity"
       >
         Redactar
       </Link>
