@@ -2,6 +2,107 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "rotterdam-stimuleert-digitale-inclusie",
+    title: "Rotterdam stimuleert digitale inclusie",
+    subtitle: "Gratis computercursussen én refurbished laptop voor Rotterdammers",
+    category: "Rotterdam",
+    date: "2025-10-01",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Het Rotterdam Digital Inclusion Program lanceert samen met Digi Surfer een nieuwe ronde gratis cursussen digitale vaardigheden — inclusief een refurbished laptop voor elke deelnemer.",
+    coverImage: "/images/digi-surfer-rotterdam.jpg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/digi-surfer-rotterdam.jpg",
+        alt: "Rotterdam Digital Inclusion Program — Digi Surfer computercursussen",
+        caption: "Digi Surfer biedt gratis digitale cursussen en refurbished laptops aan Rotterdammers.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, oktober 2025 – Met als doel de digitale kloof te dichten en de maatschappelijke en arbeidsmarktparticipatie van haar inwoners te bevorderen, lanceert het Rotterdam Digital Inclusion Program, in samenwerking met Digi Surfer, een nieuwe ronde gratis cursussen computer- en digitale vaardigheden. Deze cursussen zijn bedoeld voor iedereen die zijn of haar technologische kennis wil verbeteren, ongeacht het ervaringsniveau.",
+      },
+      {
+        type: "paragraph",
+        text: "Het initiatief, dat openstaat voor inwoners van Rotterdam, biedt een unieke kans: training in het basis- en geavanceerde gebruik van digitale tools, online communicatie en computerbeheer, en het ontvangen van een refurbished laptop voor persoonlijk gebruik thuis.",
+      },
+      {
+        type: "subheading",
+        text: "Toegankelijke training en persoonlijke ondersteuning",
+      },
+      {
+        type: "paragraph",
+        text: "De cursussen worden in groepen gegeven door professionele instructeurs in verschillende wijken van de stad of binnen deelnemende organisaties, zodat elke deelnemer toegang heeft tot een locatie in de buurt.",
+      },
+      {
+        type: "paragraph",
+        text: "Daarnaast ondersteunt Digi Surfer elke cursist tijdens en na de training en biedt gratis technische ondersteuning bij problemen met de apparatuur of het gebruik van de geleerde tools.",
+      },
+      {
+        type: "pullquote",
+        text: "We willen dat niemand achterblijft in het digitale tijdperk. Met deze cursussen bieden we niet alleen kennis, maar ook concrete tools om deze toe te passen in het dagelijks leven en werk.",
+      },
+      {
+        type: "subheading",
+        text: "Een laptop om thuis te blijven groeien",
+      },
+      {
+        type: "paragraph",
+        text: "Een van de hoogtepunten van het programma is de levering van een refurbished laptop, eerder gebruikt en aangepast voor optimale prestaties. Dit apparaat wordt aan de deelnemers gegeven zodat ze thuis kunnen oefenen, studeren en hun vaardigheden verder kunnen ontwikkelen.",
+      },
+      {
+        type: "paragraph",
+        text: "Na succesvolle afronding van de cursus ontvangen deelnemers een officieel certificaat 'Digitale Vaardigheden', erkend door de gemeente Rotterdam en Digi Surfer, dat hun niveau van digitale competentie bevestigt.",
+      },
+      {
+        type: "subheading",
+        text: "Data en inschrijfprocedure",
+      },
+      {
+        type: "paragraph",
+        text: "De trainingsdata en -locaties worden bekendgemaakt nadat elke deelnemer zijn of haar inschrijving heeft bevestigd. Geïnteresseerden kunnen zich rechtstreeks bij Sheila registreren of meer informatie opvragen, van maandag tot en met donderdag tussen 10.00 en 16.00 uur.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Telefoon", value: "06 21 85 69 62", href: "tel:0621856962" },
+          { label: "E-mail", value: "aanmelden@digisurfer.nl", href: "mailto:aanmelden@digisurfer.nl" },
+          { label: "Openingstijden", value: "Maandag t/m donderdag, 10:00–16:00" },
+        ],
+      },
+      {
+        type: "subheading",
+        text: "Een commitment aan digitale inclusie in Rotterdam",
+      },
+      {
+        type: "paragraph",
+        text: "Het Digi Surfer-project, ondersteund door de gemeente Rotterdam, maakt deel uit van het lokale beleid voor sociale en technologische inclusie, dat ervoor moet zorgen dat alle burgers — jongeren, senioren, immigranten en werkzoekenden — toegang hebben tot de mogelijkheden die de digitale omgeving van vandaag biedt.",
+      },
+      {
+        type: "pullquote",
+        text: "Digitale geletterdheid is geen luxe meer, maar een noodzaak. Dankzij dit programma zet Rotterdam een stap vooruit, zodat iedereen de nodige tools heeft om vooruitgang te boeken in onderwijs, werk en dagelijks leven.",
+      },
+      {
+        type: "subheading",
+        text: "Over Digi Surfer",
+      },
+      {
+        type: "paragraph",
+        text: "Digi Surfer is een organisatie die zich inzet voor het versterken van de digitale vaardigheden van Rotterdammers door middel van praktische training, persoonlijke begeleiding en het verstrekken van refurbished apparaten. De missie is om een meer verbonden en inclusieve gemeenschap te creëren die voorbereid is op de technologische uitdagingen van vandaag.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Contactpersoon", value: "Sheila — Programmacoördinator" },
+          { label: "Telefoon", value: "06 21 85 69 62", href: "tel:0621856962" },
+          { label: "E-mail", value: "aanmelden@digisurfer.nl", href: "mailto:aanmelden@digisurfer.nl" },
+          { label: "Organisatie", value: "Gemeente Rotterdam | Digi Surfer" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "open-lab-women-connected",
     title: "Open Lab: Women Connected",
     subtitle: "Van 14 oktober tot en met 10 november in de Centrale Bibliotheek Rotterdam",
