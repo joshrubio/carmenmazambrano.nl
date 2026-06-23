@@ -2,6 +2,59 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "dokkum-koningsdag-2026",
+    title: "Dokkum vierde Koningsdag 2026 met traditie en nationale eenheid",
+    subtitle: "De Friese stad als middelpunt van de verjaardag van koning Willem-Alexander",
+    category: "Nederland",
+    date: "2026-04-27",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Op maandag 27 april 2026 werd de Friese stad Dokkum het epicentrum van de nationale viering van de verjaardag van koning Willem-Alexander — een dag van traditie, oranje straatkleur en collectieve verbinding.",
+    coverImage: "/images/koningsdag-dokkum-2026.png",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/koningsdag-dokkum-2026.png",
+        alt: "Koningsdag 2026 in Dokkum — verjaardag koning Willem-Alexander",
+        caption: "Dokkum in oranje: de Friese stad als gastheer van Koningsdag 2026.",
+      },
+      {
+        type: "paragraph",
+        text: "Op maandag 27 april 2026 werd de stad Dokkum, in de provincie Friesland, het middelpunt van de nationale viering van de verjaardag van de koning. De festiviteiten begonnen al tijdens het weekend met optredens, markten en culturele activiteiten in de openbare ruimte — een aanloop die de sfeer zette voor de grote dag.",
+      },
+      {
+        type: "paragraph",
+        text: "Koningsdag, dat sinds 2014 de vroegere Koninginnedag verving, vulde de straten van Dokkum met muziek, kleur en een feestelijke drukte die bewoners en bezoekers van heinde en verre samenbracht. Het kenmerkende oranje, symbool van de nationale feestdag en de koninklijke familie, sierden straten, pleinen en winkelgevels.",
+      },
+      {
+        type: "paragraph",
+        text: "Op de centrale feestdag zelf trok de koninklijke familie door enkele van de meest iconische plekken van Dokkum. Het programma omvatte een bezoek aan de historische binnenstad, deelname aan volkssporten, traditionele spelen en speciaal voor de gelegenheid opgezette markten. Overal waar het gezelschap verscheen, werd het met enthousiasme ontvangen door het publiek.",
+      },
+      {
+        type: "pullquote",
+        text: "Straten, pleinen en handelszaken sloten zich aan bij de viering in een sfeer van saamhorigheid, culturele identiteit en collectieve vreugde.",
+      },
+      {
+        type: "paragraph",
+        text: "Nationale en internationale media volgden de gebeurtenissen live en brachten verslag van de hoogtepunten van de dag. De uitzendingen reflecteerden de geest van nationale eenheid die Koningsdag ieder jaar opnieuw kenmerkt — een dag waarop Nederland één groot feest is.",
+      },
+      {
+        type: "paragraph",
+        text: "De editie van 2026 vestigde Dokkum als een van de meest memorabele gastheden van Koningsdag in de recente geschiedenis — een dag waarop traditie, erfgoed en burgerparticipatie samenkwamen in het hart van Friesland.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Evenement", value: "Koningsdag 2026" },
+          { label: "Locatie", value: "Dokkum, Friesland" },
+          { label: "Datum", value: "Maandag 27 april 2026" },
+          { label: "LinkedIn", value: "Lees de originele post", href: "https://www.linkedin.com/posts/carmen-zambrano_dokkum-willemalexander-koningsdag-activity-7456450728203825152-nIMC?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "planck-galerie-afsluiting-rotterdam-art-week-2026",
     title: "Afsluiting Rotterdam Art Week 2026 in Galerie Planck",
     subtitle: "Een feestelijk sluitingsevenement vol kunst, cultuur en verbinding — zondag 29 maart",
