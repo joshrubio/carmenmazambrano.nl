@@ -51,6 +51,18 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
   if (variant === "compact") {
     return (
       <article className="group border-t border-rule pt-3">
+        {article.coverImage && (
+          <Link href={`/articles/${article.slug}`} className="block mb-2 overflow-hidden">
+            <div className="relative w-full h-32">
+              <Image
+                src={article.coverImage}
+                alt={article.title}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+          </Link>
+        )}
         <CategoryBadge category={article.category} />
         <Link href={`/articles/${article.slug}`}>
           <h3 className="font-display text-base font-bold leading-snug text-ink mt-1 group-hover:text-accent transition-colors">
