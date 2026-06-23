@@ -2,6 +2,78 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "planck-galerie-afsluiting-rotterdam-art-week-2026",
+    title: "Afsluiting Rotterdam Art Week 2026 in Galerie Planck",
+    subtitle: "Een feestelijk sluitingsevenement vol kunst, cultuur en verbinding — zondag 29 maart",
+    category: "Cultuur",
+    date: "2026-03-29",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Galerie Planck sloot de Rotterdam Art Week 2026 af met een bijzondere laatste expositiedag — een ontmoeting van kunst, gastronomie en gemeenschap rond het fotografisch werk van Ruth Álvarez.",
+    coverImage: "/images/planck-galerie-cover.jpg",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/planck-galerie-cover.jpg",
+        alt: "Afsluiting Rotterdam Art Week 2026 — Galerie Planck",
+        caption: "Galerie Planck tijdens de slotdag van de Rotterdam Art Week 2026, zondag 29 maart.",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, 29 maart 2026 — Op de laatste dag van de Rotterdam Art Week 2026 opende Galerie Planck haar deuren van 15:00 tot 17:30 uur voor een feestelijke afsluiting van een week vol creativiteit, inspiratie en culturele uitwisseling. Bezoekers, kunstenaars en buurtbewoners kwamen samen om dit bijzondere evenement in stijl te vieren.",
+      },
+      {
+        type: "paragraph",
+        text: "De fototentoonstelling was in handen van Ruth Álvarez, die gedurende deze betekenisvolle maand haar artistieke blik met Rotterdam heeft gedeeld. Een cyclus die begon in het teken van Internationale Vrouwendag op 8 maart — een opening geladen met symboliek, erkenning en vrouwelijke expressie — sloot nu zijn deuren met een viering die het geheel de waardering gaf die het verdient.",
+      },
+      {
+        type: "pullquote",
+        text: "Niet alleen de kunst werd gevierd, maar ook de stem, de gevoeligheid en de creatieve kracht die elk moment van deze culturele ervaring hebben begeleid.",
+      },
+      {
+        type: "paragraph",
+        text: "De slotmiddag was meer dan een tentoonstelling: het was een ontmoetingsplaats. Bezoekers deelden hun eigen gerechten en dranken, wat een warme en vertrouwde sfeer schiep. Die informele gastronomische uitwisseling maakte de bijeenkomst tot een echte gemeenschapservaring — precies de geest die de Rotterdam Art Week beoogt te bevorderen.",
+      },
+      {
+        type: "paragraph",
+        text: "Galerie Planck heeft met dit evenement opnieuw laten zien dat kunst niet enkel te bewonderen valt van een afstand, maar beleefd wordt in verbinding met anderen. De combinatie van fotografie, persoonlijke verhalen en gedeeld eten gaf de slotdag een intiem en feestelijk karakter dat lang zal worden herinnerd.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/planck-galerie-1.jpg", alt: "Galerie Planck — slotdag 1" },
+          { src: "/images/planck-galerie-2.jpg", alt: "Galerie Planck — slotdag 2" },
+          { src: "/images/planck-galerie-3.jpg", alt: "Galerie Planck — slotdag 3" },
+          { src: "/images/planck-galerie-4.jpg", alt: "Galerie Planck — slotdag 4" },
+          { src: "/images/planck-galerie-5.jpg", alt: "Galerie Planck — slotdag 5" },
+          { src: "/images/planck-galerie-6.jpg", alt: "Galerie Planck — slotdag 6" },
+          { src: "/images/planck-galerie-7.jpg", alt: "Galerie Planck — slotdag 7" },
+          { src: "/images/planck-galerie-8.jpg", alt: "Galerie Planck — slotdag 8" },
+          { src: "/images/planck-galerie-9.jpg", alt: "Galerie Planck — slotdag 9" },
+          { src: "/images/planck-galerie-10.jpg", alt: "Galerie Planck — slotdag 10" },
+          { src: "/images/planck-galerie-11.jpg", alt: "Galerie Planck — slotdag 11" },
+          { src: "/images/planck-galerie-12.jpg", alt: "Galerie Planck — slotdag 12" },
+        ],
+        caption: "Sfeerbeelden van de slotdag van de Rotterdam Art Week 2026 in Galerie Planck.",
+      },
+      {
+        type: "paragraph",
+        text: "Met vreugde werd deze prachtige kunstweek in Rotterdam afgesloten. Een week die begon met een eerbetoon aan vrouwen en eindigde met een feest van verbinding, schoonheid en gedeelde creativiteit.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Evenement", value: "Rotterdam Art Week 2026 — Slotdag" },
+          { label: "Locatie", value: "Galerie Planck, Rotterdam" },
+          { label: "Datum", value: "Zondag 29 maart 2026" },
+          { label: "Tijd", value: "15:00 – 17:30" },
+          { label: "Tentoonstelling", value: "Ruth Álvarez — fotografie" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "ruth-alvarez-poetic-look-human-sensitivity",
     title: "Ruth Álvarez: A Poetic Look at Human Sensitivity",
     subtitle: "An exhibition on time, memory and the everyday — International Women's Day",
