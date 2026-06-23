@@ -34,7 +34,7 @@ export function AdminButton() {
         </Link>
         <button
           onClick={handleLogout}
-          className="label text-muted font-normal hover:text-accent transition-colors"
+          className="label bg-ink text-inverse px-3 py-0.5 leading-none hover:opacity-80 transition-opacity"
         >
           Salir
         </button>
