@@ -29,9 +29,9 @@ export function AdminButton() {
   return (
     <Link
       href="/admin/login"
-      className="label text-muted font-normal hover:text-accent transition-colors"
+      className="label bg-accent text-inverse px-3 py-1 hover:opacity-90 transition-opacity"
     >
-      Iniciar sesión
+      Login
     </Link>
   );
 }
