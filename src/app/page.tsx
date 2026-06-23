@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllArticles } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
+import { ArticleCarousel } from "@/components/ui/ArticleCarousel";
 import { ThickRule, HorizontalRule } from "@/components/ui/ColumnDivider";
 import { Hero } from "@/components/ui/Hero";
 
@@ -33,23 +34,17 @@ export default function HomePage() {
         )}
       </div>
 
-      <HorizontalRule />
-
-      {/* Scroll strip — all remaining articles */}
       {rest.length > 0 && (
-        <div className="mt-6 mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="label text-accent">More</span>
-            <ThickRule />
+        <>
+          <HorizontalRule />
+          <div className="mt-6 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="label text-accent">More</span>
+              <ThickRule />
+            </div>
+            <ArticleCarousel articles={rest} perPage={3} />
           </div>
-          <div className="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-            {rest.map((article) => (
-              <div key={article.slug} className="shrink-0 w-56">
-                <ArticleCard article={article} variant="compact" />
-              </div>
-            ))}
-          </div>
-        </div>
+        </>
       )}
 
       <div className="text-center mt-2 mb-4">
