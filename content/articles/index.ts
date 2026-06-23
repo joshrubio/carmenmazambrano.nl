@@ -2,6 +2,81 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "erasmusbrug-rotterdam-icoon-stad",
+    title: "De Erasmusbrug: architectonisch icoon en ziel van Rotterdam",
+    subtitle: "Van omstreden ontwerp tot onmiskenbaar symbool — de brug die een stad transformeerde",
+    category: "Rotterdam",
+    date: "2026-05-22",
+    author: "Carmen Zambrano",
+    excerpt:
+      "De Erasmusbrug is meer dan een oversteek over de Nieuwe Maas — het is het silhouet waarmee Rotterdam zich aan de wereld presenteert. Een blik op de geschiedenis, de architectuur en de blijvende betekenis van 'De Zwaan'.",
+    coverImage: "/images/erasmusbrug-rotterdam.webp",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/erasmusbrug-rotterdam.webp",
+        alt: "Erasmusbrug Rotterdam — De Zwaan",
+        caption: "De Erasmusbrug over de Nieuwe Maas, met de asymmetrische pyloon die haar de bijnaam 'De Zwaan' bezorgde.",
+      },
+      {
+        type: "paragraph",
+        text: "De Erasmusbrug is een tuibrug van 802 meter lang over de Nieuwe Maas in Rotterdam, en behoort tot de meest herkenbare bouwwerken van Nederland. De brug verbindt het stadscentrum met het voormalige havengebied Kop van Zuid en is uitgegroeid tot het visuele handelsmerk van de stad.",
+      },
+      {
+        type: "subheading",
+        text: "Het ontwerp: een zwaan boven het water",
+      },
+      {
+        type: "paragraph",
+        text: "De brug werd ontworpen door de Nederlandse architect Ben van Berkel van het bureau UN Studio en werd op 6 september 1996 officieel geopend door koningin Beatrix. Het meest opvallende kenmerk is de asymmetrische pyloon van 139 meter hoog, die licht naar achteren helt en de brug het elegante silhouet geeft dat haar de bijnaam 'De Zwaan' opleverde. De slanke lijnen, de staalblauwe kleur en de compositie van honderden tuikabels maken de brug tot een meesterwerk van hedendaagse civiele architectuur.",
+      },
+      {
+        type: "pullquote",
+        text: "De Erasmusbrug is niet zomaar een oversteek — het is het silhouet waarmee Rotterdam zich aan de wereld presenteert.",
+      },
+      {
+        type: "subheading",
+        text: "Historische context: wederopbouw en ambitie",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam werd tijdens de Tweede Wereldoorlog zwaar gebombardeerd en moest zichzelf van de grond af opnieuw uitvinden. Die geschiedenis van herbouw heeft de stad een architectonische vrijheid gegeven die haar onderscheidt van andere Europese steden. De Erasmusbrug past in die traditie van gedurfde stedenbouwkundige keuzes: de brug was onderdeel van een grootschalig herontwikkelingsplan voor het vervallen havengebied aan de zuidoever van de Maas.",
+      },
+      {
+        type: "paragraph",
+        text: "Vóór de komst van de brug gold Kop van Zuid als een verwaarloosd industriegebied, afgesneden van de economische en culturele dynamiek van de noordelijke stadskern. De beslissing om hier een iconische brug neer te zetten was strategisch: ze moest niet alleen mensen vervoeren, maar ook een nieuwe stadswijk tot leven wekken. Het plan slaagde. Rond de brug verrezen kantoorgebouwen, hotels, culturele instellingen en woningen die Kop van Zuid transformeerden tot een van de meest gewilde stadsdelen van Rotterdam.",
+      },
+      {
+        type: "subheading",
+        text: "Relevantie vandaag: meer dan infrastructuur",
+      },
+      {
+        type: "paragraph",
+        text: "Bijna dertig jaar na de opening is de Erasmusbrug nog altijd het meest gefotografeerde bouwwerk van Rotterdam. Ze verschijnt op ansichtkaarten, in films, op sociale media en in internationale architectuurgidsen. Jaarlijks trekt de brug miljoenen bezoekers en is ze een vaste bestemming voor architectuurliefhebbers, fotografen en toeristen.",
+      },
+      {
+        type: "paragraph",
+        text: "De brug speelt ook een actieve rol in het stadsleven: ze fungeert als decor voor de Rotterdam Marathon, evenementen, lichtinstallaties en culturele projecten. Tijdens bijzondere gelegenheden wordt ze aangelicht in verschillende kleuren en versterkt ze de sfeer van de stad.",
+      },
+      {
+        type: "paragraph",
+        text: "Voor de bewoners van Rotterdam is De Zwaan meer dan een monument — het is een dagelijks oriëntatiepunt, een symbool van veerkracht en een bewijs dat doordachte architectuur een stad kan veranderen. In een wereld waar steden steeds meer op elkaar lijken, blijft de Erasmusbrug een onmiskenbaar Rotterdams statement.",
+      },
+      {
+        type: "infobox",
+        items: [
+          { label: "Lengte", value: "802 meter" },
+          { label: "Pyloon", value: "139 meter hoog" },
+          { label: "Architect", value: "Ben van Berkel / UN Studio" },
+          { label: "Geopend", value: "6 september 1996" },
+          { label: "Verbinding", value: "Centrum ↔ Kop van Zuid" },
+          { label: "LinkedIn", value: "Lees de originele post", href: "https://www.linkedin.com/posts/carmen-zambrano_erasmusbrug-rotterdam-puenterasmus-activity-7463994055517999104-s3dV?utm_source=share&utm_medium=member_desktop&rcm=ACoAACCudWUBP8ld36M--LeijmfZR3W1GCpyZwY" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "rotterdam-zuid-community-ontmoetingspunt-2026",
     title: "Rotterdam Zuid wordt een gemeenschappelijk ontmoetingspunt",
     subtitle: "Gratis juridisch advies, ondernemers en immigranten samen op de Feijenoordmarkt",
