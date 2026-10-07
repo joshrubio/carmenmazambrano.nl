@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { addSubscriber, EMAIL_RE, type SubscriberSource } from "@/lib/subscribers";
+import { rateLimit, SUBSCRIBE_RULES } from "@/lib/rate-limit";
 
 const SOURCES: SubscriberSource[] = ["footer", "page"];
 
@@ -9,6 +10,14 @@ const SOURCES: SubscriberSource[] = ["footer", "page"];
 // el email es nuevo como si ya existía, para no revelar quién está apuntado.
 export async function POST(req: NextRequest) {
   try {
+    const limited = await rateLimit(req, "subscribe", SUBSCRIBE_RULES);
+    if (!limited.ok) {
+      return NextResponse.json(
+        { error: "Too many attempts. Please try again later.", code: "rate_limited" },
+        { status: 429, headers: { "Retry-After": String(limited.retryAfter) } }
+      );
+    }
+
     const body = await req.json().catch(() => null);
     if (!body || typeof body !== "object") {
       return NextResponse.json({ error: "Invalid request" }, { status: 400 });

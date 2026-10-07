@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, LOGIN_RULES } from "@/lib/rate-limit";
 
 async function generateToken(secret: string): Promise<string> {
   const encoder = new TextEncoder();
@@ -14,6 +15,14 @@ async function generateToken(secret: string): Promise<string> {
 }
 
 export async function POST(req: NextRequest) {
+  const limited = await rateLimit(req, "login", LOGIN_RULES);
+  if (!limited.ok) {
+    return NextResponse.json(
+      { error: `Demasiados intentos. Inténtalo de nuevo en ${Math.ceil(limited.retryAfter / 60)} min.` },
+      { status: 429, headers: { "Retry-After": String(limited.retryAfter) } }
+    );
+  }
+
   const { password } = await req.json();
 
   if (password !== process.env.ADMIN_PASSWORD) {

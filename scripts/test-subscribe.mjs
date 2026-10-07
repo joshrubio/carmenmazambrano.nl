@@ -10,7 +10,10 @@ const password = process.env.ADMIN_PASSWORD ?? "dev-local-password";
 
 // --- Redis REST falso (HSETNX / HGETALL / HDEL) ---
 const hash = new Map();
+const counters = new Map();
 const calls = [];
+let ipSeq = 0;
+const newIp = () => `10.1.${Math.floor(++ipSeq / 250)}.${ipSeq % 250}`; // cada petición, otra IP
 const mock = http.createServer((req, res) => {
   let body = "";
   req.on("data", (c) => (body += c));
@@ -19,6 +22,27 @@ const mock = http.createServer((req, res) => {
     if (req.headers.authorization !== "Bearer test") {
       res.statusCode = 401;
       return res.end(JSON.stringify({ error: "WRONGPASS" }));
+    }
+    if (req.url === "/pipeline") {
+      const now = Date.now();
+      const out = JSON.parse(body).map(([c, key, a, b, d, e]) => {
+        const cur = counters.get(key);
+        const alive = cur && cur.expiresAt > now;
+        if (c === "SET") {
+          if (e === "NX" && alive) return { result: null };
+          counters.set(key, { value: Number(a), expiresAt: now + Number(d) * 1000 });
+          return { result: "OK" };
+        }
+        if (c === "INCR") {
+          if (!alive) counters.set(key, { value: 0, expiresAt: Infinity });
+          const entry = counters.get(key);
+          entry.value++;
+          return { result: entry.value };
+        }
+        if (c === "TTL") return { result: alive ? Math.ceil((cur.expiresAt - now) / 1000) : -2 };
+        return { error: `ERR unknown command ${c}` };
+      });
+      return res.end(JSON.stringify(out));
     }
     const [cmd, , field, value] = JSON.parse(body);
     calls.push(cmd);
@@ -44,11 +68,11 @@ const post = (path, body, headers = {}, init = {}) =>
   fetch(`${base}${path}`, {
     method: "POST",
     redirect: "manual",
-    headers: { "Content-Type": "application/json", ...headers },
+    headers: { "Content-Type": "application/json", "x-forwarded-for": newIp(), ...headers },
     body: typeof body === "string" ? body : JSON.stringify(body),
     ...init,
   });
-const sub = (b) => post("/api/subscribe", b);
+const sub = (b, headers) => post("/api/subscribe", b, headers);
 
 try {
   // --- Alta pública ---
@@ -72,6 +96,25 @@ try {
   const largo = JSON.parse(hash.get("largo@example.com"));
   check(largo.name.length === 100 && largo.source === "page", "nombre limitado a 100 y origen desconocido -> page");
   await sub({ name: "=cmd|' /C calc'!A0", email: "csv@example.com", consent: true });
+
+  // --- Rate limit: 5 intentos / 10 min por IP ---
+  const abuser = { "x-forwarded-for": "203.0.113.50" };
+  const statuses = [];
+  for (let i = 0; i < 7; i++) {
+    statuses.push((await sub({ email: `spam${i}@example.com`, consent: true }, abuser)).status);
+  }
+  check(statuses.slice(0, 5).every((s) => s === 200) && statuses[5] === 429 && statuses[6] === 429,
+    `una IP: 5 altas pasan y la 6ª y 7ª dan 429 (${statuses.join(",")})`);
+  check(!hash.has("spam5@example.com") && hash.has("spam4@example.com"), "las peticiones bloqueadas no se guardan");
+  r = await sub({ email: "spam9@example.com", consent: true }, abuser);
+  const retry = Number(r.headers.get("retry-after"));
+  const body429 = await r.json();
+  check(r.status === 429 && retry > 0 && retry <= 600 && body429.code === "rate_limited",
+    `429 con Retry-After (${retry}s) y código rate_limited`);
+  r = await sub({ email: "otro@example.com", consent: true }, { "x-forwarded-for": "198.51.100.7" });
+  check(r.status === 200, "otra IP no se ve afectada");
+  for (const e of [...hash.keys()]) if (e.startsWith("spam")) hash.delete(e); // limpia para el resto de pruebas
+  hash.delete("otro@example.com");
 
   // --- Admin protegido ---
   r = await fetch(`${base}/api/admin/subscribers`, { redirect: "manual" });
@@ -102,6 +145,15 @@ try {
   check(csv.startsWith("\"name\",\"email\",\"source\",\"subscribed_at\"") && csv.includes("ana@example.com"),
     "CSV con cabecera y datos");
   check(csv.includes("\"'=cmd|") && !csv.includes("\"=cmd"), "CSV neutraliza fórmulas (CSV injection)");
+
+  // --- Rate limit del login: 10 intentos / 15 min por IP ---
+  const bruteIp = { "x-forwarded-for": "203.0.113.99" };
+  const loginStatuses = [];
+  for (let i = 0; i < 12; i++) loginStatuses.push((await post("/api/admin/login", { password: "mala" }, bruteIp)).status);
+  check(loginStatuses.slice(0, 10).every((s) => s === 401) && loginStatuses.slice(10).every((s) => s === 429),
+    `login: 10 intentos fallidos dan 401 y luego 429 (${loginStatuses.join(",")})`);
+  r = await post("/api/admin/login", { password }, bruteIp);
+  check(r.status === 429, "con la IP bloqueada ni la contraseña correcta entra");
 
   // --- Borrado ---
   r = await fetch(`${base}/api/admin/subscribers`, {

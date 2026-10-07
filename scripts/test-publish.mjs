@@ -22,7 +22,7 @@ const original = await fs.readFile(indexPath, "utf8");
 try {
   const login = await fetch(`${base}/api/admin/login`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "x-forwarded-for": `10.9.${Math.floor(Math.random()*250)}.${Math.floor(Math.random()*250)}` },
     body: JSON.stringify({ password }),
   });
   check(login.ok, `login (${login.status})`);
