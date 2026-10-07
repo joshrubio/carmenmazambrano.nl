@@ -10,11 +10,17 @@ export function Masthead() {
           <span className="label text-muted font-normal normal-case tracking-wide hidden sm:inline">
             Rotterdam, Netherlands
           </span>
-          <nav className="flex items-center gap-3 sm:gap-6 label text-muted w-full sm:w-auto justify-between sm:justify-end">
+          <nav className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-6 label text-muted w-full sm:w-auto justify-between sm:justify-end">
             <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <Link href="/about" className="hover:text-accent transition-colors">About</Link>
             <Link href="/articles" className="hover:text-accent transition-colors">Articles</Link>
             <a href="mailto:carmenmazambrano@gmail.com" className="hover:text-accent transition-colors hidden sm:inline">Contact</a>
+            <Link
+              href="/newsletter"
+              className="label border border-ink text-ink px-3 py-1 leading-none hover:bg-ink hover:text-inverse transition-colors"
+            >
+              Newsletter
+            </Link>
             <AdminButton />
           </nav>
         </div>

@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="border-t-4 border-ink mt-12">
+    <footer className="border-t-4 border-ink mt-12 [section+&]:mt-0">
       <div className="max-w-6xl mx-auto px-4 pt-6 pb-4">
 
         {/* Main row: name + CTA */}

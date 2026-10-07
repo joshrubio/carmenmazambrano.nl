@@ -24,7 +24,11 @@ export async function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
-  if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {
+  if (
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/api/admin") ||
+    pathname.startsWith("/contact-list")
+  ) {
     const session = req.cookies.get("admin_session")?.value;
     const secret = process.env.SESSION_SECRET;
 
@@ -44,5 +48,5 @@ export async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/admin/:path*", "/api/admin/:path*", "/contact-list/:path*"],
 };

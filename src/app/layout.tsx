@@ -3,6 +3,8 @@ import { Playfair_Display, Lora, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Masthead } from "@/components/ui/Masthead";
 import { Footer } from "@/components/ui/Footer";
+import { AdminShell } from "@/components/admin/AdminShell";
+import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 
 // Variable names intentionally different from @theme font tokens
 const playfair = Playfair_Display({
@@ -48,7 +50,10 @@ export default function RootLayout({
     >
       <body className="bg-paper text-ink min-h-screen flex flex-col antialiased font-ui">
         <Masthead />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">{children}</main>
+        <AdminShell>
+          <main className="flex-1 min-w-0 max-w-6xl mx-auto w-full px-4 py-8">{children}</main>
+        </AdminShell>
+        <NewsletterSection />
         <Footer />
       </body>
     </html>
