@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import { addSubscriber, EMAIL_RE, type SubscriberSource } from "@/lib/subscribers";
 import { rateLimit, SUBSCRIBE_RULES } from "@/lib/rate-limit";
+import { defaultLocale, hasLocale } from "@/i18n/config";
 
 const SOURCES: SubscriberSource[] = ["footer", "page"];
 
@@ -31,15 +32,16 @@ export async function POST(req: NextRequest) {
     const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
     const name = typeof body.name === "string" ? body.name.trim().slice(0, 100) : "";
     const source: SubscriberSource = SOURCES.includes(body.source) ? body.source : "page";
+    const locale = hasLocale(body.locale) ? body.locale : defaultLocale;
 
     if (!email || email.length > 254 || !EMAIL_RE.test(email)) {
-      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+      return NextResponse.json({ error: "Please enter a valid email address.", code: "invalid_email" }, { status: 400 });
     }
     if (body.consent !== true) {
-      return NextResponse.json({ error: "Please accept the consent checkbox to subscribe." }, { status: 400 });
+      return NextResponse.json({ error: "Please accept the consent checkbox to subscribe.", code: "consent_required" }, { status: 400 });
     }
 
-    await addSubscriber({ email, name, consent: true, source, createdAt: new Date().toISOString() });
+    await addSubscriber({ email, name, consent: true, source, locale, createdAt: new Date().toISOString() });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[subscribe]", err);

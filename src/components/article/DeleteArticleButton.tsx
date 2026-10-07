@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { localePath } from "@/i18n/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 // Solo se muestra con la sesión de admin iniciada.
 export function DeleteArticleButton({ slug, title }: { slug: string; title: string }) {
   const router = useRouter();
+  const { lang } = useLocale();
   const [authenticated, setAuthenticated] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -47,7 +50,7 @@ export function DeleteArticleButton({ slug, title }: { slug: string; title: stri
           Nota borrada. La web se actualizará en <strong>2–3 minutos</strong>.
         </p>
         <button
-          onClick={() => router.push("/articles")}
+          onClick={() => router.push(localePath(lang, "/articles"))}
           className="label text-ink border border-ink px-4 py-2 mt-3 hover:bg-ink hover:text-inverse transition-colors"
         >
           Ir a artículos

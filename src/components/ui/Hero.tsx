@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PhotoSlot } from "./PhotoSlot";
 import { about } from "../../../content/about";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 
 const socialIcons: Record<string, React.ReactNode> = {
   linkedin: (
@@ -20,7 +22,7 @@ const socialLabels: Record<string, string> = {
   tiktok: "TikTok",
 };
 
-export function Hero() {
+export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const socialEntries = Object.entries(about.social) as [string, string][];
 
   return (
@@ -28,7 +30,7 @@ export function Hero() {
       {/* Section label */}
       <div className="flex items-center gap-3 mb-5">
         <div className="h-[3px] w-8 bg-accent" />
-        <span className="label text-accent">The Journalist</span>
+        <span className="label text-accent">{dict.hero.label}</span>
         <div className="flex-1 h-[3px] bg-ink" />
       </div>
 
@@ -38,12 +40,12 @@ export function Hero() {
         {/* Photo column */}
         <div className="md:col-span-4 md:border-r md:border-rule">
           <div className="relative w-full aspect-[3/4] max-h-80 md:max-h-none bg-surface overflow-hidden">
-            <PhotoSlot src={about.photo} alt="Carmen Zambrano" grayscale={false} />
+            <PhotoSlot src={about.photo} alt={about.name} grayscale={false} fallbackText={dict.common.photoComingSoon} />
             <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
           </div>
           <div className="bg-ink px-3 py-2">
             <p className="label text-inverse/70 font-normal normal-case tracking-wide">
-              Social Communicator &amp; Journalist · Rotterdam
+              {dict.hero.photoCaption}
             </p>
           </div>
         </div>
@@ -53,17 +55,19 @@ export function Hero() {
 
           {/* Display headline */}
           <h2 className="font-display text-5xl md:text-6xl font-black leading-[0.95] tracking-tight text-ink mb-4">
-            30 Years<br />
-            <span className="text-accent">Telling the</span><br />
-            Stories That<br />
-            Matter
+            {dict.hero.headline.map((line, i) => (
+              <span key={i} className={i === 1 ? "text-accent" : undefined}>
+                {line}
+                {i < dict.hero.headline.length - 1 && <br />}
+              </span>
+            ))}
           </h2>
 
           <div className="h-[2px] bg-ink mb-4" />
 
           {/* Bio — Lora, 2 newspaper columns */}
           <div className="col-2 mb-5">
-            {about.bio.map((para, i) => (
+            {dict.about.bio.map((para, i) => (
               <p
                 key={i}
                 className="font-body text-sm leading-[1.85] text-ink text-justify hyphens-auto mb-3 break-inside-avoid"
@@ -77,7 +81,7 @@ export function Hero() {
 
           {/* Specialties */}
           <div className="flex flex-wrap gap-x-5 gap-y-2 mb-5">
-            {about.specialties.map((s) => (
+            {dict.about.specialtiesList.map((s) => (
               <span
                 key={s}
                 className="label text-muted font-normal normal-case tracking-wide flex items-center gap-1.5 before:content-['▪'] before:text-accent"
@@ -90,12 +94,12 @@ export function Hero() {
           {/* Footer strip: location · phone · social · CTA */}
           <div className="flex items-start sm:items-center gap-x-4 gap-y-3 border-t border-rule pt-4 flex-wrap mt-auto">
             <div>
-              <p className="label text-accent">Based in</p>
-              <p className="font-body text-sm text-ink mt-0.5">{about.location}</p>
+              <p className="label text-accent">{dict.hero.basedIn}</p>
+              <p className="font-body text-sm text-ink mt-0.5">{dict.common.location}</p>
             </div>
             <div className="hidden sm:block w-px h-8 bg-rule shrink-0" />
             <div>
-              <p className="label text-accent">Contact</p>
+              <p className="label text-accent">{dict.hero.contact}</p>
               <a
                 href={`tel:${about.phone}`}
                 className="font-body text-sm text-ink hover:text-accent transition-colors block mt-0.5"
@@ -105,7 +109,7 @@ export function Hero() {
             </div>
             <div className="hidden sm:block w-px h-8 bg-rule shrink-0" />
             <div>
-              <p className="label text-accent">Email</p>
+              <p className="label text-accent">{dict.hero.email}</p>
               <a
                 href={`mailto:${about.email}`}
                 className="font-body text-sm text-ink hover:text-accent transition-colors block mt-0.5 break-all"
@@ -133,10 +137,10 @@ export function Hero() {
             </div>
 
             <Link
-              href="/about"
+              href={localePath(lang, "/about")}
               className="w-full sm:w-auto sm:ml-auto label text-ink font-normal normal-case tracking-wide border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors whitespace-nowrap text-center"
             >
-              Full Profile →
+              {dict.hero.fullProfile}
             </Link>
           </div>
         </div>

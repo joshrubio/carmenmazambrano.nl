@@ -6,6 +6,7 @@ export const articles: Article[] = [
     title: "Museum Fenix: een ontroerende blik op de immigrantengeschiedenis van Rotterdam",
     subtitle: "Foto's, objecten en verhalen van wie Rotterdam tot een rijkere stad maakten",
     category: "Cultuur",
+    language: "nl",
     date: "2026-06-07",
     author: "Carmen Zambrano",
     excerpt:
@@ -64,6 +65,7 @@ export const articles: Article[] = [
     title: "Rotterdam opent 'Gevoelens en Emoties' van Freehaut Kilas",
     subtitle: "Acrylwerken vol kleur, textuur en menselijke verbinding — Galerie Planchard, 6 juni 2026",
     category: "Cultuur",
+    language: "nl",
     date: "2026-06-06",
     author: "Carmen Zambrano",
     excerpt:
@@ -125,6 +127,7 @@ export const articles: Article[] = [
     title: "Rotterdam Blaak: het hart van stedelijk vervoer én architectuur",
     subtitle: "Van vervoersknooppunt tot toeristische poort — de plek waar Rotterdam samenkomt",
     category: "Rotterdam",
+    language: "nl",
     date: "2026-06-01",
     author: "Carmen Zambrano",
     excerpt:
@@ -198,6 +201,7 @@ export const articles: Article[] = [
     title: "De mensheid als spiegel: tentoonstelling Gohar Shachbazov sluit af in Rotterdam",
     subtitle: "Een maand van kunst, emotie en reflectie over de menselijke conditie",
     category: "Cultuur",
+    language: "nl",
     date: "2026-05-30",
     author: "Carmen Zambrano",
     excerpt:
@@ -256,6 +260,7 @@ export const articles: Article[] = [
     title: "De Erasmusbrug: architectonisch icoon en ziel van Rotterdam",
     subtitle: "Van omstreden ontwerp tot onmiskenbaar symbool — de brug die een stad transformeerde",
     category: "Rotterdam",
+    language: "nl",
     date: "2026-05-22",
     author: "Carmen Zambrano",
     excerpt:
@@ -331,6 +336,7 @@ export const articles: Article[] = [
     title: "Rotterdam Zuid wordt een gemeenschappelijk ontmoetingspunt",
     subtitle: "Gratis juridisch advies, ondernemers en immigranten samen op de Feijenoordmarkt",
     category: "Rotterdam",
+    language: "nl",
     date: "2026-05-21",
     author: "Carmen Zambrano",
     excerpt:
@@ -384,6 +390,7 @@ export const articles: Article[] = [
     title: "Moederdag bracht vrouwen samen in een bewogen middag in Rotterdam",
     subtitle: "Warmte, vriendschap en gemeenschap — een viering die meer was dan een dag",
     category: "Rotterdam",
+    language: "nl",
     date: "2026-05-10",
     author: "Carmen Zambrano",
     excerpt:
@@ -446,6 +453,7 @@ export const articles: Article[] = [
     title: "Dokkum vierde Koningsdag 2026 met traditie en nationale eenheid",
     subtitle: "De Friese stad als middelpunt van de verjaardag van koning Willem-Alexander",
     category: "Nederland",
+    language: "nl",
     date: "2026-04-27",
     author: "Carmen Zambrano",
     excerpt:
@@ -499,6 +507,7 @@ export const articles: Article[] = [
     title: "Afsluiting Rotterdam Art Week 2026 in Galerie Planck",
     subtitle: "Een feestelijk sluitingsevenement vol kunst, cultuur en verbinding — zondag 29 maart",
     category: "Cultuur",
+    language: "nl",
     date: "2026-03-29",
     author: "Carmen Zambrano",
     excerpt:
@@ -576,6 +585,7 @@ export const articles: Article[] = [
     title: "Ruth Álvarez: A Poetic Look at Human Sensitivity",
     subtitle: "An exhibition on time, memory and the everyday — International Women's Day",
     category: "Cultuur",
+    language: "en",
     date: "2026-03-08",
     author: "Carmen Zambrano",
     excerpt:
@@ -639,6 +649,7 @@ export const articles: Article[] = [
     title: '"The Nest": collectieve kunst van vrouwen in Rotterdam',
     subtitle: "Van 15 oktober tot 10 november in de Centrale Bibliotheek Rotterdam",
     category: "Cultuur",
+    language: "nl",
     date: "2025-10-14",
     author: "Carmen Zambrano",
     excerpt:
@@ -729,6 +740,7 @@ export const articles: Article[] = [
     title: "GRAW 25: eerbetoon aan vrouwen in Rotterdam",
     subtitle: "Artistieke opening in het kader van het Rotterdam Grand Studio Weekend",
     category: "Cultuur",
+    language: "nl",
     date: "2025-10-15",
     author: "Carmen Zambrano",
     excerpt:
@@ -801,6 +813,7 @@ export const articles: Article[] = [
     title: "Het hart van Rotterdam: openluchtmarkt",
     subtitle: "De Binnenrotte/Blaak — meer dan 400 kramen, elke dinsdag en zaterdag",
     category: "Rotterdam",
+    language: "nl",
     date: "2025-10-16",
     author: "Carmen Zambrano",
     excerpt:
@@ -897,6 +910,7 @@ export const articles: Article[] = [
     title: "Rotterdam stimuleert digitale inclusie",
     subtitle: "Gratis computercursussen én refurbished laptop voor Rotterdammers",
     category: "Rotterdam",
+    language: "nl",
     date: "2025-10-01",
     author: "Carmen Zambrano",
     excerpt:
@@ -998,6 +1012,7 @@ export const articles: Article[] = [
     title: "Open Lab: Women Connected",
     subtitle: "Van 14 oktober tot en met 10 november in de Centrale Bibliotheek Rotterdam",
     category: "Cultuur",
+    language: "nl",
     date: "2025-10-14",
     author: "Carmen Zambrano",
     excerpt:
@@ -1104,6 +1119,7 @@ export const articles: Article[] = [
     title: "Rotterdam versterkt steun aan Europese migranten",
     subtitle: "Twee informatiepunten bieden gratis begeleiding over huisvesting, werk, zorg en meer",
     category: "Rotterdam",
+    language: "nl",
     date: "2025-11-01",
     author: "Carmen Zambrano",
     excerpt:
@@ -1187,6 +1203,7 @@ export const articles: Article[] = [
     title: "De nachtbus die nooit slaapt: uw veilige terugkeer in Rotterdam",
     subtitle: "De RET-nachtbus verbindt Rotterdam met de regio — ook als de stad slaapt",
     category: "Rotterdam",
+    language: "nl",
     date: "2025-06-23",
     author: "Carmen Zambrano",
     excerpt:

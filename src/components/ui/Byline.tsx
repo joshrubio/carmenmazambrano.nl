@@ -1,15 +1,18 @@
 import { formatDate } from "@/lib/articles";
+import type { Locale } from "@/i18n/config";
 
 interface Props {
   author: string;
   date: string;
   category?: string;
+  lang: Locale;
+  byLabel: string;
 }
 
-export function Byline({ author, date, category }: Props) {
+export function Byline({ author, date, category, lang, byLabel }: Props) {
   return (
-    <div className="flex items-center gap-3 border-t border-b border-rule py-2 my-3">
-      <span className="label text-ink">By {author}</span>
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-b border-rule py-2 my-3">
+      <span className="label text-ink">{byLabel} {author}</span>
       <span className="text-rule select-none">|</span>
       {category && (
         <>
@@ -18,7 +21,7 @@ export function Byline({ author, date, category }: Props) {
         </>
       )}
       <time dateTime={date} className="label text-dim font-normal normal-case tracking-wide">
-        {formatDate(date)}
+        {formatDate(date, lang)}
       </time>
     </div>
   );

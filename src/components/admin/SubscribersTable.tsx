@@ -6,6 +6,8 @@ interface Subscriber {
   email: string;
   name: string;
   source: string;
+  locale: string;
+  unsubscribePath: string;
   createdAt: string;
 }
 
@@ -16,6 +18,7 @@ export function SubscribersTable() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [busy, setBusy] = useState("");
+  const [copied, setCopied] = useState("");
 
   useEffect(() => {
     fetch("/api/admin/subscribers", { cache: "no-store" })
@@ -53,6 +56,18 @@ export function SubscribersTable() {
     }
   }
 
+  async function copyUnsubscribeLink(s: Subscriber) {
+    const url = `${window.location.origin}${s.unsubscribePath}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // Respaldo si el navegador no permite el portapapeles: se muestra para copiarlo a mano.
+      window.prompt("Copia el enlace de baja (Ctrl+C):", url);
+    }
+    setCopied(s.email);
+    setTimeout(() => setCopied((c) => (c === s.email ? "" : c)), 2000);
+  }
+
   if (error && !subs) return <p className="font-body text-accent">{error}</p>;
   if (!subs) return <p className="font-body text-muted">Cargando...</p>;
 
@@ -72,12 +87,12 @@ export function SubscribersTable() {
             aria-label="Buscar suscriptores"
             className="border border-rule bg-white px-3 py-2 font-body text-sm text-ink focus:outline-none focus:border-ink w-full sm:w-64"
           />
-          <a
-            href="/api/admin/subscribers?format=csv"
+          <button
+            onClick={() => window.location.assign("/api/admin/subscribers?format=csv")}
             className="label bg-ink text-inverse px-4 py-2 leading-none whitespace-nowrap hover:opacity-80 transition-opacity"
           >
             Exportar CSV
-          </a>
+          </button>
         </div>
       </div>
 
@@ -92,7 +107,7 @@ export function SubscribersTable() {
           <table className="w-full min-w-[640px] text-left">
             <thead className="border-b-2 border-ink">
               <tr>
-                {["Nombre", "Email", "Origen", "Fecha", ""].map((h) => (
+                {["Nombre", "Email", "Idioma", "Origen", "Fecha", ""].map((h) => (
                   <th key={h} className="label text-accent px-4 py-3 whitespace-nowrap">
                     {h}
                   </th>
@@ -104,13 +119,20 @@ export function SubscribersTable() {
                 <tr key={s.email} className="border-b border-rule last:border-0">
                   <td className="px-4 py-3 font-body text-ink">{s.name || <span className="text-dim">—</span>}</td>
                   <td className="px-4 py-3 font-body text-ink whitespace-nowrap">{s.email}</td>
+                  <td className="px-4 py-3 label text-muted font-normal tracking-wide">{s.locale}</td>
                   <td className="px-4 py-3 label text-muted font-normal normal-case tracking-wide">
                     {s.source === "page" ? "Página" : "Footer"}
                   </td>
                   <td className="px-4 py-3 font-body text-sm text-muted whitespace-nowrap">
                     {dateFmt.format(new Date(s.createdAt))}
                   </td>
-                  <td className="px-4 py-3 text-right">
+                  <td className="px-4 py-3 text-right whitespace-nowrap">
+                    <button
+                      onClick={() => copyUnsubscribeLink(s)}
+                      className="label text-muted font-normal hover:text-ink transition-colors mr-4"
+                    >
+                      {copied === s.email ? "¡Copiado!" : "Copiar enlace de baja"}
+                    </button>
                     <button
                       onClick={() => handleDelete(s)}
                       disabled={busy === s.email}

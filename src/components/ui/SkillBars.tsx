@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 interface SkillItem {
   name: string;
@@ -52,11 +53,12 @@ function Bar({ name, level, pct }: SkillItem) {
 }
 
 export function SkillBars({ languages, tools }: Props) {
+  const { t } = useLocale();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
       {/* Languages */}
       <div>
-        <p className="label text-accent mb-4">Languages</p>
+        <p className="label text-accent mb-4">{t.skills.languages}</p>
         {languages.map((s) => (
           <Bar key={s.name} {...s} />
         ))}
@@ -64,7 +66,7 @@ export function SkillBars({ languages, tools }: Props) {
 
       {/* Tools & Skills */}
       <div>
-        <p className="label text-accent mb-4">Tools &amp; Skills</p>
+        <p className="label text-accent mb-4">{t.skills.tools}</p>
         {tools.map((s) => (
           <Bar key={s.name} {...s} />
         ))}

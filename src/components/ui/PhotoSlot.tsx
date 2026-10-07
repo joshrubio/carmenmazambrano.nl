@@ -7,9 +7,10 @@ interface Props {
   src: string;
   alt: string;
   grayscale?: boolean;
+  fallbackText: string;
 }
 
-export function PhotoSlot({ src, alt, grayscale = false }: Props) {
+export function PhotoSlot({ src, alt, grayscale = false, fallbackText }: Props) {
   const [error, setError] = useState(false);
 
   if (error) {
@@ -25,7 +26,7 @@ export function PhotoSlot({ src, alt, grayscale = false }: Props) {
           <path d="M4 160 C4 110 116 110 116 160 Z" />
         </svg>
         <p className="label text-ink/40 font-normal normal-case tracking-wide">
-          Photo coming soon
+          {fallbackText}
         </p>
       </div>
     );

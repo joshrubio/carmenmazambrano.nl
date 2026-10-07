@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:publish": "node scripts/test-publish.mjs",
-    "test:subscribe": "node scripts/test-subscribe.mjs"
+    "test:subscribe": "node scripts/test-subscribe.mjs",
+    "test:i18n": "node scripts/test-i18n.mjs"
   },
   "dependencies": {
     "next": "16.2.9",

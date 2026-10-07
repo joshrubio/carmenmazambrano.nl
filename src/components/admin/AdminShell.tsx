@@ -3,23 +3,27 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { localePath, stripLocale, type Locale } from "@/i18n/config";
 
-const TABS = [
+// El panel está siempre en español. Los enlaces a la web pública usan el idioma actual.
+const tabs = (lang: Locale) => [
   { href: "/admin/new", label: "Redactar" },
-  { href: "/articles", label: "Notas de prensa" },
-  { href: "/about", label: "About" },
+  { href: localePath(lang, "/articles"), label: "Notas de prensa" },
+  { href: localePath(lang, "/about"), label: "About" },
   { href: "/contact-list", label: "Suscriptores" },
 ];
 
 function isActive(pathname: string, href: string) {
-  return pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+  // /es/articles y /es/articles/mi-nota cuentan como la pestaña "Notas de prensa"
+  return stripLocale(pathname) === stripLocale(href) || stripLocale(pathname).startsWith(`${stripLocale(href)}/`);
 }
 
 // Envuelve el contenido de cada página. Con sesión de admin añade una sidebar
 // (escritorio) o una barra de pestañas (móvil). Sin sesión no renderiza nada extra.
 // La estructura es estable para que `children` no se vuelva a montar al detectar la sesión.
-export function AdminShell({ children }: { children: React.ReactNode }) {
+export function AdminShell({ lang, children }: { lang: Locale; children: React.ReactNode }) {
   const pathname = usePathname();
+  const TABS = tabs(lang);
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {

@@ -1,4 +1,9 @@
-export function Footer() {
+import Link from "next/link";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
+import { about } from "../../../content/about";
+
+export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <footer className="border-t-4 border-ink mt-12 [section+&]:mt-0">
       <div className="max-w-6xl mx-auto px-4 pt-6 pb-4">
@@ -10,22 +15,28 @@ export function Footer() {
               Carmen Zambrano
             </p>
             <p className="font-display text-sm italic text-muted font-normal mt-1">
-              Social Communicator &amp; Journalist · Rotterdam, Netherlands
+              {dict.footer.tagline}
             </p>
           </div>
           <a
-            href="mailto:carmenmazambrano@gmail.com"
+            href={`mailto:${about.email}`}
             className="label bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap self-start sm:self-auto"
           >
-            Contact via Email
+            {dict.footer.contactCta}
           </a>
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-rule pt-3">
+        <div className="border-t border-rule pt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
           <p className="label text-dim font-normal normal-case tracking-normal">
             © {new Date().getFullYear()} carmenzambrano.nl
           </p>
+          <Link
+            href={localePath(lang, "/privacy")}
+            className="label text-dim font-normal normal-case tracking-normal hover:text-accent transition-colors"
+          >
+            {dict.footer.privacy}
+          </Link>
         </div>
 
       </div>

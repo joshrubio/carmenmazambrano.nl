@@ -76,10 +76,10 @@ const sub = (b, headers) => post("/api/subscribe", b, headers);
 
 try {
   // --- Alta pública ---
-  let r = await sub({ name: "  Ana  ", email: "  Ana@Example.COM ", consent: true, website: "", source: "footer" });
+  let r = await sub({ name: "  Ana  ", email: "  Ana@Example.COM ", consent: true, website: "", source: "footer", locale: "es" });
   check(r.status === 200, `alta válida (${r.status})`);
   const stored = JSON.parse(hash.get("ana@example.com") ?? "null");
-  check(stored?.name === "Ana" && stored.source === "footer" && stored.consent === true && !!stored.createdAt,
+  check(stored?.name === "Ana" && stored.source === "footer" && stored.locale === "es" && stored.consent === true && !!stored.createdAt,
     "se guarda normalizado (email en minúsculas, nombre sin espacios, consentimiento y fecha)");
 
   r = await sub({ name: "Otra Ana", email: "ana@example.com", consent: true, source: "page" });
@@ -92,9 +92,13 @@ try {
   check((await post("/api/subscribe", "{no es json")).status === 400, "JSON mal formado -> 400");
   r = await sub({ email: "bot@example.com", consent: true, website: "http://spam.example" });
   check(r.status === 200 && !hash.has("bot@example.com"), "honeypot relleno: finge éxito y no guarda");
-  await sub({ name: "x".repeat(500), email: "largo@example.com", consent: true, source: "otro" });
+  await sub({ name: "x".repeat(500), email: "largo@example.com", consent: true, source: "otro", locale: "xx" });
   const largo = JSON.parse(hash.get("largo@example.com"));
-  check(largo.name.length === 100 && largo.source === "page", "nombre limitado a 100 y origen desconocido -> page");
+  check(largo.name.length === 100 && largo.source === "page" && largo.locale === "en", "nombre limitado a 100, origen desconocido -> page, idioma desconocido -> en");
+  r = await sub({ email: "x", consent: true });
+  check((await r.json()).code === "invalid_email", "email inválido devuelve code invalid_email");
+  r = await sub({ email: "b@example.com", consent: false });
+  check((await r.json()).code === "consent_required", "sin consentimiento devuelve code consent_required");
   await sub({ name: "=cmd|' /C calc'!A0", email: "csv@example.com", consent: true });
 
   // --- Rate limit: 5 intentos / 10 min por IP ---
@@ -142,9 +146,38 @@ try {
   const csv = await r.text();
   check(r.ok && r.headers.get("content-type").includes("text/csv") && r.headers.get("content-disposition").includes("attachment"),
     "exportación CSV con cabeceras de descarga");
-  check(csv.startsWith("\"name\",\"email\",\"source\",\"subscribed_at\"") && csv.includes("ana@example.com"),
+  check(csv.startsWith("\"name\",\"email\",\"locale\",\"source\",\"subscribed_at\"") && csv.includes("ana@example.com"),
     "CSV con cabecera y datos");
   check(csv.includes("\"'=cmd|") && !csv.includes("\"=cmd"), "CSV neutraliza fórmulas (CSV injection)");
+
+  // --- Baja con enlace firmado ---
+  const ana = list.subscribers.find((x) => x.email === "ana@example.com");
+  check(ana?.locale === "es" && ana.unsubscribePath.startsWith("/es/unsubscribe?e=ana%40example.com&t="), "el listado incluye idioma y enlace de baja firmado");
+  const token = new URL(ana.unsubscribePath, base).searchParams.get("t");
+  const unsub = (b, ip = newIp()) => post("/api/unsubscribe", b, { "x-forwarded-for": ip });
+  r = await fetch(`${base}${ana.unsubscribePath}`);
+  let html = await r.text();
+  check(r.ok && html.includes("Darse de baja") && html.includes("Sí, darme de baja") && html.includes("ana@example.com"), "/es/unsubscribe con token válido muestra la confirmación en español");
+  check(hash.has("ana@example.com"), "abrir el enlace (GET) NO da de baja a nadie");
+  r = await fetch(`${base}/en/unsubscribe?e=ana%40example.com&t=${token.slice(0, -2)}xx`);
+  html = await r.text();
+  check(r.ok && html.includes("This link is not valid") && !html.includes("Yes, unsubscribe me"), "token manipulado: página de enlace no válido, sin botón");
+  r = await fetch(`${base}/nl/unsubscribe`);
+  html = await r.text();
+  check(html.includes("Deze link is niet geldig") && html.includes("carmenmazambrano@gmail.com"), "sin token: aviso en neerlandés con el email de contacto");
+  r = await unsub({ email: "ana@example.com", token: "falso" });
+  check(r.status === 400 && hash.has("ana@example.com"), "token falso -> 400 y no borra");
+  const largoTok = new URL(list.subscribers.find((x) => x.email === "largo@example.com").unsubscribePath, base).searchParams.get("t");
+  r = await unsub({ email: "ana@example.com", token: largoTok });
+  check(r.status === 400 && hash.has("ana@example.com"), "el token de otra persona no sirve");
+  r = await unsub({ email: "ANA@example.com ", token });
+  check(r.status === 200 && !hash.has("ana@example.com"), "token válido: baja inmediata (email normalizado)");
+  r = await unsub({ email: "ana@example.com", token });
+  check(r.status === 200, "baja repetida: misma respuesta (idempotente)");
+  const spam = [];
+  for (let i = 0; i < 12; i++) spam.push((await unsub({ email: "x@example.com", token: "mal" }, "203.0.113.77")).status);
+  check(spam.slice(0, 10).every((x) => x === 400) && spam[10] === 429, `rate limit de la baja (${spam.join(",")})`);
+  await sub({ name: "Ana", email: "ana@example.com", consent: true, locale: "es" }); // se recupera para el resto
 
   // --- Rate limit del login: 10 intentos / 15 min por IP ---
   const bruteIp = { "x-forwarded-for": "203.0.113.99" };
@@ -170,10 +203,10 @@ try {
   check(page.includes("Stay in the Loop") && page.includes("Subscribe"), "/newsletter se renderiza");
   const home = await (await fetch(`${base}/`)).text();
   check(home.includes("Stories from Rotterdam, in your inbox"), "banda de suscripción en la portada");
-  check(home.includes('href="/newsletter"'), "botón Newsletter en el header");
+  check(home.includes('href="/en/newsletter"'), "botón Newsletter en el header");
   check(home.indexOf("The Newsletter") < home.indexOf("<footer") && home.indexOf("The Newsletter") > home.indexOf("</main>"),
     "la banda va entre el contenido y el footer");
-  check(!page.includes("Stories from Rotterdam, in your inbox"), "la banda no se repite en /newsletter");
+  check(!page.includes("<section aria-labelledby=\"newsletter-heading\""), "la banda no se repite en /newsletter");
   check(calls.includes("HSETNX") && calls.includes("HGETALL") && calls.includes("HDEL"), "se usaron HSETNX, HGETALL y HDEL");
 } catch (e) {
   failed = true;

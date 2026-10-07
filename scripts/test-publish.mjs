@@ -55,7 +55,7 @@ try {
     body: JSON.stringify({
       title, subtitle: "Subtítulo de prueba", category: "Rotterdam", date: "2026-10-07",
       excerpt: "Extracto de prueba.", body: "Primer párrafo.\n\nSegundo párrafo.\n\n## Sección\n\nTercer párrafo.",
-      pullquote: "Cita de prueba", linkedin: "",
+      pullquote: "Cita de prueba", linkedin: "", language: "es",
       coverImage, galleryImages: [{ src: g1, alt: "foto 1" }, { src: g2, alt: "foto 2" }],
     }),
   });
@@ -80,8 +80,19 @@ try {
   check(feed.includes(title), "la nota aparece en /articles");
   const home = await (await fetch(`${base}/`, { cache: "no-store" })).text();
   check(home.includes(title), "la nota aparece en la portada");
-  const art = await fetch(`${base}/articles/${slug}`);
-  check(art.ok && (await art.text()).includes("Tercer párrafo."), "la página del artículo se renderiza");
+  let art;
+  for (let i = 0; i < 10; i++) {
+    art = await fetch(`${base}/es/articles/${slug}`);
+    if (art.ok) break;
+    await new Promise((r) => setTimeout(r, 1000));
+  }
+  const artHtml = await art.text();
+  check(art.ok && artHtml.includes("Tercer párrafo."), `la página del artículo se renderiza (${art.status}, ${artHtml.length} bytes)`);
+  check(/<div lang="es">/.test(artHtml), "el contenido de la nota lleva lang=\"es\" (idioma original)");
+  const artEn = await (await fetch(`${base}/en/articles/${slug}`)).text();
+  check(artEn.includes("This article is written in Spanish."), "en /en avisa de que la nota está escrita en español");
+  check(!artHtml.includes("Este artículo está escrito en"), "en /es (mismo idioma) no se muestra el aviso");
+  check(/language: "es"/.test(await fs.readFile(indexPath, "utf8")), "index.ts guarda language: \"es\"");
   for (const src of [coverImage, g1, g2]) {
     const im = await fetch(`${base}${src}`);
     check(im.ok && im.headers.get("content-type")?.includes("image"), `imagen servida ${src}`);

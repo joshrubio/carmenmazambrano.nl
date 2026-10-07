@@ -1,5 +1,7 @@
 "use client";
 
+import { useLocale } from "@/i18n/LocaleProvider";
+
 interface Props {
   url: string;
 }
@@ -22,6 +24,7 @@ function getEmbedUrl(url: string): string | null {
 }
 
 export function MediaEmbed({ url }: Props) {
+  const { t } = useLocale();
   const embedUrl = getEmbedUrl(url);
 
   if (!embedUrl) {
@@ -41,7 +44,7 @@ export function MediaEmbed({ url }: Props) {
     <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
       <iframe
         src={embedUrl}
-        title="Embedded video"
+        title={t.embed.title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         className="absolute inset-0 w-full h-full"

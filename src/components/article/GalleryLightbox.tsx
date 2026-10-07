@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import type { GalleryImage } from "@/lib/articles";
+import { format, useLocale } from "@/i18n/LocaleProvider";
 
 interface Props {
   images: GalleryImage[];
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export function GalleryLightbox({ images, caption }: Props) {
+  const { t } = useLocale();
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -93,7 +95,7 @@ export function GalleryLightbox({ images, caption }: Props) {
           <button
             onClick={close}
             className="absolute top-3 right-3 text-white/70 hover:text-white transition-colors text-3xl leading-none p-2"
-            aria-label="Close"
+            aria-label={t.lightbox.close}
           >
             ×
           </button>
@@ -104,14 +106,14 @@ export function GalleryLightbox({ images, caption }: Props) {
               <button
                 onClick={(e) => { e.stopPropagation(); prev(); }}
                 className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-5xl leading-none px-4 py-6"
-                aria-label="Previous"
+                aria-label={t.lightbox.previous}
               >
                 ‹
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); next(); }}
                 className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-5xl leading-none px-4 py-6"
-                aria-label="Next"
+                aria-label={t.lightbox.next}
               >
                 ›
               </button>
@@ -121,7 +123,7 @@ export function GalleryLightbox({ images, caption }: Props) {
                     key={j}
                     onClick={(e) => { e.stopPropagation(); setIndex(j); }}
                     className={`w-1.5 h-1.5 rounded-full transition-colors ${j === index ? "bg-white" : "bg-white/40"}`}
-                    aria-label={`Go to image ${j + 1}`}
+                    aria-label={format(t.lightbox.goTo, { n: j + 1 })}
                   />
                 ))}
               </div>

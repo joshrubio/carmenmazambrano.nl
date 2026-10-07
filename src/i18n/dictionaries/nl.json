@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "siteTitle": "Carmen Zambrano — Sociaal communicator & journalist",
+    "titleTemplate": "%s | Carmen Zambrano",
+    "description": "Sociaal communicator met meer dan 30 jaar ervaring in pers, overheidscommunicatie en bedrijfsjournalistiek. Gevestigd in Rotterdam, Nederland.",
+    "ogLocale": "nl_NL"
+  },
+  "common": {
+    "tagline": "Sociaal communicator & journalist",
+    "location": "Rotterdam, Nederland",
+    "est": "Meer dan 30 jaar journalistiek",
+    "photoComingSoon": "Foto volgt binnenkort"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Over mij",
+    "articles": "Artikelen",
+    "contact": "Contact",
+    "newsletter": "Nieuwsbrief",
+    "login": "Inloggen",
+    "language": "Taal"
+  },
+  "footer": {
+    "tagline": "Sociaal communicator & journalist · Rotterdam, Nederland",
+    "contactCta": "Contact per e-mail",
+    "privacy": "Privacybeleid"
+  },
+  "hero": {
+    "label": "De journalist",
+    "headline": ["30 jaar", "verhalen vertellen", "die ertoe", "doen"],
+    "photoCaption": "Sociaal communicator & journalist · Rotterdam",
+    "basedIn": "Gevestigd in",
+    "contact": "Contact",
+    "email": "E-mail",
+    "fullProfile": "Volledig profiel →"
+  },
+  "home": {
+    "latest": "Laatste",
+    "more": "Meer",
+    "viewAll": "Alle artikelen bekijken"
+  },
+  "articles": {
+    "label": "Artikelen",
+    "title": "Artikelen",
+    "description": "Persberichten en artikelen van Carmen Zambrano."
+  },
+  "article": {
+    "by": "Door",
+    "writtenIn": "Dit artikel is geschreven in het {language}.",
+    "languages": { "es": "Spaans", "en": "Engels", "nl": "Nederlands" }
+  },
+  "categories": {
+    "Cultuur": "Cultuur",
+    "Rotterdam": "Rotterdam",
+    "Nederland": "Nederland",
+    "Politiek": "Politiek",
+    "Onderwijs": "Onderwijs",
+    "Gemeenschap": "Gemeenschap",
+    "Kunst": "Kunst"
+  },
+  "about": {
+    "title": "Over mij",
+    "profile": "Profiel",
+    "location": "Locatie",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "specialties": "Specialisaties",
+    "contactCta": "Contact per e-mail",
+    "skills": "Vaardigheden",
+    "experience": "Ervaring",
+    "present": "Heden",
+    "jobTitle": "Sociaal communicator & journalist",
+    "bio": [
+      "Ik ben sociaal communicator met meer dan 30 jaar ervaring in pers, overheidscommunicatie en bedrijfsjournalistiek — van de redactievloer tot het leiden van teams in cultuur, media en klantrelaties.",
+      "Mijn loopbaan omvat radio, televisie en onderwijs, waar ik een diep inzicht heb opgebouwd in hoe verhalen mensen verbinden en verandering teweegbrengen. Ik ben gepassioneerd over cultuur, gemeenschap en projecten die blijvende impact hebben."
+    ],
+    "specialtiesList": [
+      "Persjournalistiek",
+      "Overheidscommunicatie",
+      "Bedrijfsmedia",
+      "Radio & televisie",
+      "Culturele projecten",
+      "Teamleiderschap",
+      "Universitair onderwijs"
+    ],
+    "skillNames": {
+      "Spanish": "Spaans",
+      "English": "Engels",
+      "Dutch": "Nederlands",
+      "Word / Docs": "Word / Docs",
+      "Canva": "Canva",
+      "Photography": "Fotografie",
+      "Social Networking": "Sociale media"
+    },
+    "levels": { "Native": "Moedertaal" },
+    "experienceItems": {
+      "radio-popular": {
+        "title": "Radiojournalist",
+        "description": "Verslaggeving volgens nieuwsrichtlijnen, schrijven van radioscripts en live en opgenomen radiopresentatie."
+      },
+      "la-columna": {
+        "title": "Redacteur",
+        "description": "Dagelijkse verslaggeving in het veld — evenementen bijwonen, onderzoek doen en nieuws en reportages schrijven voor de krant."
+      },
+      "la-prensa-coro": {
+        "title": "Correspondent",
+        "description": "Verzamelde onderzoeksgegevens, schreef persberichten, nieuwsverslagen en reportages tot aan publicatie."
+      },
+      "televisa": {
+        "title": "Lid productieteam",
+        "description": "Schrijven van tv-scripts, bedienen van de teleprompter, montage en opname van nieuwsitems en reportages."
+      },
+      "casa-cultura": {
+        "title": "Journalist",
+        "description": "Verslaggeving over de activiteiten van 32 cultuurhuizen en -centra in de staat Zulia; beheer van een digitaal nieuwsnetwerk en verspreiding van verhalen naar regionale media."
+      },
+      "metropolitano": {
+        "title": "Redacteur",
+        "description": "Nieuwsverslaggeving en het maken van reportages en onderzoeksjournalistieke stukken voor de gedrukte editie."
+      },
+      "el-tiempo": {
+        "title": "Redacteur",
+        "description": "Verslaggeving in het veld, enquêtes, interviews, onderzoek en het schrijven van persberichten en reportages."
+      },
+      "actualidad-empresarial": {
+        "title": "Zakelijk journalist",
+        "description": "Verslaggeving over de zakelijke agenda, onderzoeksjournalistiek, schrijven en fotografie voor het businessmagazine."
+      },
+      "alcaldia-sotillo": {
+        "title": "Redacteur",
+        "description": "Dagelijkse verslaggeving over gemeentelijke en gemeentelijk gelieerde instellingen, huisstijl, nieuwsplanning en wisselende weekenddiensten. Veertien jaar in dienst, met de volledige breedte van lokale overheidscommunicatie."
+      },
+      "zona-educativa": {
+        "title": "Journalist (oprichtingsteam)",
+        "description": "Medeoprichter van de krant van de Onderwijsdelegatie, 'EEnuuru Taspijsha' — vernoemd in het Kariña, een inheemse taal in het oosten van Venezuela — met verslaggeving over onderwijszaken in de hele staat."
+      },
+      "ubv": {
+        "title": "Docent (extern) — Sociale communicatie",
+        "description": "Ontwierp evaluatieplannen voor meerdere vakken Sociale communicatie; begeleidde laatstejaarsstudenten bij het bedenken, uitvoeren en presenteren van projecten en bij de verdediging van hun scriptie."
+      },
+      "iutja": {
+        "title": "Assistent-docent",
+        "description": "Gaf algemene vakken voor de opleidingen Informatica en Bedrijfsadministratie; ontwierp beoordelingsplannen en begeleidde zes gelijktijdige klasprojecten."
+      },
+      "corpoelec": {
+        "title": "Redacteur — Pers & public relations",
+        "description": "Leidde de dagelijkse persverslaggeving over energiebesparingsprogramma's (vervanging van lampen, omruil van apparaten, rationeel energiegebruik). Richtte de afdeling Burgerservice voor Oost-Venezuela op. Werkte binnen de afdelingen Pers & PR, Sociale ontwikkeling en Klantenservice."
+      },
+      "freelance": {
+        "title": "Onafhankelijk journalist",
+        "description": "Persberichten en cultuurverslaggeving voor de Latijns-Amerikaanse en bredere Rotterdamse gemeenschap. Onderwerpen: kunst, sociale inclusie, stedelijke evenementen en multiculturele samenleving in Nederland. Gepubliceerd op digitale platforms en sociale media, met nadruk op het versterken van stemmen uit de gemeenschap en het documenteren van de Nederlands-Venezolaanse ervaring."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Neem contact op",
+    "description": "Neem contact op met Carmen Zambrano.",
+    "subtitle": "Voor persvragen, samenwerkingen of adviesopdrachten.",
+    "phone": "Telefoon",
+    "location": "Locatie"
+  },
+  "newsletter": {
+    "label": "Nieuwsbrief",
+    "title": "Blijf op de hoogte",
+    "subtitle": "Nieuwe artikelen, cultuur en nieuws uit de Rotterdamse gemeenschap, rechtstreeks in je inbox.",
+    "description": "Schrijf je in voor de nieuwsbrief van Carmen Zambrano: nieuwe artikelen, cultuur en nieuws uit de Rotterdamse gemeenschap.",
+    "bandLabel": "De nieuwsbrief",
+    "bandTitle": "Verhalen uit Rotterdam, in je inbox",
+    "bandText": "Nieuwe artikelen, cultuur en nieuws uit de gemeenschap. Meld je aan en lees ze als eerste."
+  },
+  "privacy": {
+    "label": "Juridisch",
+    "title": "Privacybeleid",
+    "description": "Hoe deze website omgaat met de persoonsgegevens van abonnees op de nieuwsbrief.",
+    "updated": "Laatst bijgewerkt: 7 oktober 2026",
+    "sections": [
+      {
+        "heading": "1. Wie is verantwoordelijk",
+        "paragraphs": [
+          "Verantwoordelijk voor de verwerking van je persoonsgegevens op deze website is Carmen Zambrano, gevestigd in Rotterdam, Nederland. Je kunt contact opnemen via {email}."
+        ]
+      },
+      {
+        "heading": "2. Welke gegevens we verzamelen",
+        "paragraphs": ["Als je je inschrijft voor de nieuwsbrief slaan we op:"],
+        "items": [
+          "je e-mailadres;",
+          "je naam, als je die wilt opgeven (optioneel);",
+          "het feit dat je toestemming hebt gegeven, met datum en tijd;",
+          "waar op de site je je hebt ingeschreven (pagina of voettekst) en de taal van de site op dat moment."
+        ],
+        "after": [
+          "Om misbruik te voorkomen (bijvoorbeeld geautomatiseerde aanmeldingen) wordt korte tijd een versleutelde, niet-herleidbare versie van je IP-adres gebruikt om het aantal pogingen te beperken; deze is niet gekoppeld aan je inschrijving en verloopt binnen 24 uur. De hostingpartij kan daarnaast gebruikelijke technische serverlogs bewaren."
+        ]
+      },
+      {
+        "heading": "3. Waarvoor we ze gebruiken en op welke grondslag",
+        "paragraphs": [
+          "We gebruiken je gegevens uitsluitend om je de nieuwsbrief met nieuwe artikelen en nieuws van deze website te sturen. De grondslag is je toestemming (artikel 6, lid 1, onder a van de AVG). Je hoeft je nooit in te schrijven om de website te gebruiken."
+        ]
+      },
+      {
+        "heading": "4. Hoe lang we ze bewaren",
+        "paragraphs": [
+          "Tot je je uitschrijft of je toestemming intrekt. Daarna worden je gegevens uit de abonneelijst verwijderd."
+        ]
+      },
+      {
+        "heading": "5. Wie er verder toegang toe heeft",
+        "paragraphs": [
+          "We verkopen je gegevens niet en gebruiken ze niet voor reclame. Voor de werking van de website maken we gebruik van dienstverleners die in onze opdracht gegevens verwerken: Vercel Inc. (hosting) en Upstash (database waarin de abonneelijst wordt opgeslagen). Deze partijen kunnen gegevens buiten de Europese Economische Ruimte verwerken; in dat geval moeten zij passende waarborgen toepassen, zoals modelcontractbepalingen."
+        ]
+      },
+      {
+        "heading": "6. Je rechten",
+        "paragraphs": ["Je hebt het recht om:"],
+        "items": [
+          "de gegevens die we over je hebben in te zien;",
+          "ze te laten corrigeren of verwijderen;",
+          "de verwerking te beperken of er bezwaar tegen te maken;",
+          "een kopie in een overdraagbaar formaat te ontvangen;",
+          "je toestemming op elk moment in te trekken, zonder dat dit de eerdere verwerking aantast."
+        ],
+        "after": [
+          "Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl)."
+        ]
+      },
+      {
+        "heading": "7. Hoe je je uitschrijft of je gegevens laat verwijderen",
+        "paragraphs": [
+          "Elke nieuwsbrief bevat een afmeldlink waarmee je direct wordt verwijderd. Je kunt ook mailen naar {email}; je gegevens worden dan zo snel mogelijk en in elk geval binnen een maand verwijderd."
+        ]
+      },
+      {
+        "heading": "8. Cookies",
+        "paragraphs": [
+          "Deze website gebruikt geen tracking- of advertentiecookies. Er wordt één kleine functionele cookie (NEXT_LOCALE) opgeslagen om je voorkeurstaal te onthouden, en een sessiecookie die alleen de eigenaar van de site gebruikt om de website te beheren."
+        ]
+      }
+    ]
+  },
+  "unsubscribe": {
+    "label": "Nieuwsbrief",
+    "title": "Uitschrijven",
+    "description": "Uitschrijven van de nieuwsbrief.",
+    "confirmText": "Je staat op het punt {email} van de nieuwsbrief te verwijderen. Je ontvangt geen e-mails meer en je gegevens worden verwijderd.",
+    "confirmButton": "Ja, schrijf me uit",
+    "working": "Bezig met uitschrijven...",
+    "doneTitle": "Je bent uitgeschreven",
+    "doneText": "Je e-mailadres is van de lijst verwijderd en je gegevens zijn gewist. Jammer dat je weggaat.",
+    "invalidTitle": "Deze link is niet geldig",
+    "invalidText": "Om je uit te schrijven, gebruik je de link onderaan een nieuwsbriefmail. Je kunt ook mailen naar {email}; je gegevens worden dan binnen een maand verwijderd.",
+    "errorGeneric": "Er is iets misgegaan. Probeer het zo meteen opnieuw.",
+    "errorRate": "Te veel pogingen. Probeer het later opnieuw.",
+    "backHome": "Terug naar de website"
+  },
+  "client": {
+    "carousel": { "prev": "Vorige", "next": "Volgende", "previousAria": "Vorige pagina", "nextAria": "Volgende pagina" },
+    "skills": { "languages": "Talen", "tools": "Tools & vaardigheden" },
+    "lightbox": { "close": "Sluiten", "previous": "Vorige", "next": "Volgende", "goTo": "Ga naar afbeelding {n}" },
+    "embed": { "title": "Ingesloten video" },
+    "subscribe": {
+      "nameLabel": "Naam (optioneel)",
+      "namePlaceholder": "Je naam",
+      "emailLabel": "E-mail *",
+      "emailPlaceholder": "jij@voorbeeld.nl",
+      "consentBefore": "Ik ga akkoord met het ontvangen van de nieuwsbrief van Carmen Zambrano en met het opslaan van mijn naam en e-mailadres voor dat doel, zoals beschreven in het ",
+      "consentLink": "privacybeleid",
+      "consentAfter": ". Ik kan me op elk moment uitschrijven.",
+      "submit": "Inschrijven",
+      "submitting": "Bezig met inschrijven...",
+      "successTitle": "Bedankt!",
+      "successText": "Je staat op de lijst. Je hoort binnenkort van Carmen.",
+      "errorInvalidEmail": "Vul een geldig e-mailadres in.",
+      "errorConsent": "Vink het toestemmingsvakje aan om je in te schrijven.",
+      "errorRate": "Te veel pogingen. Probeer het later opnieuw.",
+      "errorNetwork": "Geen verbinding met de server. Controleer je verbinding en probeer het opnieuw.",
+      "errorGeneric": "Er is iets misgegaan. Probeer het zo meteen opnieuw."
+    }
+  }
+}

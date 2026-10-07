@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { localePath, type Locale } from "@/i18n/config";
 
-export function AdminButton() {
+// Los botones de administración están siempre en español (el panel no se traduce);
+// solo el "Login" público sigue el idioma de la web.
+export function AdminButton({ lang, loginLabel }: { lang: Locale; loginLabel: string }) {
   const router = useRouter();
   const [authenticated, setAuthenticated] = useState<boolean | null>(null);
 
@@ -18,7 +21,7 @@ export function AdminButton() {
   async function handleLogout() {
     await fetch("/api/admin/logout", { method: "POST" });
     setAuthenticated(false);
-    router.push("/");
+    router.push(localePath(lang));
   }
 
   if (authenticated === null) return null;
@@ -47,7 +50,7 @@ export function AdminButton() {
       href="/admin/login"
       className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
     >
-      Login
+      {loginLabel}
     </Link>
   );
 }

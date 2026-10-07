@@ -40,6 +40,7 @@ export default function NewArticlePage() {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [category, setCategory] = useState(CATEGORIES[1]);
+  const [language, setLanguage] = useState("nl");
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [excerpt, setExcerpt] = useState("");
   const [body, setBody] = useState("");
@@ -111,7 +112,7 @@ export default function NewArticlePage() {
       const data = await postJson("/api/admin/publish", {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          title, subtitle, category, date, excerpt, body, pullquote, linkedin,
+          title, subtitle, category, language, date, excerpt, body, pullquote, linkedin,
           coverImage, galleryImages,
         }),
       });
@@ -202,6 +203,25 @@ export default function NewArticlePage() {
             className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
             placeholder="Una línea complementaria al título"
           />
+        </div>
+
+        {/* Idioma de la nota */}
+        <div>
+          <label className="label text-accent block mb-2">Idioma en el que está escrita la nota *</label>
+          <p className="font-body text-xs text-dim mb-2">
+            La web se ve en español, inglés y neerlandés, pero cada nota se publica en un solo idioma:
+            el navegador de quien la lea podrá ofrecer traducirla.
+          </p>
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+            required
+          >
+            <option value="nl">Neerlandés (Nederlands)</option>
+            <option value="es">Español</option>
+            <option value="en">Inglés (English)</option>
+          </select>
         </div>
 
         {/* Categoría y fecha */}

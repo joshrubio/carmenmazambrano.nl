@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import type { Article } from "@/lib/articles";
+import type { ArticleSummary } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 interface Props {
-  articles: Article[];
+  articles: ArticleSummary[];
   perPage?: number;
 }
 
 export function ArticleCarousel({ articles, perPage = 3 }: Props) {
+  const { t } = useLocale();
   const [page, setPage] = useState(0);
   const totalPages = Math.ceil(articles.length / perPage);
   const slice = articles.slice(page * perPage, page * perPage + perPage);
@@ -28,9 +30,9 @@ export function ArticleCarousel({ articles, perPage = 3 }: Props) {
             onClick={() => setPage((p) => Math.max(0, p - 1))}
             disabled={page === 0}
             className="label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Previous"
+            aria-label={t.carousel.previousAria}
           >
-            ‹ Prev
+            ‹ {t.carousel.prev}
           </button>
 
           <span className="label text-dim font-normal normal-case tracking-wide">
@@ -41,9 +43,9 @@ export function ArticleCarousel({ articles, perPage = 3 }: Props) {
             onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
             disabled={page === totalPages - 1}
             className="label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Next"
+            aria-label={t.carousel.nextAria}
           >
-            Next ›
+            {t.carousel.next} ›
           </button>
         </div>
       )}

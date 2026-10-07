@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "siteTitle": "Carmen Zambrano — Social Communicator & Journalist",
+    "titleTemplate": "%s | Carmen Zambrano",
+    "description": "Social Communicator with over 30 years of experience in press, governmental, and corporate journalism. Based in Rotterdam, Netherlands.",
+    "ogLocale": "en_GB"
+  },
+  "common": {
+    "tagline": "Social Communicator & Journalist",
+    "location": "Rotterdam, Netherlands",
+    "est": "Est. 30 Years of Journalism",
+    "photoComingSoon": "Photo coming soon"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "articles": "Articles",
+    "contact": "Contact",
+    "newsletter": "Newsletter",
+    "login": "Login",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Social Communicator & Journalist · Rotterdam, Netherlands",
+    "contactCta": "Contact via Email",
+    "privacy": "Privacy policy"
+  },
+  "hero": {
+    "label": "The Journalist",
+    "headline": ["30 Years", "Telling the", "Stories That", "Matter"],
+    "photoCaption": "Social Communicator & Journalist · Rotterdam",
+    "basedIn": "Based in",
+    "contact": "Contact",
+    "email": "Email",
+    "fullProfile": "Full Profile →"
+  },
+  "home": {
+    "latest": "Latest",
+    "more": "More",
+    "viewAll": "View All Articles"
+  },
+  "articles": {
+    "label": "Articles",
+    "title": "Articles",
+    "description": "Press notes and articles by Carmen Zambrano."
+  },
+  "article": {
+    "by": "By",
+    "writtenIn": "This article is written in {language}.",
+    "languages": { "es": "Spanish", "en": "English", "nl": "Dutch" }
+  },
+  "categories": {
+    "Cultuur": "Culture",
+    "Rotterdam": "Rotterdam",
+    "Nederland": "Netherlands",
+    "Politiek": "Politics",
+    "Onderwijs": "Education",
+    "Gemeenschap": "Community",
+    "Kunst": "Art"
+  },
+  "about": {
+    "title": "About",
+    "profile": "Profile",
+    "location": "Location",
+    "phone": "Phone",
+    "email": "Email",
+    "specialties": "Specialties",
+    "contactCta": "Contact via Email",
+    "skills": "Skills",
+    "experience": "Experience",
+    "present": "Present",
+    "jobTitle": "Social Communicator & Journalist",
+    "bio": [
+      "I'm a Social Communicator with over 30 years of experience across press, governmental, and corporate journalism — from the newsroom trenches to leading teams in culture, media, and client relations.",
+      "My journey spans radio, television, and education, where I've honed a deep understanding of how stories connect people and inspire change. I'm passionate about culture, community, and driving projects that make a lasting impact."
+    ],
+    "specialtiesList": [
+      "Press Journalism",
+      "Governmental Communications",
+      "Corporate Media",
+      "Radio & Television",
+      "Cultural Projects",
+      "Team Leadership",
+      "University Teaching"
+    ],
+    "skillNames": {
+      "Spanish": "Spanish",
+      "English": "English",
+      "Dutch": "Dutch",
+      "Word / Docs": "Word / Docs",
+      "Canva": "Canva",
+      "Photography": "Photography",
+      "Social Networking": "Social Networking"
+    },
+    "levels": { "Native": "Native" },
+    "experienceItems": {
+      "radio-popular": {
+        "title": "Radio Journalist",
+        "description": "Coverage of news guidelines, radio script writing, and live and recorded radio narration."
+      },
+      "la-columna": {
+        "title": "Staff Journalist",
+        "description": "Daily field coverage — attending events, investigating, writing news and reports for the newspaper."
+      },
+      "la-prensa-coro": {
+        "title": "Correspondent",
+        "description": "Collected research data, wrote press releases, news coverage and reports through to publication."
+      },
+      "televisa": {
+        "title": "Production Team Member",
+        "description": "TV script writing, teleprompter operation, editing, recording of news segments and reports."
+      },
+      "casa-cultura": {
+        "title": "Journalist",
+        "description": "Covered activities across 32 cultural houses and centres in Zulia state; managed a networked digital news wire and distributed stories to regional media."
+      },
+      "metropolitano": {
+        "title": "Staff Journalist",
+        "description": "News coverage, production of reports and investigative pieces for the print edition."
+      },
+      "el-tiempo": {
+        "title": "Staff Journalist",
+        "description": "Field coverage, surveys, interviews, research, and writing of press notes and reports."
+      },
+      "actualidad-empresarial": {
+        "title": "Business Journalist",
+        "description": "Coverage of business agenda, investigative journalism, writing and photography for the business magazine."
+      },
+      "alcaldia-sotillo": {
+        "title": "Staff Journalist",
+        "description": "Daily coverage of municipal and para-municipal institutions, corporate image, news sequencing, and rotating weekend duty. Fourteen-year tenure serving the full scope of local government communications."
+      },
+      "zona-educativa": {
+        "title": "Founding Journalist",
+        "description": "Co-founded the Education Delegation's newspaper 'EEnuuru Taspijsha' — named in Kariña, the indigenous language of eastern Venezuela — covering educational affairs across the state."
+      },
+      "ubv": {
+        "title": "Adjunct Professor — Social Communication",
+        "description": "Designed evaluation plans for multiple Social Communication subjects; supervised final-year students through project conception, execution, presentation and thesis defence."
+      },
+      "iutja": {
+        "title": "Assistant Professor",
+        "description": "Taught general studies for IT and Business Administration programmes; designed assessment plans and supervised six simultaneous classroom projects."
+      },
+      "corpoelec": {
+        "title": "Staff Journalist — Press & Public Relations",
+        "description": "Led daily press coverage of energy-efficiency programmes (bulb replacement, appliance exchange, rational energy use). Founded the Citizens' Service Department for the Eastern Venezuela region. Worked across Press & PR, Social Development, and Customer Service divisions."
+      },
+      "freelance": {
+        "title": "Independent Journalist",
+        "description": "Press notes and cultural coverage for the Latino and broader Rotterdam community. Topics span arts, social inclusion, urban events, and multicultural life in the Netherlands. Published across digital platforms and social media, with an emphasis on amplifying community voices and documenting the Dutch-Venezuelan experience."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Get in Touch",
+    "description": "Get in touch with Carmen Zambrano.",
+    "subtitle": "For press inquiries, collaborations, or consulting engagements.",
+    "phone": "Phone",
+    "location": "Location"
+  },
+  "newsletter": {
+    "label": "Newsletter",
+    "title": "Stay in the Loop",
+    "subtitle": "New articles, culture and community news from Rotterdam, straight to your inbox.",
+    "description": "Subscribe to Carmen Zambrano's newsletter: new articles, culture and community news from Rotterdam.",
+    "bandLabel": "The Newsletter",
+    "bandTitle": "Stories from Rotterdam, in your inbox",
+    "bandText": "New articles, culture and community news. Join the list and be the first to read them."
+  },
+  "privacy": {
+    "label": "Legal",
+    "title": "Privacy Policy",
+    "description": "How Carmen Zambrano's website handles personal data of newsletter subscribers.",
+    "updated": "Last updated: 7 October 2026",
+    "sections": [
+      {
+        "heading": "1. Who is responsible",
+        "paragraphs": [
+          "The person responsible for processing your personal data on this website is Carmen Zambrano, based in Rotterdam, the Netherlands. You can contact her at {email}."
+        ]
+      },
+      {
+        "heading": "2. What data we collect",
+        "paragraphs": ["When you subscribe to the newsletter we store:"],
+        "items": [
+          "your email address;",
+          "your name, if you choose to give it (optional);",
+          "the fact that you gave your consent, and the date and time you did so;",
+          "where on the site you signed up (page or footer) and the language of the site at that moment."
+        ],
+        "after": [
+          "To prevent abuse (for example automated sign-ups), a scrambled, non-reversible version of your IP address is used for a short time to limit the number of attempts; it is not linked to your subscription and expires within 24 hours. The hosting provider may also keep standard technical server logs."
+        ]
+      },
+      {
+        "heading": "3. Why we use it and on what legal basis",
+        "paragraphs": [
+          "We use your data only to send you the newsletter with new articles and news from this website. The legal basis is your consent (Article 6(1)(a) of the GDPR, in Dutch the AVG). You are never required to subscribe to use the website."
+        ]
+      },
+      {
+        "heading": "4. How long we keep it",
+        "paragraphs": [
+          "Until you unsubscribe or withdraw your consent. After that your data is deleted from the subscriber list."
+        ]
+      },
+      {
+        "heading": "5. Who else can access it",
+        "paragraphs": [
+          "We do not sell your data or use it for advertising. To run the website we rely on service providers that process data on our behalf: Vercel Inc. (hosting) and Upstash (database where the subscriber list is stored). These providers may process data outside the European Economic Area, in which case they must apply appropriate safeguards such as standard contractual clauses."
+        ]
+      },
+      {
+        "heading": "6. Your rights",
+        "paragraphs": ["You have the right to:"],
+        "items": [
+          "access the data we hold about you;",
+          "have it corrected or deleted;",
+          "restrict or object to its processing;",
+          "receive a copy of it in a portable format;",
+          "withdraw your consent at any time, without affecting the processing done before."
+        ],
+        "after": [
+          "You also have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens, autoriteitpersoonsgegevens.nl)."
+        ]
+      },
+      {
+        "heading": "7. How to unsubscribe or delete your data",
+        "paragraphs": [
+          "Every newsletter will include an unsubscribe link that removes you immediately. You can also write to {email} and your data will be deleted as soon as possible and in any case within one month."
+        ]
+      },
+      {
+        "heading": "8. Cookies",
+        "paragraphs": [
+          "This website does not use tracking or advertising cookies. It stores one small functional cookie (NEXT_LOCALE) to remember your preferred language, and a session cookie that is only used by the site owner to manage the website."
+        ]
+      }
+    ]
+  },
+  "unsubscribe": {
+    "label": "Newsletter",
+    "title": "Unsubscribe",
+    "description": "Unsubscribe from the newsletter.",
+    "confirmText": "You are about to remove {email} from the newsletter. You won't receive any more emails and your data will be deleted.",
+    "confirmButton": "Yes, unsubscribe me",
+    "working": "Unsubscribing...",
+    "doneTitle": "You have been unsubscribed",
+    "doneText": "Your email has been removed from the list and your data deleted. We're sorry to see you go.",
+    "invalidTitle": "This link is not valid",
+    "invalidText": "To unsubscribe, use the link at the bottom of any newsletter email. You can also write to {email} and your data will be deleted within one month.",
+    "errorGeneric": "Something went wrong. Please try again in a moment.",
+    "errorRate": "Too many attempts. Please try again later.",
+    "backHome": "Back to the website"
+  },
+  "client": {
+    "carousel": { "prev": "Prev", "next": "Next", "previousAria": "Previous page", "nextAria": "Next page" },
+    "skills": { "languages": "Languages", "tools": "Tools & Skills" },
+    "lightbox": { "close": "Close", "previous": "Previous", "next": "Next", "goTo": "Go to image {n}" },
+    "embed": { "title": "Embedded video" },
+    "subscribe": {
+      "nameLabel": "Name (optional)",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "you@example.com",
+      "consentBefore": "I agree to receive Carmen Zambrano's newsletter and to my name and email being stored for that purpose, as described in the ",
+      "consentLink": "privacy policy",
+      "consentAfter": ". I can unsubscribe at any time.",
+      "submit": "Subscribe",
+      "submitting": "Subscribing...",
+      "successTitle": "Thank you!",
+      "successText": "You're on the list. You'll hear from Carmen soon.",
+      "errorInvalidEmail": "Please enter a valid email address.",
+      "errorConsent": "Please accept the consent checkbox to subscribe.",
+      "errorRate": "Too many attempts. Please try again later.",
+      "errorNetwork": "Could not reach the server. Check your connection and try again.",
+      "errorGeneric": "Something went wrong. Please try again in a moment."
+    }
+  }
+}

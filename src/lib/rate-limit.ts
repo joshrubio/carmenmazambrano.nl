@@ -79,4 +79,5 @@ export const SUBSCRIBE_RULES: Rule[] = [
   { limit: 5, windowSec: 10 * 60 },
   { limit: 20, windowSec: 24 * 60 * 60 },
 ];
+export const UNSUBSCRIBE_RULES: Rule[] = [{ limit: 10, windowSec: 10 * 60 }];
 export const LOGIN_RULES: Rule[] = [{ limit: 10, windowSec: 15 * 60 }];

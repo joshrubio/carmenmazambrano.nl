@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import type { Locale } from "@/i18n/config";
 
 export type SubscriberSource = "footer" | "page";
 
@@ -8,6 +9,8 @@ export interface Subscriber {
   name: string;
   consent: true;
   source: SubscriberSource;
+  // Idioma de la web en el que se apuntó (para la newsletter y el enlace de baja)
+  locale: Locale;
   createdAt: string;
 }
 

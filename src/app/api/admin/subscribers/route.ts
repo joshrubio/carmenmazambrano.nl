@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { listSubscribers, removeSubscriber, type Subscriber } from "@/lib/subscribers";
+import { unsubscribePath } from "@/lib/unsubscribe-token";
 
 // Protegido por proxy.ts (todo /api/admin exige sesión).
 
@@ -12,8 +13,8 @@ function csvCell(value: string) {
 }
 
 function toCsv(subs: Subscriber[]) {
-  const rows = [["name", "email", "source", "subscribed_at"]];
-  for (const s of subs) rows.push([s.name, s.email, s.source, s.createdAt]);
+  const rows = [["name", "email", "locale", "source", "subscribed_at"]];
+  for (const s of subs) rows.push([s.name, s.email, s.locale ?? "en", s.source, s.createdAt]);
   return rows.map((r) => r.map(csvCell).join(",")).join("\r\n") + "\r\n";
 }
 
@@ -28,7 +29,10 @@ export async function GET(req: NextRequest) {
         },
       });
     }
-    return NextResponse.json({ subscribers, total: subscribers.length });
+    return NextResponse.json({
+      subscribers: subscribers.map((s) => ({ ...s, locale: s.locale ?? "en", unsubscribePath: unsubscribePath(s.email, s.locale ?? "en") })),
+      total: subscribers.length,
+    });
   } catch (err) {
     console.error("[subscribers GET]", err);
     return NextResponse.json(

@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "siteTitle": "Carmen Zambrano — Comunicación Social y Periodismo",
+    "titleTemplate": "%s | Carmen Zambrano",
+    "description": "Comunicación social con más de 30 años de experiencia en prensa, comunicación gubernamental y periodismo corporativo. Desde Róterdam, Países Bajos.",
+    "ogLocale": "es_ES"
+  },
+  "common": {
+    "tagline": "Comunicación Social y Periodismo",
+    "location": "Róterdam, Países Bajos",
+    "est": "Más de 30 años de periodismo",
+    "photoComingSoon": "Foto próximamente"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Perfil",
+    "articles": "Artículos",
+    "contact": "Contacto",
+    "newsletter": "Newsletter",
+    "login": "Acceder",
+    "language": "Idioma"
+  },
+  "footer": {
+    "tagline": "Comunicación Social y Periodismo · Róterdam, Países Bajos",
+    "contactCta": "Contactar por email",
+    "privacy": "Política de privacidad"
+  },
+  "hero": {
+    "label": "Periodismo",
+    "headline": ["30 años", "contando las", "historias que", "importan"],
+    "photoCaption": "Comunicación Social y Periodismo · Róterdam",
+    "basedIn": "Ubicación",
+    "contact": "Contacto",
+    "email": "Email",
+    "fullProfile": "Perfil completo →"
+  },
+  "home": {
+    "latest": "Últimas",
+    "more": "Más",
+    "viewAll": "Ver todos los artículos"
+  },
+  "articles": {
+    "label": "Artículos",
+    "title": "Artículos",
+    "description": "Notas de prensa y artículos de Carmen Zambrano."
+  },
+  "article": {
+    "by": "Por",
+    "writtenIn": "Este artículo está escrito en {language}.",
+    "languages": { "es": "español", "en": "inglés", "nl": "neerlandés" }
+  },
+  "categories": {
+    "Cultuur": "Cultura",
+    "Rotterdam": "Róterdam",
+    "Nederland": "Países Bajos",
+    "Politiek": "Política",
+    "Onderwijs": "Educación",
+    "Gemeenschap": "Comunidad",
+    "Kunst": "Arte"
+  },
+  "about": {
+    "title": "Perfil",
+    "profile": "Perfil",
+    "location": "Ubicación",
+    "phone": "Teléfono",
+    "email": "Email",
+    "specialties": "Especialidades",
+    "contactCta": "Contactar por email",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "present": "Actualidad",
+    "jobTitle": "Comunicación Social y Periodismo",
+    "bio": [
+      "Más de 30 años de experiencia en comunicación social a lo largo de la prensa, la comunicación gubernamental y el periodismo corporativo: desde las redacciones hasta la coordinación de equipos en cultura, medios y relación con clientes.",
+      "Una trayectoria que abarca radio, televisión y educación, donde he afianzado una comprensión profunda de cómo las historias conectan a las personas e inspiran el cambio. Me apasionan la cultura, la comunidad y los proyectos que dejan una huella duradera."
+    ],
+    "specialtiesList": [
+      "Periodismo de prensa",
+      "Comunicación gubernamental",
+      "Medios corporativos",
+      "Radio y televisión",
+      "Proyectos culturales",
+      "Liderazgo de equipos",
+      "Docencia universitaria"
+    ],
+    "skillNames": {
+      "Spanish": "Español",
+      "English": "Inglés",
+      "Dutch": "Neerlandés",
+      "Word / Docs": "Word / Docs",
+      "Canva": "Canva",
+      "Photography": "Fotografía",
+      "Social Networking": "Redes sociales"
+    },
+    "levels": { "Native": "Nativo" },
+    "experienceItems": {
+      "radio-popular": {
+        "title": "Periodista de radio",
+        "description": "Cobertura de pautas informativas, redacción de guiones radiofónicos y locución en directo y grabada."
+      },
+      "la-columna": {
+        "title": "Periodista de plantilla",
+        "description": "Cobertura diaria en la calle: asistencia a eventos, investigación y redacción de noticias y reportajes para el periódico."
+      },
+      "la-prensa-coro": {
+        "title": "Corresponsal",
+        "description": "Recopilación de datos de investigación, redacción de notas de prensa, cobertura informativa y reportajes hasta su publicación."
+      },
+      "televisa": {
+        "title": "Equipo de producción",
+        "description": "Redacción de guiones de televisión, manejo del teleprompter, edición y grabación de segmentos informativos y reportajes."
+      },
+      "casa-cultura": {
+        "title": "Periodista",
+        "description": "Cobertura de las actividades de 32 casas y centros culturales del estado Zulia; gestión de una agencia de noticias digital en red y distribución de contenidos a medios regionales."
+      },
+      "metropolitano": {
+        "title": "Periodista de plantilla",
+        "description": "Cobertura informativa y elaboración de reportajes y piezas de investigación para la edición impresa."
+      },
+      "el-tiempo": {
+        "title": "Periodista de plantilla",
+        "description": "Cobertura en la calle, encuestas, entrevistas, investigación y redacción de notas de prensa y reportajes."
+      },
+      "actualidad-empresarial": {
+        "title": "Periodista de economía y empresa",
+        "description": "Cobertura de la agenda empresarial, periodismo de investigación, redacción y fotografía para la revista de negocios."
+      },
+      "alcaldia-sotillo": {
+        "title": "Periodista de plantilla",
+        "description": "Cobertura diaria de las instituciones municipales y paramunicipales, imagen corporativa, secuenciación de noticias y guardias rotativas de fin de semana. Catorce años de trayectoria abarcando toda la comunicación del gobierno local."
+      },
+      "zona-educativa": {
+        "title": "Periodista del equipo fundador",
+        "description": "Cofundación del periódico de la Delegación de Educación, «EEnuuru Taspijsha» —nombre en kariña, lengua indígena del oriente de Venezuela—, con cobertura de la actualidad educativa del estado."
+      },
+      "ubv": {
+        "title": "Profesorado adjunto — Comunicación Social",
+        "description": "Diseño de planes de evaluación para varias asignaturas de Comunicación Social; tutoría de estudiantes de último año en la concepción, ejecución y presentación de proyectos y en la defensa de tesis."
+      },
+      "iutja": {
+        "title": "Profesorado asistente",
+        "description": "Docencia de estudios generales en los programas de Informática y Administración; diseño de planes de evaluación y tutoría de seis proyectos de aula simultáneos."
+      },
+      "corpoelec": {
+        "title": "Periodista de plantilla — Prensa y Relaciones Públicas",
+        "description": "Dirección de la cobertura diaria de prensa de los programas de eficiencia energética (sustitución de bombillos, cambio de electrodomésticos, uso racional de la energía). Fundación del Departamento de Atención al Ciudadano de la región oriental de Venezuela. Trabajo en las divisiones de Prensa y RR. PP., Desarrollo Social y Atención al Cliente."
+      },
+      "freelance": {
+        "title": "Periodista independiente",
+        "description": "Notas de prensa y cobertura cultural para la comunidad latina y el conjunto de Róterdam. Temas de arte, inclusión social, eventos urbanos y vida multicultural en los Países Bajos. Publicaciones en plataformas digitales y redes sociales, con énfasis en dar voz a la comunidad y documentar la experiencia neerlandesa-venezolana."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Hablemos",
+    "description": "Ponte en contacto con Carmen Zambrano.",
+    "subtitle": "Para consultas de prensa, colaboraciones o proyectos de consultoría.",
+    "phone": "Teléfono",
+    "location": "Ubicación"
+  },
+  "newsletter": {
+    "label": "Newsletter",
+    "title": "No te pierdas nada",
+    "subtitle": "Nuevos artículos, cultura y noticias de la comunidad de Róterdam, directamente en tu bandeja de entrada.",
+    "description": "Suscríbete a la newsletter de Carmen Zambrano: nuevos artículos, cultura y noticias de la comunidad de Róterdam.",
+    "bandLabel": "La newsletter",
+    "bandTitle": "Historias de Róterdam, en tu bandeja de entrada",
+    "bandText": "Nuevos artículos, cultura y noticias de la comunidad. Apúntate a la lista y sé de los primeros en leerlos."
+  },
+  "privacy": {
+    "label": "Legal",
+    "title": "Política de privacidad",
+    "description": "Cómo trata esta web los datos personales de las personas suscritas a la newsletter.",
+    "updated": "Última actualización: 7 de octubre de 2026",
+    "sections": [
+      {
+        "heading": "1. Responsable del tratamiento",
+        "paragraphs": [
+          "La persona responsable del tratamiento de tus datos personales en esta web es Carmen Zambrano, con sede en Róterdam (Países Bajos). Puedes contactar en {email}."
+        ]
+      },
+      {
+        "heading": "2. Qué datos recogemos",
+        "paragraphs": ["Cuando te suscribes a la newsletter guardamos:"],
+        "items": [
+          "tu dirección de email;",
+          "tu nombre, si decides facilitarlo (es opcional);",
+          "el hecho de que diste tu consentimiento, con la fecha y la hora;",
+          "desde qué parte de la web te suscribiste (página o pie de página) y el idioma de la web en ese momento."
+        ],
+        "after": [
+          "Para evitar abusos (por ejemplo, altas automáticas), durante un breve periodo se usa una versión codificada e irreversible de tu dirección IP para limitar el número de intentos; no se asocia a tu suscripción y caduca en un máximo de 24 horas. El proveedor de alojamiento también puede conservar los registros técnicos habituales del servidor."
+        ]
+      },
+      {
+        "heading": "3. Para qué los usamos y con qué base legal",
+        "paragraphs": [
+          "Usamos tus datos únicamente para enviarte la newsletter con nuevos artículos y novedades de esta web. La base legal es tu consentimiento (artículo 6.1.a del RGPD). No es obligatorio suscribirse para usar la web."
+        ]
+      },
+      {
+        "heading": "4. Cuánto tiempo los conservamos",
+        "paragraphs": [
+          "Hasta que te des de baja o retires tu consentimiento. Después, tus datos se eliminan de la lista de suscriptores."
+        ]
+      },
+      {
+        "heading": "5. Quién más puede acceder a ellos",
+        "paragraphs": [
+          "No vendemos tus datos ni los usamos para publicidad. Para el funcionamiento de la web contamos con proveedores que tratan datos por cuenta nuestra: Vercel Inc. (alojamiento) y Upstash (base de datos donde se guarda la lista de suscriptores). Estos proveedores pueden tratar datos fuera del Espacio Económico Europeo; en ese caso deben aplicar garantías adecuadas, como las cláusulas contractuales tipo."
+        ]
+      },
+      {
+        "heading": "6. Tus derechos",
+        "paragraphs": ["Tienes derecho a:"],
+        "items": [
+          "acceder a los datos que tenemos sobre ti;",
+          "rectificarlos o suprimirlos;",
+          "limitar su tratamiento u oponerte a él;",
+          "recibir una copia en un formato portable;",
+          "retirar tu consentimiento en cualquier momento, sin que afecte al tratamiento realizado antes."
+        ],
+        "after": [
+          "También puedes presentar una reclamación ante la autoridad neerlandesa de protección de datos (Autoriteit Persoonsgegevens, autoriteitpersoonsgegevens.nl)."
+        ]
+      },
+      {
+        "heading": "7. Cómo darte de baja o borrar tus datos",
+        "paragraphs": [
+          "Cada newsletter incluirá un enlace de baja que te elimina de inmediato. También puedes escribir a {email} y tus datos se borrarán lo antes posible y, en cualquier caso, en el plazo de un mes."
+        ]
+      },
+      {
+        "heading": "8. Cookies",
+        "paragraphs": [
+          "Esta web no usa cookies de seguimiento ni de publicidad. Guarda una pequeña cookie funcional (NEXT_LOCALE) para recordar tu idioma preferido, y una cookie de sesión que solo utiliza la persona titular del sitio para gestionarlo."
+        ]
+      }
+    ]
+  },
+  "unsubscribe": {
+    "label": "Newsletter",
+    "title": "Darse de baja",
+    "description": "Darse de baja de la newsletter.",
+    "confirmText": "Vas a eliminar {email} de la newsletter. No recibirás más emails y tus datos se borrarán.",
+    "confirmButton": "Sí, darme de baja",
+    "working": "Dando de baja...",
+    "doneTitle": "Te has dado de baja",
+    "doneText": "Tu email se ha eliminado de la lista y tus datos se han borrado. Sentimos que te vayas.",
+    "invalidTitle": "Este enlace no es válido",
+    "invalidText": "Para darte de baja, usa el enlace que aparece al final de cualquier email de la newsletter. También puedes escribir a {email} y tus datos se borrarán en el plazo de un mes.",
+    "errorGeneric": "Algo ha salido mal. Inténtalo de nuevo en un momento.",
+    "errorRate": "Demasiados intentos. Inténtalo de nuevo más tarde.",
+    "backHome": "Volver a la web"
+  },
+  "client": {
+    "carousel": { "prev": "Anterior", "next": "Siguiente", "previousAria": "Página anterior", "nextAria": "Página siguiente" },
+    "skills": { "languages": "Idiomas", "tools": "Herramientas y habilidades" },
+    "lightbox": { "close": "Cerrar", "previous": "Anterior", "next": "Siguiente", "goTo": "Ir a la imagen {n}" },
+    "embed": { "title": "Vídeo incrustado" },
+    "subscribe": {
+      "nameLabel": "Nombre (opcional)",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "consentBefore": "Acepto recibir la newsletter de Carmen Zambrano y que mi nombre y mi email se guarden con ese fin, tal y como se describe en la ",
+      "consentLink": "política de privacidad",
+      "consentAfter": ". Puedo darme de baja en cualquier momento.",
+      "submit": "Suscribirme",
+      "submitting": "Suscribiendo...",
+      "successTitle": "¡Gracias!",
+      "successText": "Ya estás en la lista. Pronto recibirás noticias de Carmen.",
+      "errorInvalidEmail": "Introduce una dirección de email válida.",
+      "errorConsent": "Marca la casilla de consentimiento para suscribirte.",
+      "errorRate": "Demasiados intentos. Inténtalo de nuevo más tarde.",
+      "errorNetwork": "No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.",
+      "errorGeneric": "Algo ha salido mal. Inténtalo de nuevo en un momento."
+    }
+  }
+}

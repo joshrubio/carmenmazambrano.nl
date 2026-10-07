@@ -4,6 +4,7 @@ export const maxDuration = 60;
 import { NextRequest, NextResponse } from "next/server";
 import { ghGet, ghPutText } from "@/lib/storage";
 import { slugify } from "@/lib/slug";
+import { hasLocale, type Locale } from "@/i18n/config";
 
 interface Block {
   type: string;
@@ -79,19 +80,21 @@ function articleToTS(params: {
   title: string;
   subtitle?: string;
   category: string;
+  language: Locale;
   date: string;
   author: string;
   excerpt: string;
   coverImage?: string;
   blocks: Block[];
 }): string {
-  const { slug, title, subtitle, category, date, author, excerpt, coverImage, blocks } = params;
+  const { slug, title, subtitle, category, language, date, author, excerpt, coverImage, blocks } = params;
   const lines: string[] = [];
   lines.push("  {");
   lines.push(`    slug: ${JSON.stringify(slug)},`);
   lines.push(`    title: ${JSON.stringify(title)},`);
   if (subtitle) lines.push(`    subtitle: ${JSON.stringify(subtitle)},`);
   lines.push(`    category: ${JSON.stringify(category)},`);
+  lines.push(`    language: ${JSON.stringify(language)},`);
   lines.push(`    date: ${JSON.stringify(date)},`);
   lines.push(`    author: ${JSON.stringify(author)},`);
   lines.push(`    excerpt:`);
@@ -113,6 +116,7 @@ export async function POST(req: NextRequest) {
     const subtitle = (data.subtitle as string | undefined) || undefined;
     const category = data.category as string;
     const date = data.date as string;
+    const language: Locale = hasLocale(data.language) ? data.language : "nl";
     const excerpt = data.excerpt as string;
     const body = data.body as string;
     const pullquote = (data.pullquote as string | undefined) ?? "";
@@ -151,6 +155,7 @@ export async function POST(req: NextRequest) {
       title,
       subtitle,
       category,
+      language,
       date,
       author: "Carmen Zambrano",
       excerpt,
