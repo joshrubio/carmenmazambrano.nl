@@ -2,6 +2,49 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "nota-de-prueba",
+    title: "Nota de Prueba",
+    category: "Rotterdam",
+    date: "2026-10-07",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Esto es una descripción",
+    coverImage: "/images/nota-de-prueba-cover.webp",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/nota-de-prueba-cover.webp",
+        alt: "Nota de Prueba",
+      },
+      {
+        type: "paragraph",
+        text: "Primer Parrafo",
+      },
+      {
+        type: "paragraph",
+        text: "Segundo parrafo",
+      },
+      {
+        type: "paragraph",
+        text: "##Titulo",
+      },
+      {
+        type: "paragraph",
+        text: "Ultimo parrafo",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/nota-de-prueba-1.webp", alt: "Nota de Prueba — foto 1" },
+          { src: "/images/nota-de-prueba-2.webp", alt: "Nota de Prueba — foto 2" },
+          { src: "/images/nota-de-prueba-3.webp", alt: "Nota de Prueba — foto 3" },
+          { src: "/images/nota-de-prueba-4.webp", alt: "Nota de Prueba — foto 4" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "museum-fenix-rotterdam-immigranten-tentoonstelling",
     title: "Museum Fenix: een ontroerende blik op de immigrantengeschiedenis van Rotterdam",
     subtitle: "Foto's, objecten en verhalen van wie Rotterdam tot een rijkere stad maakten",
