@@ -86,6 +86,25 @@ try {
     const im = await fetch(`${base}${src}`);
     check(im.ok && im.headers.get("content-type")?.includes("image"), `imagen servida ${src}`);
   }
+  // --- Borrado ---
+  const slugCount = (src) => (src.match(/^ {4}slug: /gm) ?? []).length;
+  const postDelete = (b, headers = { cookie, "Content-Type": "application/json" }) =>
+    fetch(`${base}/api/admin/delete`, { method: "POST", redirect: "manual", headers, body: JSON.stringify(b) });
+  const before = slugCount((await fs.readFile(indexPath, "utf8")).replace(/\r\n/g, "\n"));
+  const unauthDel = await postDelete({ slug }, {});
+  check(unauthDel.status >= 300 && unauthDel.status < 400, `borrar sin sesión redirige (${unauthDel.status})`);
+  const del = await postDelete({ slug });
+  const dj = await del.json();
+  check(del.ok && dj.imagesDeleted === 3, `borrar nota (${del.status}, fotos borradas=${dj.imagesDeleted})`);
+  const after = (await fs.readFile(indexPath, "utf8")).replace(/\r\n/g, "\n");
+  check(slugCount(after) === before - 1 && !after.includes(slug), "index.ts conserva el resto de notas intactas");
+  const left = (await fs.readdir("public/images")).filter((f) => f.startsWith(slug));
+  check(left.length === 0, "las fotos de la nota se borraron del disco");
+  const again = await postDelete({ slug });
+  check(again.status === 404, `borrar de nuevo da 404 (${again.status})`);
+  const bad = await postDelete({ slug: "../x" });
+  check(bad.status === 400, `slug inválido rechazado (${bad.status})`);
+
   console.log("\nTodo correcto.");
 } finally {
   await fs.writeFile(indexPath, original);

@@ -5,6 +5,7 @@ import { ArticleBody } from "@/components/article/ArticleBody";
 import { Byline } from "@/components/ui/Byline";
 import { CategoryBadge } from "@/components/ui/CategoryBadge";
 import { ThickRule } from "@/components/ui/ColumnDivider";
+import { DeleteArticleButton } from "@/components/article/DeleteArticleButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,6 +29,8 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <article className="max-w-3xl mx-auto">
+      <DeleteArticleButton slug={article.slug} title={article.title} />
+
       <div className="flex items-center gap-3 mb-6">
         <CategoryBadge category={article.category} />
         <ThickRule />

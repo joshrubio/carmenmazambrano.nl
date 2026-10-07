@@ -160,7 +160,7 @@ export async function POST(req: NextRequest) {
 
     const indexPath = "content/articles/index.ts";
     const { content: encodedContent, sha } = await ghGet(indexPath);
-    const currentContent = Buffer.from(encodedContent, "base64").toString("utf8");
+    const currentContent = Buffer.from(encodedContent, "base64").toString("utf8").replace(/\r\n/g, "\n");
 
     if (currentContent.includes(`slug: ${JSON.stringify(slug)},`)) {
       return NextResponse.json(

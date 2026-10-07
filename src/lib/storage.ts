@@ -69,3 +69,50 @@ export async function ghPutBinary(p: string, data: Buffer, message: string) {
   } catch {}
   return ghPut(p, data, message, sha);
 }
+
+export type FileChange =
+  | { path: string; text: string }
+  | { path: string; delete: true };
+
+// Aplica varios cambios en UN solo commit (y por tanto un solo deploy).
+// Usa la API Git Data de GitHub; en modo local escribe/borra en el disco.
+export async function commitChanges(changes: FileChange[], message: string) {
+  if (isLocal()) {
+    for (const c of changes) {
+      const full = localPath(c.path);
+      if ("delete" in c) await fs.rm(full, { force: true });
+      else await fs.writeFile(full, c.text, "utf8");
+    }
+    return;
+  }
+
+  const base = `${GH_API}/repos/${owner()}/${repo()}`;
+  const call = async (url: string, init?: RequestInit) => {
+    const res = await fetch(`${base}${url}`, { headers: ghHeaders(), cache: "no-store", ...init });
+    if (!res.ok) throw new Error(`GitHub ${init?.method ?? "GET"} ${url}: ${res.status} ${await res.text()}`);
+    return res.json();
+  };
+
+  const ref = await call(`/git/ref/heads/${branch()}`);
+  const parentSha: string = ref.object.sha;
+  const parent = await call(`/git/commits/${parentSha}`);
+  const tree = await call(`/git/trees`, {
+    method: "POST",
+    body: JSON.stringify({
+      base_tree: parent.tree.sha,
+      tree: changes.map((c) =>
+        "delete" in c
+          ? { path: c.path, mode: "100644", type: "blob", sha: null }
+          : { path: c.path, mode: "100644", type: "blob", content: c.text }
+      ),
+    }),
+  });
+  const commit = await call(`/git/commits`, {
+    method: "POST",
+    body: JSON.stringify({ message, tree: tree.sha, parents: [parentSha] }),
+  });
+  await call(`/git/refs/heads/${branch()}`, {
+    method: "PATCH",
+    body: JSON.stringify({ sha: commit.sha }),
+  });
+}
