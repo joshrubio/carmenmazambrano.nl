@@ -1,70 +1,9 @@
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 import { NextRequest, NextResponse } from "next/server";
-import sharp from "sharp";
-
-const GH_API = "https://api.github.com";
-const owner = () => process.env.GITHUB_OWNER!;
-const repo = () => process.env.GITHUB_REPO!;
-const branch = () => process.env.GITHUB_BRANCH ?? "master";
-const ghToken = () => process.env.GITHUB_TOKEN!;
-
-function ghHeaders() {
-  return {
-    Authorization: `Bearer ${ghToken()}`,
-    Accept: "application/vnd.github+json",
-    "Content-Type": "application/json",
-    "X-GitHub-Api-Version": "2022-11-28",
-  };
-}
-
-async function ghGet(path: string): Promise<{ content: string; sha: string }> {
-  const res = await fetch(
-    `${GH_API}/repos/${owner()}/${repo()}/contents/${path}?ref=${branch()}`,
-    { headers: ghHeaders() }
-  );
-  if (!res.ok) throw new Error(`GitHub GET ${path}: ${res.status}`);
-  return res.json();
-}
-
-async function ghPutText(path: string, text: string, message: string, sha?: string) {
-  const content = Buffer.from(text, "utf8").toString("base64");
-  const body: Record<string, string> = { message, content, branch: branch() };
-  if (sha) body.sha = sha;
-  const res = await fetch(`${GH_API}/repos/${owner()}/${repo()}/contents/${path}`, {
-    method: "PUT",
-    headers: ghHeaders(),
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`GitHub PUT ${path}: ${res.status} ${await res.text()}`);
-}
-
-async function ghPutBinary(path: string, data: Buffer, message: string) {
-  const content = data.toString("base64");
-  const body: Record<string, string> = { message, content, branch: branch() };
-  try {
-    const existing = await ghGet(path);
-    body.sha = existing.sha;
-  } catch {}
-  const res = await fetch(`${GH_API}/repos/${owner()}/${repo()}/contents/${path}`, {
-    method: "PUT",
-    headers: ghHeaders(),
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`GitHub PUT binary ${path}: ${res.status} ${await res.text()}`);
-}
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .slice(0, 80);
-}
+import { ghGet, ghPutText } from "@/lib/storage";
+import { slugify } from "@/lib/slug";
 
 interface Block {
   type: string;
@@ -168,18 +107,18 @@ function articleToTS(params: {
 
 export async function POST(req: NextRequest) {
   try {
-    const formData = await req.formData();
+    const data = await req.json();
 
-    const title = formData.get("title") as string;
-    const subtitle = formData.get("subtitle") as string | null;
-    const category = formData.get("category") as string;
-    const date = formData.get("date") as string;
-    const excerpt = formData.get("excerpt") as string;
-    const body = formData.get("body") as string;
-    const pullquote = (formData.get("pullquote") as string | null) ?? "";
-    const linkedin = (formData.get("linkedin") as string | null) ?? "";
-    const coverFile = formData.get("cover") as File | null;
-    const galleryFiles = formData.getAll("gallery") as File[];
+    const title = data.title as string;
+    const subtitle = (data.subtitle as string | undefined) || undefined;
+    const category = data.category as string;
+    const date = data.date as string;
+    const excerpt = data.excerpt as string;
+    const body = data.body as string;
+    const pullquote = (data.pullquote as string | undefined) ?? "";
+    const linkedin = (data.linkedin as string | undefined) ?? "";
+    const coverImage = (data.coverImage as string | undefined) || undefined;
+    const galleryImages = (data.galleryImages as { src: string; alt: string }[] | undefined) ?? [];
 
     if (!title || !category || !date || !excerpt || !body) {
       return NextResponse.json({ error: "Faltan campos obligatorios" }, { status: 400 });
@@ -188,31 +127,6 @@ export async function POST(req: NextRequest) {
     const slug = slugify(title);
     const commitMsg = `Add article: ${title}`;
 
-    // Upload cover image
-    let coverImage: string | undefined;
-    if (coverFile && coverFile.size > 0) {
-      const coverBuffer = await sharp(Buffer.from(await coverFile.arrayBuffer()))
-        .webp({ quality: 85 })
-        .toBuffer();
-      const coverPath = `public/images/${slug}-cover.webp`;
-      await ghPutBinary(coverPath, coverBuffer, `Add cover image for: ${title}`);
-      coverImage = `/images/${slug}-cover.webp`;
-    }
-
-    // Upload gallery images
-    const galleryImages: { src: string; alt: string }[] = [];
-    for (let i = 0; i < galleryFiles.length; i++) {
-      const f = galleryFiles[i];
-      if (!f || f.size === 0) continue;
-      const buf = await sharp(Buffer.from(await f.arrayBuffer()))
-        .webp({ quality: 85 })
-        .toBuffer();
-      const imgPath = `public/images/${slug}-${i + 1}.webp`;
-      await ghPutBinary(imgPath, buf, `Add gallery image ${i + 1} for: ${title}`);
-      galleryImages.push({ src: `/images/${slug}-${i + 1}.webp`, alt: `${title} — foto ${i + 1}` });
-    }
-
-    // Build content blocks
     const blocks: Block[] = [];
 
     if (coverImage) {
@@ -232,11 +146,10 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Generate TypeScript code for new article
     const newArticleTS = articleToTS({
       slug,
       title,
-      subtitle: subtitle ?? undefined,
+      subtitle,
       category,
       date,
       author: "Carmen Zambrano",
@@ -245,20 +158,23 @@ export async function POST(req: NextRequest) {
       blocks,
     });
 
-    // Fetch current articles index file
     const indexPath = "content/articles/index.ts";
     const { content: encodedContent, sha } = await ghGet(indexPath);
     const currentContent = Buffer.from(encodedContent, "base64").toString("utf8");
+
+    if (currentContent.includes(`slug: ${JSON.stringify(slug)},`)) {
+      return NextResponse.json(
+        { error: "Ya existe una nota con ese título. Cambia el título." },
+        { status: 409 }
+      );
+    }
 
     const MARKER = "export const articles: Article[] = [\n";
     if (!currentContent.includes(MARKER)) {
       throw new Error("Could not find insertion point in articles/index.ts");
     }
 
-    const updatedContent = currentContent.replace(
-      MARKER,
-      MARKER + newArticleTS + "\n"
-    );
+    const updatedContent = currentContent.replace(MARKER, MARKER + newArticleTS + "\n");
 
     await ghPutText(indexPath, updatedContent, commitMsg, sha);
 

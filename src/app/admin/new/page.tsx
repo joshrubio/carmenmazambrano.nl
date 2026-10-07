@@ -3,16 +3,39 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import { slugify } from "@/lib/slug";
+import { compressImage } from "@/lib/compress-image";
 
 const CATEGORIES = ["Cultuur", "Rotterdam", "Nederland", "Politiek", "Onderwijs", "Gemeenschap", "Kunst"];
 
 type Status = "idle" | "loading" | "success" | "error";
+
+// Las respuestas de error de la plataforma (413, 504...) no son JSON, así que
+// se traducen aquí a un mensaje comprensible en vez de un fallo genérico.
+async function postJson(url: string, init: RequestInit) {
+  let res: Response;
+  try {
+    res = await fetch(url, { method: "POST", ...init });
+  } catch {
+    throw new Error("No se pudo conectar con el servidor. Revisa tu conexión a internet.");
+  }
+  const data = await res.json().catch(() => null);
+  if (res.redirected) throw new Error("La sesión ha caducado. Vuelve a iniciar sesión.");
+  if (res.ok && data) return data;
+  if (data?.error) throw new Error(data.error);
+  if (res.status === 401 || res.status === 403) throw new Error("La sesión ha caducado. Vuelve a iniciar sesión.");
+  if (res.status === 413) throw new Error("Una de las fotos pesa demasiado. Prueba con una más pequeña.");
+  if (res.status === 504) throw new Error("El servidor tardó demasiado en responder. Inténtalo de nuevo.");
+  throw new Error(`Error del servidor (${res.status})`);
+}
 
 export default function NewArticlePage() {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [publishedSlug, setPublishedSlug] = useState("");
+  const [progress, setProgress] = useState("");
 
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -58,32 +81,45 @@ export default function NewArticlePage() {
     setStatus("loading");
     setErrorMsg("");
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("subtitle", subtitle);
-    formData.append("category", category);
-    formData.append("date", date);
-    formData.append("excerpt", excerpt);
-    formData.append("body", body);
-    formData.append("pullquote", pullquote);
-    formData.append("linkedin", linkedin);
-    if (coverFile) formData.append("cover", coverFile);
-    for (const f of galleryFiles) formData.append("gallery", f);
-
     try {
-      const res = await fetch("/api/admin/publish", { method: "POST", body: formData });
-      const data = await res.json();
+      const slug = slugify(title);
+      const total = (coverFile ? 1 : 0) + galleryFiles.length;
+      let done = 0;
+      const progress = () => setProgress(total ? `Subiendo fotos (${done}/${total})...` : "Publicando...");
+      progress();
 
-      if (res.ok) {
-        setStatus("success");
-        setPublishedSlug(data.slug);
-      } else {
-        setStatus("error");
-        setErrorMsg(data.error ?? "Error desconocido");
+      const upload = async (file: File, name: string) => {
+        const small = await compressImage(file);
+        const fd = new FormData();
+        fd.append("file", small);
+        fd.append("slug", slug);
+        fd.append("name", name);
+        const data = await postJson("/api/admin/upload-image", { body: fd });
+        done++;
+        progress();
+        return data.src as string;
+      };
+
+      const coverImage = coverFile ? await upload(coverFile, "cover") : undefined;
+      const galleryImages: { src: string; alt: string }[] = [];
+      for (let i = 0; i < galleryFiles.length; i++) {
+        const src = await upload(galleryFiles[i], String(i + 1));
+        galleryImages.push({ src, alt: `${title} — foto ${i + 1}` });
       }
-    } catch {
+
+      setProgress("Publicando...");
+      const data = await postJson("/api/admin/publish", {
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title, subtitle, category, date, excerpt, body, pullquote, linkedin,
+          coverImage, galleryImages,
+        }),
+      });
+      setStatus("success");
+      setPublishedSlug(data.slug);
+    } catch (err) {
       setStatus("error");
-      setErrorMsg("No se pudo conectar con el servidor");
+      setErrorMsg(err instanceof Error ? err.message : "Error desconocido");
     }
   }
 
@@ -113,12 +149,12 @@ export default function NewArticlePage() {
             >
               Publicar otra nota
             </button>
-            <a
+            <Link
               href="/"
               className="label text-ink border border-ink py-3 hover:bg-ink hover:text-inverse transition-colors block text-center"
             >
               Ver la web
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -340,7 +376,7 @@ export default function NewArticlePage() {
             disabled={status === "loading"}
             className="w-full label bg-accent text-inverse py-4 text-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {status === "loading" ? "Publicando... (puede tardar unos segundos)" : "Publicar nota de prensa"}
+            {status === "loading" ? (progress || "Publicando...") : "Publicar nota de prensa"}
           </button>
         </div>
 
