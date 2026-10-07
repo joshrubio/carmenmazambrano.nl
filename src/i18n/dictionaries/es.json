@@ -260,6 +260,7 @@
     "skills": { "languages": "Idiomas", "tools": "Herramientas y habilidades" },
     "lightbox": { "close": "Cerrar", "previous": "Anterior", "next": "Siguiente", "goTo": "Ir a la imagen {n}" },
     "embed": { "title": "Vídeo incrustado" },
+    "translate": {"button":"Traducir este artículo","downloading":"Descargando el paquete de idioma… {percent} %","translating":"Traduciendo… {done}/{total}","showOriginal":"Ver original","translateAgain":"Ver traducción","note":"Traducido automáticamente en tu navegador desde el {from}. Puede contener errores.","error":"No se pudo completar la traducción. Inténtalo de nuevo."},
     "subscribe": {
       "nameLabel": "Nombre (opcional)",
       "namePlaceholder": "Tu nombre",

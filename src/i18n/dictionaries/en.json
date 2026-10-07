@@ -260,6 +260,7 @@
     "skills": { "languages": "Languages", "tools": "Tools & Skills" },
     "lightbox": { "close": "Close", "previous": "Previous", "next": "Next", "goTo": "Go to image {n}" },
     "embed": { "title": "Embedded video" },
+    "translate": {"button":"Translate this article","downloading":"Downloading language pack… {percent}%","translating":"Translating… {done}/{total}","showOriginal":"Show original","translateAgain":"Show translation","note":"Translated automatically in your browser from {from}. It may contain mistakes.","error":"The translation could not be completed. Please try again."},
     "subscribe": {
       "nameLabel": "Name (optional)",
       "namePlaceholder": "Your name",

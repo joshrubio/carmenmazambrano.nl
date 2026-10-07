@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 import { ArticleBody } from "@/components/article/ArticleBody";
+import { TranslatableArticle } from "@/components/article/TranslatableArticle";
 import { DeleteArticleButton } from "@/components/article/DeleteArticleButton";
 import { Byline } from "@/components/ui/Byline";
 import { CategoryBadge } from "@/components/ui/CategoryBadge";
@@ -58,8 +59,9 @@ export default async function ArticlePage({ params }: Props) {
         <ThickRule />
       </div>
 
-      {/* `lang` del contenido: permite que el navegador ofrezca traducirlo y silabee bien */}
-      <div lang={article.language}>
+      {/* `lang` del contenido: permite que el navegador ofrezca traducirlo y silabee bien.
+          Además, TranslatableArticle ofrece un botón de traducción local donde el navegador la soporte. */}
+      <TranslatableArticle articleLang={article.language} fromName={dict.article.languages[article.language]}>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] text-ink">
           {article.title}
         </h1>
@@ -77,7 +79,7 @@ export default async function ArticlePage({ params }: Props) {
         </p>
 
         <ArticleBody blocks={article.content} />
-      </div>
+      </TranslatableArticle>
     </article>
   );
 }

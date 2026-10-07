@@ -260,6 +260,7 @@
     "skills": { "languages": "Talen", "tools": "Tools & vaardigheden" },
     "lightbox": { "close": "Sluiten", "previous": "Vorige", "next": "Volgende", "goTo": "Ga naar afbeelding {n}" },
     "embed": { "title": "Ingesloten video" },
+    "translate": {"button":"Vertaal dit artikel","downloading":"Taalpakket downloaden… {percent}%","translating":"Vertalen… {done}/{total}","showOriginal":"Toon origineel","translateAgain":"Toon vertaling","note":"Automatisch in je browser vertaald uit het {from}. Kan fouten bevatten.","error":"De vertaling kon niet worden voltooid. Probeer het opnieuw."},
     "subscribe": {
       "nameLabel": "Naam (optioneel)",
       "namePlaceholder": "Je naam",

@@ -11,7 +11,7 @@ interface Props {
 
 export function Byline({ author, date, category, lang, byLabel }: Props) {
   return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-b border-rule py-2 my-3">
+    <div lang={lang} data-no-translate className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-b border-rule py-2 my-3">
       <span className="label text-ink">{byLabel} {author}</span>
       <span className="text-rule select-none">|</span>
       {category && (
