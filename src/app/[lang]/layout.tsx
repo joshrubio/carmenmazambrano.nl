@@ -9,6 +9,7 @@ import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
+import { site } from "@/lib/site";
 
 interface Props {
   children: React.ReactNode;
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Pick<Props, "params">): Promi
   return {
     title: { default: dict.meta.siteTitle, template: dict.meta.titleTemplate },
     description: dict.meta.description,
-    metadataBase: new URL("https://carmenzambrano.nl"),
+    metadataBase: new URL(site.url),
     openGraph: {
       locale: dict.meta.ogLocale,
       alternateLocale: locales.filter((l) => l !== lang).map((l) => ({ es: "es_ES", en: "en_GB", nl: "nl_NL" })[l]),

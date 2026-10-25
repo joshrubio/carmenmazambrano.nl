@@ -1,14 +1,13 @@
 {
   "meta": {
-    "siteTitle": "Carmen Zambrano — Comunicación Social y Periodismo",
-    "titleTemplate": "%s | Carmen Zambrano",
-    "description": "Comunicación social con más de 30 años de experiencia en prensa, comunicación gubernamental y periodismo corporativo. Desde Róterdam, Países Bajos.",
+    "siteTitle": "The New Paper — Noticias, cultura y comunidad desde Róterdam",
+    "titleTemplate": "%s | The New Paper",
+    "description": "The New Paper es un periódico de Róterdam con noticias, cultura y comunidad, fundado y dirigido por Carmen Zambrano.",
     "ogLocale": "es_ES"
   },
   "common": {
-    "tagline": "Comunicación Social y Periodismo",
-    "location": "Róterdam, Países Bajos",
-    "est": "Más de 30 años de periodismo",
+    "tagline": "Noticias, cultura y comunidad · Róterdam",
+    "location": "Róterdam, Países Bajos",
     "photoComingSoon": "Foto próximamente"
   },
   "nav": {
@@ -21,14 +20,14 @@
     "language": "Idioma"
   },
   "footer": {
-    "tagline": "Comunicación Social y Periodismo · Róterdam, Países Bajos",
+    "tagline": "Noticias, cultura y comunidad · Róterdam, Países Bajos",
     "contactCta": "Contactar por email",
     "privacy": "Política de privacidad"
   },
   "hero": {
-    "label": "Periodismo",
+    "label": "La editora",
     "headline": ["30 años", "contando las", "historias que", "importan"],
-    "photoCaption": "Comunicación Social y Periodismo · Róterdam",
+    "photoCaption": "Fundadora y editora · Róterdam",
     "basedIn": "Ubicación",
     "contact": "Contacto",
     "email": "Email",
@@ -42,7 +41,7 @@
   "articles": {
     "label": "Artículos",
     "title": "Artículos",
-    "description": "Notas de prensa y artículos de Carmen Zambrano."
+    "description": "Noticias, notas de prensa y artículos de The New Paper."
   },
   "article": {
     "by": "Por",
@@ -60,7 +59,7 @@
   },
   "about": {
     "title": "Perfil",
-    "profile": "Perfil",
+    "profile": "La editora",
     "location": "Ubicación",
     "phone": "Teléfono",
     "email": "Email",
@@ -69,7 +68,7 @@
     "skills": "Habilidades",
     "experience": "Experiencia",
     "present": "Actualidad",
-    "jobTitle": "Comunicación Social y Periodismo",
+    "jobTitle": "Fundadora y editora",
     "bio": [
       "Más de 30 años de experiencia en comunicación social a lo largo de la prensa, la comunicación gubernamental y el periodismo corporativo: desde las redacciones hasta la coordinación de equipos en cultura, medios y relación con clientes.",
       "Una trayectoria que abarca radio, televisión y educación, donde he afianzado una comprensión profunda de cómo las historias conectan a las personas e inspiran el cambio. Me apasionan la cultura, la comunidad y los proyectos que dejan una huella duradera."
@@ -155,8 +154,8 @@
   "contact": {
     "label": "Contacto",
     "title": "Hablemos",
-    "description": "Ponte en contacto con Carmen Zambrano.",
-    "subtitle": "Para consultas de prensa, colaboraciones o proyectos de consultoría.",
+    "description": "Ponte en contacto con The New Paper.",
+    "subtitle": "Para avisos de noticias, consultas de prensa o colaboraciones.",
     "phone": "Teléfono",
     "location": "Ubicación"
   },
@@ -164,7 +163,7 @@
     "label": "Newsletter",
     "title": "No te pierdas nada",
     "subtitle": "Nuevos artículos, cultura y noticias de la comunidad de Róterdam, directamente en tu bandeja de entrada.",
-    "description": "Suscríbete a la newsletter de Carmen Zambrano: nuevos artículos, cultura y noticias de la comunidad de Róterdam.",
+    "description": "Suscríbete a la newsletter de The New Paper: nuevos artículos, cultura y noticias de la comunidad de Róterdam.",
     "bandLabel": "La newsletter",
     "bandTitle": "Historias de Róterdam, en tu bandeja de entrada",
     "bandText": "Nuevos artículos, cultura y noticias de la comunidad. Apúntate a la lista y sé de los primeros en leerlos."
@@ -178,7 +177,7 @@
       {
         "heading": "1. Responsable del tratamiento",
         "paragraphs": [
-          "La persona responsable del tratamiento de tus datos personales en esta web es Carmen Zambrano, con sede en Róterdam (Países Bajos). Puedes contactar en {email}."
+          "La persona responsable del tratamiento de tus datos personales en The New Paper es Carmen Zambrano, con sede en Róterdam (Países Bajos). Puedes contactarla en {email}."
         ]
       },
       {
@@ -266,7 +265,7 @@
       "namePlaceholder": "Tu nombre",
       "emailLabel": "Email *",
       "emailPlaceholder": "tu@ejemplo.com",
-      "consentBefore": "Acepto recibir la newsletter de Carmen Zambrano y que mi nombre y mi email se guarden con ese fin, tal y como se describe en la ",
+      "consentBefore": "Acepto recibir la newsletter de The New Paper y que mi nombre y mi email se guarden con ese fin, tal y como se describe en la ",
       "consentLink": "política de privacidad",
       "consentAfter": ". Puedo darme de baja en cualquier momento.",
       "submit": "Suscribirme",

@@ -1,8 +1,18 @@
 import { ImageResponse } from "next/og";
+import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Carmen Zambrano — Social Communicator & Journalist";
+export const alt = `${site.name} — News, culture & community from Rotterdam`;
+
+const headline = {
+  fontFamily: "serif",
+  fontSize: "120px",
+  fontWeight: 900,
+  lineHeight: 0.95,
+  color: "#1A1A1A",
+  letterSpacing: "-0.02em",
+} as const;
 
 export default function OgImage() {
   return new ImageResponse(
@@ -25,43 +35,21 @@ export default function OgImage() {
           <span
             style={{
               fontFamily: "serif",
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: 600,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#8B1A1A",
             }}
           >
-            Social Communicator &amp; Journalist
+            News, culture &amp; community
           </span>
         </div>
 
-        {/* Name */}
+        {/* Nameplate */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-          <span
-            style={{
-              fontFamily: "serif",
-              fontSize: "96px",
-              fontWeight: 900,
-              lineHeight: 0.95,
-              color: "#1A1A1A",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Carmen
-          </span>
-          <span
-            style={{
-              fontFamily: "serif",
-              fontSize: "96px",
-              fontWeight: 900,
-              lineHeight: 0.95,
-              color: "#1A1A1A",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Zambrano
-          </span>
+          <span style={headline}>The New</span>
+          <span style={headline}>Paper</span>
         </div>
 
         {/* Footer */}
@@ -79,7 +67,7 @@ export default function OgImage() {
             Rotterdam, Netherlands
           </span>
           <span style={{ fontFamily: "sans-serif", fontSize: "18px", color: "#555555" }}>
-            carmenzambrano.nl
+            {site.domain}
           </span>
         </div>
       </div>

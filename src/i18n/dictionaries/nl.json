@@ -1,14 +1,13 @@
 {
   "meta": {
-    "siteTitle": "Carmen Zambrano — Sociaal communicator & journalist",
-    "titleTemplate": "%s | Carmen Zambrano",
-    "description": "Sociaal communicator met meer dan 30 jaar ervaring in pers, overheidscommunicatie en bedrijfsjournalistiek. Gevestigd in Rotterdam, Nederland.",
+    "siteTitle": "The New Paper — Nieuws, cultuur & gemeenschap uit Rotterdam",
+    "titleTemplate": "%s | The New Paper",
+    "description": "The New Paper is een krant uit Rotterdam over nieuws, cultuur en gemeenschap, opgericht en geleid door journalist Carmen Zambrano.",
     "ogLocale": "nl_NL"
   },
   "common": {
-    "tagline": "Sociaal communicator & journalist",
-    "location": "Rotterdam, Nederland",
-    "est": "Meer dan 30 jaar journalistiek",
+    "tagline": "Nieuws, cultuur & gemeenschap · Rotterdam",
+    "location": "Rotterdam, Nederland",
     "photoComingSoon": "Foto volgt binnenkort"
   },
   "nav": {
@@ -21,14 +20,14 @@
     "language": "Taal"
   },
   "footer": {
-    "tagline": "Sociaal communicator & journalist · Rotterdam, Nederland",
+    "tagline": "Nieuws, cultuur & gemeenschap · Rotterdam, Nederland",
     "contactCta": "Contact per e-mail",
     "privacy": "Privacybeleid"
   },
   "hero": {
-    "label": "De journalist",
+    "label": "De hoofdredactie",
     "headline": ["30 jaar", "verhalen vertellen", "die ertoe", "doen"],
-    "photoCaption": "Sociaal communicator & journalist · Rotterdam",
+    "photoCaption": "Oprichter & hoofdredacteur · Rotterdam",
     "basedIn": "Gevestigd in",
     "contact": "Contact",
     "email": "E-mail",
@@ -42,7 +41,7 @@
   "articles": {
     "label": "Artikelen",
     "title": "Artikelen",
-    "description": "Persberichten en artikelen van Carmen Zambrano."
+    "description": "Nieuws, persberichten en artikelen van The New Paper."
   },
   "article": {
     "by": "Door",
@@ -60,7 +59,7 @@
   },
   "about": {
     "title": "Over mij",
-    "profile": "Profiel",
+    "profile": "De hoofdredactie",
     "location": "Locatie",
     "phone": "Telefoon",
     "email": "E-mail",
@@ -69,7 +68,7 @@
     "skills": "Vaardigheden",
     "experience": "Ervaring",
     "present": "Heden",
-    "jobTitle": "Sociaal communicator & journalist",
+    "jobTitle": "Oprichter & hoofdredacteur",
     "bio": [
       "Ik ben sociaal communicator met meer dan 30 jaar ervaring in pers, overheidscommunicatie en bedrijfsjournalistiek — van de redactievloer tot het leiden van teams in cultuur, media en klantrelaties.",
       "Mijn loopbaan omvat radio, televisie en onderwijs, waar ik een diep inzicht heb opgebouwd in hoe verhalen mensen verbinden en verandering teweegbrengen. Ik ben gepassioneerd over cultuur, gemeenschap en projecten die blijvende impact hebben."
@@ -155,8 +154,8 @@
   "contact": {
     "label": "Contact",
     "title": "Neem contact op",
-    "description": "Neem contact op met Carmen Zambrano.",
-    "subtitle": "Voor persvragen, samenwerkingen of adviesopdrachten.",
+    "description": "Neem contact op met The New Paper.",
+    "subtitle": "Voor nieuwstips, persvragen of samenwerkingen.",
     "phone": "Telefoon",
     "location": "Locatie"
   },
@@ -164,7 +163,7 @@
     "label": "Nieuwsbrief",
     "title": "Blijf op de hoogte",
     "subtitle": "Nieuwe artikelen, cultuur en nieuws uit de Rotterdamse gemeenschap, rechtstreeks in je inbox.",
-    "description": "Schrijf je in voor de nieuwsbrief van Carmen Zambrano: nieuwe artikelen, cultuur en nieuws uit de Rotterdamse gemeenschap.",
+    "description": "Schrijf je in voor de nieuwsbrief van The New Paper: nieuwe artikelen, cultuur en nieuws uit de Rotterdamse gemeenschap.",
     "bandLabel": "De nieuwsbrief",
     "bandTitle": "Verhalen uit Rotterdam, in je inbox",
     "bandText": "Nieuwe artikelen, cultuur en nieuws uit de gemeenschap. Meld je aan en lees ze als eerste."
@@ -178,7 +177,7 @@
       {
         "heading": "1. Wie is verantwoordelijk",
         "paragraphs": [
-          "Verantwoordelijk voor de verwerking van je persoonsgegevens op deze website is Carmen Zambrano, gevestigd in Rotterdam, Nederland. Je kunt contact opnemen via {email}."
+          "Verantwoordelijk voor de verwerking van je persoonsgegevens op de website van The New Paper is Carmen Zambrano, gevestigd in Rotterdam, Nederland. Je kunt contact opnemen via {email}."
         ]
       },
       {
@@ -266,7 +265,7 @@
       "namePlaceholder": "Je naam",
       "emailLabel": "E-mail *",
       "emailPlaceholder": "jij@voorbeeld.nl",
-      "consentBefore": "Ik ga akkoord met het ontvangen van de nieuwsbrief van Carmen Zambrano en met het opslaan van mijn naam en e-mailadres voor dat doel, zoals beschreven in het ",
+      "consentBefore": "Ik ga akkoord met het ontvangen van de nieuwsbrief van The New Paper en met het opslaan van mijn naam en e-mailadres voor dat doel, zoals beschreven in het ",
       "consentLink": "privacybeleid",
       "consentAfter": ". Ik kan me op elk moment uitschrijven.",
       "submit": "Inschrijven",
