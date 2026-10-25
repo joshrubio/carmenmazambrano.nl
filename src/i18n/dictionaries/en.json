@@ -188,6 +188,7 @@
           "your email address;",
           "your name, if you choose to give it (optional);",
           "the fact that you gave your consent, and the date and time you did so;",
+          "whether and when you confirmed your email address by clicking the confirmation link;",
           "where on the site you signed up (page or footer) and the language of the site at that moment."
         ],
         "after": [
@@ -197,7 +198,7 @@
       {
         "heading": "3. Why we use it and on what legal basis",
         "paragraphs": [
-          "We use your data only to send you the newsletter with new articles and news from this website. The legal basis is your consent (Article 6(1)(a) of the GDPR, in Dutch the AVG). You are never required to subscribe to use the website."
+          "We use your data only to send you the newsletter with new articles and news from this website. The legal basis is your consent (Article 6(1)(a) of the GDPR, in Dutch the AVG). You are never required to subscribe to use the website. After you sign up we send you one email to confirm your address, and you only start receiving the newsletter once you click the link in it."
         ]
       },
       {
@@ -209,7 +210,7 @@
       {
         "heading": "5. Who else can access it",
         "paragraphs": [
-          "We do not sell your data or use it for advertising. To run the website we rely on service providers that process data on our behalf: Vercel Inc. (hosting) and Upstash (database where the subscriber list is stored). These providers may process data outside the European Economic Area, in which case they must apply appropriate safeguards such as standard contractual clauses."
+          "We do not sell your data or use it for advertising. To run the website we rely on service providers that process data on our behalf: Vercel Inc. (hosting), Upstash (database where the subscriber list is stored) and Resend (email delivery). These providers may process data outside the European Economic Area, in which case they must apply appropriate safeguards such as standard contractual clauses."
         ]
       },
       {
@@ -239,6 +240,43 @@
         ]
       }
     ]
+  },
+  "confirm": {
+    "label": "Newsletter",
+    "title": "Confirm your subscription",
+    "description": "Confirm your newsletter subscription.",
+    "confirmText": "Confirm that {email} should receive Carmen Zambrano's newsletter.",
+    "confirmButton": "Yes, confirm my subscription",
+    "working": "Confirming...",
+    "doneTitle": "Subscription confirmed",
+    "doneText": "Thank you! You're now on the list and will receive the next newsletter.",
+    "alreadyTitle": "Already confirmed",
+    "alreadyText": "This email address is already confirmed. You don't need to do anything else.",
+    "invalidTitle": "This link is not valid",
+    "invalidText": "The confirmation link is incorrect or incomplete. Try signing up again from the newsletter page, or write to {email}.",
+    "expiredTitle": "This link has expired",
+    "expiredText": "Confirmation links are valid for 7 days. Please sign up again from the newsletter page.",
+    "errorGeneric": "Something went wrong. Please try again in a moment.",
+    "errorRate": "Too many attempts. Please try again later.",
+    "backHome": "Back to the website"
+  },
+  "email": {
+    "confirm": {
+      "subject": "Confirm your subscription to Carmen Zambrano's newsletter",
+      "preheader": "One click to confirm your email address.",
+      "greeting": "Hi {name},",
+      "greetingNoName": "Hi,",
+      "body": "Thanks for signing up for the newsletter. Please confirm your email address to start receiving it.",
+      "button": "Confirm my subscription",
+      "linkHint": "If the button doesn't work, copy and paste this link into your browser:",
+      "expires": "This link is valid for 7 days.",
+      "ignore": "If you didn't sign up, ignore this email: you won't be subscribed and we won't write to you again."
+    },
+    "newsletter": {
+      "unsubscribe": "Unsubscribe",
+      "why": "You are receiving this email because you subscribed to Carmen Zambrano's newsletter.",
+      "testPrefix": "[TEST] "
+    }
   },
   "unsubscribe": {
     "label": "Newsletter",
@@ -271,8 +309,8 @@
       "consentAfter": ". I can unsubscribe at any time.",
       "submit": "Subscribe",
       "submitting": "Subscribing...",
-      "successTitle": "Thank you!",
-      "successText": "You're on the list. You'll hear from Carmen soon.",
+      "successTitle": "Almost done!",
+      "successText": "We've sent you an email. Click the link in it to confirm your subscription.",
       "errorInvalidEmail": "Please enter a valid email address.",
       "errorConsent": "Please accept the consent checkbox to subscribe.",
       "errorRate": "Too many attempts. Please try again later.",

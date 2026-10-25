@@ -7,6 +7,7 @@ interface Subscriber {
   name: string;
   source: string;
   locale: string;
+  status: "pending" | "confirmed";
   unsubscribePath: string;
   createdAt: string;
 }
@@ -75,8 +76,14 @@ export function SubscribersTable() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <p className="font-body text-muted">
-          <strong className="text-ink">{subs.length}</strong>{" "}
-          {subs.length === 1 ? "persona apuntada" : "personas apuntadas"}
+          <strong className="text-ink">{subs.filter((s) => s.status === "confirmed").length}</strong>{" "}
+          {subs.filter((s) => s.status === "confirmed").length === 1 ? "confirmada" : "confirmadas"}
+          {subs.some((s) => s.status === "pending") && (
+            <>
+              {" · "}
+              <strong className="text-accent">{subs.filter((s) => s.status === "pending").length}</strong> pendientes de confirmar
+            </>
+          )}
         </p>
         <div className="flex items-center gap-3">
           <input
@@ -107,7 +114,7 @@ export function SubscribersTable() {
           <table className="w-full min-w-[640px] text-left">
             <thead className="border-b-2 border-ink">
               <tr>
-                {["Nombre", "Email", "Idioma", "Origen", "Fecha", ""].map((h) => (
+                {["Nombre", "Email", "Estado", "Idioma", "Origen", "Fecha", ""].map((h) => (
                   <th key={h} className="label text-accent px-4 py-3 whitespace-nowrap">
                     {h}
                   </th>
@@ -119,6 +126,11 @@ export function SubscribersTable() {
                 <tr key={s.email} className="border-b border-rule last:border-0">
                   <td className="px-4 py-3 font-body text-ink">{s.name || <span className="text-dim">—</span>}</td>
                   <td className="px-4 py-3 font-body text-ink whitespace-nowrap">{s.email}</td>
+                  <td className="px-4 py-3 label font-normal normal-case tracking-wide whitespace-nowrap">
+                    <span className={s.status === "confirmed" ? "text-ink" : "text-accent"}>
+                      {s.status === "confirmed" ? "Confirmado" : "Pendiente"}
+                    </span>
+                  </td>
                   <td className="px-4 py-3 label text-muted font-normal tracking-wide">{s.locale}</td>
                   <td className="px-4 py-3 label text-muted font-normal normal-case tracking-wide">
                     {s.source === "page" ? "Página" : "Footer"}

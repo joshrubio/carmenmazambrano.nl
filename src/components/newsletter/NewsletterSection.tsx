@@ -6,7 +6,7 @@ import { SubscribeForm } from "./SubscribeForm";
 
 // Banda de suscripción justo antes del footer. Se oculta donde sobra:
 // la propia página /newsletter y la de baja.
-const HIDDEN_ON = ["/newsletter", "/unsubscribe"];
+const HIDDEN_ON = ["/newsletter", "/unsubscribe", "/confirm"];
 
 export function NewsletterSection({ label, title, text }: { label: string; title: string; text: string }) {
   const path = stripLocale(usePathname());

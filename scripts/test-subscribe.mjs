@@ -1,63 +1,18 @@
-// Prueba de extremo a extremo de la newsletter contra `npm run dev`, usando el
-// almacén Redis (REST) de producción pero con un servidor falso en local.
-//   1) En una terminal:
-//        UPSTASH_REDIS_REST_URL=http://localhost:3199 UPSTASH_REDIS_REST_TOKEN=test npm run dev -- -p 3100
-//   2) En otra:  npm run test:subscribe  [http://localhost:3100]
-import http from "node:http";
+// Prueba de extremo a extremo de la newsletter (alta, baja, rate limit, admin) contra el
+// servidor de pruebas, que usa Redis y Resend FALSOS (ver scripts/lib/mocks.mjs).
+//   1) En una terminal:  npm run dev:test
+//   2) En otra:          npm run test:subscribe   [http://localhost:3100]
+import { startMockRedis, startMockResend } from "./lib/mocks.mjs";
 
 const base = process.argv[2] ?? "http://localhost:3100";
 const password = process.env.ADMIN_PASSWORD ?? "dev-local-password";
 
-// --- Redis REST falso (HSETNX / HGETALL / HDEL) ---
-const hash = new Map();
-const counters = new Map();
-const calls = [];
+const redis = await startMockRedis();
+const resend = await startMockResend();
+const hash = redis.hash("subscribers");
+const calls = redis.calls;
 let ipSeq = 0;
 const newIp = () => `10.1.${Math.floor(++ipSeq / 250)}.${ipSeq % 250}`; // cada petición, otra IP
-const mock = http.createServer((req, res) => {
-  let body = "";
-  req.on("data", (c) => (body += c));
-  req.on("end", () => {
-    res.setHeader("Content-Type", "application/json");
-    if (req.headers.authorization !== "Bearer test") {
-      res.statusCode = 401;
-      return res.end(JSON.stringify({ error: "WRONGPASS" }));
-    }
-    if (req.url === "/pipeline") {
-      const now = Date.now();
-      const out = JSON.parse(body).map(([c, key, a, b, d, e]) => {
-        const cur = counters.get(key);
-        const alive = cur && cur.expiresAt > now;
-        if (c === "SET") {
-          if (e === "NX" && alive) return { result: null };
-          counters.set(key, { value: Number(a), expiresAt: now + Number(d) * 1000 });
-          return { result: "OK" };
-        }
-        if (c === "INCR") {
-          if (!alive) counters.set(key, { value: 0, expiresAt: Infinity });
-          const entry = counters.get(key);
-          entry.value++;
-          return { result: entry.value };
-        }
-        if (c === "TTL") return { result: alive ? Math.ceil((cur.expiresAt - now) / 1000) : -2 };
-        return { error: `ERR unknown command ${c}` };
-      });
-      return res.end(JSON.stringify(out));
-    }
-    const [cmd, , field, value] = JSON.parse(body);
-    calls.push(cmd);
-    if (cmd === "HSETNX") {
-      const isNew = !hash.has(field);
-      if (isNew) hash.set(field, value);
-      return res.end(JSON.stringify({ result: isNew ? 1 : 0 }));
-    }
-    if (cmd === "HGETALL") return res.end(JSON.stringify({ result: [...hash].flat() }));
-    if (cmd === "HDEL") return res.end(JSON.stringify({ result: hash.delete(field) ? 1 : 0 }));
-    res.statusCode = 400;
-    res.end(JSON.stringify({ error: `ERR unknown command ${cmd}` }));
-  });
-});
-await new Promise((r) => mock.listen(3199, r));
 
 let failed = false;
 const check = (ok, msg) => {
@@ -146,7 +101,7 @@ try {
   const csv = await r.text();
   check(r.ok && r.headers.get("content-type").includes("text/csv") && r.headers.get("content-disposition").includes("attachment"),
     "exportación CSV con cabeceras de descarga");
-  check(csv.startsWith("\"name\",\"email\",\"locale\",\"source\",\"subscribed_at\"") && csv.includes("ana@example.com"),
+  check(csv.startsWith("\"name\",\"email\",\"status\",\"locale\",\"source\",\"subscribed_at\",\"confirmed_at\"") && csv.includes("ana@example.com"),
     "CSV con cabecera y datos");
   check(csv.includes("\"'=cmd|") && !csv.includes("\"=cmd"), "CSV neutraliza fórmulas (CSV injection)");
 
@@ -212,7 +167,8 @@ try {
   failed = true;
   console.log("ERROR", e);
 } finally {
-  mock.close();
+  redis.close();
+  resend.close();
   console.log(failed ? "\nHay fallos." : "\nTodo correcto.");
   process.exit(failed ? 1 : 0);
 }

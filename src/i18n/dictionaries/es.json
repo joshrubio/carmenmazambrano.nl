@@ -188,6 +188,7 @@
           "tu dirección de email;",
           "tu nombre, si decides facilitarlo (es opcional);",
           "el hecho de que diste tu consentimiento, con la fecha y la hora;",
+          "si has confirmado tu dirección de email pulsando el enlace de confirmación, y cuándo;",
           "desde qué parte de la web te suscribiste (página o pie de página) y el idioma de la web en ese momento."
         ],
         "after": [
@@ -197,7 +198,7 @@
       {
         "heading": "3. Para qué los usamos y con qué base legal",
         "paragraphs": [
-          "Usamos tus datos únicamente para enviarte la newsletter con nuevos artículos y novedades de esta web. La base legal es tu consentimiento (artículo 6.1.a del RGPD). No es obligatorio suscribirse para usar la web."
+          "Usamos tus datos únicamente para enviarte la newsletter con nuevos artículos y novedades de esta web. La base legal es tu consentimiento (artículo 6.1.a del RGPD). No es obligatorio suscribirse para usar la web. Tras apuntarte te enviamos un email para confirmar tu dirección y solo empezarás a recibir la newsletter cuando pulses el enlace que contiene."
         ]
       },
       {
@@ -209,7 +210,7 @@
       {
         "heading": "5. Quién más puede acceder a ellos",
         "paragraphs": [
-          "No vendemos tus datos ni los usamos para publicidad. Para el funcionamiento de la web contamos con proveedores que tratan datos por cuenta nuestra: Vercel Inc. (alojamiento) y Upstash (base de datos donde se guarda la lista de suscriptores). Estos proveedores pueden tratar datos fuera del Espacio Económico Europeo; en ese caso deben aplicar garantías adecuadas, como las cláusulas contractuales tipo."
+          "No vendemos tus datos ni los usamos para publicidad. Para el funcionamiento de la web contamos con proveedores que tratan datos por cuenta nuestra: Vercel Inc. (alojamiento), Upstash (base de datos donde se guarda la lista de suscriptores) y Resend (envío de emails). Estos proveedores pueden tratar datos fuera del Espacio Económico Europeo; en ese caso deben aplicar garantías adecuadas, como las cláusulas contractuales tipo."
         ]
       },
       {
@@ -239,6 +240,43 @@
         ]
       }
     ]
+  },
+  "confirm": {
+    "label": "Newsletter",
+    "title": "Confirma tu suscripción",
+    "description": "Confirma tu suscripción a la newsletter.",
+    "confirmText": "Confirma que {email} debe recibir la newsletter de Carmen Zambrano.",
+    "confirmButton": "Sí, confirmar mi suscripción",
+    "working": "Confirmando...",
+    "doneTitle": "Suscripción confirmada",
+    "doneText": "¡Gracias! Ya estás en la lista y recibirás la próxima newsletter.",
+    "alreadyTitle": "Ya está confirmada",
+    "alreadyText": "Esta dirección de email ya está confirmada. No tienes que hacer nada más.",
+    "invalidTitle": "Este enlace no es válido",
+    "invalidText": "El enlace de confirmación es incorrecto o está incompleto. Vuelve a apuntarte desde la página de la newsletter o escribe a {email}.",
+    "expiredTitle": "Este enlace ha caducado",
+    "expiredText": "Los enlaces de confirmación valen 7 días. Vuelve a apuntarte desde la página de la newsletter.",
+    "errorGeneric": "Algo ha salido mal. Inténtalo de nuevo en un momento.",
+    "errorRate": "Demasiados intentos. Inténtalo de nuevo más tarde.",
+    "backHome": "Volver a la web"
+  },
+  "email": {
+    "confirm": {
+      "subject": "Confirma tu suscripción a la newsletter de Carmen Zambrano",
+      "preheader": "Un clic para confirmar tu dirección de email.",
+      "greeting": "Hola, {name}:",
+      "greetingNoName": "Hola:",
+      "body": "Gracias por apuntarte a la newsletter. Confirma tu dirección de email para empezar a recibirla.",
+      "button": "Confirmar mi suscripción",
+      "linkHint": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+      "expires": "Este enlace es válido durante 7 días.",
+      "ignore": "Si no te has apuntado tú, ignora este email: no quedarás suscrito y no volveremos a escribirte."
+    },
+    "newsletter": {
+      "unsubscribe": "Darme de baja",
+      "why": "Recibes este email porque te suscribiste a la newsletter de Carmen Zambrano.",
+      "testPrefix": "[PRUEBA] "
+    }
   },
   "unsubscribe": {
     "label": "Newsletter",
@@ -271,8 +309,8 @@
       "consentAfter": ". Puedo darme de baja en cualquier momento.",
       "submit": "Suscribirme",
       "submitting": "Suscribiendo...",
-      "successTitle": "¡Gracias!",
-      "successText": "Ya estás en la lista. Pronto recibirás noticias de Carmen.",
+      "successTitle": "¡Casi listo!",
+      "successText": "Te hemos enviado un email. Pulsa el enlace que contiene para confirmar tu suscripción.",
       "errorInvalidEmail": "Introduce una dirección de email válida.",
       "errorConsent": "Marca la casilla de consentimiento para suscribirte.",
       "errorRate": "Demasiados intentos. Inténtalo de nuevo más tarde.",

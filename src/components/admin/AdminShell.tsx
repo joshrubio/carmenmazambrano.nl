@@ -11,6 +11,7 @@ const tabs = (lang: Locale) => [
   { href: localePath(lang, "/articles"), label: "Notas de prensa" },
   { href: localePath(lang, "/about"), label: "About" },
   { href: "/contact-list", label: "Suscriptores" },
+  { href: "/admin/newsletter", label: "Newsletter" },
 ];
 
 function isActive(pathname: string, href: string) {

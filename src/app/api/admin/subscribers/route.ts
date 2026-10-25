@@ -13,8 +13,8 @@ function csvCell(value: string) {
 }
 
 function toCsv(subs: Subscriber[]) {
-  const rows = [["name", "email", "locale", "source", "subscribed_at"]];
-  for (const s of subs) rows.push([s.name, s.email, s.locale ?? "en", s.source, s.createdAt]);
+  const rows = [["name", "email", "status", "locale", "source", "subscribed_at", "confirmed_at"]];
+  for (const s of subs) rows.push([s.name, s.email, s.status, s.locale, s.source, s.createdAt, s.confirmedAt ?? ""]);
   return rows.map((r) => r.map(csvCell).join(",")).join("\r\n") + "\r\n";
 }
 
