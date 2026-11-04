@@ -2,6 +2,94 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "leiderschap-dat-verbindt-luisteren-naar-andersdenkenden",
+    title: "LEIDERSCHAP DAT VERBINDT: REGEREN BETEKENT OOK LUISTEREN NAAR WIE ANDERS DENKT",
+    subtitle: "Een reflectie over democratie, respect voor verschillende meningen en de verantwoordelijkheid van wie publieke macht uitoefent",
+    category: "Opinie",
+    language: "nl",
+    date: "2026-11-04",
+    author: "Carmen Zambrano",
+    excerpt:
+      "Een recente vraag van journalist Merel Ek aan premier Rob Jetten roept een vraag op die verder gaat dan partijpolitiek: kan een bestuurder een heel land vertegenwoordigen als zijn of haar woorden wie anders denkt buitensluiten? Een reflectie over democratie, luisteren en het bouwen van bruggen.",
+    coverImage: "/images/leiderschap-dat-verbindt-luisteren-naar-andersdenkenden.webp",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/leiderschap-dat-verbindt-luisteren-naar-andersdenkenden.webp",
+        alt: "Close-up van een glimlachende man tijdens een publiek moment",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, Nederland — In een democratische samenleving betekent het winnen van verkiezingen veel meer dan het bereiken van een machtspositie: het is de verplichting om te regeren voor iedereen, ook voor burgers die onze ideeën, voorstellen of politieke voorkeuren niet delen.",
+      },
+      {
+        type: "paragraph",
+        text: "Een recente vraag van journalist Merel Ek aan de Nederlandse premier Rob Jetten heeft een kwestie op tafel gelegd die een reflectie verdient voorbij de partijverschillen: kan een bestuurder werkelijk een hele natie vertegenwoordigen als zijn of haar betoog wie anders denkt buiten beeld laat?",
+      },
+      {
+        type: "paragraph",
+        text: "Het moment nodigt uit tot nadenken over de rol van politieke communicatie en het belang van woorden bij het opbouwen van een samenhangende samenleving. Uitspraken van mensen met publieke verantwoordelijkheid zijn geen losse verklaringen; ze dragen waarden over, nemen standpunten in en kunnen zowel bijdragen aan ontmoeting als aan verdeeldheid.",
+      },
+      {
+        type: "pullquote",
+        text: "Democratie bestaat niet alleen uit het tellen van stemmen.",
+      },
+      {
+        type: "paragraph",
+        text: "Achter elke stem schuilt een persoon, een verhaal, een zorg en een verwachting van de toekomst. Daarom zou echt leiderschap niet alleen gemeten moeten worden aan het vermogen om meerderheden te veroveren, maar ook aan de bereidheid om naar minderheden te luisteren, de zorgen van andersdenkenden serieus te nemen en ruimte te creëren waar verschillen kunnen klinken zonder te verworden tot vijandschap.",
+      },
+      {
+        type: "paragraph",
+        text: "In dit krachtenveld speelt de journalistiek een essentiële rol. Vragen stellen, vergelijken, ter discussie stellen en uitleg vragen aan wie de macht uitoefent, hoort bij haar maatschappelijke verantwoordelijkheid. Een ongemakkelijke vraag, zorgvuldig en respectvol gesteld, kan een kans zijn om transparantie en verantwoording te versterken.",
+      },
+      {
+        type: "subheading",
+        text: "Een reflectie die verder reikt dan de politiek",
+      },
+      {
+        type: "paragraph",
+        text: "Deze situatie herinnert ons aan een les die op alle terreinen van het leven geldt: we hoeven niet hetzelfde te denken om te leren samenleven, elkaar te respecteren en samen te werken aan gemeenschappelijke doelen.",
+      },
+      {
+        type: "paragraph",
+        text: "In gezinnen, gemeenschappen, organisaties en regeringen is het vermogen om te luisteren een van de belangrijkste uitingen van menselijke volwassenheid.",
+      },
+      {
+        type: "paragraph",
+        text: "Gezag zou niet gebruikt moeten worden om verschillen het zwijgen op te leggen, maar om de dialoog mogelijk te maken. Het woord zou geen instrument van confrontatie moeten zijn, maar een brug om andere werkelijkheden te begrijpen.",
+      },
+      {
+        type: "paragraph",
+        text: "Want een werkelijk democratische samenleving is niet een samenleving waarin iedereen hetzelfde denkt, maar een waarin iedereen zijn of haar ideeën waardig kan uiten en erop kan rekenen gehoord te worden.",
+      },
+      {
+        type: "subheading",
+        text: "Een uitnodiging om bruggen te bouwen",
+      },
+      {
+        type: "paragraph",
+        text: "Vanuit menselijk en maatschappelijk perspectief laat deze reflectie ons met een fundamentele vraag achter: gebruiken we onze woorden om mensen dichter bij elkaar te brengen, of om nieuwe barrières op te werpen?",
+      },
+      {
+        type: "paragraph",
+        text: "De ontwikkeling van een gemeenschap begint wanneer we begrijpen dat respect niet afhangt van overeenstemming, dat waardigheid niet afhangt van een politieke voorkeur en dat dialoog niet vraagt dat we onze overtuigingen opgeven.",
+      },
+      {
+        type: "paragraph",
+        text: "Regeren is dienen. Leiding geven is verantwoordelijkheid nemen. Communiceren is de reikwijdte van onze woorden begrijpen. En bovenal begint het bouwen van een betere samenleving met het erkennen van de waarde van elke persoon, ook wanneer die anders denkt.",
+      },
+      {
+        type: "paragraph",
+        text: "Want verschillen kunnen ons scheiden wanneer respect ontbreekt, maar ze kunnen ons ook verrijken wanneer er bereidheid is om samen te leven.",
+      },
+      {
+        type: "pullquote",
+        text: "Journalistiek om over na te denken, communiceren om te bouwen en opbouwen om te transformeren.",
+      },
+    ],
+  },
+  {
     slug: "rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet",
     title: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET",
     category: "Rotterdam",
