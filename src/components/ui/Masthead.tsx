@@ -24,7 +24,7 @@ export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <a href={`mailto:${about.email}`} className="hover:text-accent transition-colors hidden sm:inline">{dict.nav.contact}</a>
             <Link
               href={localePath(lang, "/newsletter")}
-              className="label border border-ink text-ink px-3 py-1 leading-none hover:bg-ink hover:text-inverse transition-colors"
+              className="rounded-full label border border-ink text-ink px-3 py-1 leading-none hover:bg-ink hover:text-inverse transition-colors"
             >
               {dict.nav.newsletter}
             </Link>

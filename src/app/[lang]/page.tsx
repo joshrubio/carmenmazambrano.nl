@@ -71,7 +71,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-2 mb-4">
             <Link
               href={localePath(lang, "/articles")}
-              className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
+              className="rounded-full label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
             >
               {dict.home.viewAll}
             </Link>
@@ -79,7 +79,7 @@ export default async function HomePage({ params }: Props) {
         </div>
 
         {/* Perfil de la editora: panel vertical a la izquierda (debajo de las noticias en móvil) */}
-        <aside className="@3xl:col-span-4 @3xl:order-first @3xl:border-r @3xl:border-rule @3xl:pr-8">
+        <aside className="@3xl:col-span-4 @3xl:order-first">
           <EditorPanel lang={lang} dict={dict} />
         </aside>
       </div>

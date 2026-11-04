@@ -22,109 +22,97 @@ const socialLabels: Record<string, string> = {
   tiktok: "TikTok",
 };
 
-// Panel vertical con el perfil de la editora, a la derecha de la portada.
+const stroke = (d: string) => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d={d} />
+  </svg>
+);
+const MAIL = "M4 6h16v12H4zM4 7l8 6 8-6";
+const PHONE = "M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z";
+const ARROW = "M5 12h14M13 6l6 6-6 6";
+
+const roundButton =
+  "w-10 h-10 rounded-full border border-rule bg-white text-ink flex items-center justify-center hover:bg-ink hover:text-inverse hover:border-ink transition-colors";
+
+// Tarjeta de la editora (columna izquierda de la portada): foto grande a sangre con el nombre
+// encima y, debajo, una tarjeta suave con la biografía, las especialidades y el contacto.
 export function EditorPanel({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const socialEntries = Object.entries(about.social) as [string, string][];
 
   return (
-    <section aria-label={dict.hero.label}>
-      {/* Section label */}
-      <div className="flex items-center gap-3 mb-4">
-        <div className="h-[3px] w-8 bg-accent" />
-        <span className="label text-accent">{dict.hero.label}</span>
-        <div className="flex-1 h-[3px] bg-ink" />
-      </div>
-
-      {/* Photo */}
-      <div className="relative w-full aspect-[3/4] max-h-[26rem] bg-surface overflow-hidden">
+    <section
+      aria-label={dict.hero.label}
+      className="rounded-2xl overflow-hidden border border-rule/70 bg-gradient-to-b from-white to-surface/70 shadow-soft"
+    >
+      {/* Foto grande con el nombre encima */}
+      <div className="relative w-full aspect-[4/5] bg-surface">
         <PhotoSlot src={about.photo} alt={about.name} grayscale={false} fallbackText={dict.common.photoComingSoon} />
-      </div>
-      <div className="bg-ink px-3 py-2">
-        <p className="label text-inverse/70 font-normal normal-case tracking-wide">{dict.hero.photoCaption}</p>
-      </div>
-
-      {/* Display headline */}
-      <h2 className="font-display text-4xl font-black leading-[0.98] tracking-tight text-ink mt-5 mb-4">
-        {dict.hero.headline.map((line, i) => (
-          <span key={i} className={i === 1 ? "text-accent" : undefined}>
-            {line}
-            {i < dict.hero.headline.length - 1 && <br />}
-          </span>
-        ))}
-      </h2>
-
-      <div className="h-[2px] bg-ink mb-4" />
-
-      {/* Bio */}
-      <div className="space-y-3 mb-4">
-        {dict.about.bio.map((para, i) => (
-          <p key={i} className="font-body text-sm leading-[1.75] text-ink text-justify hyphens-auto">
-            {para}
-          </p>
-        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent pointer-events-none" />
+        <span className="absolute top-3 left-3 label text-inverse bg-accent rounded-full px-3 py-1">{dict.hero.label}</span>
+        <div className="absolute bottom-0 inset-x-0 p-5 text-inverse">
+          <h2 className="font-display text-3xl font-black leading-none">{about.name}</h2>
+          <p className="font-display italic text-inverse/80 text-sm mt-1">{dict.hero.photoCaption}</p>
+        </div>
       </div>
 
-      <div className="h-px bg-rule mb-4" />
+      <div className="p-5">
+        {/* Titular de la casa */}
+        <p className="font-display text-2xl font-black leading-[1.05] tracking-tight text-ink">
+          {dict.hero.headline.map((line, i) => (
+            <span key={i} className={i === 1 ? "text-accent" : undefined}>
+              {line}{" "}
+            </span>
+          ))}
+        </p>
 
-      {/* Specialties */}
-      <ul className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4">
-        {dict.about.specialtiesList.map((s) => (
-          <li
-            key={s}
-            className="label text-muted font-normal normal-case tracking-wide flex items-center gap-1.5 before:content-['▪'] before:text-accent"
-          >
-            {s}
-          </li>
-        ))}
-      </ul>
+        <div className="mt-4 space-y-3">
+          {dict.about.bio.map((para, i) => (
+            <p key={i} className="font-body text-sm leading-[1.75] text-ink">
+              {para}
+            </p>
+          ))}
+        </div>
 
-      {/* Contact */}
-      <dl className="border-t border-rule pt-4 space-y-3">
-        <div>
-          <dt className="label text-accent">{dict.hero.basedIn}</dt>
-          <dd className="font-body text-sm text-ink mt-0.5">{dict.common.location}</dd>
-        </div>
-        <div>
-          <dt className="label text-accent">{dict.hero.contact}</dt>
-          <dd className="mt-0.5">
-            <a href={`tel:${about.phone}`} className="font-body text-sm text-ink hover:text-accent transition-colors">
-              {about.phone}
-            </a>
-          </dd>
-        </div>
-        <div>
-          <dt className="label text-accent">{dict.hero.email}</dt>
-          <dd className="mt-0.5">
-            <a href={`mailto:${about.email}`} className="font-body text-sm text-ink hover:text-accent transition-colors break-all">
-              {about.email}
-            </a>
-          </dd>
-        </div>
-      </dl>
+        {/* Especialidades */}
+        <ul className="flex flex-wrap gap-1.5 mt-4">
+          {dict.about.specialtiesList.map((s) => (
+            <li key={s} className="label font-normal normal-case tracking-wide text-ink bg-surface rounded-full px-3 py-1">
+              {s}
+            </li>
+          ))}
+        </ul>
 
-      {/* Social buttons */}
-      <div className="flex flex-wrap items-center gap-2 mt-4">
-        {socialEntries.map(([key, url]) => (
-          <a
-            key={key}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={socialLabels[key] ?? key}
-            className="flex items-center gap-1.5 label text-ink font-normal normal-case tracking-wide border border-ink px-3 py-2 hover:bg-ink hover:text-inverse transition-colors"
-          >
-            {socialIcons[key]}
-            <span>{socialLabels[key] ?? key}</span>
+        {/* Contacto: botones redondos */}
+        <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-rule/70">
+          <a href={`mailto:${about.email}`} className={roundButton} aria-label={`${dict.hero.email}: ${about.email}`} title={about.email}>
+            {stroke(MAIL)}
           </a>
-        ))}
-      </div>
+          <a href={`tel:${about.phone}`} className={roundButton} aria-label={`${dict.hero.contact}: ${about.phone}`} title={about.phone}>
+            {stroke(PHONE)}
+          </a>
+          {socialEntries.map(([key, url]) => (
+            <a
+              key={key}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={socialLabels[key] ?? key}
+              title={socialLabels[key] ?? key}
+              className={roundButton}
+            >
+              {socialIcons[key]}
+            </a>
+          ))}
+        </div>
 
-      <Link
-        href={localePath(lang, "/about")}
-        className="block w-full mt-4 label text-ink font-normal normal-case tracking-wide border border-ink px-4 py-2.5 hover:bg-ink hover:text-inverse transition-colors text-center"
-      >
-        {dict.hero.fullProfile}
-      </Link>
+        <Link
+          href={localePath(lang, "/about")}
+          className="mt-5 flex items-center justify-center gap-2 label bg-ink text-inverse rounded-full px-5 py-3 hover:bg-accent transition-colors"
+        >
+          {dict.hero.fullProfile.replace(" →", "")}
+          {stroke(ARROW)}
+        </Link>
+      </div>
     </section>
   );
 }

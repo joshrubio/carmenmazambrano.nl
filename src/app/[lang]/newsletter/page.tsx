@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ThickRule } from "@/components/ui/ColumnDivider";
-import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
+import { NewsletterCard } from "@/components/newsletter/NewsletterCard";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { alternatesFor } from "@/i18n/metadata";
@@ -27,18 +26,15 @@ export default async function NewsletterPage({ params }: Props) {
   const N = (await getDictionary(lang)).newsletter;
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="flex items-center gap-3 mb-8">
-        <span className="label text-accent">{N.label}</span>
-        <ThickRule />
-      </div>
-
-      <h1 className="font-display text-5xl font-black text-ink mb-2">{N.title}</h1>
-      <p className="font-display text-lg text-muted italic font-normal mb-8">{N.subtitle}</p>
-
-      <div className="relative border-t border-rule pt-6">
-        <SubscribeForm source="page" />
-      </div>
+    <div className="max-w-4xl mx-auto py-4">
+      <NewsletterCard
+        label={N.label}
+        title={N.title}
+        text={N.subtitle}
+        source="page"
+        headingId="newsletter-page-heading"
+        as="h1"
+      />
     </div>
   );
 }

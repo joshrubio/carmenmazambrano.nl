@@ -31,13 +31,13 @@ export function AdminButton({ lang, loginLabel }: { lang: Locale; loginLabel: st
       <div className="flex items-center gap-3">
         <Link
           href="/admin/new"
-          className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
+          className="rounded-full label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
         >
           Redactar
         </Link>
         <button
           onClick={handleLogout}
-          className="label bg-ink text-inverse px-3 py-1 leading-none hover:opacity-80 transition-opacity"
+          className="rounded-full label bg-ink text-inverse px-3 py-1 leading-none hover:opacity-80 transition-opacity"
         >
           Logout
         </button>
@@ -48,7 +48,7 @@ export function AdminButton({ lang, loginLabel }: { lang: Locale; loginLabel: st
   return (
     <Link
       href="/admin/login"
-      className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
+      className="rounded-full label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity"
     >
       {loginLabel}
     </Link>

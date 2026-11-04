@@ -21,7 +21,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           </div>
           <a
             href={`mailto:${about.email}`}
-            className="label bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap self-start sm:self-auto"
+            className="rounded-full label bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap self-start sm:self-auto"
           >
             {dict.footer.contactCta}
           </a>
