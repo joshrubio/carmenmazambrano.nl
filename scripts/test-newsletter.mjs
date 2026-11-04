@@ -48,7 +48,7 @@ try {
   check(ana?.status === "pending" && !!ana.confirmNonce && !ana.confirmedAt, "el alta queda PENDIENTE (no confirmada)");
   check(resend.sent.length === 1 && resend.sent[0].to[0] === "ana@example.com", "se envía 1 correo de confirmación a esa dirección");
   const mail1 = resend.sent[0];
-  check(mail1.from === "Carmen Zambrano <hola@example.test>" && mail1.reply_to === "carmenmazambrano@gmail.com", "remitente (EMAIL_FROM) y reply-to correctos");
+  check(mail1.from === "The New Paper <hola@example.test>" && mail1.reply_to === "carmenmazambrano@gmail.com", "remitente (EMAIL_FROM) y reply-to correctos");
   check(mail1.endpoint === "/emails", "la confirmación usa el endpoint de envío individual");
   check(mail1.subject.startsWith("Bevestig je inschrijving") && mail1.html.includes('lang="nl"') && mail1.html.includes("Hallo Ana,"), "correo en el idioma de la persona (nl) y con su nombre");
   const confirmUrl = linkIn(mail1, "confirm");

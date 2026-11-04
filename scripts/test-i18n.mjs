@@ -99,7 +99,7 @@ if (base) {
     const home = await (await fetch(`${base}/${l}`)).text();
     check(new RegExp(`<html[^>]*lang="${l}"`).test(home), `/${l}: <html lang="${l}">`);
     for (const other of locales) {
-      check(new RegExp(`<link[^>]*rel="alternate"[^>]*hreflang="${other}"[^>]*href="https://carmenzambrano.nl/${other}"`, "i").test(home),
+      check(new RegExp(`<link[^>]*rel="alternate"[^>]*hreflang="${other}"[^>]*href="https://[^"]+/${other}"`, "i").test(home),
         `/${l}: hreflang para ${other}`);
     }
     const links = locales.map((o) => home.includes(`href="/${o}"`));

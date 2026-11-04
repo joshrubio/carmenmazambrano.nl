@@ -12,7 +12,7 @@ const child = spawn("npx", ["next", "dev", "-p", "3100"], {
     UPSTASH_REDIS_REST_TOKEN: "test",
     RESEND_API_KEY: "re_test",
     RESEND_API_URL: "http://localhost:3198",
-    EMAIL_FROM: "Carmen Zambrano <hola@example.test>",
+    EMAIL_FROM: "The New Paper <hola@example.test>",
     SITE_URL: "https://web.example.test",
   },
 });

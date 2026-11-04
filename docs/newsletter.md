@@ -1,6 +1,6 @@
 # Newsletter: configuración y funcionamiento
 
-Guía de referencia del sistema de newsletter de carmenzambrano.nl. Las claves reales **no** van en
+Guía de referencia del sistema de newsletter de The New Paper (thenewpaper.nl). Las claves reales **no** van en
 este repositorio (es público): se guardan en Vercel (producción) y en `.env.local` (tu equipo).
 
 ## Cómo funciona
@@ -23,9 +23,9 @@ Los datos (suscriptores y envíos) se guardan en **Redis (Upstash)**, nunca en G
 |---|---|---|
 | `KV_REST_API_URL`, `KV_REST_API_TOKEN` | Vercel (las pone la integración de Upstash) | Base de datos de suscriptores y envíos |
 | `RESEND_API_KEY` | Vercel + `.env.local` | Clave de Resend (`re_...`). **Obligatoria en producción** |
-| `EMAIL_FROM` | Vercel | Remitente, p. ej. `Carmen Zambrano <hola@carmenzambrano.nl>`. **Obligatoria en producción** y su dominio debe estar verificado en Resend |
+| `EMAIL_FROM` | Vercel | Remitente, p. ej. `The New Paper <newsletter@mail.thenewpaper.nl>` (Resend recomienda un subdominio de envío). **Obligatoria en producción** y su dominio debe estar verificado en Resend |
 | `EMAIL_REPLY_TO` | opcional | Dirección de respuesta (por defecto, el email de `content/about.ts`) |
-| `SITE_URL` | Vercel | URL pública para los enlaces de los correos, p. ej. `https://carmenzambrano.nl`. Si falta se usa la del propio despliegue |
+| `SITE_URL` | Vercel | URL pública para los enlaces de los correos, `https://thenewpaper.nl`. Si falta se usa la del propio despliegue |
 | `SESSION_SECRET` | Vercel | Firma los enlaces de baja y confirmación. **Si lo cambias, los enlaces ya enviados dejan de valer** |
 
 Tras cambiar variables en Vercel hay que hacer **Redeploy**.
@@ -35,7 +35,7 @@ Tras cambiar variables en Vercel hay que hacer **Redeploy**.
 
 ## Puesta en marcha de Resend
 
-1. Cuenta en resend.com → *Domains* → añade `carmenzambrano.nl`.
+1. Cuenta en resend.com → *Domains* → añade `mail.thenewpaper.nl` (o `thenewpaper.nl`).
 2. Resend muestra registros DNS (SPF y DKIM): ponlos donde esté registrado el dominio y espera a que
    Resend lo marque como verificado.
 3. *API Keys* → crea una clave y guárdala en Vercel (`RESEND_API_KEY`) y, si quieres probar en local,

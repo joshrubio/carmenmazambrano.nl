@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/i18n/dictionaries";
+import { site } from "./site";
 
 const INK = "#1A1A1A";
 const PAPER = "#FAF7F0";
@@ -63,7 +64,7 @@ function layout({ lang, title, preheader, innerHtml, footerHtml }: LayoutParts):
 <div style="background:${PAPER};padding:24px 12px;">
   <div style="max-width:600px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:${INK};">
     <div style="border-bottom:3px solid ${INK};padding-bottom:12px;margin-bottom:24px;">
-      <div style="font-size:28px;font-weight:bold;letter-spacing:-0.5px;">Carmen Zambrano</div>
+      <div style="font-size:28px;font-weight:bold;letter-spacing:-0.5px;">${esc(site.name)}</div>
     </div>
     ${innerHtml}
     <div style="border-top:1px solid #CCCCCC;margin-top:32px;padding-top:16px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:${MUTED};">

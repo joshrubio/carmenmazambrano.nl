@@ -259,7 +259,7 @@
     "label": "Newsletter",
     "title": "Confirm your subscription",
     "description": "Confirm your newsletter subscription.",
-    "confirmText": "Confirm that {email} should receive Carmen Zambrano's newsletter.",
+    "confirmText": "Confirm that {email} should receive The New Paper newsletter.",
     "confirmButton": "Yes, confirm my subscription",
     "working": "Confirming...",
     "doneTitle": "Subscription confirmed",
@@ -276,7 +276,7 @@
   },
   "email": {
     "confirm": {
-      "subject": "Confirm your subscription to Carmen Zambrano's newsletter",
+      "subject": "Confirm your subscription to The New Paper newsletter",
       "preheader": "One click to confirm your email address.",
       "greeting": "Hi {name},",
       "greetingNoName": "Hi,",
@@ -288,7 +288,7 @@
     },
     "newsletter": {
       "unsubscribe": "Unsubscribe",
-      "why": "You are receiving this email because you subscribed to Carmen Zambrano's newsletter.",
+      "why": "You are receiving this email because you subscribed to The New Paper newsletter.",
       "testPrefix": "[TEST] "
     }
   },

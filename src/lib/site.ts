@@ -2,7 +2,7 @@
 // basta con editar `domain` (y conectarlo en Vercel / verificarlo en el proveedor de correo).
 export const site = {
   name: "The New Paper",
-  domain: "carmenzambrano.nl", // provisional hasta tener el dominio propio del periódico
+  domain: "thenewpaper.nl",
   get url() {
     return `https://${this.domain}`;
   },

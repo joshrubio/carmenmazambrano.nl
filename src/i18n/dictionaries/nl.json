@@ -259,7 +259,7 @@
     "label": "Nieuwsbrief",
     "title": "Bevestig je inschrijving",
     "description": "Bevestig je inschrijving op de nieuwsbrief.",
-    "confirmText": "Bevestig dat {email} de nieuwsbrief van Carmen Zambrano mag ontvangen.",
+    "confirmText": "Bevestig dat {email} de nieuwsbrief van The New Paper mag ontvangen.",
     "confirmButton": "Ja, bevestig mijn inschrijving",
     "working": "Bezig met bevestigen...",
     "doneTitle": "Inschrijving bevestigd",
@@ -276,7 +276,7 @@
   },
   "email": {
     "confirm": {
-      "subject": "Bevestig je inschrijving op de nieuwsbrief van Carmen Zambrano",
+      "subject": "Bevestig je inschrijving op de nieuwsbrief van The New Paper",
       "preheader": "Eén klik om je e-mailadres te bevestigen.",
       "greeting": "Hallo {name},",
       "greetingNoName": "Hallo,",
@@ -288,7 +288,7 @@
     },
     "newsletter": {
       "unsubscribe": "Uitschrijven",
-      "why": "Je ontvangt deze e-mail omdat je je hebt ingeschreven op de nieuwsbrief van Carmen Zambrano.",
+      "why": "Je ontvangt deze e-mail omdat je je hebt ingeschreven op de nieuwsbrief van The New Paper.",
       "testPrefix": "[TEST] "
     }
   },

@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { about } from "../../content/about";
+import { site } from "./site";
 
 export interface OutEmail {
   to: string;
@@ -30,8 +31,8 @@ const apiUrl = () => (process.env.RESEND_API_URL ?? "https://api.resend.com").re
 function from(): string {
   const f = process.env.EMAIL_FROM;
   if (f) return f;
-  if (process.env.NODE_ENV !== "production") return "Carmen Zambrano <newsletter@carmenzambrano.nl>";
-  throw new EmailError("Falta EMAIL_FROM en Vercel (por ejemplo: Carmen Zambrano <hola@carmenzambrano.nl>)");
+  if (process.env.NODE_ENV !== "production") return `${site.name} <newsletter@${site.domain}>`;
+  throw new EmailError(`Falta EMAIL_FROM en Vercel (por ejemplo: ${site.name} <newsletter@${site.domain}>)`);
 }
 
 // URL pública del sitio para los enlaces de los correos. SITE_URL manda; si no está,
