@@ -32,7 +32,7 @@ const PHONE = "M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0
 const ARROW = "M5 12h14M13 6l6 6-6 6";
 
 const roundButton =
-  "w-10 h-10 rounded-full border border-rule bg-white text-ink flex items-center justify-center hover:bg-ink hover:text-inverse hover:border-ink transition-colors";
+  "w-10 h-10 border border-rule bg-white text-ink flex items-center justify-center hover:bg-ink hover:text-inverse hover:border-ink transition-colors";
 
 // Tarjeta de la editora (columna izquierda de la portada): foto grande a sangre con el nombre
 // encima y, debajo, una tarjeta suave con la biografía, las especialidades y el contacto.
@@ -42,13 +42,13 @@ export function EditorPanel({ lang, dict }: { lang: Locale; dict: Dictionary }) 
   return (
     <section
       aria-label={dict.hero.label}
-      className="rounded-2xl overflow-hidden border border-rule/70 bg-gradient-to-b from-white to-surface/70 shadow-soft"
+      className=" overflow-hidden border border-rule/70 bg-gradient-to-b from-white to-surface/70 shadow-soft"
     >
       {/* Foto grande con el nombre encima */}
       <div className="relative w-full aspect-[4/5] bg-surface">
         <PhotoSlot src={about.photo} alt={about.name} grayscale={false} fallbackText={dict.common.photoComingSoon} />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent pointer-events-none" />
-        <span className="absolute top-3 left-3 label text-inverse bg-accent rounded-full px-3 py-1">{dict.hero.label}</span>
+        <span className="absolute top-3 left-3 label text-inverse bg-accent px-3 py-1">{dict.hero.label}</span>
         <div className="absolute bottom-0 inset-x-0 p-5 text-inverse">
           <h2 className="font-display text-3xl font-black leading-none">{about.name}</h2>
           <p className="font-display italic text-inverse/80 text-sm mt-1">{dict.hero.photoCaption}</p>
@@ -76,7 +76,7 @@ export function EditorPanel({ lang, dict }: { lang: Locale; dict: Dictionary }) 
         {/* Especialidades */}
         <ul className="flex flex-wrap gap-1.5 mt-4">
           {dict.about.specialtiesList.map((s) => (
-            <li key={s} className="label font-normal normal-case tracking-wide text-ink bg-surface rounded-full px-3 py-1">
+            <li key={s} className="label font-normal normal-case tracking-wide text-ink bg-surface px-3 py-1">
               {s}
             </li>
           ))}
@@ -107,7 +107,7 @@ export function EditorPanel({ lang, dict }: { lang: Locale; dict: Dictionary }) 
 
         <Link
           href={localePath(lang, "/about")}
-          className="mt-5 flex items-center justify-center gap-2 label bg-ink text-inverse rounded-full px-5 py-3 hover:bg-accent transition-colors"
+          className="mt-5 flex items-center justify-center gap-2 label bg-ink text-inverse px-5 py-3 hover:bg-accent transition-colors"
         >
           {dict.hero.fullProfile.replace(" →", "")}
           {stroke(ARROW)}
