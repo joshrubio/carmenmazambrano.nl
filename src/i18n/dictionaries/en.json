@@ -64,7 +64,8 @@
     "Politiek": "Politics",
     "Onderwijs": "Education",
     "Gemeenschap": "Community",
-    "Kunst": "Art"
+    "Kunst": "Art",
+    "Opinie": "Opinion"
   },
   "about": {
     "title": "About",

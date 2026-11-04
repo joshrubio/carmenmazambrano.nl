@@ -18,7 +18,7 @@ export function ArticleCarousel({ articles, perPage = 3 }: Props) {
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 min-h-[220px]">
+      <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6 min-h-[220px]">
         {slice.map((article) => (
           <ArticleCard key={article.slug} article={article} variant="compact" />
         ))}

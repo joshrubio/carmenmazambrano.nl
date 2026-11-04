@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 import { ArticleBody } from "@/components/article/ArticleBody";
 import { TranslatableArticle } from "@/components/article/TranslatableArticle";
+import { RichText } from "@/components/article/RichText";
 import { DeleteArticleButton } from "@/components/article/DeleteArticleButton";
 import { Byline } from "@/components/ui/Byline";
 import { CategoryBadge } from "@/components/ui/CategoryBadge";
@@ -10,6 +11,7 @@ import { ThickRule } from "@/components/ui/ColumnDivider";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { alternatesFor } from "@/i18n/metadata";
+import { stripInline } from "@/lib/rich-text";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(lang) || !article) return {};
   return {
     title: article.title,
-    description: article.excerpt,
+    description: stripInline(article.excerpt),
     alternates: alternatesFor(lang, `/articles/${slug}`),
   };
 }
@@ -68,14 +70,14 @@ export default async function ArticlePage({ params }: Props) {
 
         {article.subtitle && (
           <p className="font-display text-xl italic text-muted font-normal mt-2">
-            {article.subtitle}
+            <RichText text={article.subtitle} />
           </p>
         )}
 
         <Byline author={article.author} date={article.date} category={category} lang={lang} byLabel={dict.article.by} />
 
         <p className="font-body text-lg font-medium text-muted leading-relaxed mb-8 border-l-4 border-accent pl-4">
-          {article.excerpt}
+          <RichText text={article.excerpt} />
         </p>
 
         <ArticleBody blocks={article.content} />

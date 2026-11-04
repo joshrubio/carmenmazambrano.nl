@@ -4,11 +4,12 @@ import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { site } from "@/lib/site";
 import Image from "next/image";
+import { RichTextEditor } from "@/components/admin/RichTextEditor";
 import Link from "next/link";
 import { slugify } from "@/lib/slug";
 import { compressImage } from "@/lib/compress-image";
 
-const CATEGORIES = ["Cultuur", "Rotterdam", "Nederland", "Politiek", "Onderwijs", "Gemeenschap", "Kunst"];
+const CATEGORIES = ["Cultuur", "Rotterdam", "Nederland", "Politiek", "Onderwijs", "Gemeenschap", "Kunst", "Opinie"];
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -308,16 +309,16 @@ export default function NewArticlePage() {
         <div>
           <label className="label text-accent block mb-2">Texto del artículo *</label>
           <p className="font-body text-xs text-dim mb-2">
-            Separa los párrafos con una línea en blanco. Para títulos de sección escribe{" "}
-            <code className="bg-surface px-1">## </code> al inicio de la línea.
+            Separa los párrafos con una línea en blanco. Selecciona texto y usa los botones de la barra (o Ctrl+B, Ctrl+I,
+            Ctrl+U). También puedes escribir las marcas a mano: <code className="bg-surface px-1">**negrita**</code>{" "}
+            <code className="bg-surface px-1">*cursiva*</code> <code className="bg-surface px-1">++subrayado++</code> y{" "}
+            <code className="bg-surface px-1">## </code> al inicio del párrafo para un título.
           </p>
-          <textarea
+          <RichTextEditor
             value={body}
-            onChange={(e) => setBody(e.target.value)}
-            rows={16}
-            className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink resize-y"
+            onChange={setBody}
+            pullquote={pullquote}
             placeholder={"Primer párrafo del artículo...\n\nSegundo párrafo...\n\n## Título de sección\n\nTexto después del título..."}
-            required
           />
         </div>
 

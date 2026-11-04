@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ContentBlock } from "@/lib/articles";
 import { MediaEmbed } from "./MediaEmbed";
 import { GalleryLightbox } from "./GalleryLightbox";
+import { RichText } from "./RichText";
 
 interface Props {
   blocks: ContentBlock[];
@@ -21,7 +22,7 @@ export function ArticleBody({ blocks, dropCap = true }: Props) {
                   i === 0 && dropCap ? "drop-cap" : ""
                 }`}
               >
-                {block.text}
+                <RichText text={block.text} />
               </p>
             );
 
@@ -31,7 +32,7 @@ export function ArticleBody({ blocks, dropCap = true }: Props) {
                 key={i}
                 className="font-display text-2xl font-bold text-ink mt-8 mb-2 border-b border-rule pb-1"
               >
-                {block.text}
+                <RichText text={block.text} />
               </h3>
             );
 
@@ -41,7 +42,7 @@ export function ArticleBody({ blocks, dropCap = true }: Props) {
                 key={i}
                 className="border-l-4 border-accent pl-5 my-8 font-display text-2xl italic text-muted leading-snug"
               >
-                &ldquo;{block.text}&rdquo;
+                &ldquo;<RichText text={block.text} />&rdquo;
               </blockquote>
             );
 

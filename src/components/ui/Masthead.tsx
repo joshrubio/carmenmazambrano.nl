@@ -9,10 +9,11 @@ import { site } from "@/lib/site";
 
 export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
-    <header className="border-b-4 border-ink pt-6 pb-3">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Top bar — UI font */}
-        <div className="flex justify-between items-center border-b border-rule pb-2 mb-3">
+    <>
+      {/* Barra de navegación fija: es hermana de la cabecera (no hija) para que se quede
+          pegada arriba durante todo el scroll de la página. Sus enlaces no se traducen. */}
+      <div id="site-nav" className="sticky top-0 z-40 bg-paper border-b border-rule">
+        <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
           <span className="label text-muted font-normal normal-case tracking-wide hidden sm:inline">
             {dict.common.location}
           </span>
@@ -31,29 +32,34 @@ export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <AdminButton lang={lang} loginLabel={dict.nav.login} />
           </nav>
         </div>
-
-        {/* Nameplate — display font */}
-        <div className="text-center py-2">
-          <Link href={localePath(lang)} className="no-underline">
-            <span className="block font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-ink leading-none">
-              {site.name}
-            </span>
-            <span className="block font-display text-sm tracking-[0.3em] uppercase text-muted font-normal italic mt-1">
-              {dict.common.tagline}
-            </span>
-          </Link>
-        </div>
-
-        {/* Edition line */}
-        <div className="flex justify-between items-center border-t border-ink mt-3 pt-2">
-          <span className="label text-muted font-normal normal-case tracking-wide">
-            <TodayDate lang={lang} />
-          </span>
-          <span className="label text-muted font-normal normal-case tracking-wide">
-            {site.domain}
-          </span>
-        </div>
       </div>
-    </header>
+
+      <header className="border-b-4 border-ink pt-4 pb-3">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Nameplate — display font */}
+          <div className="text-center py-2">
+            <Link href={localePath(lang)} className="no-underline">
+              {/* Altura de línea holgada: la "p" de "Paper" tiene rabo y con leading-none pisaba el lema */}
+              <span className="block font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-ink leading-[1.18]">
+                {site.name}
+              </span>
+              <span className="block font-display text-sm tracking-[0.3em] uppercase text-muted font-normal italic mt-1.5">
+                {dict.common.tagline}
+              </span>
+            </Link>
+          </div>
+
+          {/* Edition line */}
+          <div className="flex justify-between items-center border-t border-ink mt-3 pt-2">
+            <span className="label text-muted font-normal normal-case tracking-wide">
+              <TodayDate lang={lang} />
+            </span>
+            <span className="label text-muted font-normal normal-case tracking-wide">
+              {site.domain}
+            </span>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }

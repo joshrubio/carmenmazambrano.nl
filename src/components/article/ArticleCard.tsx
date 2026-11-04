@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { ArticleSummary } from "@/lib/articles";
 import { CategoryBadge } from "@/components/ui/CategoryBadge";
 import { formatDate } from "@/lib/articles";
+import { RichText } from "./RichText";
 import { localePath } from "@/i18n/config";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -49,11 +50,11 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
         </Link>
         {article.subtitle && (
           <p lang={textLang} className="font-display text-xl text-muted italic font-normal mt-1">
-            {article.subtitle}
+            <RichText text={article.subtitle} />
           </p>
         )}
         <p lang={textLang} className="font-body text-sm text-muted mt-2 leading-relaxed">
-          {article.excerpt}
+          <RichText text={article.excerpt} />
         </p>
         {date}
       </article>
@@ -111,11 +112,11 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
       </Link>
       {article.subtitle && (
         <p lang={textLang} className="font-display text-sm text-muted italic font-normal mt-0.5">
-          {article.subtitle}
+          <RichText text={article.subtitle} />
         </p>
       )}
       <p lang={textLang} className="font-body text-sm text-muted mt-2 leading-relaxed line-clamp-3">
-        {article.excerpt}
+        <RichText text={article.excerpt} />
       </p>
       {date}
     </article>

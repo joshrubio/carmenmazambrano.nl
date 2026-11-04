@@ -54,7 +54,7 @@ try {
     headers: { cookie, "Content-Type": "application/json" },
     body: JSON.stringify({
       title, subtitle: "Subtítulo de prueba", category: "Rotterdam", date: "2026-10-07",
-      excerpt: "Extracto de prueba.", body: "Primer párrafo.\n\nSegundo párrafo.\n\n## Sección\n\nTercer párrafo.",
+      excerpt: "Extracto de prueba.", body: "Primer párrafo.\n\nSegundo **negrita** *cursiva* ++subrayado++ y <b>html</b>.\n\n## Sección con *énfasis*\n\nTercer párrafo.",
       pullquote: "Cita de prueba", linkedin: "", language: "es",
       coverImage, galleryImages: [{ src: g1, alt: "foto 1" }, { src: g2, alt: "foto 2" }],
     }),
@@ -88,6 +88,10 @@ try {
   }
   const artHtml = await art.text();
   check(art.ok && artHtml.includes("Tercer párrafo."), `la página del artículo se renderiza (${art.status}, ${artHtml.length} bytes)`);
+  check(artHtml.includes("<strong>negrita</strong>") && artHtml.includes("<em>cursiva</em>") && /<u[^>]*>subrayado<\/u>/.test(artHtml), "el formato (negrita, cursiva, subrayado) se pinta como etiquetas");
+  check(/<h3[^>]*>Sección con <em>énfasis<\/em><\/h3>/.test(artHtml), "el título de sección también admite formato");
+  check(artHtml.includes("&lt;b&gt;html&lt;/b&gt;") && !artHtml.includes("<b>html</b>"), "el HTML escrito a mano en el texto se escapa (no se inyecta)");
+  check(/Segundo \*\*negrita\*\* \*cursiva\* \+\+subrayado\+\+/.test(await fs.readFile(indexPath, "utf8")), "index.ts guarda el texto con las marcas tal cual");
   check(/<div lang="es">/.test(artHtml), "el contenido de la nota lleva lang=\"es\" (idioma original)");
   const artEn = await (await fetch(`${base}/en/articles/${slug}`)).text();
   check(artEn.includes("This article is written in Spanish."), "en /en avisa de que la nota está escrita en español");

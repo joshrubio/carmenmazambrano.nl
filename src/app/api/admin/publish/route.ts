@@ -4,6 +4,7 @@ export const maxDuration = 60;
 import { NextRequest, NextResponse } from "next/server";
 import { ghGet, ghPutText } from "@/lib/storage";
 import { slugify } from "@/lib/slug";
+import { parseBody } from "@/lib/article-body";
 import { hasLocale, type Locale } from "@/i18n/config";
 
 interface Block {
@@ -14,34 +15,6 @@ interface Block {
   caption?: string;
   images?: { src: string; alt: string }[];
   items?: { label: string; value: string; href?: string }[];
-}
-
-function parseBody(body: string, pullquote: string): Block[] {
-  const blocks: Block[] = [];
-  const sections = body.split(/\n{2,}/);
-  let pullInserted = false;
-  let paraCount = 0;
-
-  for (const raw of sections) {
-    const s = raw.trim();
-    if (!s) continue;
-    if (s.startsWith("## ")) {
-      blocks.push({ type: "subheading", text: s.slice(3).trim() });
-    } else {
-      blocks.push({ type: "paragraph", text: s });
-      paraCount++;
-      if (!pullInserted && pullquote && paraCount === 2) {
-        blocks.push({ type: "pullquote", text: pullquote });
-        pullInserted = true;
-      }
-    }
-  }
-
-  if (!pullInserted && pullquote) {
-    blocks.push({ type: "pullquote", text: pullquote });
-  }
-
-  return blocks;
 }
 
 function serializeBlock(b: Block): string {

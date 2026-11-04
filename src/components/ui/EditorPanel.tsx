@@ -1,0 +1,130 @@
+import Link from "next/link";
+import { PhotoSlot } from "./PhotoSlot";
+import { about } from "../../../content/about";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
+
+const socialIcons: Record<string, React.ReactNode> = {
+  linkedin: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  ),
+  tiktok: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.19 8.19 0 004.79 1.53V6.82a4.85 4.85 0 01-1.02-.13z" />
+    </svg>
+  ),
+};
+
+const socialLabels: Record<string, string> = {
+  linkedin: "LinkedIn",
+  tiktok: "TikTok",
+};
+
+// Panel vertical con el perfil de la editora, a la derecha de la portada.
+export function EditorPanel({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+  const socialEntries = Object.entries(about.social) as [string, string][];
+
+  return (
+    <section aria-label={dict.hero.label}>
+      {/* Section label */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="h-[3px] w-8 bg-accent" />
+        <span className="label text-accent">{dict.hero.label}</span>
+        <div className="flex-1 h-[3px] bg-ink" />
+      </div>
+
+      {/* Photo */}
+      <div className="relative w-full aspect-[3/4] max-h-[26rem] bg-surface overflow-hidden">
+        <PhotoSlot src={about.photo} alt={about.name} grayscale={false} fallbackText={dict.common.photoComingSoon} />
+      </div>
+      <div className="bg-ink px-3 py-2">
+        <p className="label text-inverse/70 font-normal normal-case tracking-wide">{dict.hero.photoCaption}</p>
+      </div>
+
+      {/* Display headline */}
+      <h2 className="font-display text-4xl font-black leading-[0.98] tracking-tight text-ink mt-5 mb-4">
+        {dict.hero.headline.map((line, i) => (
+          <span key={i} className={i === 1 ? "text-accent" : undefined}>
+            {line}
+            {i < dict.hero.headline.length - 1 && <br />}
+          </span>
+        ))}
+      </h2>
+
+      <div className="h-[2px] bg-ink mb-4" />
+
+      {/* Bio */}
+      <div className="space-y-3 mb-4">
+        {dict.about.bio.map((para, i) => (
+          <p key={i} className="font-body text-sm leading-[1.75] text-ink text-justify hyphens-auto">
+            {para}
+          </p>
+        ))}
+      </div>
+
+      <div className="h-px bg-rule mb-4" />
+
+      {/* Specialties */}
+      <ul className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4">
+        {dict.about.specialtiesList.map((s) => (
+          <li
+            key={s}
+            className="label text-muted font-normal normal-case tracking-wide flex items-center gap-1.5 before:content-['▪'] before:text-accent"
+          >
+            {s}
+          </li>
+        ))}
+      </ul>
+
+      {/* Contact */}
+      <dl className="border-t border-rule pt-4 space-y-3">
+        <div>
+          <dt className="label text-accent">{dict.hero.basedIn}</dt>
+          <dd className="font-body text-sm text-ink mt-0.5">{dict.common.location}</dd>
+        </div>
+        <div>
+          <dt className="label text-accent">{dict.hero.contact}</dt>
+          <dd className="mt-0.5">
+            <a href={`tel:${about.phone}`} className="font-body text-sm text-ink hover:text-accent transition-colors">
+              {about.phone}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className="label text-accent">{dict.hero.email}</dt>
+          <dd className="mt-0.5">
+            <a href={`mailto:${about.email}`} className="font-body text-sm text-ink hover:text-accent transition-colors break-all">
+              {about.email}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {/* Social buttons */}
+      <div className="flex flex-wrap items-center gap-2 mt-4">
+        {socialEntries.map(([key, url]) => (
+          <a
+            key={key}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={socialLabels[key] ?? key}
+            className="flex items-center gap-1.5 label text-ink font-normal normal-case tracking-wide border border-ink px-3 py-2 hover:bg-ink hover:text-inverse transition-colors"
+          >
+            {socialIcons[key]}
+            <span>{socialLabels[key] ?? key}</span>
+          </a>
+        ))}
+      </div>
+
+      <Link
+        href={localePath(lang, "/about")}
+        className="block w-full mt-4 label text-ink font-normal normal-case tracking-wide border border-ink px-4 py-2.5 hover:bg-ink hover:text-inverse transition-colors text-center"
+      >
+        {dict.hero.fullProfile}
+      </Link>
+    </section>
+  );
+}
