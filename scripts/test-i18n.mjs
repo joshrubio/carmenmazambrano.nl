@@ -49,6 +49,13 @@ for (const l of ["es", "nl"]) {
   const same = untranslated(l);
   check(same.length === 0, `${l}: ningún texto largo copiado tal cual del inglés${same.length ? " -> " + same.slice(0, 3).join(", ") : ""}`);
 }
+// Marca: el periódico se llama The New Paper en los 3 idiomas
+for (const l of locales) {
+  const m = dicts[l].meta;
+  check(m.siteTitle.startsWith("The New Paper") && m.titleTemplate === "%s | The New Paper" && m.description.includes("The New Paper"),
+    `${l}: título, plantilla y descripción usan "The New Paper"`);
+  check(!("est" in dicts[l].common), `${l}: sin la línea "Est. 30 años" (era la trayectoria de Carmen, no la del periódico)`);
+}
 // Las claves de categoría, experiencia y habilidades deben cubrir lo que usa el contenido.
 const aboutSrc = fs.readFileSync("content/about.ts", "utf8");
 const ids = [...aboutSrc.matchAll(/id: "([a-z-]+)"/g)].map((m) => m[1]);
@@ -97,6 +104,8 @@ if (base) {
     }
     const links = locales.map((o) => home.includes(`href="/${o}"`));
     check(links.every(Boolean), `/${l}: selector de idioma con los 3 enlaces`);
+    check(/<title>The New Paper — /.test(home) && home.includes("The New Paper"), `/${l}: <title> y cabecera con el nombre del periódico`);
+    check(!/Est. 30 Years|Más de 30 años de periodismo|Meer dan 30 jaar journalistiek/.test(home), `/${l}: la cabecera ya no dice "30 años de periodismo"`);
     check(home.includes(dicts[l].hero.headline[0]) && home.includes(dicts[l].nav.articles), `/${l}: textos de la interfaz en ${l}`);
     for (const p of ["articles", "about", "contact", "newsletter", "privacy"]) {
       const res = await fetch(`${base}/${l}/${p}`);

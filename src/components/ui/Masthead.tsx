@@ -3,7 +3,9 @@ import { AdminButton } from "./AdminButton";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { TodayDate } from "./TodayDate";
 import { about } from "../../../content/about";
+import { site } from "@/lib/site";
 
 export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
@@ -34,7 +36,7 @@ export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <div className="text-center py-2">
           <Link href={localePath(lang)} className="no-underline">
             <span className="block font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-ink leading-none">
-              Carmen Zambrano
+              {site.name}
             </span>
             <span className="block font-display text-sm tracking-[0.3em] uppercase text-muted font-normal italic mt-1">
               {dict.common.tagline}
@@ -45,10 +47,10 @@ export function Masthead({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         {/* Edition line */}
         <div className="flex justify-between items-center border-t border-ink mt-3 pt-2">
           <span className="label text-muted font-normal normal-case tracking-wide">
-            {dict.common.est}
+            <TodayDate lang={lang} />
           </span>
           <span className="label text-muted font-normal normal-case tracking-wide">
-            carmenzambrano.nl
+            {site.domain}
           </span>
         </div>
       </div>

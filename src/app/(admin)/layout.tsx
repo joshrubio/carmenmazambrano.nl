@@ -5,11 +5,12 @@ import { Masthead } from "@/components/ui/Masthead";
 import { Footer } from "@/components/ui/Footer";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { getDictionary } from "@/i18n/dictionaries";
+import { site } from "@/lib/site";
 
 // Raíz independiente para el panel de administración: sin prefijo de idioma,
 // siempre en español y fuera de los buscadores.
 export const metadata: Metadata = {
-  title: { default: "Panel | Carmen Zambrano", template: "%s | Carmen Zambrano" },
+  title: { default: `Panel | ${site.name}`, template: `%s | ${site.name}` },
   robots: { index: false, follow: false },
 };
 

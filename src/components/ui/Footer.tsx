@@ -2,6 +2,7 @@ import Link from "next/link";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { about } from "../../../content/about";
+import { site } from "@/lib/site";
 
 export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
@@ -12,7 +13,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-4">
           <div>
             <p className="font-display text-3xl font-black text-ink leading-none">
-              Carmen Zambrano
+              {site.name}
             </p>
             <p className="font-display text-sm italic text-muted font-normal mt-1">
               {dict.footer.tagline}
@@ -29,7 +30,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         {/* Bottom strip */}
         <div className="border-t border-rule pt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
           <p className="label text-dim font-normal normal-case tracking-normal">
-            © {new Date().getFullYear()} carmenzambrano.nl
+            © {new Date().getFullYear()} {site.domain}
           </p>
           <Link
             href={localePath(lang, "/privacy")}

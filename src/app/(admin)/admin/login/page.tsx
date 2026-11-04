@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { site } from "@/lib/site";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-paper flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="border-b-2 border-ink pb-4 mb-8 text-center">
-          <p className="label text-accent mb-1">Carmen Zambrano</p>
+          <p className="label text-accent mb-1">{site.name}</p>
           <h1 className="font-display text-3xl font-black text-ink">Panel de redacción</h1>
         </div>
 

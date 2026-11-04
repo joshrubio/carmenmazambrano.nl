@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { site } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import { slugify } from "@/lib/slug";
@@ -167,7 +168,7 @@ export default function NewArticlePage() {
       {/* Header */}
       <div className="border-b-2 border-ink px-6 py-4 flex items-center justify-between">
         <div>
-          <p className="label text-accent mb-0.5">Carmen Zambrano</p>
+          <p className="label text-accent mb-0.5">{site.name}</p>
           <h1 className="font-display text-xl font-black text-ink leading-none">Nueva nota de prensa</h1>
         </div>
         <button

@@ -1,14 +1,13 @@
 {
   "meta": {
-    "siteTitle": "Carmen Zambrano — Social Communicator & Journalist",
-    "titleTemplate": "%s | Carmen Zambrano",
-    "description": "Social Communicator with over 30 years of experience in press, governmental, and corporate journalism. Based in Rotterdam, Netherlands.",
+    "siteTitle": "The New Paper — News, culture & community from Rotterdam",
+    "titleTemplate": "%s | The New Paper",
+    "description": "The New Paper is a newspaper from Rotterdam covering news, culture and community, founded and edited by journalist Carmen Zambrano.",
     "ogLocale": "en_GB"
   },
   "common": {
-    "tagline": "Social Communicator & Journalist",
+    "tagline": "News, culture & community · Rotterdam",
     "location": "Rotterdam, Netherlands",
-    "est": "Est. 30 Years of Journalism",
     "photoComingSoon": "Photo coming soon"
   },
   "nav": {
@@ -21,14 +20,19 @@
     "language": "Language"
   },
   "footer": {
-    "tagline": "Social Communicator & Journalist · Rotterdam, Netherlands",
+    "tagline": "News, culture & community · Rotterdam, Netherlands",
     "contactCta": "Contact via Email",
     "privacy": "Privacy policy"
   },
   "hero": {
-    "label": "The Journalist",
-    "headline": ["30 Years", "Telling the", "Stories That", "Matter"],
-    "photoCaption": "Social Communicator & Journalist · Rotterdam",
+    "label": "The Editor",
+    "headline": [
+      "30 Years",
+      "Telling the",
+      "Stories That",
+      "Matter"
+    ],
+    "photoCaption": "Founder & Editor · Rotterdam",
     "basedIn": "Based in",
     "contact": "Contact",
     "email": "Email",
@@ -42,12 +46,16 @@
   "articles": {
     "label": "Articles",
     "title": "Articles",
-    "description": "Press notes and articles by Carmen Zambrano."
+    "description": "News, press notes and articles from The New Paper."
   },
   "article": {
     "by": "By",
     "writtenIn": "This article is written in {language}.",
-    "languages": { "es": "Spanish", "en": "English", "nl": "Dutch" }
+    "languages": {
+      "es": "Spanish",
+      "en": "English",
+      "nl": "Dutch"
+    }
   },
   "categories": {
     "Cultuur": "Culture",
@@ -60,7 +68,7 @@
   },
   "about": {
     "title": "About",
-    "profile": "Profile",
+    "profile": "The Editor",
     "location": "Location",
     "phone": "Phone",
     "email": "Email",
@@ -69,7 +77,7 @@
     "skills": "Skills",
     "experience": "Experience",
     "present": "Present",
-    "jobTitle": "Social Communicator & Journalist",
+    "jobTitle": "Founder & Editor",
     "bio": [
       "I'm a Social Communicator with over 30 years of experience across press, governmental, and corporate journalism — from the newsroom trenches to leading teams in culture, media, and client relations.",
       "My journey spans radio, television, and education, where I've honed a deep understanding of how stories connect people and inspire change. I'm passionate about culture, community, and driving projects that make a lasting impact."
@@ -92,7 +100,9 @@
       "Photography": "Photography",
       "Social Networking": "Social Networking"
     },
-    "levels": { "Native": "Native" },
+    "levels": {
+      "Native": "Native"
+    },
     "experienceItems": {
       "radio-popular": {
         "title": "Radio Journalist",
@@ -155,8 +165,8 @@
   "contact": {
     "label": "Contact",
     "title": "Get in Touch",
-    "description": "Get in touch with Carmen Zambrano.",
-    "subtitle": "For press inquiries, collaborations, or consulting engagements.",
+    "description": "Get in touch with The New Paper.",
+    "subtitle": "For news tips, press inquiries or collaborations.",
     "phone": "Phone",
     "location": "Location"
   },
@@ -164,7 +174,7 @@
     "label": "Newsletter",
     "title": "Stay in the Loop",
     "subtitle": "New articles, culture and community news from Rotterdam, straight to your inbox.",
-    "description": "Subscribe to Carmen Zambrano's newsletter: new articles, culture and community news from Rotterdam.",
+    "description": "Subscribe to The New Paper newsletter: new articles, culture and community news from Rotterdam.",
     "bandLabel": "The Newsletter",
     "bandTitle": "Stories from Rotterdam, in your inbox",
     "bandText": "New articles, culture and community news. Join the list and be the first to read them."
@@ -172,18 +182,20 @@
   "privacy": {
     "label": "Legal",
     "title": "Privacy Policy",
-    "description": "How Carmen Zambrano's website handles personal data of newsletter subscribers.",
+    "description": "How The New Paper handles the personal data of newsletter subscribers.",
     "updated": "Last updated: 7 October 2026",
     "sections": [
       {
         "heading": "1. Who is responsible",
         "paragraphs": [
-          "The person responsible for processing your personal data on this website is Carmen Zambrano, based in Rotterdam, the Netherlands. You can contact her at {email}."
+          "The person responsible for processing your personal data on The New Paper website is Carmen Zambrano, based in Rotterdam, the Netherlands. You can contact her at {email}."
         ]
       },
       {
         "heading": "2. What data we collect",
-        "paragraphs": ["When you subscribe to the newsletter we store:"],
+        "paragraphs": [
+          "When you subscribe to the newsletter we store:"
+        ],
         "items": [
           "your email address;",
           "your name, if you choose to give it (optional);",
@@ -215,7 +227,9 @@
       },
       {
         "heading": "6. Your rights",
-        "paragraphs": ["You have the right to:"],
+        "paragraphs": [
+          "You have the right to:"
+        ],
         "items": [
           "access the data we hold about you;",
           "have it corrected or deleted;",
@@ -294,17 +308,40 @@
     "backHome": "Back to the website"
   },
   "client": {
-    "carousel": { "prev": "Prev", "next": "Next", "previousAria": "Previous page", "nextAria": "Next page" },
-    "skills": { "languages": "Languages", "tools": "Tools & Skills" },
-    "lightbox": { "close": "Close", "previous": "Previous", "next": "Next", "goTo": "Go to image {n}" },
-    "embed": { "title": "Embedded video" },
-    "translate": {"button":"Translate this article","downloading":"Downloading language pack… {percent}%","translating":"Translating… {done}/{total}","showOriginal":"Show original","translateAgain":"Show translation","note":"Translated automatically in your browser from {from}. It may contain mistakes.","error":"The translation could not be completed. Please try again."},
+    "carousel": {
+      "prev": "Prev",
+      "next": "Next",
+      "previousAria": "Previous page",
+      "nextAria": "Next page"
+    },
+    "skills": {
+      "languages": "Languages",
+      "tools": "Tools & Skills"
+    },
+    "lightbox": {
+      "close": "Close",
+      "previous": "Previous",
+      "next": "Next",
+      "goTo": "Go to image {n}"
+    },
+    "embed": {
+      "title": "Embedded video"
+    },
+    "translate": {
+      "button": "Translate this article",
+      "downloading": "Downloading language pack… {percent}%",
+      "translating": "Translating… {done}/{total}",
+      "showOriginal": "Show original",
+      "translateAgain": "Show translation",
+      "note": "Translated automatically in your browser from {from}. It may contain mistakes.",
+      "error": "The translation could not be completed. Please try again."
+    },
     "subscribe": {
       "nameLabel": "Name (optional)",
       "namePlaceholder": "Your name",
       "emailLabel": "Email *",
       "emailPlaceholder": "you@example.com",
-      "consentBefore": "I agree to receive Carmen Zambrano's newsletter and to my name and email being stored for that purpose, as described in the ",
+      "consentBefore": "I agree to receive The New Paper newsletter and to my name and email being stored for that purpose, as described in the ",
       "consentLink": "privacy policy",
       "consentAfter": ". I can unsubscribe at any time.",
       "submit": "Subscribe",
