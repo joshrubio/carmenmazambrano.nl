@@ -2,6 +2,90 @@ import type { Article } from "@/lib/articles";
 
 export const articles: Article[] = [
   {
+    slug: "rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet",
+    title: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET",
+    category: "Rotterdam",
+    language: "nl",
+    date: "2026-11-04",
+    author: "Carmen Zambrano",
+    excerpt:
+      "De tentoonstelling *Dom dom, tak dom, tak* van Mohamed Abdelkarim in Gemaal op Zuid (Rotterdam) onderzoekt het historisch geheugen, koloniaal geweld en cultureel verzet. Het is het eerste deel van de reeks *Spiritual Disobedience*, gecureerd door Yusser Al Obaidi.",
+    coverImage: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-cover.webp",
+    featured: false,
+    content: [
+      {
+        type: "image",
+        src: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-cover.webp",
+        alt: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET",
+      },
+      {
+        type: "subheading",
+        text: "Mohamed Abdelkarim presenteert Dom dom, tak dom, tak in cultuurcentrum Gemaal op Zuid",
+      },
+      {
+        type: "paragraph",
+        text: "Rotterdam, Nederland, 29 oktober 2026 — Hedendaagse kunst wordt opnieuw een ruimte voor reflectie op het historisch geheugen, de wonden van het kolonialisme en vormen van cultureel verzet, met de tentoonstelling Dom dom, tak dom, tak van multidisciplinair kunstenaar Mohamed Abdelkarim. De tentoonstelling is te zien in Gemaal op Zuid, een cultuurcentrum in het voormalige gemaal in het zuiden van Rotterdam.",
+      },
+      {
+        type: "paragraph",
+        text: "De tentoonstelling, geopend op 17 oktober 2026, is de eerste in de reeks Spiritual Disobedience: O Companion of Time, een project onder curatorschap van Yusser Al Obaidi dat alternatieve manieren aanreikt om geschiedenis, spiritualiteit en de relatie tussen gemeenschappen en hun gebieden te interpreteren. De reeks brengt werk samen van Mohamed Abdelkarim, Hussein Shikha, Ameneh Solati en Farah al-Khoury.",
+      },
+      {
+        type: "pullquote",
+        text: "In the ghoul’s time, there are no apocalyptic endings, no catastrophes, no final resurrection. Instead, moments come when one time withdraws and hands itself over to a new time.",
+      },
+      {
+        type: "paragraph",
+        text: "Abdelkarim put uit de wereld van Duizend-en-een-nacht, waar de ghoul leeft op de wisselende grens tussen mens en monster, levend en dood. De tentoonstelling stelt een vraag: wat als de ghoul geen wezen is, maar een worden? Welke materiële geschiedenissen brengen ghouls voort?",
+      },
+      {
+        type: "paragraph",
+        text: "Dom dom, tak dom, tak volgt hoe strijd die verslagen lijkt in andere vormen en op andere momenten terugkeert. Geschiedenis beweegt niet in een rechte lijn: geweld en verzet galmen na door de tijd, en onvoltooide strijd keert terug in het heden, in het masmoudy-ritme, tot aan de randen van tijdperken en van de koloniale tijd.",
+      },
+      {
+        type: "paragraph",
+        text: "De tentoonstelling staat stil bij drie momenten waarop een hoofd een symbool werd:",
+      },
+      {
+        type: "paragraph",
+        text: "- 1800: Suleiman al-Halabi doodde Jean-Baptiste Kléber, bevelhebber van de Franse koloniale troepen in Egypte. Zijn schedel werd als artefact meegenomen en tentoongesteld in Franse musea.\n- 1695: Zumbi dos Palmares leidde het verzet tegen de slavernij van Afrikanen door de Portugezen in koloniaal Brazilië. Zijn lichaam werd verminkt en zijn hoofd werd een trofee en een waarschuwing.\n- 680: Imam Hussein, die weigerde een onrechtvaardige heerser te accepteren, kwam om in de slag bij Karbala.",
+      },
+      {
+        type: "paragraph",
+        text: "Wat wordt afgesneden, verdwijnt niet: het blijft bestaan als spoor en draagt herinnering met zich mee. Een schedel, een speer, een vlag, een koloniaal artefact, een waarschuwing aan de gekoloniseerden, een symbool van martelaarschap en verzet. De tentoonstelling vraagt wat de herinnering aan dit ghoulachtige verleden kan betekenen voor het begrijpen van de crises van het heden, en of de afwezigheid van gerechtigheid kan worden opgevat als een moment van opschorting binnen een groter ritme, een wachten dat niet het einde betekent.",
+      },
+      {
+        type: "paragraph",
+        text: "De reeks werkt deze reflectie uit aan de hand van de sjiitische kosmologie, de figuur van Sahib al-Zaman (de ‘Heer van de Tijd’ in de sjiitische traditie) en de ideeën van gerechtigheid en transformatie. Het project legt ook verbanden met de geopolitieke en ecologische werkelijkheid van de Iraakse moerasgebieden, die getekend zijn door oorlog, oliewinning en het verlies van hun natuurlijke landschap.",
+      },
+      {
+        type: "subheading",
+        text: "Een culturele ruimte in de buurt",
+      },
+      {
+        type: "paragraph",
+        text: "Gemaal op Zuid, gelegen in de Afrikaanderwijk, brengt hedendaagse kunst bij een breed publiek en bevordert ontmoetingen tussen uiteenlopende ervaringen, identiteiten en perspectieven. Met deze tentoonstelling verbindt het centrum lokale ervaringen met thema’s van internationaal belang.",
+      },
+      {
+        type: "paragraph",
+        text: "Praktische informatie",
+      },
+      {
+        type: "paragraph",
+        text: "- Tentoonstelling: Dom dom, tak dom, tak\n- Kunstenaar: Mohamed Abdelkarim\n- Curator: Yusser Al Obaidi\n- Reeks: Spiritual Disobedience: O Companion of Time\n- Locatie: Gemaal op Zuid, Pretorialaan 141, 3072 EL Rotterdam\n- Opening: 17 oktober 2026\n- Looptijd: te zien vanaf 17 oktober 2026 (einddatum nog te bevestigen)\n- Publieksprogramma en bezoektijden: hetgemaalopzuid.nl/programma",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-1.webp", alt: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET — foto 1" },
+          { src: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-2.webp", alt: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET — foto 2" },
+          { src: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-3.webp", alt: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET — foto 3" },
+          { src: "/images/rotterdam-opent-ruimte-voor-kunst-geheugen-en-cultureel-verzet-4.webp", alt: "ROTTERDAM OPENT RUIMTE VOOR KUNST, GEHEUGEN EN CULTUREEL VERZET — foto 4" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "museum-fenix-rotterdam-immigranten-tentoonstelling",
     title: "Museum Fenix: een ontroerende blik op de immigrantengeschiedenis van Rotterdam",
     subtitle: "Foto's, objecten en verhalen van wie Rotterdam tot een rijkere stad maakten",
