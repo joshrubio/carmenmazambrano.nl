@@ -1,8 +1,7 @@
 // Voces de la redacción: citas de Carmen y del equipo sobre notas que ya hemos publicado.
 // Cada cita se escribe en los tres idiomas de la web y enlaza a su nota (`article` = slug).
 //
-// `draft: true` = redactada como propuesta y pendiente de que la persona la apruebe; se
-// muestra con la etiqueta "Borrador". Cuando la apruebe, se borra la marca.
+// `draft: true` (opcional) = cita pendiente de aprobar: se muestra con la etiqueta "Borrador".
 type L = "es" | "en" | "nl";
 type Text = Record<L, string>;
 
@@ -27,7 +26,6 @@ export const voices: Voice[] = [
     author: "Carmen Zambrano",
     role: EDITOR_ROLE,
     article: "the-nest-collectief-kunstwerk-vrouwen-rotterdam",
-    draft: true,
   },
   {
     quote: {
@@ -48,7 +46,6 @@ export const voices: Voice[] = [
     author: "Carmen Zambrano",
     role: EDITOR_ROLE,
     article: "rotterdam-zuid-community-ontmoetingspunt-2026",
-    draft: true,
   },
   {
     quote: {
@@ -69,6 +66,5 @@ export const voices: Voice[] = [
     author: "Carmen Zambrano",
     role: EDITOR_ROLE,
     article: "moederdag-viering-rotterdam-2026",
-    draft: true,
   },
 ];

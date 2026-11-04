@@ -32,6 +32,8 @@ interface Props {
   labels: LoopLabels;
   // Ocupa todo el alto disponible y centra cada tarjeta en vertical.
   fill?: boolean;
+  // "dark": puntos claros para usarlo sobre fondo negro.
+  tone?: "light" | "dark";
   className?: string;
 }
 
@@ -39,7 +41,7 @@ interface Props {
 // por tarjeta debajo. El punto activo se tiñe de burdeos y todos son clicables.
 // Se detiene al pasar el cursor o al navegar con el teclado, y no se mueve solo si el
 // sistema pide reducir el movimiento. También admite ← → y deslizar en móvil.
-export function LoopCarousel({ items, labels, fill = false, className = "" }: Props) {
+export function LoopCarousel({ items, labels, fill = false, tone = "light", className = "" }: Props) {
   const n = items.length;
   const reduced = useSyncExternalStore(subscribeReduced, getReduced, getReducedServer);
   const [index, setIndex] = useState(0);
@@ -142,7 +144,9 @@ export function LoopCarousel({ items, labels, fill = false, className = "" }: Pr
               >
                 <span
                   className={`block w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
-                    i === index ? "bg-accent" : "bg-rule group-hover:bg-dim"
+                    i === index
+                      ? tone === "dark" ? "bg-[#D2504F]" : "bg-accent"
+                      : tone === "dark" ? "bg-white/25 group-hover:bg-white/50" : "bg-rule group-hover:bg-dim"
                   }`}
                 />
               </button>
