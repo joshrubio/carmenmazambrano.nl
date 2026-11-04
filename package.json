@@ -12,7 +12,8 @@
     "test:i18n": "node scripts/test-i18n.mjs",
     "test:richtext": "node scripts/test-richtext.mjs",
     "test:newsletter": "node scripts/test-newsletter.mjs",
-    "dev:test": "node scripts/dev-test-server.mjs"
+    "dev:test": "node scripts/dev-test-server.mjs",
+    "test:comments": "node scripts/test-comments.mjs"
   },
   "dependencies": {
     "next": "16.2.9",

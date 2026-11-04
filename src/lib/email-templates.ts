@@ -133,3 +133,47 @@ export function renderNewsletterEmail(o: {
   const text = [o.subject.toUpperCase(), body.text, "—", n.why, `${n.unsubscribe}: ${o.unsubscribeUrl}`].join("\n\n");
   return { subject, html, text };
 }
+
+// Correo para verificar un comentario. Si marcó la casilla de promociones, avisa de que el
+// mismo clic también la apunta a la newsletter.
+export function renderCommentConfirmEmail(o: {
+  lang: string;
+  dict: Dictionary;
+  name: string;
+  articleTitle: string;
+  commentBody: string;
+  confirmUrl: string;
+  promo: boolean;
+}): Rendered {
+  const c = o.dict.email.comment;
+  const greeting = o.name ? c.greeting.replace("{name}", o.name) : c.greetingNoName;
+  const intro = c.intro.replace("{article}", o.articleTitle);
+  const preview = o.commentBody.length > 300 ? `${o.commentBody.slice(0, 300)}…` : o.commentBody;
+  const html = layout({
+    lang: o.lang,
+    title: c.subject,
+    preheader: c.preheader,
+    innerHtml: `
+    <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">${esc(greeting)}</p>
+    <p style="font-size:16px;line-height:1.7;margin:0 0 8px;">${esc(intro)}</p>
+    <blockquote style="margin:8px 0 16px;padding:8px 16px;border-left:3px solid ${ACCENT};font-style:italic;line-height:1.6;white-space:pre-line;">${esc(preview)}</blockquote>
+    <p style="font-size:16px;line-height:1.7;margin:0 0 8px;">${esc(c.body)}</p>
+    ${o.promo ? `<p style="font-size:14px;line-height:1.7;margin:0 0 8px;">${esc(c.promoNote)}</p>` : ""}
+    ${button(o.confirmUrl, c.button)}
+    <p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.6;color:${MUTED};margin:0 0 4px;">${esc(c.linkHint)}</p>
+    <p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.6;word-break:break-all;margin:0 0 16px;"><a href="${esc(o.confirmUrl)}" style="color:${ACCENT};">${esc(o.confirmUrl)}</a></p>
+    <p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.6;color:${MUTED};margin:0;">${esc(c.expires)}</p>`,
+    footerHtml: esc(c.ignore),
+  });
+  const text = [
+    greeting,
+    intro,
+    `"${preview}"`,
+    c.body,
+    ...(o.promo ? [c.promoNote] : []),
+    `${c.button}: ${o.confirmUrl}`,
+    c.expires,
+    c.ignore,
+  ].join("\n\n");
+  return { subject: c.subject, html, text };
+}

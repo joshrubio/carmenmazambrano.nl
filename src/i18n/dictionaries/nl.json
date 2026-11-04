@@ -194,7 +194,7 @@
     "label": "Juridisch",
     "title": "Privacybeleid",
     "description": "Hoe deze website omgaat met de persoonsgegevens van abonnees op de nieuwsbrief.",
-    "updated": "Laatst bijgewerkt: 7 oktober 2026",
+    "updated": "Laatst bijgewerkt: 5 november 2026",
     "sections": [
       {
         "heading": "1. Wie is verantwoordelijk",
@@ -259,9 +259,19 @@
         ]
       },
       {
-        "heading": "8. Cookies",
+        "heading": "8. Reacties bij artikelen",
         "paragraphs": [
-          "Deze website gebruikt geen tracking- of advertentiecookies. Er wordt één kleine functionele cookie (NEXT_LOCALE) opgeslagen om je voorkeurstaal te onthouden, en een sessiecookie die alleen de eigenaar van de site gebruikt om de website te beheren."
+          "Als je een reactie bij een artikel achterlaat, slaan we je naam, je e-mailadres, de tekst van de reactie, de datum en tijd, de taal van de site, of je dit beleid hebt geaccepteerd en of je akkoord ging met promotionele e-mails, en of je je e-mailadres hebt geverifieerd op.",
+          "Alleen je naam, de tekst van de reactie en de datum worden gepubliceerd. Je e-mailadres wordt nooit getoond.",
+          "Om te voorkomen dat iemand met het e-mailadres van een ander reageert, sturen we een verificatielink: de reactie wordt pas gepubliceerd als je erop klikt. Een niet-geverifieerde reactie wordt na 7 dagen verwijderd, samen met je e-mailadres. Na verificatie wordt je e-mailadres, als je het vakje voor promotionele e-mails hebt aangevinkt, aan de nieuwsbrief toegevoegd (zie de rest van dit beleid voor die gegevens).",
+          "De rechtsgrond is je toestemming. We bewaren de reactie zolang ze gepubliceerd blijft of tot je vraagt haar te verwijderen via {email}. De redactie kan reacties verwijderen die beledigend, onwettig of respectloos naar anderen zijn."
+        ]
+      },
+      {
+        "heading": "9. Cookies",
+        "paragraphs": [
+          "Deze website gebruikt geen tracking- of advertentiecookies. Er wordt één kleine functionele cookie (NEXT_LOCALE) opgeslagen om je voorkeurstaal te onthouden, en een sessiecookie die alleen de eigenaar van de site gebruikt om de website te beheren.",
+          "Als je bij het reageren je e-mailadres verifieert, slaan we een technische cookie in je browser op (tnp_commenter, 90 dagen) om te onthouden dat dit e-mailadres al is geverifieerd en het je niet elke keer te vragen. Hij wordt niet gebruikt voor reclame of om je te volgen."
         ]
       }
     ]
@@ -285,6 +295,23 @@
     "errorRate": "Te veel pogingen. Probeer het later opnieuw.",
     "backHome": "Terug naar de website"
   },
+  "commentConfirm": {
+    "label": "Reacties",
+    "title": "Bevestig je reactie",
+    "description": "Bevestig je reactie zodat ze wordt gepubliceerd.",
+    "confirmText": "Je staat op het punt je reactie bij “{article}” te publiceren met het e-mailadres {email}.",
+    "confirmButton": "Ja, bevestigen en publiceren",
+    "doneTitle": "Reactie geplaatst",
+    "doneText": "Bedankt voor je bijdrage. Je reactie is nu zichtbaar bij het artikel.",
+    "doneTextPromo": "Bedankt voor je bijdrage. Je reactie is nu zichtbaar bij het artikel en je e-mailadres is aan de nieuwsbrief toegevoegd.",
+    "alreadyTitle": "Al gepubliceerd",
+    "alreadyText": "Deze reactie was al bevestigd. Je hoeft verder niets te doen.",
+    "invalidTitle": "Deze link is niet geldig",
+    "invalidText": "De verificatielink is onjuist of onvolledig. Schrijf je reactie opnieuw of mail naar {email}.",
+    "expiredTitle": "Deze link is verlopen",
+    "expiredText": "Verificatielinks zijn 7 dagen geldig. Schrijf je reactie opnieuw.",
+    "backToArticle": "Terug naar het artikel"
+  },
   "email": {
     "confirm": {
       "subject": "Bevestig je inschrijving op de nieuwsbrief van The New Paper",
@@ -301,6 +328,19 @@
       "unsubscribe": "Uitschrijven",
       "why": "Je ontvangt deze e-mail omdat je je hebt ingeschreven op de nieuwsbrief van The New Paper.",
       "testPrefix": "[TEST] "
+    },
+    "comment": {
+      "subject": "Bevestig je reactie op The New Paper",
+      "preheader": "Eén klik en je reactie wordt gepubliceerd.",
+      "greeting": "Hoi {name},",
+      "greetingNoName": "Hoi,",
+      "intro": "Je schreef deze reactie bij “{article}”:",
+      "body": "Bevestig je e-mailadres om haar te publiceren. Tot dan is ze niet zichtbaar.",
+      "promoNote": "Door te bevestigen schrijf je je ook in voor de nieuwsbrief van The New Paper, zoals je in het formulier hebt aangevinkt. Je kunt je op elk moment uitschrijven via elke e-mail die we sturen.",
+      "button": "Bevestigen en publiceren",
+      "linkHint": "Werkt de knop niet? Kopieer dan deze link en plak hem in je browser:",
+      "expires": "Deze link is 7 dagen geldig.",
+      "ignore": "Heb je geen reactie geschreven? Negeer deze e-mail dan: er wordt niets gepubliceerd en je ontvangt verder niets."
     }
   },
   "unsubscribe": {
@@ -319,6 +359,44 @@
     "backHome": "Terug naar de website"
   },
   "client": {
+    "comments": {
+      "title": "Reacties",
+      "count": "{n} reacties",
+      "countOne": "1 reactie",
+      "empty": "Nog geen reacties. Wees de eerste die reageert.",
+      "loadError": "De reacties konden niet worden geladen.",
+      "formTitle": "Laat een reactie achter",
+      "nameLabel": "Naam",
+      "namePlaceholder": "Je naam",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "jij@voorbeeld.nl",
+      "emailNote": "Wordt niet gepubliceerd. We gebruiken het alleen om je reactie te verifiëren.",
+      "bodyLabel": "Reactie",
+      "bodyPlaceholder": "Schrijf je reactie…",
+      "privacyBefore": "Ik heb het ",
+      "privacyLink": "privacybeleid",
+      "privacyAfter": " gelezen en ga ermee akkoord.",
+      "promo": "Ik wil promotionele e-mails en nieuws van The New Paper ontvangen. Ik kan me op elk moment uitschrijven.",
+      "submit": "Reactie versturen",
+      "submitting": "Versturen…",
+      "verifyTitle": "Controleer je e-mail",
+      "verifyText": "We hebben je een link gestuurd om je reactie te bevestigen. Ze wordt gepubliceerd zodra je bevestigt.",
+      "publishedTitle": "Reactie geplaatst",
+      "publishedText": "Bedankt voor je bijdrage.",
+      "another": "Nog een reactie schrijven",
+      "errors": {
+        "invalid_name": "Vul je naam in (2 tot 60 tekens).",
+        "invalid_email": "Vul een geldig e-mailadres in.",
+        "invalid_body": "Schrijf een reactie (2 tot 1500 tekens).",
+        "too_many_links": "Een reactie mag niet meer dan één link bevatten.",
+        "privacy_required": "Je moet het privacybeleid accepteren.",
+        "promo_required": "Je moet akkoord gaan met promotionele e-mails om te kunnen reageren.",
+        "rate_limited": "Te veel pogingen. Probeer het later opnieuw.",
+        "email_failed": "We konden de verificatie-e-mail niet versturen. Probeer het opnieuw.",
+        "generic": "Er ging iets mis. Probeer het zo meteen opnieuw.",
+        "network": "Geen verbinding. Controleer je verbinding en probeer het opnieuw."
+      }
+    },
     "testimonials": {
       "label": "Vanuit de redactie",
       "sliderLabel": "Stemmen van de redactie",

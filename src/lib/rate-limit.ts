@@ -58,8 +58,12 @@ export function clientIp(req: Request): string {
 // Comprueba todas las reglas para (bucket, ip). Se guarda un hash de la IP,
 // nunca la IP en claro. Si Redis falla se deja pasar (mejor que bloquear altas
 // legítimas por una caída del limitador) y se registra el error.
-export async function rateLimit(req: Request, bucket: string, rules: Rule[]): Promise<RateResult> {
-  const ip = createHash("sha256").update(clientIp(req)).digest("hex").slice(0, 16);
+export const rateLimit = (req: Request, bucket: string, rules: Rule[]) => limitBy(bucket, clientIp(req), rules);
+
+// Igual, pero con una clave cualquiera (p. ej. un email) en lugar de la IP. También se guarda
+// solo su hash.
+export async function limitBy(bucket: string, id: string, rules: Rule[]): Promise<RateResult> {
+  const ip = createHash("sha256").update(id).digest("hex").slice(0, 16);
   const url = redisUrl();
   const token = redisToken();
   let retryAfter = 0;
@@ -82,3 +86,13 @@ export const SUBSCRIBE_RULES: Rule[] = [
 export const UNSUBSCRIBE_RULES: Rule[] = [{ limit: 10, windowSec: 10 * 60 }];
 export const CONFIRM_RULES: Rule[] = [{ limit: 10, windowSec: 10 * 60 }];
 export const LOGIN_RULES: Rule[] = [{ limit: 10, windowSec: 15 * 60 }];
+
+// Comentarios: por IP, y por correo para no poder usar la web como bomba de correos de verificación.
+export const COMMENT_RULES: Rule[] = [
+  { limit: 5, windowSec: 10 * 60 },
+  { limit: 20, windowSec: 24 * 60 * 60 },
+];
+export const COMMENT_EMAIL_RULES: Rule[] = [
+  { limit: 3, windowSec: 60 * 60 },
+  { limit: 8, windowSec: 24 * 60 * 60 },
+];

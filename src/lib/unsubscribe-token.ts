@@ -43,3 +43,32 @@ export const verifyConfirm = (email: string, nonce: string, token: string) =>
   verify(signConfirm(email, nonce), token);
 export const confirmPath = (email: string, nonce: string, locale: string) =>
   `/${locale}/confirm?e=${encodeURIComponent(email)}&t=${signConfirm(email, nonce)}`;
+
+// --- Verificación de un comentario ---
+// El enlace lleva la nota y el id del comentario, y el token firma además el email y un valor
+// aleatorio del comentario: nadie puede verificar (ni publicar) un comentario ajeno.
+export const signCommentConfirm = (email: string, slug: string, id: string, nonce: string) =>
+  sign("comment-confirm", email, `${slug}\n${id}\n${nonce}`);
+export const verifyCommentConfirm = (email: string, slug: string, id: string, nonce: string, token: string) =>
+  verify(signCommentConfirm(email, slug, id, nonce), token);
+export const commentConfirmPath = (c: { email: string; slug: string; id: string; verifyNonce?: string; locale: string }) =>
+  `/${c.locale}/comment-confirm?s=${encodeURIComponent(c.slug)}&c=${encodeURIComponent(c.id)}&t=${signCommentConfirm(c.email, c.slug, c.id, c.verifyNonce ?? "")}`;
+
+// --- Cookie de "correo ya verificado" ---
+// Valor: <email en base64url>.<caduca (ms)>.<firma>. Solo la crea el servidor tras verificar un
+// comentario; si alguien la altera, la firma deja de valer.
+export function signCommenter(email: string, ttlSec: number): string {
+  const e = email.trim().toLowerCase();
+  const exp = Date.now() + ttlSec * 1000;
+  return `${Buffer.from(e).toString("base64url")}.${exp}.${sign("commenter", e, String(exp))}`;
+}
+
+export function verifyCommenter(value: string | undefined): string | null {
+  if (!value) return null;
+  const [b64, expRaw, sig] = value.split(".");
+  if (!b64 || !expRaw || !sig) return null;
+  const exp = Number(expRaw);
+  if (!Number.isFinite(exp) || exp < Date.now()) return null;
+  const email = Buffer.from(b64, "base64url").toString("utf8").trim().toLowerCase();
+  return verify(sign("commenter", email, String(exp)), sig) ? email : null;
+}

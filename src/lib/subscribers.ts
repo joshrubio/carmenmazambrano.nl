@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import { hash } from "./kv";
 
-export type SubscriberSource = "footer" | "page";
+export type SubscriberSource = "footer" | "page" | "comment";
 
 // pending: se apuntó pero no ha confirmado su email (doble opt-in); no recibe la newsletter.
 export type SubscriberStatus = "pending" | "confirmed";

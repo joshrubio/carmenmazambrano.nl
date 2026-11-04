@@ -20,16 +20,26 @@ interface Labels {
 
 // La confirmación se hace con un POST al pulsar el botón (no al abrir el enlace) para que los
 // escáneres de correo que "visitan" los enlaces no confirmen altas por su cuenta.
+// Sirve para la newsletter (por defecto) y, cambiando `endpoint`/`payload`, para otras
+// confirmaciones, como la de un comentario. `doneHref` y `expiredHref` son rutas sin idioma.
 export function ConfirmSubscription({
   email,
   token,
   lang,
   labels,
+  endpoint = "/api/confirm",
+  payload,
+  doneHref = "",
+  expiredHref = "/newsletter",
 }: {
   email: string;
   token: string;
   lang: Locale;
   labels: Labels;
+  endpoint?: string;
+  payload?: Record<string, string>;
+  doneHref?: string;
+  expiredHref?: string;
 }) {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "expired" | "error">("idle");
   const [error, setError] = useState("");
@@ -38,10 +48,10 @@ export function ConfirmSubscription({
     setStatus("loading");
     setError("");
     try {
-      const res = await fetch("/api/confirm", {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, token }),
+        body: JSON.stringify(payload ?? { email, token }),
       });
       const data = await res.json().catch(() => null);
       if (res.status === 410) return setStatus("expired");
@@ -60,7 +70,7 @@ export function ConfirmSubscription({
         <p className="font-display text-2xl font-black text-ink mb-1">{done ? labels.doneTitle : labels.expiredTitle}</p>
         <p className="font-body text-muted mb-4">{done ? labels.doneText : labels.expiredText}</p>
         <Link
-          href={localePath(lang, done ? "" : "/newsletter")}
+          href={localePath(lang, done ? doneHref : expiredHref)}
           className="label text-ink border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors inline-block"
         >
           {labels.backHome}

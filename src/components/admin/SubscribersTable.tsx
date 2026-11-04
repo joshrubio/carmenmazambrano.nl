@@ -133,7 +133,7 @@ export function SubscribersTable() {
                   </td>
                   <td className="px-4 py-3 label text-muted font-normal tracking-wide">{s.locale}</td>
                   <td className="px-4 py-3 label text-muted font-normal normal-case tracking-wide">
-                    {s.source === "page" ? "Página" : "Footer"}
+                    {s.source === "page" ? "Página" : s.source === "comment" ? "Comentario" : "Footer"}
                   </td>
                   <td className="px-4 py-3 font-body text-sm text-muted whitespace-nowrap">
                     {dateFmt.format(new Date(s.createdAt))}
