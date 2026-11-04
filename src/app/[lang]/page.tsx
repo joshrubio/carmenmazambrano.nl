@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllArticles, toSummary } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
-import { ArticleCarousel } from "@/components/ui/ArticleCarousel";
+import { AdCard } from "@/components/ui/AdCard";
 import { LatestNewsSlider } from "@/components/ui/LatestNewsSlider";
 import { ThickRule } from "@/components/ui/ColumnDivider";
 import { EditorPanel } from "@/components/ui/EditorPanel";
@@ -30,11 +30,11 @@ export default async function HomePage({ params }: Props) {
 
   // Solo el resumen viaja al navegador (sin el cuerpo de cada nota).
   // Caja superior: ficha de la editora + bucle de las 8 últimas + las 2 siguientes (se actualizan
-  // solas con cada nota nueva). Caja inferior: el resto, a todo el ancho.
+  // solas con cada nota nueva). Caja inferior: 8 notas más y la tarjeta publicitaria.
   const all = getAllArticles().map(toSummary);
   const latest = all.slice(0, 8);
   const below = all.slice(8, 10);
-  const rest = all.slice(10);
+  const rest = all.slice(10, 18);
 
   return (
     // Contenedor de consultas: el reparto en columnas depende del ancho realmente
@@ -69,24 +69,34 @@ export default async function HomePage({ params }: Props) {
         </aside>
       </section>
 
-      <section>
-        {rest.length > 0 && (
-          <>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="label text-accent">{dict.home.more}</span>
-              <ThickRule />
-            </div>
-            <ArticleCarousel articles={rest} perPage={12} />
-          </>
-        )}
+      <section className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
+        <div className="@3xl:col-span-8 min-w-0">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="label text-accent">{dict.home.more}</span>
+            <ThickRule />
+          </div>
 
-        <div className="text-center mt-8">
-          <Link
-            href={localePath(lang, "/articles")}
-            className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
-          >
-            {dict.home.viewAll}
-          </Link>
+          <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
+            {rest.map((article) => (
+              <ArticleCard key={article.slug} article={article} variant="compact" />
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href={localePath(lang, "/articles")}
+              className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
+            >
+              {dict.home.viewAll}
+            </Link>
+          </div>
+        </div>
+
+        {/* Publicidad: se queda a la vista mientras se recorre la lista */}
+        <div className="@3xl:col-span-4">
+          <div className="@3xl:sticky @3xl:top-[calc(var(--nav-h,3rem)+1rem)]">
+            <AdCard dict={dict} variant="classic" />
+          </div>
         </div>
       </section>
     </div>

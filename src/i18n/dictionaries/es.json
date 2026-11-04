@@ -38,6 +38,16 @@
     "email": "Email",
     "fullProfile": "Perfil completo →"
   },
+  "ads": {
+    "label": "Publicidad",
+    "lead": "Tu marca,",
+    "accent": "en nuestras páginas",
+    "text": "¿Tienes un negocio, un evento o un proyecto en Róterdam? Anúnciate en The New Paper y date a conocer entre los lectores de la comunidad.",
+    "cta": "Anúnciate con nosotros",
+    "hint": "Escríbenos y te contamos las opciones.",
+    "placeholder": "Tu anuncio aquí",
+    "mailSubject": "Publicidad en The New Paper"
+  },
   "home": {
     "latest": "Últimas",
     "more": "Más",
@@ -310,10 +320,6 @@
   },
   "client": {
     "carousel": {
-      "prev": "Anterior",
-      "next": "Siguiente",
-      "previousAria": "Página anterior",
-      "nextAria": "Página siguiente",
       "sliderLabel": "Últimas noticias",
       "slideOf": "Noticia {n} de {total}",
       "goTo": "Ir a la noticia {n}"

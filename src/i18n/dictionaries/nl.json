@@ -38,6 +38,16 @@
     "email": "E-mail",
     "fullProfile": "Volledig profiel →"
   },
+  "ads": {
+    "label": "Adverteren",
+    "lead": "Jouw merk,",
+    "accent": "op onze pagina’s",
+    "text": "Heb je een bedrijf, evenement of project in Rotterdam? Adverteer in The New Paper en maak kennis met onze lezers uit de gemeenschap.",
+    "cta": "Adverteer bij ons",
+    "hint": "Schrijf ons en we vertellen je graag over de mogelijkheden.",
+    "placeholder": "Jouw advertentie hier",
+    "mailSubject": "Adverteren in The New Paper"
+  },
   "home": {
     "latest": "Laatste",
     "more": "Meer",
@@ -310,10 +320,6 @@
   },
   "client": {
     "carousel": {
-      "prev": "Vorige",
-      "next": "Volgende",
-      "previousAria": "Vorige pagina",
-      "nextAria": "Volgende pagina",
       "sliderLabel": "Laatste nieuws",
       "slideOf": "Bericht {n} van {total}",
       "goTo": "Ga naar bericht {n}"
