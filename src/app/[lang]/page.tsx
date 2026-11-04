@@ -32,11 +32,13 @@ export default async function HomePage({ params }: Props) {
 
   // Solo el resumen viaja al navegador (sin el cuerpo de cada nota).
   // Caja superior: ficha de la editora + bucle de las 8 últimas + las 2 siguientes (se actualizan
-  // solas con cada nota nueva). Caja inferior: 8 notas más y la tarjeta publicitaria.
+  // solas con cada nota nueva). Caja inferior: 8 notas más en dos filas, con la publicidad y los testimonios.
   const all = getAllArticles().map(toSummary);
   const latest = all.slice(0, 8);
   const below = all.slice(8, 10);
-  const rest = all.slice(10, 18);
+  // `all` ya viene de más nueva a más antigua; se reparte tal cual, sin reordenar.
+  const moreTop = all.slice(10, 14);
+  const moreBottom = all.slice(14, 18);
 
   // Voces de la redacción en el idioma de la página, con enlace a la nota de la que hablan.
   const bySlug = new Map(all.map((a) => [a.slug, a]));
@@ -86,39 +88,53 @@ export default async function HomePage({ params }: Props) {
         </aside>
       </section>
 
-      <section className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
-        <div className="@3xl:col-span-8 min-w-0">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="label text-accent">{dict.home.more}</span>
-            <ThickRule />
+      {/* Caja inferior en dos filas, siguiendo el orden de publicación (de más nueva a más antigua):
+          fila 1 = notas 1-4 + publicidad · fila 2 = testimonios + notas 5-8 */}
+      <section className="space-y-10">
+        <div className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
+          <div className="@3xl:col-span-8 min-w-0">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="label text-accent">{dict.home.more}</span>
+              <ThickRule />
+            </div>
+            <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
+              {moreTop.map((article) => (
+                <ArticleCard key={article.slug} article={article} variant="compact" />
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
-            {rest.map((article) => (
-              <ArticleCard key={article.slug} article={article} variant="compact" />
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href={localePath(lang, "/articles")}
-              className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
-            >
-              {dict.home.viewAll}
-            </Link>
+          <div className="@3xl:col-span-4 flex flex-col">
+            {/* Mismo alto que la fila "Más" para que la tarjeta arranque a la par de las notas */}
+            <div aria-hidden="true" className="hidden @3xl:flex items-center gap-3 mb-6 invisible">
+              <span className="label">{dict.home.more}</span>
+            </div>
+            <AdCard dict={dict} className="flex-1" />
           </div>
         </div>
 
-        {/* Publicidad + testimonios: juntos cubren el alto de la lista de notas */}
-        <div className="@3xl:col-span-4 flex flex-col">
-          {/* Mismo alto que la fila "Más" para que la tarjeta arranque a la par de las notas */}
-          <div aria-hidden="true" className="hidden @3xl:flex items-center gap-3 mb-6 invisible">
-            <span className="label">{dict.home.more}</span>
+        <div className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
+          {/* En móvil primero las notas; en pantallas anchas, los testimonios a la izquierda */}
+          <div className="@3xl:col-span-8 min-w-0 @3xl:order-last">
+            <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
+              {moreBottom.map((article) => (
+                <ArticleCard key={article.slug} article={article} variant="compact" />
+              ))}
+            </div>
           </div>
-          <AdCard dict={dict} />
-          <div className="mt-6 flex-1 flex flex-col">
+
+          <div className="@3xl:col-span-4 flex flex-col">
             <TestimonialsCarousel items={voiceItems} />
           </div>
+        </div>
+
+        <div className="text-center">
+          <Link
+            href={localePath(lang, "/articles")}
+            className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
+          >
+            {dict.home.viewAll}
+          </Link>
         </div>
       </section>
     </div>

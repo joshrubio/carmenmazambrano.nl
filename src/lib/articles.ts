@@ -26,6 +26,9 @@ export interface Article {
   coverImage?: string;
 }
 
+// Orden: por `date` (solo día, sin hora), de más nueva a más antigua. El orden del archivo
+// no importa. En un empate (mismo día) manda la posición en el archivo, y las notas nuevas
+// se insertan arriba del todo, así que la publicada después sale primero. `sort` es estable.
 export function getAllArticles(): Article[] {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { articles } = require("../../content/articles/index") as { articles: Article[] };
