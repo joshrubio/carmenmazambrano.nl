@@ -71,7 +71,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-2 mb-4">
             <Link
               href={localePath(lang, "/articles")}
-              className="rounded-full label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
+              className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
             >
               {dict.home.viewAll}
             </Link>

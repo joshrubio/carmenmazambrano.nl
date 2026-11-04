@@ -96,7 +96,7 @@ export function SubscribersTable() {
           />
           <button
             onClick={() => window.location.assign("/api/admin/subscribers?format=csv")}
-            className="rounded-full label bg-ink text-inverse px-4 py-2 leading-none whitespace-nowrap hover:opacity-80 transition-opacity"
+            className="label bg-ink text-inverse px-4 py-2 leading-none whitespace-nowrap hover:opacity-80 transition-opacity"
           >
             Exportar CSV
           </button>

@@ -61,7 +61,7 @@ export function ConfirmSubscription({
         <p className="font-body text-muted mb-4">{done ? labels.doneText : labels.expiredText}</p>
         <Link
           href={localePath(lang, done ? "" : "/newsletter")}
-          className="rounded-full label text-ink border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors inline-block"
+          className="label text-ink border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors inline-block"
         >
           {labels.backHome}
         </Link>
@@ -80,7 +80,7 @@ export function ConfirmSubscription({
       <button
         onClick={handleConfirm}
         disabled={status === "loading"}
-        className="rounded-full label bg-accent text-inverse px-8 py-3 hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="label bg-accent text-inverse px-8 py-3 hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {status === "loading" ? labels.working : labels.confirmButton}
       </button>

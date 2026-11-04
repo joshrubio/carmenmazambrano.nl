@@ -29,7 +29,7 @@ export function ArticleCarousel({ articles, perPage = 3 }: Props) {
           <button
             onClick={() => setPage((p) => Math.max(0, p - 1))}
             disabled={page === 0}
-            className="rounded-full label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label={t.carousel.previousAria}
           >
             ‹ {t.carousel.prev}
@@ -42,7 +42,7 @@ export function ArticleCarousel({ articles, perPage = 3 }: Props) {
           <button
             onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
             disabled={page === totalPages - 1}
-            className="rounded-full label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="label text-ink font-normal px-4 py-1.5 border border-rule hover:border-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label={t.carousel.nextAria}
           >
             {t.carousel.next} ›

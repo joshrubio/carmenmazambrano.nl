@@ -144,7 +144,7 @@ export function TranslatableArticle({ articleLang, fromName, children }: Props) 
           {phase === "done" ? (
             <button
               onClick={toggle}
-              className="rounded-full label text-ink border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors"
+              className="label text-ink border border-ink px-4 py-2 hover:bg-ink hover:text-inverse transition-colors"
             >
               {showingTranslation ? tr.showOriginal : tr.translateAgain}
             </button>
@@ -152,7 +152,7 @@ export function TranslatableArticle({ articleLang, fromName, children }: Props) 
             <button
               onClick={handleTranslate}
               disabled={phase === "working"}
-              className="rounded-full label bg-ink text-inverse px-4 py-2 hover:opacity-80 transition-opacity disabled:opacity-60"
+              className="label bg-ink text-inverse px-4 py-2 hover:opacity-80 transition-opacity disabled:opacity-60"
             >
               {phase === "working" ? status : tr.button}
             </button>
