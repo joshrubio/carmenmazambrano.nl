@@ -80,6 +80,10 @@ export default async function HomePage({ params }: Props) {
 
         {/* Perfil de la editora: panel vertical a la izquierda (debajo de las noticias en móvil) */}
         <aside className="@3xl:col-span-4 @3xl:order-first">
+          {/* Mismo alto que la fila "Últimas" para que la foto de la ficha y la de la nota destacada arranquen a la par */}
+          <div aria-hidden="true" className="hidden @3xl:flex items-center gap-3 mb-4 invisible">
+            <span className="label">{dict.home.latest}</span>
+          </div>
           <EditorPanel lang={lang} dict={dict} />
         </aside>
       </div>
