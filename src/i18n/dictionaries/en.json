@@ -408,7 +408,12 @@
     "carousel": {
       "sliderLabel": "Latest news",
       "slideOf": "Story {n} of {total}",
-      "goTo": "Go to story {n}"
+      "goTo": "Go to story {n}",
+      "adBadge": "Advertisement",
+      "adSample": "Sample ad",
+      "adLabel": "Advertisement: {name}",
+      "adPromo": "Want to advertise here?",
+      "adPromoCta": "Contact us"
     },
     "skills": {
       "languages": "Languages",

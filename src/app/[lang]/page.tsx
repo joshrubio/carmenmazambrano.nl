@@ -6,6 +6,8 @@ import { ArticleCard } from "@/components/article/ArticleCard";
 import { AdCard } from "@/components/ui/AdCard";
 import { TestimonialsCarousel } from "@/components/ui/TestimonialsCarousel";
 import { voices } from "../../../content/testimonials";
+import { ads } from "../../../content/ads";
+import { about } from "../../../content/about";
 import { LatestNewsSlider } from "@/components/ui/LatestNewsSlider";
 import { ThickRule } from "@/components/ui/ColumnDivider";
 import { EditorPanel } from "@/components/ui/EditorPanel";
@@ -40,6 +42,22 @@ export default async function HomePage({ params }: Props) {
   const moreTop = all.slice(10, 14);
   const moreBottom = all.slice(14, 18);
 
+  // Anuncios de ejemplo del carrusel, en el idioma de la página.
+  const adSlides = ads.map((a) => ({
+    id: a.id,
+    advertiser: a.advertiser,
+    url: a.url,
+    headline: a.headline[lang],
+    text: a.text[lang],
+    cta: a.cta[lang],
+    sample: a.sample,
+    visual:
+      a.visual.kind === "image"
+        ? { kind: "image" as const, src: a.visual.src, alt: a.visual.alt[lang], position: a.visual.position, fit: a.visual.fit, bg: a.visual.bg }
+        : { kind: "type" as const, word: a.visual.word[lang], kicker: a.visual.kicker },
+  }));
+  const advertiseHref = `mailto:${about.email}?subject=${encodeURIComponent(dict.ads.mailSubject)}`;
+
   // Voces de la redacción en el idioma de la página, con enlace a la nota de la que hablan.
   const bySlug = new Map(all.map((a) => [a.slug, a]));
   const voiceItems = voices.map((v) => {
@@ -67,7 +85,7 @@ export default async function HomePage({ params }: Props) {
             <ThickRule />
           </div>
 
-          <LatestNewsSlider articles={latest} />
+          <LatestNewsSlider articles={latest} ads={adSlides} advertiseHref={advertiseHref} />
 
           {below.length > 0 && (
             <div className="mt-8 grid grid-cols-1 @xl:grid-cols-2 gap-6">

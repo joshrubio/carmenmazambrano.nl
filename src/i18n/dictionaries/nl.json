@@ -408,7 +408,12 @@
     "carousel": {
       "sliderLabel": "Laatste nieuws",
       "slideOf": "Bericht {n} van {total}",
-      "goTo": "Ga naar bericht {n}"
+      "goTo": "Ga naar bericht {n}",
+      "adBadge": "Advertentie",
+      "adSample": "Voorbeeldadvertentie",
+      "adLabel": "Advertentie: {name}",
+      "adPromo": "Wil je hier adverteren?",
+      "adPromoCta": "Neem contact op"
     },
     "skills": {
       "languages": "Talen",

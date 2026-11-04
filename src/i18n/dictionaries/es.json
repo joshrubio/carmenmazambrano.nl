@@ -408,7 +408,12 @@
     "carousel": {
       "sliderLabel": "Últimas noticias",
       "slideOf": "Noticia {n} de {total}",
-      "goTo": "Ir a la noticia {n}"
+      "goTo": "Ir a la noticia {n}",
+      "adBadge": "Publicidad",
+      "adSample": "Anuncio de ejemplo",
+      "adLabel": "Publicidad: {name}",
+      "adPromo": "¿Quieres anunciarte aquí?",
+      "adPromoCta": "Contáctanos"
     },
     "skills": {
       "languages": "Idiomas",

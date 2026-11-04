@@ -19,6 +19,8 @@ const getReducedServer = () => false;
 export interface LoopItem {
   key: string;
   node: React.ReactNode;
+  // Si se da, sustituye al texto accesible por defecto ("Noticia 3 de 8") de la tarjeta y de su punto.
+  label?: string;
 }
 
 export interface LoopLabels {
@@ -113,7 +115,7 @@ export function LoopCarousel({ items, labels, fill = false, tone = "light", clas
               key={item.key}
               role="group"
               aria-roledescription="slide"
-              aria-label={format(labels.slideOf, { n: i + 1, total: n })}
+              aria-label={item.label ?? format(labels.slideOf, { n: i + 1, total: n })}
               aria-hidden={!active}
               inert={!active}
               className={`col-start-1 row-start-1 min-w-0 ${fill ? "self-center" : ""}`}
@@ -138,7 +140,7 @@ export function LoopCarousel({ items, labels, fill = false, tone = "light", clas
               <button
                 type="button"
                 onClick={() => go(i)}
-                aria-label={format(labels.goTo, { n: i + 1 })}
+                aria-label={item.label ?? format(labels.goTo, { n: i + 1 })}
                 aria-current={i === index ? "true" : undefined}
                 className="group block p-2"
               >
