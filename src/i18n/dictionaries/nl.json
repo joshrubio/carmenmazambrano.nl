@@ -320,11 +320,12 @@
   },
   "client": {
     "testimonials": {
-      "label": "Ervaringen",
-      "sliderLabel": "Ervaringen",
-      "slideOf": "Ervaring {n} van {total}",
-      "goTo": "Ga naar ervaring {n}",
-      "sample": "Voorbeeld"
+      "label": "Vanuit de redactie",
+      "sliderLabel": "Stemmen van de redactie",
+      "slideOf": "Citaat {n} van {total}",
+      "goTo": "Ga naar citaat {n}",
+      "about": "Over het artikel",
+      "draft": "Concept"
     },
     "carousel": {
       "sliderLabel": "Laatste nieuws",

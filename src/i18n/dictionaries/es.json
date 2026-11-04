@@ -320,11 +320,12 @@
   },
   "client": {
     "testimonials": {
-      "label": "Testimonios",
-      "sliderLabel": "Testimonios",
-      "slideOf": "Testimonio {n} de {total}",
-      "goTo": "Ir al testimonio {n}",
-      "sample": "Ejemplo"
+      "label": "Desde la redacción",
+      "sliderLabel": "Voces de la redacción",
+      "slideOf": "Cita {n} de {total}",
+      "goTo": "Ir a la cita {n}",
+      "about": "Sobre la nota",
+      "draft": "Borrador"
     },
     "carousel": {
       "sliderLabel": "Últimas noticias",

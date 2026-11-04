@@ -5,7 +5,7 @@ import { getAllArticles, toSummary } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
 import { AdCard } from "@/components/ui/AdCard";
 import { TestimonialsCarousel } from "@/components/ui/TestimonialsCarousel";
-import { testimonials } from "../../../content/testimonials";
+import { voices } from "../../../content/testimonials";
 import { LatestNewsSlider } from "@/components/ui/LatestNewsSlider";
 import { ThickRule } from "@/components/ui/ColumnDivider";
 import { EditorPanel } from "@/components/ui/EditorPanel";
@@ -37,6 +37,21 @@ export default async function HomePage({ params }: Props) {
   const latest = all.slice(0, 8);
   const below = all.slice(8, 10);
   const rest = all.slice(10, 18);
+
+  // Voces de la redacción en el idioma de la página, con enlace a la nota de la que hablan.
+  const bySlug = new Map(all.map((a) => [a.slug, a]));
+  const voiceItems = voices.map((v) => {
+    const art = v.article ? bySlug.get(v.article) : undefined;
+    return {
+      quote: v.quote[lang],
+      author: v.author,
+      role: v.role[lang],
+      draft: v.draft,
+      href: art ? localePath(lang, `/articles/${art.slug}`) : undefined,
+      articleTitle: art?.title,
+      articleLang: art?.language,
+    };
+  });
 
   return (
     // Contenedor de consultas: el reparto en columnas depende del ancho realmente
@@ -102,7 +117,7 @@ export default async function HomePage({ params }: Props) {
           </div>
           <AdCard dict={dict} />
           <div className="mt-6 flex-1 flex flex-col">
-            <TestimonialsCarousel items={testimonials} />
+            <TestimonialsCarousel items={voiceItems} />
           </div>
         </div>
       </section>
