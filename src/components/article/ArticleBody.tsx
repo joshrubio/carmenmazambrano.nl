@@ -67,7 +67,7 @@ export function ArticleBody({ blocks, dropCap = true }: Props) {
 
           case "infobox":
             return (
-              <div key={i} className="my-6 border border-rule bg-surface p-5">
+              <div key={i} className="my-6 rounded-2xl border border-rule bg-surface p-5">
                 <dl className="space-y-2">
                   {block.items.map((item, j) => (
                     <div key={j} className="flex gap-4 items-baseline">

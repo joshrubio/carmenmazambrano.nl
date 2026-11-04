@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: Props) {
       <h1 className="font-display text-5xl font-black text-ink mb-2">{C.title}</h1>
       <p className="font-display text-lg text-muted italic font-normal mb-8">{C.subtitle}</p>
 
-      <div className="space-y-5 border-t border-rule pt-6">
+      <div className="space-y-5 rounded-2xl border border-rule/70 bg-gradient-to-b from-white to-surface/70 shadow-soft p-6 sm:p-8">
         <div className="flex gap-6 items-baseline">
           <span className="label text-accent w-20 shrink-0">{C.phone}</span>
           <a href={`tel:${about.phone}`} className="font-body text-xl text-ink hover:text-accent transition-colors">

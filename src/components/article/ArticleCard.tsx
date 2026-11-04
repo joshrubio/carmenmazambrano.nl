@@ -32,7 +32,7 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
     return (
       <article className="group">
         {article.coverImage && (
-          <div className="relative w-full h-64 mb-3 overflow-hidden">
+          <div className="relative w-full h-64 mb-4 overflow-hidden rounded-2xl">
             <Image
               src={article.coverImage}
               alt={article.title}
@@ -63,9 +63,9 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
 
   if (variant === "compact") {
     return (
-      <article className="group border-t border-rule pt-3">
+      <article className="group rounded-2xl border border-rule/70 bg-white/60 p-3 transition-shadow duration-300 hover:shadow-soft">
         {article.coverImage && (
-          <Link href={href} className="block mb-2 overflow-hidden">
+          <Link href={href} className="block mb-2 overflow-hidden rounded-xl">
             <div className="relative w-full h-32">
               <Image
                 src={article.coverImage}
@@ -90,9 +90,9 @@ export function ArticleCard({ article, variant = "secondary" }: Props) {
 
   // secondary
   return (
-    <article className="group border-t border-rule pt-4">
+    <article className="group rounded-2xl border border-rule/70 bg-white/60 p-4 transition-shadow duration-300 hover:shadow-soft">
       {article.coverImage && (
-        <Link href={href} className="block mb-3 overflow-hidden">
+        <Link href={href} className="block mb-3 overflow-hidden rounded-xl">
           <div className="relative w-full h-48">
             <Image
               src={article.coverImage}

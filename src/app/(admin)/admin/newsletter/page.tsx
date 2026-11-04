@@ -31,7 +31,7 @@ const AUDIENCE_LABEL: Record<Audience, string> = {
 };
 const STATUS_LABEL = { sending: "Enviando", partial: "Incompleto", sent: "Enviado" } as const;
 const dateFmt = new Intl.DateTimeFormat("es-ES", { dateStyle: "medium", timeStyle: "short" });
-const inputClass = "w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink";
+const inputClass = "w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink";
 
 async function api(url: string, body?: unknown) {
   const res = await fetch(url, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : { cache: "no-store" });
@@ -129,7 +129,7 @@ export default function NewsletterAdminPage() {
       </p>
 
       {overview?.mode === "dry-run" && (
-        <p className="font-body text-sm border border-rule bg-surface px-4 py-3 mb-6">
+        <p className="rounded-xl font-body text-sm border border-rule bg-surface px-4 py-3 mb-6">
           <strong>Modo simulación:</strong> no hay clave de Resend configurada, así que los correos no se envían; se guardan
           en <code>.data/outbox</code>.
         </p>
@@ -173,7 +173,7 @@ export default function NewsletterAdminPage() {
           <button onClick={showPreview} disabled={!ready || !!busy} className="rounded-full label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
             {busy === "preview" ? "Generando..." : "Vista previa"}
           </button>
-          <input value={testTo} onChange={(e) => setTestTo(e.target.value)} type="email" placeholder="tu@email.com" aria-label="Email para la prueba" className="border border-rule bg-white px-3 py-3 font-body text-sm w-56 focus:outline-none focus:border-ink" />
+          <input value={testTo} onChange={(e) => setTestTo(e.target.value)} type="email" placeholder="tu@email.com" aria-label="Email para la prueba" className="rounded-full border border-rule bg-white px-4 py-3 font-body text-sm w-56 focus:outline-none focus:border-ink" />
           <button onClick={sendTest} disabled={!ready || !testTo || !!busy} className="rounded-full label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
             {busy === "test" ? "Enviando..." : "Enviar prueba"}
           </button>
@@ -183,13 +183,13 @@ export default function NewsletterAdminPage() {
         </div>
 
         {message && (
-          <p className={`font-body text-sm ${message.kind === "ok" ? "text-ink border border-ink bg-white px-4 py-3" : "text-accent"}`} role={message.kind === "error" ? "alert" : "status"}>
+          <p className={`font-body text-sm ${message.kind === "ok" ? "rounded-xl text-ink border border-ink bg-white px-4 py-3" : "text-accent"}`} role={message.kind === "error" ? "alert" : "status"}>
             {message.text}
           </p>
         )}
 
         {preview && (
-          <iframe title="Vista previa del correo" srcDoc={preview} sandbox="" className="w-full h-[640px] border border-rule bg-white" />
+          <iframe title="Vista previa del correo" srcDoc={preview} sandbox="" className="w-full h-[640px] rounded-2xl border border-rule bg-white" />
         )}
       </div>
 
@@ -198,9 +198,9 @@ export default function NewsletterAdminPage() {
         <ThickRule />
       </div>
       {!overview || overview.campaigns.length === 0 ? (
-        <p className="font-body text-muted border border-rule bg-white p-6">Todavía no se ha enviado ninguna newsletter.</p>
+        <p className="rounded-2xl font-body text-muted border border-rule bg-white p-6">Todavía no se ha enviado ninguna newsletter.</p>
       ) : (
-        <div className="overflow-x-auto border border-rule bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-rule bg-white shadow-soft">
           <table className="w-full min-w-[640px] text-left">
             <thead className="border-b-2 border-ink">
               <tr>

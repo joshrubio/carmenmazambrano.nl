@@ -94,8 +94,8 @@ export function AdminShell({ lang, children }: { lang: Locale; children: React.R
                 <li key={t.href}>
                   <Link
                     href={t.href}
-                    className={`label flex items-center gap-2 px-3 py-2 border-b-2 ${
-                      isActive(pathname, t.href) ? "border-accent text-accent" : "border-transparent text-muted hover:text-ink"
+                    className={`label flex items-center gap-2 px-3 py-2 rounded-full ${
+                      isActive(pathname, t.href) ? "bg-paper text-accent shadow-soft" : "text-muted hover:text-ink"
                     }`}
                   >
                     {t.icon}
@@ -122,7 +122,7 @@ export function AdminShell({ lang, children }: { lang: Locale; children: React.R
                   aria-expanded={!collapsed}
                   aria-label={collapsed ? "Desplegar el panel" : "Plegar el panel"}
                   title={collapsed ? "Desplegar el panel" : "Plegar el panel"}
-                  className="w-8 h-8 flex items-center justify-center text-muted hover:text-ink hover:bg-paper transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-muted hover:text-ink hover:bg-paper transition-colors"
                 >
                   <svg viewBox="0 0 24 24" className={`w-4 h-4 transition-transform ${collapsed ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M15 6l-6 6 6 6" />
@@ -136,10 +136,10 @@ export function AdminShell({ lang, children }: { lang: Locale; children: React.R
                       href={t.href}
                       title={collapsed ? t.label : undefined}
                       aria-label={collapsed ? t.label : undefined}
-                      className={`label flex items-center gap-3 border-l-2 ${collapsed ? "justify-center px-0 py-2.5" : "px-3 py-2"} ${
+                      className={`label flex items-center gap-3 rounded-full ${collapsed ? "justify-center px-0 py-2.5" : "px-3 py-2"} ${
                         isActive(pathname, t.href)
-                          ? "border-accent bg-paper text-accent"
-                          : "border-transparent text-muted hover:text-ink hover:bg-paper"
+                          ? "bg-paper text-accent shadow-soft"
+                          : "text-muted hover:text-ink hover:bg-paper"
                       }`}
                     >
                       {t.icon}

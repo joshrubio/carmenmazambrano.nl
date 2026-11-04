@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* Las notas se publican en un solo idioma: se avisa si no es el de la interfaz. */}
       {differs && (
-        <p className="label text-muted font-normal normal-case tracking-wide border border-rule bg-surface px-3 py-2 mb-6">
+        <p className="label text-muted font-normal normal-case tracking-wide rounded-xl border border-rule bg-surface px-3 py-2 mb-6">
           {dict.article.writtenIn.replace("{language}", dict.article.languages[article.language])}
         </p>
       )}

@@ -92,7 +92,7 @@ export function SubscribersTable() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar por nombre o email"
             aria-label="Buscar suscriptores"
-            className="border border-rule bg-white px-3 py-2 font-body text-sm text-ink focus:outline-none focus:border-ink w-full sm:w-64"
+            className="rounded-full border border-rule bg-white px-4 py-2 font-body text-sm text-ink focus:outline-none focus:border-ink w-full sm:w-64"
           />
           <button
             onClick={() => window.location.assign("/api/admin/subscribers?format=csv")}
@@ -106,11 +106,11 @@ export function SubscribersTable() {
       {error && <p className="font-body text-sm text-accent mb-3">{error}</p>}
 
       {filtered.length === 0 ? (
-        <p className="font-body text-muted border border-rule bg-white p-6">
+        <p className="rounded-2xl font-body text-muted border border-rule bg-white p-6">
           {subs.length === 0 ? "Aún no se ha apuntado nadie." : "Ningún resultado para esa búsqueda."}
         </p>
       ) : (
-        <div className="overflow-x-auto border border-rule bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-rule bg-white shadow-soft">
           <table className="w-full min-w-[640px] text-left">
             <thead className="border-b-2 border-ink">
               <tr>

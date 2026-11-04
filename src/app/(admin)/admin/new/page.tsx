@@ -189,7 +189,7 @@ export default function NewArticlePage() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border border-rule bg-white px-4 py-3 font-display text-xl text-ink focus:outline-none focus:border-ink"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-display text-xl text-ink focus:outline-none focus:border-ink"
             placeholder="El título de la nota de prensa"
             required
           />
@@ -202,7 +202,7 @@ export default function NewArticlePage() {
             type="text"
             value={subtitle}
             onChange={(e) => setSubtitle(e.target.value)}
-            className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
             placeholder="Una línea complementaria al título"
           />
         </div>
@@ -217,7 +217,7 @@ export default function NewArticlePage() {
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
-            className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
             required
           >
             <option value="nl">Neerlandés (Nederlands)</option>
@@ -233,7 +233,7 @@ export default function NewArticlePage() {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+              className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
               required
             >
               {CATEGORIES.map((c) => (
@@ -247,7 +247,7 @@ export default function NewArticlePage() {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+              className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
               required
             />
           </div>
@@ -263,7 +263,7 @@ export default function NewArticlePage() {
             value={excerpt}
             onChange={(e) => setExcerpt(e.target.value)}
             rows={3}
-            className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink resize-none"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink resize-none"
             placeholder="Breve descripción del artículo para la portada..."
             required
           />
@@ -274,7 +274,7 @@ export default function NewArticlePage() {
           <label className="label text-accent block mb-2">Imagen principal</label>
           <div
             onClick={() => coverRef.current?.click()}
-            className="border-2 border-dashed border-rule hover:border-ink transition-colors cursor-pointer bg-white"
+            className="rounded-2xl border-2 border-dashed border-rule hover:border-ink transition-colors cursor-pointer bg-white"
           >
             {coverPreview ? (
               <div className="relative w-full h-48">
@@ -329,7 +329,7 @@ export default function NewArticlePage() {
             type="text"
             value={pullquote}
             onChange={(e) => setPullquote(e.target.value)}
-            className="w-full border border-rule bg-white px-4 py-3 font-display italic text-ink focus:outline-none focus:border-ink"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-display italic text-ink focus:outline-none focus:border-ink"
             placeholder="Una frase importante del artículo..."
           />
         </div>
@@ -339,7 +339,7 @@ export default function NewArticlePage() {
           <label className="label text-muted block mb-2">Galería de fotos (opcional)</label>
           <div
             onClick={() => galleryRef.current?.click()}
-            className="border-2 border-dashed border-rule hover:border-ink transition-colors cursor-pointer bg-white py-6 text-center"
+            className="rounded-2xl border-2 border-dashed border-rule hover:border-ink transition-colors cursor-pointer bg-white py-6 text-center"
           >
             <p className="font-body text-muted text-sm">Haz clic para seleccionar varias fotos</p>
             <p className="label text-dim font-normal normal-case tracking-wide mt-1">Puedes seleccionar múltiples archivos a la vez</p>
@@ -355,7 +355,7 @@ export default function NewArticlePage() {
           {galleryPreviews.length > 0 && (
             <div className="grid grid-cols-4 gap-2 mt-3">
               {galleryPreviews.map((src, i) => (
-                <div key={i} className="relative aspect-square overflow-hidden bg-surface">
+                <div key={i} className="relative aspect-square overflow-hidden rounded-xl bg-surface">
                   <Image src={src} alt={`Gallery ${i + 1}`} fill className="object-cover" />
                 </div>
               ))}
@@ -379,7 +379,7 @@ export default function NewArticlePage() {
             type="url"
             value={linkedin}
             onChange={(e) => setLinkedin(e.target.value)}
-            className="w-full border border-rule bg-white px-4 py-3 font-body text-sm text-ink focus:outline-none focus:border-ink"
+            className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-sm text-ink focus:outline-none focus:border-ink"
             placeholder="https://www.linkedin.com/posts/..."
           />
         </div>

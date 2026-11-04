@@ -65,7 +65,7 @@ export function RichTextEditor({ value, onChange, pullquote = "", rows = 16, pla
       <div
         role="toolbar"
         aria-label="Formato del texto"
-        className="flex flex-wrap items-center gap-1 border border-b-0 border-rule bg-surface px-2 py-1.5"
+        className="flex flex-wrap items-center gap-1 rounded-t-xl border border-b-0 border-rule bg-surface px-2 py-1.5"
       >
         <button type="button" onClick={heading} disabled={preview} title="Título de sección (##)" aria-label="Título" className={`${buttonClass} label tracking-wide`}>
           Título
@@ -96,13 +96,13 @@ export function RichTextEditor({ value, onChange, pullquote = "", rows = 16, pla
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={onKeyDown}
         rows={rows}
-        className={`w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink resize-y ${preview ? "hidden" : ""}`}
+        className={`w-full rounded-b-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink resize-y ${preview ? "hidden" : ""}`}
         placeholder={placeholder}
         required={!preview}
       />
 
       {preview && (
-        <div className="border border-rule bg-white px-6 py-5 min-h-48" aria-label="Vista previa del texto">
+        <div className="rounded-b-xl border border-rule bg-white px-6 py-5 min-h-48" aria-label="Vista previa del texto">
           {blocks.length ? (
             <ArticleBody blocks={blocks} />
           ) : (

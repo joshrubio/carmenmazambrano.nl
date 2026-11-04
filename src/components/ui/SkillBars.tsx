@@ -42,7 +42,7 @@ function Bar({ name, level, pct }: SkillItem) {
           {level ?? `${pct}%`}
         </span>
       </div>
-      <div className="h-[3px] bg-rule w-full">
+      <div className="h-1.5 rounded-full overflow-hidden bg-rule/70 w-full">
         <div
           className="h-full bg-accent transition-all duration-700 ease-out"
           style={{ width: `${width}%` }}

@@ -45,7 +45,7 @@ export function DeleteArticleButton({ slug, title }: { slug: string; title: stri
 
   if (done) {
     return (
-      <div className="border border-ink p-4 mb-8">
+      <div className="rounded-2xl border border-ink p-4 mb-8">
         <p className="font-body text-ink">
           Nota borrada. La web se actualizará en <strong>2–3 minutos</strong>.
         </p>

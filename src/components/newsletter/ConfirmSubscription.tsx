@@ -56,7 +56,7 @@ export function ConfirmSubscription({
   if (status === "done" || status === "expired") {
     const done = status === "done";
     return (
-      <div className="border border-ink bg-white p-6" role="status">
+      <div className="rounded-2xl border border-ink bg-white p-6 shadow-soft" role="status">
         <p className="font-display text-2xl font-black text-ink mb-1">{done ? labels.doneTitle : labels.expiredTitle}</p>
         <p className="font-body text-muted mb-4">{done ? labels.doneText : labels.expiredText}</p>
         <Link

@@ -45,7 +45,7 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
+              className="w-full rounded-xl border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink"
               placeholder="••••••••"
               required
               autoFocus

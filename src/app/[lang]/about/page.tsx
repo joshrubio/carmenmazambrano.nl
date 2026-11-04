@@ -60,7 +60,7 @@ export default async function AboutPage({ params }: Props) {
         {/* ── Sidebar (sticky) ── */}
         <aside className="md:col-span-4">
           <div className="sticky top-8">
-            <div className="relative w-full aspect-[3/4] max-h-80 md:max-h-none overflow-hidden mb-4">
+            <div className="relative w-full aspect-[3/4] max-h-80 md:max-h-none overflow-hidden rounded-2xl shadow-soft mb-4">
               <PhotoSlot src={about.photo} alt={about.name} grayscale={false} fallbackText={dict.common.photoComingSoon} />
             </div>
 
@@ -92,9 +92,9 @@ export default async function AboutPage({ params }: Props) {
 
             <div className="mt-6">
               <p className="label text-accent mb-3">{A.specialties}</p>
-              <ul className="space-y-1.5">
+              <ul className="flex flex-wrap">
                 {A.specialtiesList.map((s) => (
-                  <li key={s} className="label text-muted font-normal normal-case tracking-wide flex items-center gap-2 before:content-['—'] before:text-accent">
+                  <li key={s} className="label font-normal normal-case tracking-wide text-ink bg-surface rounded-full px-3 py-1 inline-block mr-1.5 mb-1.5">
                     {s}
                   </li>
                 ))}
