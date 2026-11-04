@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { getAllArticles, toSummary } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
 import { ArticleCarousel } from "@/components/ui/ArticleCarousel";
-import { ThickRule, HorizontalRule } from "@/components/ui/ColumnDivider";
+import { LatestNewsSlider } from "@/components/ui/LatestNewsSlider";
+import { ThickRule } from "@/components/ui/ColumnDivider";
 import { EditorPanel } from "@/components/ui/EditorPanel";
 import { hasLocale, localePath } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -28,13 +29,18 @@ export default async function HomePage({ params }: Props) {
   const dict = await getDictionary(lang);
 
   // Solo el resumen viaja al navegador (sin el cuerpo de cada nota).
-  const [main, second, third, ...rest] = getAllArticles().map(toSummary);
+  // Caja superior: ficha de la editora + bucle de las 8 últimas + las 2 siguientes (se actualizan
+  // solas con cada nota nueva). Caja inferior: el resto, a todo el ancho.
+  const all = getAllArticles().map(toSummary);
+  const latest = all.slice(0, 8);
+  const below = all.slice(8, 10);
+  const rest = all.slice(10);
 
   return (
-    // Contenedor de consultas: el reparto en dos columnas depende del ancho realmente
+    // Contenedor de consultas: el reparto en columnas depende del ancho realmente
     // disponible (que cambia si el panel de administración está abierto), no de la pantalla.
-    <div className="@container">
-      <div className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
+    <div className="@container space-y-8">
+      <section className="grid grid-cols-1 @3xl:grid-cols-12 gap-x-8 gap-y-10">
         {/* Noticias */}
         <div className="@3xl:col-span-8 min-w-0">
           <div className="flex items-center gap-3 mb-4">
@@ -42,51 +48,47 @@ export default async function HomePage({ params }: Props) {
             <ThickRule />
           </div>
 
-          {main && (
-            <div className="mb-8">
-              <ArticleCard article={main} variant="featured" />
+          <LatestNewsSlider articles={latest} />
+
+          {below.length > 0 && (
+            <div className="mt-8 grid grid-cols-1 @xl:grid-cols-2 gap-6">
+              {below.map((article) => (
+                <ArticleCard key={article.slug} article={article} variant="secondary" />
+              ))}
             </div>
           )}
-
-          {(second || third) && (
-            <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6 mb-10">
-              {second && <ArticleCard article={second} variant="secondary" />}
-              {third && <ArticleCard article={third} variant="secondary" />}
-            </div>
-          )}
-
-          {rest.length > 0 && (
-            <>
-              <HorizontalRule />
-              <div className="mt-6 mb-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="label text-accent">{dict.home.more}</span>
-                  <ThickRule />
-                </div>
-                <ArticleCarousel articles={rest} perPage={4} />
-              </div>
-            </>
-          )}
-
-          <div className="text-center mt-2 mb-4">
-            <Link
-              href={localePath(lang, "/articles")}
-              className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
-            >
-              {dict.home.viewAll}
-            </Link>
-          </div>
         </div>
 
         {/* Perfil de la editora: panel vertical a la izquierda (debajo de las noticias en móvil) */}
         <aside className="@3xl:col-span-4 @3xl:order-first">
-          {/* Mismo alto que la fila "Últimas" para que la foto de la ficha y la de la nota destacada arranquen a la par */}
+          {/* Mismo alto que la fila "Últimas" para que la foto de la ficha y la del bucle arranquen a la par */}
           <div aria-hidden="true" className="hidden @3xl:flex items-center gap-3 mb-4 invisible">
             <span className="label">{dict.home.latest}</span>
           </div>
           <EditorPanel lang={lang} dict={dict} />
         </aside>
-      </div>
+      </section>
+
+      <section>
+        {rest.length > 0 && (
+          <>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="label text-accent">{dict.home.more}</span>
+              <ThickRule />
+            </div>
+            <ArticleCarousel articles={rest} perPage={12} />
+          </>
+        )}
+
+        <div className="text-center mt-8">
+          <Link
+            href={localePath(lang, "/articles")}
+            className="label text-ink font-normal border border-ink px-6 py-2 hover:bg-ink hover:text-inverse transition-colors"
+          >
+            {dict.home.viewAll}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

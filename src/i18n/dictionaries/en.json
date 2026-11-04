@@ -313,7 +313,10 @@
       "prev": "Prev",
       "next": "Next",
       "previousAria": "Previous page",
-      "nextAria": "Next page"
+      "nextAria": "Next page",
+      "sliderLabel": "Latest news",
+      "slideOf": "Story {n} of {total}",
+      "goTo": "Go to story {n}"
     },
     "skills": {
       "languages": "Languages",

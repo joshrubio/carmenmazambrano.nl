@@ -313,7 +313,10 @@
       "prev": "Vorige",
       "next": "Volgende",
       "previousAria": "Vorige pagina",
-      "nextAria": "Volgende pagina"
+      "nextAria": "Volgende pagina",
+      "sliderLabel": "Laatste nieuws",
+      "slideOf": "Bericht {n} van {total}",
+      "goTo": "Ga naar bericht {n}"
     },
     "skills": {
       "languages": "Talen",
