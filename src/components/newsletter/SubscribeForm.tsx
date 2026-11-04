@@ -7,12 +7,36 @@ import { useLocale } from "@/i18n/LocaleProvider";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const inputClass =
-  "w-full border border-rule bg-white px-4 py-3 font-body text-ink focus:outline-none focus:border-ink";
+// "light": sobre fondo claro (campos blancos) · "accent": dentro del bloque burdeos
+const TONES = {
+  light: {
+    input:
+      "w-full rounded-full border border-rule bg-white px-5 py-3 font-body text-sm text-ink placeholder:text-dim focus:outline-none focus:border-ink",
+    button: "label shrink-0 rounded-full bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-50",
+    consent: "text-muted",
+    link: "text-ink underline underline-offset-2 hover:text-accent",
+    error: "text-accent",
+    success: "rounded-xl border border-ink bg-paper p-5 text-ink",
+    successText: "text-muted",
+    check: "accent-[#8B1A1A]",
+  },
+  accent: {
+    input:
+      "w-full rounded-full border border-white/30 bg-white/10 px-5 py-3 font-body text-sm text-inverse placeholder:text-inverse/70 focus:outline-none focus:bg-white/20 focus:border-white/60",
+    button: "label shrink-0 rounded-full bg-paper text-ink px-6 py-3 hover:bg-white transition-colors disabled:opacity-60",
+    consent: "text-inverse/80",
+    link: "text-inverse underline underline-offset-2 hover:text-white",
+    error: "text-inverse font-semibold",
+    success: "rounded-xl border border-white/30 bg-white/10 p-5 text-inverse",
+    successText: "text-inverse/80",
+    check: "accent-[#FAF7F0]",
+  },
+} as const;
 
-export function SubscribeForm({ source }: { source: "footer" | "page" }) {
+export function SubscribeForm({ source, tone = "light" }: { source: "footer" | "page"; tone?: keyof typeof TONES }) {
   const { lang, t } = useLocale();
   const s = t.subscribe;
+  const c = TONES[tone];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
@@ -49,47 +73,50 @@ export function SubscribeForm({ source }: { source: "footer" | "page" }) {
 
   if (status === "success") {
     return (
-      <div className="border border-ink bg-paper p-6" role="status">
-        <p className="font-display text-2xl font-black text-ink mb-1">{s.successTitle}</p>
-        <p className="font-body text-muted">{s.successText}</p>
+      <div className={c.success} role="status">
+        <p className="font-display text-2xl font-black mb-1">{s.successTitle}</p>
+        <p className={`font-body ${c.successText}`}>{s.successText}</p>
       </div>
     );
   }
 
+  const nameId = `sub-name-${source}`;
+  const emailId = `sub-email-${source}`;
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor={`sub-name-${source}`} className="label text-muted block mb-1">
-            {s.nameLabel}
-          </label>
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div>
+        <label htmlFor={nameId} className="sr-only">{s.nameLabel}</label>
+        <input
+          id={nameId}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={100}
+          autoComplete="name"
+          className={c.input}
+          placeholder={s.namePlaceholder}
+        />
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex-1 min-w-0">
+          <label htmlFor={emailId} className="sr-only">{s.emailLabel}</label>
           <input
-            id={`sub-name-${source}`}
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            maxLength={100}
-            autoComplete="name"
-            className={inputClass}
-            placeholder={s.namePlaceholder}
-          />
-        </div>
-        <div>
-          <label htmlFor={`sub-email-${source}`} className="label text-accent block mb-1">
-            {s.emailLabel}
-          </label>
-          <input
-            id={`sub-email-${source}`}
+            id={emailId}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             maxLength={254}
             autoComplete="email"
             required
-            className={inputClass}
+            className={c.input}
             placeholder={s.emailPlaceholder}
           />
         </div>
+        <button type="submit" disabled={status === "loading"} className={c.button}>
+          {status === "loading" ? s.submitting : s.submit}
+        </button>
       </div>
 
       {/* Honeypot: invisible para personas, los bots lo rellenan */}
@@ -112,15 +139,11 @@ export function SubscribeForm({ source }: { source: "footer" | "page" }) {
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
           required
-          className="mt-1 h-4 w-4 accent-[#8B1A1A] shrink-0"
+          className={`mt-1 h-4 w-4 shrink-0 ${c.check}`}
         />
-        <span className="font-body text-sm text-muted leading-snug">
+        <span className={`font-body text-xs leading-snug ${c.consent}`}>
           {s.consentBefore}
-          <Link
-            href={localePath(lang, "/privacy")}
-            target="_blank"
-            className="text-ink underline underline-offset-2 hover:text-accent"
-          >
+          <Link href={localePath(lang, "/privacy")} target="_blank" className={c.link}>
             {s.consentLink}
           </Link>
           {s.consentAfter}
@@ -128,18 +151,10 @@ export function SubscribeForm({ source }: { source: "footer" | "page" }) {
       </label>
 
       {status === "error" && (
-        <p className="font-body text-sm text-accent" role="alert">
+        <p className={`font-body text-sm ${c.error}`} role="alert">
           {error}
         </p>
       )}
-
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="label bg-accent text-inverse px-8 py-3 hover:opacity-90 transition-opacity disabled:opacity-50"
-      >
-        {status === "loading" ? s.submitting : s.submit}
-      </button>
     </form>
   );
 }

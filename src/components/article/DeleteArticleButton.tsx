@@ -51,7 +51,7 @@ export function DeleteArticleButton({ slug, title }: { slug: string; title: stri
         </p>
         <button
           onClick={() => router.push(localePath(lang, "/articles"))}
-          className="label text-ink border border-ink px-4 py-2 mt-3 hover:bg-ink hover:text-inverse transition-colors"
+          className="rounded-full label text-ink border border-ink px-4 py-2 mt-3 hover:bg-ink hover:text-inverse transition-colors"
         >
           Ir a artículos
         </button>
@@ -64,7 +64,7 @@ export function DeleteArticleButton({ slug, title }: { slug: string; title: stri
       <button
         onClick={handleDelete}
         disabled={busy}
-        className="label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="rounded-full label bg-accent text-inverse px-3 py-1 leading-none hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {busy ? "Borrando..." : "Borrar nota"}
       </button>

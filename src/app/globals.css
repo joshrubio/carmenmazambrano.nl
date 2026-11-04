@@ -17,6 +17,9 @@
   --color-rule:    #CCCCCC;  /* borders, column rules */
   --color-surface: #F0EDE6;  /* card backgrounds */
   --color-inverse: #FAF7F0;  /* text on dark surfaces */
+
+  /* Sombra suave para tarjetas (el resto de la web sigue sin sombras: filetes) */
+  --shadow-soft: 0 1px 2px rgba(26,26,26,0.05), 0 12px 32px -14px rgba(26,26,26,0.20);
 }
 
 /* ─── Base ──────────────────────────────────────────────────────────────────── */
