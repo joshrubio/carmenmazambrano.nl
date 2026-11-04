@@ -319,6 +319,13 @@
     "backHome": "Back to the website"
   },
   "client": {
+    "testimonials": {
+      "label": "Testimonials",
+      "sliderLabel": "Testimonials",
+      "slideOf": "Testimonial {n} of {total}",
+      "goTo": "Go to testimonial {n}",
+      "sample": "Sample"
+    },
     "carousel": {
       "sliderLabel": "Latest news",
       "slideOf": "Story {n} of {total}",

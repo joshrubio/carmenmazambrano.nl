@@ -319,6 +319,13 @@
     "backHome": "Terug naar de website"
   },
   "client": {
+    "testimonials": {
+      "label": "Ervaringen",
+      "sliderLabel": "Ervaringen",
+      "slideOf": "Ervaring {n} van {total}",
+      "goTo": "Ga naar ervaring {n}",
+      "sample": "Voorbeeld"
+    },
     "carousel": {
       "sliderLabel": "Laatste nieuws",
       "slideOf": "Bericht {n} van {total}",

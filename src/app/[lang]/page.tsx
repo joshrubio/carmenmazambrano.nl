@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getAllArticles, toSummary } from "@/lib/articles";
 import { ArticleCard } from "@/components/article/ArticleCard";
 import { AdCard } from "@/components/ui/AdCard";
+import { TestimonialsCarousel } from "@/components/ui/TestimonialsCarousel";
+import { testimonials } from "../../../content/testimonials";
 import { LatestNewsSlider } from "@/components/ui/LatestNewsSlider";
 import { ThickRule } from "@/components/ui/ColumnDivider";
 import { EditorPanel } from "@/components/ui/EditorPanel";
@@ -92,10 +94,15 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
 
-        {/* Publicidad: se queda a la vista mientras se recorre la lista */}
-        <div className="@3xl:col-span-4">
-          <div className="@3xl:sticky @3xl:top-[calc(var(--nav-h,3rem)+1rem)]">
-            <AdCard dict={dict} variant="classic" />
+        {/* Publicidad + testimonios: juntos cubren el alto de la lista de notas */}
+        <div className="@3xl:col-span-4 flex flex-col">
+          {/* Mismo alto que la fila "Más" para que la tarjeta arranque a la par de las notas */}
+          <div aria-hidden="true" className="hidden @3xl:flex items-center gap-3 mb-6 invisible">
+            <span className="label">{dict.home.more}</span>
+          </div>
+          <AdCard dict={dict} />
+          <div className="mt-6 flex-1 flex flex-col">
+            <TestimonialsCarousel items={testimonials} />
           </div>
         </div>
       </section>
