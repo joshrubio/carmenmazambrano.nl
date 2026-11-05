@@ -11,23 +11,23 @@ type Status = "idle" | "loading" | "success" | "error";
 const TONES = {
   light: {
     input:
-      "w-full rounded-full border border-rule bg-white px-5 py-3 font-body text-sm text-ink placeholder:text-dim focus:outline-none focus:border-ink",
-    button: "label shrink-0 rounded-full bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-50",
+      "w-full border border-rule bg-white px-5 py-3 font-body text-sm text-ink placeholder:text-dim focus:outline-none focus:border-ink",
+    button: "label shrink-0 bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-50",
     consent: "text-muted",
     link: "text-ink underline underline-offset-2 hover:text-accent",
     error: "text-accent",
-    success: "rounded-xl border border-ink bg-paper p-5 text-ink",
+    success: " border border-ink bg-paper p-5 text-ink",
     successText: "text-muted",
     check: "accent-[#8B1A1A]",
   },
   accent: {
     input:
-      "w-full rounded-full border border-white/30 bg-white/10 px-5 py-3 font-body text-sm text-inverse placeholder:text-inverse/70 focus:outline-none focus:bg-white/20 focus:border-white/60",
-    button: "label shrink-0 rounded-full bg-paper text-ink px-6 py-3 hover:bg-white transition-colors disabled:opacity-60",
+      "w-full border border-white/30 bg-white/10 px-5 py-3 font-body text-sm text-inverse placeholder:text-inverse/70 focus:outline-none focus:bg-white/20 focus:border-white/60",
+    button: "label shrink-0 bg-paper text-ink px-6 py-3 hover:bg-white transition-colors disabled:opacity-60",
     consent: "text-inverse/80",
     link: "text-inverse underline underline-offset-2 hover:text-white",
     error: "text-inverse font-semibold",
-    success: "rounded-xl border border-white/30 bg-white/10 p-5 text-inverse",
+    success: " border border-white/30 bg-white/10 p-5 text-inverse",
     successText: "text-inverse/80",
     check: "accent-[#FAF7F0]",
   },

@@ -170,14 +170,14 @@ export default function NewsletterAdminPage() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <button onClick={showPreview} disabled={!ready || !!busy} className="rounded-full label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
+          <button onClick={showPreview} disabled={!ready || !!busy} className="label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
             {busy === "preview" ? "Generando..." : "Vista previa"}
           </button>
           <input value={testTo} onChange={(e) => setTestTo(e.target.value)} type="email" placeholder="tu@email.com" aria-label="Email para la prueba" className="border border-rule bg-white px-3 py-3 font-body text-sm w-56 focus:outline-none focus:border-ink" />
-          <button onClick={sendTest} disabled={!ready || !testTo || !!busy} className="rounded-full label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
+          <button onClick={sendTest} disabled={!ready || !testTo || !!busy} className="label text-ink border border-ink px-5 py-3 hover:bg-ink hover:text-inverse transition-colors disabled:opacity-40">
             {busy === "test" ? "Enviando..." : "Enviar prueba"}
           </button>
-          <button onClick={() => sendCampaign()} disabled={!ready || recipients === 0 || !!busy} className="rounded-full label bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-40 sm:ml-auto">
+          <button onClick={() => sendCampaign()} disabled={!ready || recipients === 0 || !!busy} className="label bg-accent text-inverse px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-40 sm:ml-auto">
             {busy === "send" ? "Enviando..." : `Enviar a ${recipients} ${recipients === 1 ? "persona" : "personas"}`}
           </button>
         </div>

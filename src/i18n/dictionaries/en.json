@@ -38,6 +38,16 @@
     "email": "Email",
     "fullProfile": "Full Profile →"
   },
+  "ads": {
+    "label": "Advertising",
+    "lead": "Your brand,",
+    "accent": "on our pages",
+    "text": "Do you run a business, an event or a project in Rotterdam? Advertise in The New Paper and get known among our community of readers.",
+    "cta": "Advertise with us",
+    "hint": "Write to us and we will walk you through the options.",
+    "placeholder": "Your ad here",
+    "mailSubject": "Advertising in The New Paper"
+  },
   "home": {
     "latest": "Latest",
     "more": "More",
@@ -184,7 +194,7 @@
     "label": "Legal",
     "title": "Privacy Policy",
     "description": "How The New Paper handles the personal data of newsletter subscribers.",
-    "updated": "Last updated: 7 October 2026",
+    "updated": "Last updated: 5 November 2026",
     "sections": [
       {
         "heading": "1. Who is responsible",
@@ -249,9 +259,19 @@
         ]
       },
       {
-        "heading": "8. Cookies",
+        "heading": "8. Comments on articles",
         "paragraphs": [
-          "This website does not use tracking or advertising cookies. It stores one small functional cookie (NEXT_LOCALE) to remember your preferred language, and a session cookie that is only used by the site owner to manage the website."
+          "If you leave a comment on an article we store your name, your email address, the text of the comment, the date and time, the language of the site, whether you accepted this policy and whether you agreed to receive promotional emails, and whether you have verified your email.",
+          "Only your name, the text of the comment and the date are published. Your email is never shown.",
+          "To prevent anyone from commenting with somebody else's email, we send a verification link: the comment is not published until you click it. An unverified comment is deleted, together with your email, after 7 days. Once verified, if you ticked the promotional emails box, your email is added to the newsletter (see the rest of this policy for that data).",
+          "The legal basis is your consent. We keep the comment for as long as it remains published or until you ask for it to be deleted by writing to {email}. The editors may remove comments that are offensive, unlawful or disrespectful of others."
+        ]
+      },
+      {
+        "heading": "9. Cookies",
+        "paragraphs": [
+          "This website does not use tracking or advertising cookies. It stores one small functional cookie (NEXT_LOCALE) to remember your preferred language, and a session cookie that is only used by the site owner to manage the website.",
+          "If you verify your email when commenting, we store a technical cookie in your browser (tnp_commenter, 90 days) to remember that this email is already verified and not ask you every time. It is not used for advertising or to track you."
         ]
       }
     ]
@@ -275,6 +295,23 @@
     "errorRate": "Too many attempts. Please try again later.",
     "backHome": "Back to the website"
   },
+  "commentConfirm": {
+    "label": "Comments",
+    "title": "Confirm your comment",
+    "description": "Confirm your comment so it gets published.",
+    "confirmText": "You are about to publish your comment on “{article}” using the email {email}.",
+    "confirmButton": "Yes, confirm and publish",
+    "doneTitle": "Comment published",
+    "doneText": "Thank you for taking part. Your comment is now visible on the article.",
+    "doneTextPromo": "Thank you for taking part. Your comment is now visible on the article and your email has been added to the newsletter.",
+    "alreadyTitle": "Already published",
+    "alreadyText": "This comment was already confirmed. You don't need to do anything else.",
+    "invalidTitle": "This link is not valid",
+    "invalidText": "The verification link is wrong or incomplete. Write your comment again or contact {email}.",
+    "expiredTitle": "This link has expired",
+    "expiredText": "Verification links are valid for 7 days. Please write your comment again.",
+    "backToArticle": "Back to the article"
+  },
   "email": {
     "confirm": {
       "subject": "Confirm your subscription to The New Paper newsletter",
@@ -291,6 +328,19 @@
       "unsubscribe": "Unsubscribe",
       "why": "You are receiving this email because you subscribed to The New Paper newsletter.",
       "testPrefix": "[TEST] "
+    },
+    "comment": {
+      "subject": "Confirm your comment on The New Paper",
+      "preheader": "One click and your comment is published.",
+      "greeting": "Hi {name},",
+      "greetingNoName": "Hi,",
+      "intro": "You wrote this comment on “{article}”:",
+      "body": "Confirm your email address to publish it. Until you do, it will not be visible.",
+      "promoNote": "By confirming you also join The New Paper newsletter, as you ticked in the form. You can unsubscribe at any time from any email we send you.",
+      "button": "Confirm and publish",
+      "linkHint": "If the button doesn't work, copy and paste this link into your browser:",
+      "expires": "This link is valid for 7 days.",
+      "ignore": "If you didn't write any comment, just ignore this email: nothing will be published and you won't receive anything else."
     }
   },
   "unsubscribe": {
@@ -309,11 +359,61 @@
     "backHome": "Back to the website"
   },
   "client": {
+    "comments": {
+      "title": "Comments",
+      "count": "{n} comments",
+      "countOne": "1 comment",
+      "empty": "No comments yet. Be the first to comment.",
+      "loadError": "Comments could not be loaded.",
+      "formTitle": "Leave a comment",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "emailNote": "It is not published. We only use it to verify your comment.",
+      "bodyLabel": "Comment",
+      "bodyPlaceholder": "Write your comment…",
+      "privacyBefore": "I have read and accept the ",
+      "privacyLink": "privacy policy",
+      "privacyAfter": ".",
+      "promo": "I want to receive promotional emails and news from The New Paper. I can unsubscribe at any time.",
+      "submit": "Send comment",
+      "submitting": "Sending…",
+      "verifyTitle": "Check your email",
+      "verifyText": "We have sent you a link to confirm your comment. It will be published as soon as you confirm it.",
+      "publishedTitle": "Comment published",
+      "publishedText": "Thank you for taking part.",
+      "another": "Write another comment",
+      "errors": {
+        "invalid_name": "Enter your name (2 to 60 characters).",
+        "invalid_email": "Enter a valid email address.",
+        "invalid_body": "Write a comment (2 to 1500 characters).",
+        "too_many_links": "A comment cannot contain more than one link.",
+        "privacy_required": "You need to accept the privacy policy.",
+        "promo_required": "You need to agree to receive promotional emails in order to comment.",
+        "rate_limited": "Too many attempts. Please try again later.",
+        "email_failed": "We could not send the verification email. Please try again.",
+        "generic": "Something went wrong. Please try again in a moment.",
+        "network": "We could not connect. Check your connection and try again."
+      }
+    },
+    "testimonials": {
+      "label": "From the newsroom",
+      "sliderLabel": "Voices from the newsroom",
+      "slideOf": "Quote {n} of {total}",
+      "goTo": "Go to quote {n}",
+      "about": "About the article",
+      "draft": "Draft"
+    },
     "carousel": {
-      "prev": "Prev",
-      "next": "Next",
-      "previousAria": "Previous page",
-      "nextAria": "Next page"
+      "sliderLabel": "Latest news",
+      "slideOf": "Story {n} of {total}",
+      "goTo": "Go to story {n}",
+      "adBadge": "Advertisement",
+      "adSample": "Sample ad",
+      "adLabel": "Advertisement: {name}",
+      "adPromo": "Want to advertise here?",
+      "adPromoCta": "Contact us"
     },
     "skills": {
       "languages": "Languages",

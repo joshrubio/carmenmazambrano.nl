@@ -38,6 +38,16 @@
     "email": "Email",
     "fullProfile": "Perfil completo →"
   },
+  "ads": {
+    "label": "Publicidad",
+    "lead": "Tu marca,",
+    "accent": "en nuestras páginas",
+    "text": "¿Tienes un negocio, un evento o un proyecto en Róterdam? Anúnciate en The New Paper y date a conocer entre los lectores de la comunidad.",
+    "cta": "Anúnciate con nosotros",
+    "hint": "Escríbenos y te contamos las opciones.",
+    "placeholder": "Tu anuncio aquí",
+    "mailSubject": "Publicidad en The New Paper"
+  },
   "home": {
     "latest": "Últimas",
     "more": "Más",
@@ -184,7 +194,7 @@
     "label": "Legal",
     "title": "Política de privacidad",
     "description": "Cómo trata esta web los datos personales de las personas suscritas a la newsletter.",
-    "updated": "Última actualización: 7 de octubre de 2026",
+    "updated": "Última actualización: 5 de noviembre de 2026",
     "sections": [
       {
         "heading": "1. Responsable del tratamiento",
@@ -249,9 +259,19 @@
         ]
       },
       {
-        "heading": "8. Cookies",
+        "heading": "8. Comentarios en las notas",
         "paragraphs": [
-          "Esta web no usa cookies de seguimiento ni de publicidad. Guarda una pequeña cookie funcional (NEXT_LOCALE) para recordar tu idioma preferido, y una cookie de sesión que solo utiliza la persona titular del sitio para gestionarlo."
+          "Si dejas un comentario en una nota, guardamos tu nombre, tu correo electrónico, el texto del comentario, la fecha y la hora, el idioma de la web, si aceptaste esta política y si aceptaste recibir correos promocionales, y si has verificado tu correo.",
+          "Solo se publican tu nombre, el texto del comentario y la fecha. Tu correo no se muestra nunca.",
+          "Para evitar que alguien comente con el correo de otra persona, enviamos un enlace de verificación: el comentario no se publica hasta que lo pulsas. Un comentario sin verificar se borra, junto con tu correo, a los 7 días. Al verificarlo, si marcaste la casilla de correos promocionales, tu correo se apunta a la newsletter (consulta el resto de esta política para esos datos).",
+          "La base legal es tu consentimiento. Conservamos el comentario mientras siga publicado o hasta que pidas borrarlo escribiendo a {email}. La redacción puede retirar comentarios ofensivos, ilegales o que no respeten los demás."
+        ]
+      },
+      {
+        "heading": "9. Cookies",
+        "paragraphs": [
+          "Esta web no usa cookies de seguimiento ni de publicidad. Guarda una pequeña cookie funcional (NEXT_LOCALE) para recordar tu idioma preferido, y una cookie de sesión que solo utiliza la persona titular del sitio para gestionarlo.",
+          "Si verificas tu correo al comentar, guardamos en tu navegador una cookie técnica (tnp_commenter, 90 días) para recordar que ese correo ya está verificado y no pedírtelo cada vez. No se usa para publicidad ni para seguirte."
         ]
       }
     ]
@@ -275,6 +295,23 @@
     "errorRate": "Demasiados intentos. Inténtalo de nuevo más tarde.",
     "backHome": "Volver a la web"
   },
+  "commentConfirm": {
+    "label": "Comentarios",
+    "title": "Confirma tu comentario",
+    "description": "Confirma tu comentario para que se publique.",
+    "confirmText": "Vas a publicar tu comentario en «{article}» con el correo {email}.",
+    "confirmButton": "Sí, confirmar y publicar",
+    "doneTitle": "Comentario publicado",
+    "doneText": "Gracias por participar. Tu comentario ya es visible en la nota.",
+    "doneTextPromo": "Gracias por participar. Tu comentario ya es visible en la nota y tu correo queda apuntado a la newsletter.",
+    "alreadyTitle": "Ya está publicado",
+    "alreadyText": "Este comentario ya estaba confirmado. No tienes que hacer nada más.",
+    "invalidTitle": "Este enlace no es válido",
+    "invalidText": "El enlace de verificación es incorrecto o está incompleto. Vuelve a escribir tu comentario o escribe a {email}.",
+    "expiredTitle": "Este enlace ha caducado",
+    "expiredText": "Los enlaces de verificación valen 7 días. Vuelve a escribir tu comentario.",
+    "backToArticle": "Volver a la nota"
+  },
   "email": {
     "confirm": {
       "subject": "Confirma tu suscripción a la newsletter de The New Paper",
@@ -291,6 +328,19 @@
       "unsubscribe": "Darme de baja",
       "why": "Recibes este email porque te suscribiste a la newsletter de The New Paper.",
       "testPrefix": "[PRUEBA] "
+    },
+    "comment": {
+      "subject": "Confirma tu comentario en The New Paper",
+      "preheader": "Un clic y tu comentario se publica.",
+      "greeting": "Hola, {name}:",
+      "greetingNoName": "Hola:",
+      "intro": "Has escrito este comentario en «{article}»:",
+      "body": "Confirma tu dirección de correo para publicarlo. Hasta que lo hagas, no será visible.",
+      "promoNote": "Al confirmar también te apuntas a la newsletter de The New Paper, como marcaste en el formulario. Puedes darte de baja cuando quieras desde cualquier correo que te enviemos.",
+      "button": "Confirmar y publicar",
+      "linkHint": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+      "expires": "Este enlace vale 7 días.",
+      "ignore": "Si no has escrito ningún comentario, ignora este correo: no se publicará nada y no recibirás nada más."
     }
   },
   "unsubscribe": {
@@ -309,11 +359,61 @@
     "backHome": "Volver a la web"
   },
   "client": {
+    "comments": {
+      "title": "Comentarios",
+      "count": "{n} comentarios",
+      "countOne": "1 comentario",
+      "empty": "Todavía no hay comentarios. Sé la primera persona en comentar.",
+      "loadError": "No se han podido cargar los comentarios.",
+      "formTitle": "Deja tu comentario",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "emailNote": "No se publica. Solo lo usamos para verificar tu comentario.",
+      "bodyLabel": "Comentario",
+      "bodyPlaceholder": "Escribe tu comentario…",
+      "privacyBefore": "He leído y acepto la ",
+      "privacyLink": "política de privacidad",
+      "privacyAfter": ".",
+      "promo": "Quiero recibir correos promocionales y novedades de The New Paper. Puedo darme de baja en cualquier momento.",
+      "submit": "Enviar comentario",
+      "submitting": "Enviando…",
+      "verifyTitle": "Revisa tu correo",
+      "verifyText": "Te hemos enviado un enlace para confirmar tu comentario. Se publicará en cuanto lo confirmes.",
+      "publishedTitle": "Comentario publicado",
+      "publishedText": "Gracias por participar.",
+      "another": "Escribir otro comentario",
+      "errors": {
+        "invalid_name": "Escribe tu nombre (entre 2 y 60 caracteres).",
+        "invalid_email": "Escribe un correo electrónico válido.",
+        "invalid_body": "Escribe un comentario (entre 2 y 1500 caracteres).",
+        "too_many_links": "Un comentario no puede llevar más de un enlace.",
+        "privacy_required": "Tienes que aceptar la política de privacidad.",
+        "promo_required": "Tienes que aceptar recibir correos promocionales para comentar.",
+        "rate_limited": "Demasiados intentos. Inténtalo de nuevo más tarde.",
+        "email_failed": "No hemos podido enviar el correo de verificación. Inténtalo de nuevo.",
+        "generic": "Algo ha salido mal. Inténtalo de nuevo en un momento.",
+        "network": "No hemos podido conectar. Comprueba tu conexión e inténtalo de nuevo."
+      }
+    },
+    "testimonials": {
+      "label": "Desde la redacción",
+      "sliderLabel": "Voces de la redacción",
+      "slideOf": "Cita {n} de {total}",
+      "goTo": "Ir a la cita {n}",
+      "about": "Sobre la nota",
+      "draft": "Borrador"
+    },
     "carousel": {
-      "prev": "Anterior",
-      "next": "Siguiente",
-      "previousAria": "Página anterior",
-      "nextAria": "Página siguiente"
+      "sliderLabel": "Últimas noticias",
+      "slideOf": "Noticia {n} de {total}",
+      "goTo": "Ir a la noticia {n}",
+      "adBadge": "Publicidad",
+      "adSample": "Anuncio de ejemplo",
+      "adLabel": "Publicidad: {name}",
+      "adPromo": "¿Quieres anunciarte aquí?",
+      "adPromoCta": "Contáctanos"
     },
     "skills": {
       "languages": "Idiomas",

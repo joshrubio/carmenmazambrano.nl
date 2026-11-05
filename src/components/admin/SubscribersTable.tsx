@@ -96,7 +96,7 @@ export function SubscribersTable() {
           />
           <button
             onClick={() => window.location.assign("/api/admin/subscribers?format=csv")}
-            className="rounded-full label bg-ink text-inverse px-4 py-2 leading-none whitespace-nowrap hover:opacity-80 transition-opacity"
+            className="label bg-ink text-inverse px-4 py-2 leading-none whitespace-nowrap hover:opacity-80 transition-opacity"
           >
             Exportar CSV
           </button>
@@ -133,7 +133,7 @@ export function SubscribersTable() {
                   </td>
                   <td className="px-4 py-3 label text-muted font-normal tracking-wide">{s.locale}</td>
                   <td className="px-4 py-3 label text-muted font-normal normal-case tracking-wide">
-                    {s.source === "page" ? "Página" : "Footer"}
+                    {s.source === "page" ? "Página" : s.source === "comment" ? "Comentario" : "Footer"}
                   </td>
                   <td className="px-4 py-3 font-body text-sm text-muted whitespace-nowrap">
                     {dateFmt.format(new Date(s.createdAt))}

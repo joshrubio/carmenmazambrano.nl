@@ -148,13 +148,13 @@ export default function NewArticlePage() {
                 setPullquote(""); setLinkedin(""); setCoverFile(null);
                 setCoverPreview(null); setGalleryFiles([]); setGalleryPreviews([]);
               }}
-              className="rounded-full label bg-ink text-inverse py-3 hover:bg-accent transition-colors"
+              className="label bg-ink text-inverse py-3 hover:bg-accent transition-colors"
             >
               Publicar otra nota
             </button>
             <Link
               href="/"
-              className="rounded-full label text-ink border border-ink py-3 hover:bg-ink hover:text-inverse transition-colors block text-center"
+              className="label text-ink border border-ink py-3 hover:bg-ink hover:text-inverse transition-colors block text-center"
             >
               Ver la web
             </Link>
@@ -396,7 +396,7 @@ export default function NewArticlePage() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="rounded-full w-full label bg-accent text-inverse py-4 text-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full label bg-accent text-inverse py-4 text-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === "loading" ? (progress || "Publicando...") : "Publicar nota de prensa"}
           </button>

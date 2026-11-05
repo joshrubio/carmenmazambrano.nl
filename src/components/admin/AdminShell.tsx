@@ -16,6 +16,7 @@ const tabs = (lang: Locale) => [
   { href: "/admin/new", label: "Redactar", icon: icon("M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z") },
   { href: localePath(lang, "/articles"), label: "Notas de prensa", icon: icon("M4 4h13v16H6a2 2 0 01-2-2V4zM17 8h3v10a2 2 0 01-2 2M8 8h5M8 12h5M8 16h5") },
   { href: localePath(lang, "/about"), label: "About", icon: icon("M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0") },
+  { href: "/admin/comments", label: "Comentarios", icon: icon("M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z") },
   { href: "/contact-list", label: "Suscriptores", icon: icon("M9 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2.5 20a6.5 6.5 0 0113 0M16 4.3a3.5 3.5 0 010 6.4M18 14.2a6.5 6.5 0 013.5 5.8") },
   { href: "/admin/newsletter", label: "Newsletter", icon: icon("M22 3L11 14M22 3l-7 18-4-7-7-4 18-7z") },
 ];

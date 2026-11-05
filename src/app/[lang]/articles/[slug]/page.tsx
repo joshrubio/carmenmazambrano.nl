@@ -4,6 +4,7 @@ import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 import { ArticleBody } from "@/components/article/ArticleBody";
 import { TranslatableArticle } from "@/components/article/TranslatableArticle";
 import { RichText } from "@/components/article/RichText";
+import { CommentsSection } from "@/components/article/CommentsSection";
 import { DeleteArticleButton } from "@/components/article/DeleteArticleButton";
 import { Byline } from "@/components/ui/Byline";
 import { CategoryBadge } from "@/components/ui/CategoryBadge";
@@ -82,6 +83,8 @@ export default async function ArticlePage({ params }: Props) {
 
         <ArticleBody blocks={article.content} />
       </TranslatableArticle>
+
+      <CommentsSection slug={article.slug} />
     </article>
   );
 }
