@@ -46,15 +46,24 @@ export default async function HomePage({ params }: Props) {
   const adSlides = ads.map((a) => ({
     id: a.id,
     advertiser: a.advertiser,
+    display: a.display,
     url: a.url,
+    kicker: a.kicker[lang],
     headline: a.headline[lang],
+    emphasis: a.emphasis[lang],
     text: a.text[lang],
     cta: a.cta[lang],
     sample: a.sample,
     visual:
       a.visual.kind === "image"
-        ? { kind: "image" as const, src: a.visual.src, alt: a.visual.alt[lang], position: a.visual.position, fit: a.visual.fit, bg: a.visual.bg }
-        : { kind: "type" as const, word: a.visual.word[lang], kicker: a.visual.kicker },
+        ? {
+            kind: "image" as const,
+            src: a.visual.src,
+            alt: a.visual.alt[lang],
+            position: a.visual.position,
+            credit: a.visual.credit && { text: a.visual.credit.text[lang], href: a.visual.credit.href },
+          }
+        : { kind: "art" as const, art: a.visual.art, alt: a.visual.alt[lang] },
   }));
   const advertiseHref = `mailto:${about.email}?subject=${encodeURIComponent(dict.ads.mailSubject)}`;
 
